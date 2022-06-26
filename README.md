@@ -15,4 +15,10 @@ lenovo.com
 
 ### Proyecto  integrador Team 10
 
+### Descripcion de los integrantes del grupo:
+
+### Diaz Emanuel: 
+
+Mi nombre es Diaz Emanuel Antonio, tengo 20 años, resido en la ciudad de Cutral Có, provincia de Neuquén. Actualmente curso programación web full stack gracias a la Fundación Formar. Decidí comenzar a cursar debido a que se despertó un interés en mi, adentrandome en un mundo realmente amplio, donde aprendo cada día cosas nuevas. Quiero continuar capacitandome y de esta forma poder trabajar de lo que me guste.
+
 
