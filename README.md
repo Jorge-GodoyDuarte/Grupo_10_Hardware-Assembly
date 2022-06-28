@@ -13,6 +13,17 @@ compragamer.com
 fullh4rd.com.ar
 lenovo.com
 
+Una web-commerce es un tipo de comercio (compra y venta de productos o servicios) que se da a través de internet. Esta modalidad de compra y venta se expandió en el último tiempo (debido al acceso masivo a internet) y permite comprar y vender a través de sitios webs, aplicaciones o redes sociales.
+
+Las funcionalidades que queremos replicar de estos sitios online es la agilidad y seguridad que ofrecen. requisitos de calidad como: diseño del sitio, medios de pago, disponibilidad de productos, seguridad, facilidad de compra, opciones de entrega, garantía y servicio de postventa. Además,una de las principales ventajas de esta modalidad es que el usuario puede comprar productos desde cualquier lugar del mundo, sin necesidad de dirigirse a una tienda física, y recibir sus compras a domicilio o en un punto de entrega acordado con el vendedor.
+
+Por todos estos beneficios optamos por estas paginas, creemos que somos capaces de imitarlas, pues contamos con un muy buen equipo de trabajo.
+
+
+
+
+
+
 ### Proyecto  integrador Team 10
 
 ### Descripcion de los integrantes del grupo:
