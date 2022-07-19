@@ -36,3 +36,8 @@ Mi nombre es Diaz Emanuel Antonio, tengo 20 años, resido en la ciudad de Cutral
 ### Juan Cruz Moran :
 
 Mi nombre es Juan Cruz Moran, tengo 21 años, soy del partido de San Miguel, provincia de Buenos Aires. Actualmente trabajo en la FAA (Fuerza aérea Argentina), decidí comenzar a estudiar programación Full Stack para en un futuro poder trabajar de lo que realmente me gusta e interesa.
+
+
+### Jorge A. Godoy Duarte :
+
+mi nombre es jorge alan godoy Duarte tengo  30 años, soy de la Ciudad de San Miguel en la provincia de Buenos aires, me considero una persona muy resiliente, optimista, Honesto, Emprendedor y flexible para el trabajo en equipo mi capacitacion profesional es muy amplia :Electricidad, Seguridad Electronica,Energia Critica,Logica De Cableado, Instalaciones, Facilities,Cableado Estructurado, FFOO, SSOO, Soporte IT,  este año empece Ciberseguridad y siempre me gusto mucho  el mundo de la programacion hice cursos hace mucho tiempo  de html y css pero por cuestiones de tiempo y trabajo   la vida me llevo para otro lado en  cuestiones laborales,la reciente pandemia y cambios trascendentales en mi vida me hicieron  darme cuenta que tenia que cambiar y retomar ese camino, estudiar y adentrarme de lleno a esa vieja pasion por la programacion y gracias a la fundacion Formar ,DigitalHouse y los profes aca estoy  aprendiendo algo  nuevo todos los dias muy Agradecido  de la oportunidad  
