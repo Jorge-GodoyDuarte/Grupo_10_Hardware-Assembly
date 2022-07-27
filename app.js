@@ -5,6 +5,7 @@ const port = 3030;
 
 //recurso estaticos
 app.use(express.static('public'));
+
 //rutas
 app.get('/', (req,res) => res.sendFile(path.join(__dirname,'views','home.html')))
 //servidor
