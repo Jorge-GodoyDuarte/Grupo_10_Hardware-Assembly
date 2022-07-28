@@ -1,5 +1,7 @@
 /* aca empiesa el  harcodeo  de nuestros estilos */ 
-
+.body {
+    background-color: black
+}
 /*header*/
 .menu_header{
 

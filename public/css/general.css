@@ -1,5 +1,5 @@
-@import url(./home.css);
-
+@import './home.css';
+@import './shopping-cart.css';
 :root{
 
 }
