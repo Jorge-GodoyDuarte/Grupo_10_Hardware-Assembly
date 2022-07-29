@@ -43,7 +43,7 @@
     margin-right: 10%;
     margin-top:10px;
     padding: 10px;
-    border:none;
+    border: 2px solid #a0a0a0;
     border-bottom: 1px solid silver;
     outline: none;
     font-size: 15px;
@@ -67,19 +67,33 @@
    
     margin-left: 10%;
     margin-right: 10%;
-    background-color: darkblue;
+    background: linear-gradient(45deg,red,blue,green,black);
+			background-size: 400% 400%;
+			position: relative;
+			animation: cambiar 4s ease-in-out infinite;
     padding-bottom: 10px;
     padding-top: 10px;
     margin-bottom: 10%;
     margin-top: 10%;
     color:#fff;
     text-align: center;
-}
+    font-family:'Roboto';
+    font-size: 16px ;}
+
+    @keyframes cambiar{
+        0%{background-position: 0 50%;}
+        50%{background-position: 100% 50%;}
+        100%{background-position: 0 50%;}
+    }
+
 
 .register_main{
     margin-left: 10%;
     margin-right: 10%;
-    background-color: #696969;
+    background: linear-gradient(45deg,red,blue,green,black);
+    background-size: 400% 400%;
+    position: relative;
+    animation: cambiar 4s ease-in-out infinite;
     padding-bottom: 10px;
     padding-top: 10px;
     margin-bottom: 10%;
