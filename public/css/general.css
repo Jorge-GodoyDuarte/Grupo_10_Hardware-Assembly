@@ -5,11 +5,29 @@
 :root {
     --tipografiaTitulos: 'Roboto';
     --tipografiaPrecios: 'Source Sans Pro';
-    margin: 0px;
-    padding: 0px;
+    --colorAmarillo: #EAC926;
+    --colorAzul: #03264C;
+    --colorCeleste: #1259c3;
+    --colorGrisOscuro: #666;
+    --colorGrisClaro: #ebebeb;
+    --colorVerde: #39b54a;
+    --colorRojo: rgb(253, 74, 74);
+
 }
 @keyframes cambiar{
     0%{background-position: 0 50%;}
     50%{background-position: 100% 50%;}
     100%{background-position: 0 50%;}
 }
+a{
+    text-decoration: none;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
