@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Source+Sans+Pro:wght@400;600&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Sans+Pro:wght@400;600&family=Ubuntu&display=swap');
 @import './home.css';
 @import './shopping-cart.css';
+@import './form.css';
 
 :root {
     --tipografiaTitulos: 'Roboto';
