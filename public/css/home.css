@@ -1,54 +1,75 @@
 /* aca empiesa el  harcodeo  de nuestros estilos */ 
 
 /*header*/
-.menu_header{
 
-};
+.menu_header{
+display: flex;
+flex-direction: row-reverse;
+}
 .carrito{
 
-};
-.imagen_header{
+}
 
-};
-
+.imagen_header img{
+    width: 320px;
+    height: 70px;
+}
 
 /*main*/
 .cuadro_categorias{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 200px;
+    border: solid 1px;
+    background-color:lightgray;
 
-};
+}
 .producto{
-    border: solid 1px black ;
-    width: 120 px;
-    height: 180 px;
 
+width: 85px;
+height: 85px;
+border: 1px solid black;
+background-color: aliceblue;
+margin: 10px;   
+display: inline-flex;
 
-};
+}
 .desarrollo_producto{
+    display: flex;
 
-};
+}
 .filtros_lateral{
+    width: 120px;
+    border: 2px solid blue;
+    background-color: aliceblue;
 
-};
+}
 .tarjeta_producto{
+    width: 80px;
+    height: 120px;
+    background-color: aliceblue;
+    border: 1px solid red;
 
-};
+}
 .nombre{
 
-};
+    
+}
 .precio{
 
-};
+}
 .ver_producto{
 
-};
+}
 /*footer*/
 .logos_redes{
 
-};
+}
 .logo_pagina{
 
-};
+}
 .terminos_condiciones{
 
-};
-
+}
