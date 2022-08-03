@@ -6,93 +6,170 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/general.css">
+    <script src="https://kit.fontawesome.com/b4935bb790.js" crossorigin="anonymous"></script>
     <title>Hardware-Assembly & you</title>
+
 
 </head>
 
 <body>
-    <header>
-        <nav class="menu_header">
-            <h3 class="home">HOME</h3>
-            <h3 class="registro">REGISTRO</h3>
-            <h3 class="login">LOGIN!</h3>
-        </nav>
-        <div class="carrito"><img src="..//images/cart.webp" alt=""></div>
-        <div class="imagen_header"><img src="..//images/imagen_header.jpeg" alt=""></div>
+    <header class="header">
+
+        <div class="ingreso_registro">
+            <a href="login.html">
+                <h3>Logueate! <i class="fa-solid fa-user-shield"></i></h3>
+            </a>
+            <a href="register.html">
+                <h3>Registrate! <i class="fa-solid fa-id-card"></i></h3>
+            </a>
+        </div>
+        <section class="header__section">
+            <article class="header__article">
+                <div class="header__user">
+
+                    <div class="cart_icon">
+                        <a href="shopping-cart.html">
+
+
+                            <i class="fa-solid fa-cart-plus"></i></a>
+                    </div>
+
+
+                </div>
+                <div class="header__search">
+                    <input class="shopping__header__button" type="search" name="busquedaproducto"
+                        value="Buscar productos, marcas y más ..">
+                </div>
+
+            </article>
+            <div class="burger-menu">
+                <button class="burger-button"><i class="fa-solid fa-bars"></i></button>
+            </div>
 
     </header>
-
     <main>
         <div class="cuadro_categorias">
-            <div class="producto"><img src="" alt=""></div>
-            <div class="producto"><img src="" alt=""></div>
-            <div class="producto"><img src="" alt=""></div>
-            <div class="producto"><img src="" alt=""></div>
-            <div class="producto"><img src="" alt=""></div>
-            <div class="producto"><img src="" alt=""></div>
-            <div class="producto"><img src="" alt=""></div>
-            <div class="producto"><img src="" alt=""></div>
-            <div class="producto"><img src="" alt=""></div>
-            <div class="producto"><img src="" alt=""></div>
-            <div class="producto"><img src="" alt=""></div>
-            <div class="producto"><img src="" alt=""></div>
+            <div class="producto"><a href=""><img src="/images/logos-categorias/mother.bmp" alt=""></a></div>
+            <div class="producto"><a href=""><img src="/images/logos-categorias/cpu.bmp" alt=""></a></div>
+            <div class="producto"><a href=""><img src="/images/logos-categorias/ram.bmp" alt=""></a></div>
+            <div class="producto"><a href=""><img src="/images/logos-categorias/fuente.bmp" alt=""></a></div>
+            <div class="producto"><a href=""><img src="/images/logos-categorias/hdd.bmp" alt=""></a></div>
+            <div class="producto"><a href=""><img src="/images/logos-categorias/gpu.bmp" alt=""></a></div>
+            <div class="producto"><a href=""><img src="/images/logos-categorias/cooling.bmp" alt=""></a></div>
+            <div class="producto"><a href=""><img src="/images/logos-categorias/display.bmp" alt=""></a></div>
+            <div class="producto"><a href=""><img src="/images/logos-categorias/teclados.bmp" alt=""></a></div>
+            <div class="producto"><a href=""><img src="/images/logos-categorias/mouse.bmp" alt=""></a></div>
+            <div class="producto"><a href=""><img src="/images/logos-categorias/headset.bmp" alt=""></a></div>
+            <div class="producto"><a href=""><img src="/images/logos-categorias/conectividad.bmp" alt=""></a></div>
+            <div class="producto"><a href=""><img src="/images/logos-categorias/licenciasyseguridad.bmp" alt=""></a>
+            </div>
+            <div class="producto"><a href=""><img src="/images/logos-categorias/desktop.bmp" alt=""></a></div>
+            <div class="producto"><a href=""><img src="/images/logos-categorias/laptop.bmp" alt=""></a></div>
+            <div class="producto"><a href=""><img src="/images/logos-categorias/USB.bmp" alt=""></a></div>
+
         </div>
         <div class="desarrollo_producto">
             <aside class="filtros_lateral">
                 <form action="">
-                    <h4>Categoria Elegida </h4>
-                    <h4>Quitar Filtros</h4>
-                    <h4>Mayor Precio</h4>
-                    <h4>Menor Precio</h4>
-                    <h4>Filtros Mas Usados</h4>
+                    <label for="Categoria_Elegida">
+                        <h4>Categoria</h4>
+                    </label>
+                    <label for="Quitar_filtros">
+                        <h3> Quitar Filtros</h3> <span><input type="checkbox" name="Quitar_Filtros"
+                                value="Quitar Filtros"></span>
+                    </label>
+                    <label for="Mayor_precio">
+                        <h3> Mayor Precio</h3> <span><input type="checkbox" name="Mayor_precio"
+                                value="Mayor Precio"></span>
+                    </label>
+                    <label for="Menor_precio">
+                        <h3>Menor Precio</h3><span><input type="checkbox" name="Menor_precio"
+                                value="Menor Precio"></span>
+                    </label>
+                    <label for="Mas_populares">
+                        <h3> Populares</h3> <span><input type="checkbox" name="Mas_populares"
+                                value="Mas Populares"></span>
+                    </label>
+
                 </form>
             </aside>
-            <div class="tarjeta_producto">
-                <section><img src="" alt=""></section>
-                <section>
+            <div class="tarjeta-producto">
+                <section class="img-tarjeta">
+                    <img src="/images/CoolerRgb-mini.jpg" alt="">
+                </section>
+                <section class="valores-tarjeta">
+                    <h2 class="nombre">asd
+                    </h2>
+                    <h2 class="precio">1231235</h2>
+                </section>
+                <a href="/detail.html" class="boton">ver producto</a>
+            </div>
+            <div class="tarjeta-producto">
+                <section class="img-tarjeta">
+                    <img src="/images/MonitorSamsung-mini.jpg" alt="">
+                </section>
+                <section class="valores-tarjeta">
                     <h2 class="nombre">asd</h2>
-                    <h2 class="precio">123123</h2>
-                    <input class="ver_producto" type="button" value="">
+                    <h2 class="precio">20591</h2>
+
 
                 </section>
+                <a href="/detail.html" class="boton">ver producto</a>
             </div>
-            <div class="tarjeta_producto">
-                <section><img src="" alt=""></section>
-                <section>
-                    <h2 class="nombre">asd</h2>
-                    <h2 class="precio">123123</h2>
-                    <input class="ver_producto" type="button" value="">
-
+            <div class="tarjeta-producto">
+                <section class="img-tarjeta">
+                    <img src="/images/intelcorei3-mini.jpg" alt="">
                 </section>
-            </div>
-            <div class="tarjeta_producto">
-                <section><img src="" alt=""></section>
-                <section>
+                <section class="valores-tarjeta">
                     <h2 class="nombre">asd</h2>
-                    <h2 class="precio">123123</h2>
-                    <input class="ver_producto" type="button" value="">
-
+                    <h2 class="precio">12300</h2>
                 </section>
+                <a href="/detail.html" class="boton">ver producto</a>
             </div>
-            <div class="tarjeta_producto">
-                <section><img src="" alt=""></section>
-                <section>
+            <div class="tarjeta-producto">
+                <section class="img-tarjeta">
+                    <img src="/images/Mouse-pad-mini.png" alt="">
+                </section>
+                <section class="valores-tarjeta">
                     <h2 class="nombre">asd</h2>
-                    <h2 class="precio">123123</h2>
-                    <input class="ver_producto" type="button" value="">
-
+                    <h2 class="precio">50000</h2>
                 </section>
+                <a href="/detail.html" class="boton">ver producto</a>
             </div>
+            <div class="tarjeta-producto">
+                <section class="img-tarjeta">
+                    <img src="/images/Mouse-pad-mini.png" alt="">
+                </section>
+                <section class="valores-tarjeta">
+                    <h2 class="nombre">asd</h2>
+                    <h2 class="precio">323123</h2>
+                </section>
+                <a href="/detail.html" class="boton">ver producto</a>
+            </div>
+            <div class="tarjeta-producto">
+                <section class="img-tarjeta">
+                    <img src="/images/Mouse-pad-mini.png" alt="">
+                </section>
+                <section class="valores-tarjeta">
+                    <h2 class="nombre">asd</h2>
+                    <h2 class="precio">456123 </h2>
+                </section>
+                <a href="/detail.html" class="boton">ver producto</a>
+            </div>
+
+        </div>
 
         </div>
     </main>
     <footer>
         <section class="logos_redes">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
+            <nav class="logos"><a href=""> <i class="fa-brands fa-facebook"></i></a>
+                <a href=""> <i class="fa-brands fa-instagram"></i></a>
+                <a href=""> <i class="fa-brands fa-twitter"></i></a>
+                <a href=""> <i class="fa-brands fa-twitch"></i></a>
+                <a href=""> <i class="fa-brands fa-linkedin"></i></a>
+                <a href=""> <i class="fa-brands fa-google-play"></i> </a>
+            </nav>
         </section>
         <section class="logo_pagina">
             <img src="" alt="">
