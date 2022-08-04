@@ -83,3 +83,22 @@ background-color: #C1C1C1;
     border: 1px solid #ebebeb;
     width: 100%;
 }
+.title-detail {
+color: #ffff;
+}
+
+
+@media (min-width:768px) {
+.detail__main-img img {
+    width: 60%;
+    height: 80%;
+
+}
+.detail__main-img {
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-left: 20%;
+}
+}
