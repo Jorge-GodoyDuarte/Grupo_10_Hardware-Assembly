@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <<<<<<<<< Temporary merge branch 1
+=======
+<<<<<<< HEAD
+>>>>>>> 86d34edef5bfcf7ac5b650dd18f755b869846179
 /* MAIN */
 .detail__main-article {
     display: flex;
@@ -84,6 +88,7 @@ background-color: #C1C1C1;
     border: 1px solid #ebebeb;
     width: 100%;
 }
+<<<<<<< HEAD
 =========
 
 /*header*/
@@ -264,3 +269,26 @@ background-color: #C1C1C1;
     color: black;
   }
 >>>>>>>>> Temporary merge branch 2
+=======
+.title-detail {
+color: #ffff;
+}
+
+
+@media (min-width:768px) {
+.detail__main-img img {
+    width: 60%;
+    height: 80%;
+
+}
+.detail__main-img {
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-left: 20%;
+}
+}
+=======
+>>>>>>> b725a3ebdd26e6fd9dc4337c9975bcac4711e1e0
+>>>>>>> 86d34edef5bfcf7ac5b650dd18f755b869846179
