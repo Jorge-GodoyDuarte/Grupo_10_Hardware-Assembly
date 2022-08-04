@@ -2,6 +2,7 @@
 @import './home.css';
 @import './shopping-cart.css';
 @import './form.css';
+@import './detail.css';
 
 :root {
     --tipografiaTitulos: 'Roboto';
