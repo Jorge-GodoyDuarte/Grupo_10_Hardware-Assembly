@@ -208,9 +208,12 @@
 }
 
 .nombre {
+  text-align: center;
 
 }
 .precio {
+
+text-align: center;
   
 }
 .boton {
