@@ -34,10 +34,14 @@
     gap:0px;
 }
 
+.home_main_register{
+    align-items: center;
+
+}
 
 
 .form_input{
-    width:80%;
+    width:73%;
     align-items: center;
     margin-left: 10%;
     margin-right: 10%;
@@ -104,12 +108,17 @@
 
 
 .form_select{
-    width:83%;
-    padding:10px 0;
+    width:82.5%;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top:10px;
+    padding: 10px;
     border: 1px solid silver;
     background-color: #fff;
     margin-left: 10%;
     margin-right: 10%;
+    
 }
 
 
@@ -174,6 +183,20 @@
 }
 
 
+.form_select{
+    width:79%;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top:10px;
+    padding: 10px;
+    border: 1px solid silver;
+    background-color: #fff;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+}
+
 }
 
 @media(min-width:1024px){
@@ -205,4 +228,18 @@
          padding: 20px;
        }
    
+       .form_select{
+        width:77%;
+        align-items: center;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top:10px;
+        padding: 10px;
+        border: 1px solid silver;
+        background-color: #fff;
+        margin-left: 10%;
+        margin-right: 10%;
+        
+    }
+
 }
