@@ -1,46 +1,62 @@
 [
-    {
-        "id": 1,
-        "name" : "Intel Core i3",
-        "marca" : "Intel",
-        "modelo" : "10100f 4.3Ghz",
-        "price" : 43.801,
-        "discount" : 5,
-        "image" : "intelcorei3-mini.jpg",
-        "section" : "procesador"
-
-    },
-    {
-        "id": 2,
-        "name" : "Mouse Pad gamer Xtrike Me MP-602 de caucho y tela negro",
-        "marca" : "Xtrike",
-        "modelo" : "MP-602",
-        "price" : 980,
-        "discount" : 0,
-        "image" : "Mouse-pad-shopping-cart.png",
-        "section" : "mousepad"
-
-    },
-    {
-        "id": 3,
-        "name" : "Monitor Samsung LED",
-        "marca" : "Samsung",
-        "modelo" :"T350H IPS",
-        "price" : 41.999,
-        "discount" : 5,
-        "image" : "MonitorSamsung-shoppingcart.jpg",
-        "section" : "monitor"
-
-    },
-    {
-        "id": 4,
-        "name" : "Cooler Cougar para INTEL & AMD",
-        "marca" : "Cougar",
-        "modelo" : "3600mm",
-        "price" : 139.100,
-        "discount" : 5,
-        "image" : "CoolerRgb-shoppingcart.jpg",
-        "section" : "cooler"
-
-    }
+   {
+      "id": 1,
+      "name": "Intel Core i3",
+      "marca": "Intel",
+      "modelo": "10100f 4.3Ghz",
+      "price": 43.801,
+      "discount": 5,
+      "image": "intelcorei3-mini.jpg",
+      "section": "procesador"
+   },
+   {
+      "id": 2,
+      "name": "Mouse Pad gamer Xtrike Me MP-602 de caucho y tela negro",
+      "marca": "Xtrike",
+      "modelo": "MP-602",
+      "price": 980,
+      "discount": 0,
+      "image": "Mouse-pad-shopping-cart.png",
+      "section": "mousepad"
+   },
+   {
+      "id": 3,
+      "name": "Monitor Samsung LED",
+      "marca": "SAMSUNG",
+      "modelo": "T350H IPS",
+      "price": 41.999,
+      "discount": 5,
+      "image": "MonitorSamsung-shoppingcart.jpg",
+      "section": "monitor"
+   },
+   {
+      "id": 4,
+      "name": "Cooler Cougar para INTEL & AMD",
+      "marca": "Cougar",
+      "modelo": "3600mm",
+      "price": 139.1,
+      "discount": 5,
+      "image": "CoolerRgb-shoppingcart.jpg",
+      "section": "cooler"
+   },
+   {
+      "id": 5,
+      "name": "Hola",
+      "marca": "Das",
+      "modelo": "dasdasd",
+      "price": 999,
+      "discount": 90,
+      "section": "AMD",
+      "image": "intelcorei3-mini.jpg"
+   },
+   {
+      "id": 6,
+      "name": "ASD",
+      "marca": "ASD",
+      "modelo": "ASD",
+      "price": 124124,
+      "discount": 124124,
+      "section": "HYPERX",
+      "image": "intelcorei3-mini.jpg"
+   }
 ]

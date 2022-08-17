@@ -1,6 +1,16 @@
 /* aca empiesa el  harcodeo  de nuestros estilos */
 
 /*header*/
+.header__agregar {
+  font-family: var(--tipografiaTitulos);
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
+.header__agregar h3 {
+  color: white;
+  font-size: 18px;
+}
 
 .ingreso_registro a {
   display: inline-flex;
