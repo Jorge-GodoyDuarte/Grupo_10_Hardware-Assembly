@@ -1,4 +1,13 @@
 /* MAIN */
+.alerta {
+    background-color: #706eec;
+    font-style: var(--tipografiaTitulos);
+    padding-top: 20px;
+}
+.alerta-keywords {
+    font-style: var(--tipografiaTitulos);
+    font-size: 20px;
+}
 .detail__main-article {
     display: flex;
     flex-wrap: wrap;
@@ -19,6 +28,40 @@ width: 100%;
     width: 100%;
     margin: 0px;
     padding: 0px;
+}
+.detail__main-price-discount {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.detail__main-price-discount h5 {
+    display: flex;
+    justify-content: center;
+    color: rgb(253, 74, 74);
+    font-size: 18px;
+    font-family: var(--tipografiaPrecios);
+    font-weight: 600;
+    font-style: italic;
+    width: 50%;
+    margin: 0px;
+}
+.detail__discount {
+    display: flex;
+    justify-content: flex-end;
+    color: red;
+    text-decoration: line-through;
+    margin-top: 15%;
+    font-size: 16px;
+}
+.detail__main-price-discount h4 {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-family: var(--tipografiaPrecios);
+    font-weight: 600;
+    width: 50%;
 }
 h4 {
     font-size: 18px;
