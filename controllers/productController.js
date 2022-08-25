@@ -3,26 +3,33 @@ const { search } = require('../routes');
 
 const products = require('../data/db_Module').loadProducts();
 const brands = require('../data/db_Module').loadBrands();
-const {storeProducts} = require('../data/db_Module')
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const {storeProducts, loadBrands, loadProducts, loadCategory} = require('../data/db_Module')
 module.exports = {
     add : (req,res) => {
+        
+        const products = loadProducts();
+        const category = loadCategory()
         return res.render('productAdd',{
             title: 'productadd',
-            brands : brands.sort()
-        })
+            brands : brands.sort(),
+            products,
+            category,
+            
+        })  
         
     },
     store : (req,res) => {
-        const {name,marca,modelo,price,discount,} =req.body;
+        const {name,marca,description,price,discount,} =req.body;
         
-        const id = products[products.length - 1].id
+        const id = products[products.length - 1].id;
 
         const newProduct = {
             id : id + 1,
             ...req.body,
             name: name.trim(),
             marca: marca.trim(),
-            modelo: modelo.trim(),
+            description: description.trim(),
             price: +price,
             discount: +discount,
             image : "intelcorei3-mini.jpg"
@@ -33,22 +40,46 @@ module.exports = {
     },
     edit : (req,res) => {
         const product = products.find(product => product.id === +req.params.id);
+        const category = loadCategory();
 
         return res.render('productEdit', {
             brands,
             product,
-            title : 'edit'
+            title : 'edit',
+            category
         })
     },
     update : (req,res) => {
-        return res.send(req.body)
+        const {name,marca,description,price,discount,} =req.body;
+
+        const productsModify = products.map(product => {
+            if (product.id === +req.params.id) {
+                return {
+                    ...product,
+                    ...req.body,
+                    name: name.trim(),
+                    marca: marca,
+                    price: +price,
+                    discount: +discount,
+                    image : "intelcorei3-mini.jpg",
+                    description: description.trim()
+                }
+            } else {
+                return product
+            }
+        })
+
+        storeProducts(productsModify)
+        return res.redirect('/products/detail/' + req.params.id)
         
     },
     detail: (req,res)=>{
+        const products = loadProducts();
         const product = products.find(product => product.id === +req.params.id);
         return res.render('detail',{
             title:'Detalle de producto',
-            product
+            product,
+            toThousand
         })
     },
     carrito: (req,res)=>{
@@ -71,5 +102,13 @@ module.exports = {
             keywords : req.query.keywords,
             title:'products'
         })
+    },
+    remove : (req,res) => {
+        const products = loadProducts();
+        const productsModify = products.filter(product => product.id !== +req.params.id);
+        
+        storeProducts(productsModify)
+        return res.redirect('/')
+        
     }
 }
