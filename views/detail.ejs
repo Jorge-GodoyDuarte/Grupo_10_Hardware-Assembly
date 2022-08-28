@@ -11,11 +11,22 @@
         <section>
             <article class="detail__main-article">
                 <div class="detail__main-img">
-                    <img src="/images/intelcorei3-shopping-cart.jpg" alt="">
+                    <img src="/images/<%=product.image%>" alt="">
                 </div>
 
                 <div class="detail__main-tittle">
-                    <h4> INTEL CORE i3</h4>
+                    <h4><%= product.name%></h4>
+                </div>
+                <div class="detail__main-price-discount">
+                    <% if (product.discount) { %>
+                        <h4> $<%= toThousand((product.price) - (product.price * product.discount / 100)) %> </h4> <p class="detail__discount"> $<%= product.price%> </p>
+                    <% } else { %>
+                        <h4> $<%= toThousand(product.price)%>
+                    <% } %>
+                    <% if (product.discount > 0) { %>
+                        <h5> %<%= product.discount%> OFF </h5>
+                    <% } %>
+
                 </div>
                 <div class="detail__main-subtittle">
                     <h4>CARACTERISTICAS GENERALES </h4>
@@ -23,8 +34,8 @@
                 
                 <article class="detail__main-info">
                    <div class="detail__main-info-product">
-                    <p>Modelo</p>
-                    <p>10100f</p>
+                    <p>Familia</p>
+                    <p><%= product.marca%></p>
                    </div>
                    <div class="detail__main-info-product">
                     <p>Socket</p>
@@ -55,19 +66,22 @@
                     <p>4300 mhz</p>
                    </div>
                    <div class="detail__main-info-product">
-                    <p>Familia</p>
-                    <p>Intel Core i3</p>
+                    <p>Descripción</p>
+                    <p><%= product.description%></p>
                    </div>
                 </article>
                 
             </article>
             <article class="detail__main-article-button">
                 <div class="detail__main-button">
-                    <button class="detail__button1"> <a href="/shopping-cart"><h4 class="title-detail"> AGREGAR AL CARRITO</h4></a></button>
+                    <button class="detail__button1"> <a href="/products/edit/<%=product.id%>"><h4 class="title-detail"> EDITAR </h4></a></button>
                 </div>
                 <div class="detail__main-button"></div>
                     <button class="detail__button2"> <h4 class="title-detail"> COMPRAR </h4></button>
                 </div>
+                <form action="/products/delete/<%= product.id%>?_metohd=DELETE" method="POST">
+                <button type="submit">Eliminar</button>
+            </form>
             </article>
         </section>
     </main>

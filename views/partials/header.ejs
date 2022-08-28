@@ -21,11 +21,13 @@
 
 
             </div>
-            <div class="header__search">
-                <input class="shopping__header__button" type="search" name="busquedaproducto"
+            <form action="/products/search" class="header__search" method="GET">
+                <input class="shopping__header__button" type="text" name="keywords"
                     value="Buscar productos, marcas y más ..">
+            </form>
+            <div>
+                <li class="header__agregar"><a href="/products/add"> <h3>Agregar</h3> </a></li>
             </div>
-
         </article>
         <div class="burger-menu">
             <button class="burger-button"><i class="fa-solid fa-bars"></i></button>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head')  %> 
+
+
+<body>
+
+    <%- include('./partials/header') %> 
+    <main>
+        <% if (products.length > 0) { %>
+            <% products.forEach(({id,name,image,price}) => { %>
+                <div class="desarrollo_producto">
+                        <div class="tarjeta-producto">
+                            <section  class="img-tarjeta">
+                                <img src="/images/<%= image%>" alt="">
+                            </section>
+                            <section class="valores-tarjeta">
+                                <h2 class="nombre"><%= name %></h2>
+                                <h2 class="precio"> $<%= price %></h2>
+                            </section>
+                            <a href="/products/detail/<%= id%>" class="boton">ver producto</a>
+                        </div>
+                     
+                        
+                        
+                    </div>
+                    <% }) %>
+        <% } else {%>
+            <div class="alerta"> <h1>No se encontró la busquedá:</h1> <p class="alerta-keywords"> </p> </div>
+            <% } %>
+    
+    </main>
+    <footer>
+        <section class="logos_redes">
+            <nav class="logos"><a href=""> <i class="fa-brands fa-facebook"></i></a>
+                <a href=""> <i class="fa-brands fa-instagram"></i></a>
+                <a href=""> <i class="fa-brands fa-twitter"></i></a>
+                <a href=""> <i class="fa-brands fa-twitch"></i></a>
+                <a href=""> <i class="fa-brands fa-linkedin"></i></a>
+                <a href=""> <i class="fa-brands fa-google-play"></i> </a>
+            </nav>
+        </section>
+        <section class="logo_pagina">
+            <img src="" alt="">
+        </section>
+        <section>
+            <p class="terminos_condiciones"><a href="terminos&condiciones">Terminos&Condiciones</a></p>
+        </section>
+    </footer>
+</body>
+
+</html>

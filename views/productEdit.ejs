@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head')  %>
+
+<body>
+ 
+        <%- include('./partials/header')  %>
+    
+
+    <main class="home_main_register">
+
+        <section class="register_main_section">
+            
+        
+            <h1 class="form_title">Editar producto</h1>
+    
+    
+            <form action="/products/update/<%=product.id%>?_method=PUT" class="form" method="POST">
+    
+
+                
+            <div class="form_box">
+                <label class="form_label" for="nombre">Nombre del producto:</label>
+                <input class="form_input" type="text" id="nombre" name="name" value="<%=product.name%>">
+                <small class="form_text_error">El nombre es obligatorio</small>
+            </div>
+            <div class="form_box">
+                <label class="form_label" for="marcas">Coloca una marca:</label>
+                <select name="marcas" id="marcas">
+                    <% brands.forEach(brand => { %>
+                        <option value="<%=brand%>" <%= product.brand === brand && 'selected'%> > <%= brand%> </option>
+                        
+                        <% }) %>
+                    </select>
+                </div>
+            <div class="form_box">
+                <label class="form_label" for="price">Precio:</label>
+                <input class="form_input" type="number" id="price" name="price" value="<%=product.price%>">
+                <small class="form_text_error">Coloca un precio a tu producto</small>
+            </div>
+            <div class="form_box">
+                <label class="form_label" for="discount">Descuento:</label>
+                <input class="form_input" type="number" id="discount" name="discount" value="<%=product.discount%>">
+                <small class="form_text_error">Coloca un descuento a tu producto</small>
+            </div>
+            
+            <div class="form_box">
+                <input type="file" name="imageupload" accept="image/png, .jpeg, .jpg, image/gif" multiple>
+            </div>
+            <div class="form_box">
+                <label class="form_label" for="category">Seleccione una categoria:</label>
+                <select name="category" id="category">
+                    <% category.forEach(category => { %>
+                        <option value="<%=category%>" <%= product.category === category && 'selected'%> > <%= category%> </option>
+                        
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form_box">
+                    <label class="form_label" for="description">Descripción:</label>
+                    <input class="form_input" type="text" id="description" name="description" value="<%=product.description%>">
+                    <small class="form_text_error">Coloca una descripción a tu producto </small>
+                </div>
+               <div>
+                <button><a href="/">Cancelar</a></button>
+                <button type="submit">Guardar</button>
+               </div>
+            </form>
+         
+    </section>
+                
+        </main >
+
+    <footer></footer>
+
+</body>
+
+</html>
