@@ -96,9 +96,9 @@ module.exports = {
     })
     },
     search : (req,res) => {
-        const category = loadCategory();
-        const result = products.filter(product => product.name.toLowerCase().includes(req.query.keywords.toLowerCase()));
-   
+        
+        const result = products.filter(product => product.name.toLowerCase().includes(req.query.keywords.toLowerCase()) || product.category.toLowerCase().includes(req.query.keywords.toLowerCase()));
+
         return res.render('products', {
             products : result,
             keywords : req.query.keywords,

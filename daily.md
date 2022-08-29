@@ -21,4 +21,8 @@ Al momento de mergear surgian conflictos, cuando estos sucedian consultabamos po
 
 
 
+## 3er sprint 
+
+# Resumen de tareas completadas
+
 

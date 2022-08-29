@@ -1,10 +1,92 @@
-[{"id":1,"firstName":"Lisabeth","lastName":"Tineman","email":"ltineman0@economist.com","password":"tyKaIn6t","category":"admin","image":"imgu1"},
-{"id":2,"firstName":"Jessalin","lastName":"Whiteway","email":"jwhiteway1@geocities.com","password":"GE5dEkYb","category":"user","image":"imgu2"},
-{"id":3,"firstName":"Merl","lastName":"Holdron","email":"mholdron2@msn.com","password":"PRu4LKyReCwK","category":"admin","image":"imgu3"},
-{"id":4,"firstName":"Maisey","lastName":"Souttar","email":"msouttar3@meetup.com","password":"ffAkXIy2Vv7s","category":"user","image":"imgu4"},
-{"id":5,"firstName":"Chelsie","lastName":"Eck","email":"ceck4@harvard.edu","password":"1FUrMeCT","category":"admin","image":"imgu5"},
-{"id":6,"firstName":"Phip","lastName":"Bisiker","email":"pbisiker5@cornell.edu","password":"QHDI3T8BBDo0","category":"user","image":"imgu6"},
-{"id":7,"firstName":"Willdon","lastName":"Girt","email":"wgirt6@deliciousdays.com","password":"Szuwb729q","category":"admin","image":"imgu7"},
-{"id":8,"firstName":"Gideon","lastName":"Brigshaw","email":"gbrigshaw7@livejournal.com","password":"LoHw92wfa9F9","category":"user","image":"imgu8"},
-{"id":9,"firstName":"Seka","lastName":"Beaney","email":"sbeaney8@posterous.com","password":"gfUKzss","category":"admin","image":"imgu9"},
-{"id":10,"firstName":"Damien","lastName":"McNalley","email":"dmcnalley9@php.net","password":"BJvjkx8CyXwt","category":"user","image":"imgu10"}]
+[
+    {
+        "id": 1,
+        "firstName": "Lisabeth",
+        "lastName": "Tineman",
+        "email": "ltineman0@economist.com",
+        "password": "tyKaIn6t",
+        "category": "admin",
+        "image": "imgu1"
+    },
+    {
+        "id": 2,
+        "firstName": "Jessalin",
+        "lastName": "Whiteway",
+        "email": "jwhiteway1@geocities.com",
+        "password": "GE5dEkYb",
+        "category": "user",
+        "image": "imgu2"
+    },
+    {
+        "id": 3,
+        "firstName": "Merl",
+        "lastName": "Holdron",
+        "email": "mholdron2@msn.com",
+        "password": "PRu4LKyReCwK",
+        "category": "admin",
+        "image": "imgu3"
+    },
+    {
+        "id": 4,
+        "firstName": "Maisey",
+        "lastName": "Souttar",
+        "email": "msouttar3@meetup.com",
+        "password": "ffAkXIy2Vv7s",
+        "category": "user",
+        "image": "imgu4"
+    },
+    {
+        "id": 5,
+        "firstName": "Chelsie",
+        "lastName": "Eck",
+        "email": "ceck4@harvard.edu",
+        "password": "1FUrMeCT",
+        "category": "admin",
+        "image": "imgu5"
+    },
+    {
+        "id": 6,
+        "firstName": "Phip",
+        "lastName": "Bisiker",
+        "email": "pbisiker5@cornell.edu",
+        "password": "QHDI3T8BBDo0",
+        "category": "user",
+        "image": "imgu6"
+    },
+    {
+        "id": 7,
+        "firstName": "Willdon",
+        "lastName": "Girt",
+        "email": "wgirt6@deliciousdays.com",
+        "password": "Szuwb729q",
+        "category": "admin",
+        "image": "imgu7"
+    },
+    {
+        "id": 8,
+        "firstName": "Gideon",
+        "lastName": "Brigshaw",
+        "email": "gbrigshaw7@livejournal.com",
+        "password": "LoHw92wfa9F9",
+        "category": "user",
+        "image": "imgu8"
+    },
+    {
+        "id": 9,
+        "firstName": "Seka",
+        "lastName": "Beaney",
+        "email": "sbeaney8@posterous.com",
+        "password": "gfUKzss",
+        "category": "admin",
+        "image": "imgu9"
+    },
+    {
+        "id": 10,
+        "firstName": "Damien",
+        "lastName": "McNalley",
+        "email": "dmcnalley9@php.net",
+        "password": "BJvjkx8CyXwt",
+        "category": "user",
+        "image": "imgu10"
+    }
+]
