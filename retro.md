@@ -16,4 +16,13 @@ A medida que vamos trabajando en el desarrollo del proyecto podemos determinar q
 Nuestro 'obstaculo' por el momento es el tiempo, por tal motivo en ocasiones no podemos realizar reuniones diariamente para poder ejecutar las actualizaciones pertinentes a nuestro trabajo.
 
 Sabemos que no es facil, que pueden haber muchos contraproducentes de por medio, aun asi, tenemos un gran desafio y proponemos sacar nuestro potencial, aplicando todos los conceptos que nuestros profesores nos brindan.
->>>>>>> 4472b3de1a81114ae3b40d0bd186cb8f2452e150
+
+# Retrospectiva del 3er sprint
+
+A medida que transcurre el tiempo nos vamos consolidando cada vez más como un equipo unido e idóneo. Cabe destacar la colaboración que ofrece cada integrante al momento de enfrentar los problemas que van surgiendo en la construcción de nuestro proyecto.
+
+Como resaltamos en el sprint anterior, nuestro contraproducente es el tiempo, pero tratamos de organizarnos y encontrar el espacio para poder reunirnos y trabajar de manera grupal exponiendo nuestros impedimentos y soluciones.
+
+Vamos por un muy buen camino, somos conscientes de que cada vez falta menos para la finalización de este gran trabajo que estamos desarrollando. Continuaremos por esta senda, con esfuerzo y dedicación lo lograremos.
+
+
