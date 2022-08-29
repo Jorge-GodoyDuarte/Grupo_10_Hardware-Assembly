@@ -26,10 +26,10 @@
                 <small class="form_text_error">El nombre es obligatorio</small>
             </div>
             <div class="form_box">
-                <label class="form_label" for="marcas">Coloca una marca:</label>
-                <select name="marcas" id="marcas">
+                <label class="form_label" for="marca">Coloca una marca:</label>
+                <select name="marca" id="marca">
                     <% brands.forEach(brand => { %>
-                        <option value="<%=brand%>" <%= product.brand === brand && 'selected'%> > <%= brand%> </option>
+                        <option value="<%=brand%>" <%= product.marca === brand && 'selected'%> > <%= brand%> </option>
                         
                         <% }) %>
                     </select>
@@ -46,7 +46,7 @@
             </div>
             
             <div class="form_box">
-                <input type="file" name="imageupload" accept="image/png, .jpeg, .jpg, image/gif" multiple>
+                <input type="file" name="image" accept="image/png, .jpeg, .jpg, image/gif" multiple>
             </div>
             <div class="form_box">
                 <label class="form_label" for="category">Seleccione una categoria:</label>

@@ -41,7 +41,7 @@ module.exports = {
     edit : (req,res) => {
         const product = products.find(product => product.id === +req.params.id);
         const category = loadCategory();
-
+        const brands = loadBrands();
         return res.render('productEdit', {
             brands,
             product,
@@ -84,7 +84,7 @@ module.exports = {
     },
     carrito: (req,res)=>{
         return res.render('shopping-cart',{
-            title:'Carrito'
+            
         })
     },
 
@@ -92,15 +92,17 @@ module.exports = {
         const productsFilter = products.filter(product => product.section === req.query.section)
     return res.render('products', {
         products : productsFilter,
-        title:'products'
+        
     })
     },
     search : (req,res) => {
-        const result = products.filter(product => product.name.toLowerCase().includes(req.query.keywords.toLowerCase()))
+        const category = loadCategory();
+        const result = products.filter(product => product.name.toLowerCase().includes(req.query.keywords.toLowerCase()));
+   
         return res.render('products', {
             products : result,
             keywords : req.query.keywords,
-            title:'products'
+            
         })
     },
     remove : (req,res) => {
