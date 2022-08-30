@@ -12,8 +12,8 @@
             <% products.forEach(({id,name,image,price}) => { %>
                 <div class="desarrollo_producto">
                         <div class="tarjeta-producto">
-                            <section  class="img-tarjeta">
-                                <img src="/images/<%= image %>" alt="">
+                            <section class="img-tarjeta">
+                                <img src="/images/<%= image%>" alt="">
                             </section>
                             <section class="valores-tarjeta">
                                 <h2 class="nombre"><%= name %></h2>
@@ -27,7 +27,7 @@
                     </div>
                     <% }) %>
         <% } else {%>
-            <div class="alerta"> <h1>No se encontró la busquedá:</h1> <h2 class="alerta-keywords"><%= keywords%></h2> </div>
+            <div class="alerta"> <h1>No se encontró la busquedá:</h1> <p class="alerta-keywords"><%= keywords%></p> </div>
             <% } %>
     
     </main>

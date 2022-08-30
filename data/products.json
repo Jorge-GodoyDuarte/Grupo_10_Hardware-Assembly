@@ -1,62 +1,1602 @@
 [
    {
       "id": 1,
-      "name": "Intel Core i3",
-      "marca": "Intel",
-      "modelo": "10100f 4.3Ghz",
-      "price": 43.801,
-      "discount": 5,
+      "name": "Intel® Core™ i",
+      "price": 0.43,
+      "discount": 49,
       "image": "intelcorei3-mini.jpg",
-      "section": "procesador"
+      "category": "GPU",
+      "description": "purus sit amet nulla quisque arcu libero rutrum ac lobortis vel dapibus",
+      "marca": "INTEL"
    },
    {
       "id": 2,
-      "name": "Mouse Pad gamer Xtrike Me MP-602 de caucho y tela negro",
-      "marca": "Xtrike",
-      "modelo": "MP-602",
-      "price": 980,
-      "discount": 0,
-      "image": "Mouse-pad-shopping-cart.png",
-      "section": "mousepad"
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "PATRIOT",
+      "price": "2.07",
+      "discount": 65,
+      "image": "img24",
+      "category": "Headset",
+      "description": "cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus"
    },
    {
       "id": 3,
-      "name": "Monitor Samsung LED",
-      "marca": "SAMSUNG",
-      "modelo": "T350H IPS",
-      "price": 41.999,
-      "discount": 5,
-      "image": "MonitorSamsung-shoppingcart.jpg",
-      "section": "monitor"
+      "name": "Inspiron 16 Plus",
+      "marca": "GEIL TEAM",
+      "price": "3.03",
+      "discount": 57,
+      "image": "img8",
+      "category": "Laptop",
+      "description": "consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel"
    },
    {
       "id": 4,
-      "name": "Cooler Cougar para INTEL & AMD",
-      "marca": "Cougar",
-      "modelo": "3600mm",
-      "price": 139.1,
-      "discount": 5,
-      "image": "CoolerRgb-shoppingcart.jpg",
-      "section": "cooler"
+      "name": "XPS 16",
+      "marca": "AMD",
+      "price": "0.82",
+      "discount": 29,
+      "image": "img7",
+      "category": "Mouse",
+      "description": "in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis"
    },
    {
       "id": 5,
-      "name": "Hola",
-      "marca": "Das",
-      "modelo": "dasdasd",
-      "price": 999,
-      "discount": 90,
-      "section": "AMD",
-      "image": "intelcorei3-mini.jpg"
+      "name": "Nuevo XPS 13",
+      "marca": "GENIUS",
+      "price": "4.82",
+      "discount": 21,
+      "image": "img38",
+      "category": "Monitor",
+      "description": "erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus"
    },
    {
       "id": 6,
-      "name": "ASD",
-      "marca": "ASD",
-      "modelo": "ASD",
-      "price": 124124,
-      "discount": 124124,
-      "section": "HYPERX",
-      "image": "intelcorei3-mini.jpg"
+      "name": "Nuevo XPS 13",
+      "marca": "CORSAIR",
+      "price": "0.68",
+      "discount": 8,
+      "image": "img17",
+      "category": "Conectividad",
+      "description": "potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam"
+   },
+   {
+      "id": 7,
+      "name": "",
+      "marca": "SAMSUNG",
+      "price": "6.62",
+      "discount": 58,
+      "image": "img24",
+      "category": "Desktop",
+      "description": "ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices"
+   },
+   {
+      "id": 8,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "CRUCIAL",
+      "price": "6.20",
+      "discount": 32,
+      "image": "img13",
+      "category": "Teclados",
+      "description": "ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed"
+   },
+   {
+      "id": 9,
+      "name": "XPS 16",
+      "marca": "PATRIOT",
+      "price": "3.12",
+      "discount": 8,
+      "image": "img15",
+      "category": "Headset",
+      "description": "elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus"
+   },
+   {
+      "id": 10,
+      "name": "placa de video Nvidia Colorful iGame GeForce RTX 30 Series RTX 3060 GeForce RTX 3060 Advanced OC 12G L-V 12GB",
+      "marca": "AMD",
+      "price": "7.14",
+      "discount": 2,
+      "image": "img10",
+      "category": "USB",
+      "description": "congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget"
+   },
+   {
+      "id": 11,
+      "name": "placa de video Nvidia Colorful iGame GeForce RTX 30 Series RTX 3060 GeForce RTX 3060 Advanced OC 12G L-V 12GB",
+      "marca": "ASROCK",
+      "price": "8.52",
+      "discount": 19,
+      "image": "img18",
+      "category": "Headset",
+      "description": "neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit"
+   },
+   {
+      "id": 12,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "RADEON",
+      "price": "8.78",
+      "discount": 64,
+      "image": "img40",
+      "category": "Licencias y seguridad",
+      "description": "vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus"
+   },
+   {
+      "id": 13,
+      "name": "Intel® Core™ i",
+      "marca": "ID Cooling",
+      "price": "4.12",
+      "discount": 48,
+      "image": "img2",
+      "category": "Licencias y seguridad",
+      "description": "ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor"
+   },
+   {
+      "id": 14,
+      "name": "uente de alimentación para PC Thermaltake Technology TR2 Series TR2-500NL2NC 500W black 115V/230V",
+      "marca": "ASUS",
+      "price": "8.46",
+      "discount": 67,
+      "image": "img16",
+      "category": "CPU",
+      "description": "lectus suspendisse potenti in eleifend quam a odio in hac habitasse"
+   },
+   {
+      "id": 15,
+      "name": "Inspiron 16 Plus",
+      "marca": "GEIL TEAM",
+      "price": "4.95",
+      "discount": 6,
+      "image": "img34",
+      "category": "Monitor",
+      "description": "est quam pharetra magna ac consequat metus sapien ut nunc vestibulum"
+   },
+   {
+      "id": 16,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "INTEL",
+      "price": "5.33",
+      "discount": 25,
+      "image": "img7",
+      "category": "Headset",
+      "description": "justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique"
+   },
+   {
+      "id": 17,
+      "name": "Inspiron 16 Plus",
+      "marca": "KINGSTON",
+      "price": "0.75",
+      "discount": 20,
+      "image": "img8",
+      "category": "Motherboard",
+      "description": "vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac"
+   },
+   {
+      "id": 18,
+      "name": "",
+      "marca": "ASSUS TUF",
+      "price": "1.19",
+      "discount": 70,
+      "image": "img9",
+      "category": "Licencias y seguridad",
+      "description": "lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh"
+   },
+   {
+      "id": 19,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "RADEON",
+      "price": "7.78",
+      "discount": 67,
+      "image": "img21",
+      "category": "Laptop",
+      "description": "sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc"
+   },
+   {
+      "id": 20,
+      "name": "XPS 16",
+      "marca": "HYPERX",
+      "price": "7.93",
+      "discount": 34,
+      "image": "img7",
+      "category": "Conectividad",
+      "description": "curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi"
+   },
+   {
+      "id": 21,
+      "name": "Inspiron 16 Plus",
+      "marca": "RAZE",
+      "price": "4.47",
+      "discount": 58,
+      "image": "img25",
+      "category": "CPU",
+      "description": "neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi"
+   },
+   {
+      "id": 22,
+      "name": "XPS 16",
+      "marca": "GEFORCE",
+      "price": "6.20",
+      "discount": 6,
+      "image": "img17",
+      "category": "Monitor",
+      "description": "sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi"
+   },
+   {
+      "id": 23,
+      "name": "uente de alimentación para PC Thermaltake Technology TR2 Series TR2-500NL2NC 500W black 115V/230V",
+      "marca": "ASSUS TUF",
+      "price": "9.04",
+      "discount": 16,
+      "image": "img28",
+      "category": "Monitor",
+      "description": "sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis"
+   },
+   {
+      "id": 24,
+      "name": "XPS 15",
+      "marca": "NISUTA",
+      "price": "0.92",
+      "discount": 44,
+      "image": "img25",
+      "category": "Motherboard",
+      "description": "justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id"
+   },
+   {
+      "id": 25,
+      "name": "uente de alimentación para PC Thermaltake Technology TR2 Series TR2-500NL2NC 500W black 115V/230V",
+      "marca": "LENOVO",
+      "price": "1.74",
+      "discount": 14,
+      "image": "img35",
+      "category": "Laptop",
+      "description": "cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget"
+   },
+   {
+      "id": 26,
+      "name": "XPS 16",
+      "marca": "GEIL TEAM",
+      "price": "1.22",
+      "discount": 28,
+      "image": "img25",
+      "category": "Cooling",
+      "description": "bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce"
+   },
+   {
+      "id": 27,
+      "name": "XPS 15",
+      "marca": "CRUCIAL",
+      "price": "5.49",
+      "discount": 21,
+      "image": "img29",
+      "category": "Monitor",
+      "description": "lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio"
+   },
+   {
+      "id": 28,
+      "name": "placa de video Nvidia Colorful iGame GeForce RTX 30 Series RTX 3060 GeForce RTX 3060 Advanced OC 12G L-V 12GB",
+      "marca": "RADEON",
+      "price": "4.07",
+      "discount": 71,
+      "image": "img28",
+      "category": "Teclados",
+      "description": "nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper"
+   },
+   {
+      "id": 29,
+      "name": "Nuevo XPS 13",
+      "marca": "CISCO",
+      "price": "2.79",
+      "discount": 35,
+      "image": "img16",
+      "category": "Motherboard",
+      "description": "etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida"
+   },
+   {
+      "id": 30,
+      "name": "",
+      "marca": "NVIDIA",
+      "price": "2.63",
+      "discount": 17,
+      "image": "",
+      "category": "Fuente",
+      "description": "libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu"
+   },
+   {
+      "id": 31,
+      "name": "",
+      "marca": "COOLER MASTER",
+      "price": "2.75",
+      "discount": 4,
+      "image": "img8",
+      "category": "Motherboard",
+      "description": "vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque"
+   },
+   {
+      "id": 32,
+      "name": "XPS 16",
+      "marca": "RAZE",
+      "price": "5.32",
+      "discount": 17,
+      "image": "img38",
+      "category": "Motherboard",
+      "description": "dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique"
+   },
+   {
+      "id": 33,
+      "name": "XPS 16",
+      "marca": "ID Cooling",
+      "price": "8.91",
+      "discount": 47,
+      "image": "img21",
+      "category": "Mouse",
+      "description": "nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor"
+   },
+   {
+      "id": 34,
+      "name": "",
+      "marca": "SAMSUNG",
+      "price": "6.97",
+      "discount": 50,
+      "image": "img39",
+      "category": "Fuente",
+      "description": "pede libero quis orci nullam molestie nibh in lectus pellentesque"
+   },
+   {
+      "id": 35,
+      "name": "XPS 16",
+      "marca": "MSI",
+      "price": "9.02",
+      "discount": 71,
+      "image": "img23",
+      "category": "USB",
+      "description": "nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam"
+   },
+   {
+      "id": 36,
+      "name": "XPS 16",
+      "marca": "CORSAIR",
+      "price": "1.55",
+      "discount": 26,
+      "image": "img4",
+      "category": "Teclados",
+      "description": "eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc"
+   },
+   {
+      "id": 37,
+      "name": "uente de alimentación para PC Thermaltake Technology TR2 Series TR2-500NL2NC 500W black 115V/230V",
+      "marca": "THERMALTAKE",
+      "price": "8.85",
+      "discount": 74,
+      "image": "img32",
+      "category": "Ram",
+      "description": "lorem id ligula suspendisse ornare consequat lectus in est risus"
+   },
+   {
+      "id": 38,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "HP",
+      "price": "8.97",
+      "discount": 31,
+      "image": "img21",
+      "category": "Licencias y seguridad",
+      "description": "sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus"
+   },
+   {
+      "id": 39,
+      "name": "XPS 16",
+      "marca": "AMD",
+      "price": "7.84",
+      "discount": 16,
+      "image": "img36",
+      "category": "Laptop",
+      "description": "rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper"
+   },
+   {
+      "id": 40,
+      "name": "disco sólido interno Kingston SA400S37/480G 480GB negro",
+      "marca": "LENOVO",
+      "price": "7.53",
+      "discount": 40,
+      "image": "img13",
+      "category": "Monitor",
+      "description": "morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie"
+   },
+   {
+      "id": 41,
+      "name": "Intel® Core™ i",
+      "marca": "GENIUS",
+      "price": "1.74",
+      "discount": 49,
+      "image": "img13",
+      "category": "GPU",
+      "description": "proin leo odio porttitor id consequat in consequat ut nulla sed accumsan"
+   },
+   {
+      "id": 42,
+      "name": "Inspiron 16 Plus",
+      "marca": "HYPERX",
+      "price": "3.71",
+      "discount": 67,
+      "image": "img1",
+      "category": "Monitor",
+      "description": "iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat"
+   },
+   {
+      "id": 43,
+      "name": "XPS 16",
+      "marca": "SAMSUNG",
+      "price": "1.07",
+      "discount": 11,
+      "image": "img26",
+      "category": "CPU",
+      "description": "metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque"
+   },
+   {
+      "id": 44,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "DELL",
+      "price": "2.83",
+      "discount": 7,
+      "image": "img20",
+      "category": "Ram",
+      "description": "at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus"
+   },
+   {
+      "id": 45,
+      "name": "XPS 15",
+      "marca": "SEAGATE",
+      "price": "9.99",
+      "discount": 19,
+      "image": "",
+      "category": "Teclados",
+      "description": "vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis"
+   },
+   {
+      "id": 46,
+      "name": "uente de alimentación para PC Thermaltake Technology TR2 Series TR2-500NL2NC 500W black 115V/230V",
+      "marca": "RED DRAGON",
+      "price": "1.86",
+      "discount": 32,
+      "image": "img1",
+      "category": "USB",
+      "description": "justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est"
+   },
+   {
+      "id": 47,
+      "name": "Nuevo XPS 13",
+      "marca": "LOGITECH",
+      "price": "4.10",
+      "discount": 72,
+      "image": "img13",
+      "category": "Ram",
+      "description": "volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in"
+   },
+   {
+      "id": 48,
+      "name": "",
+      "marca": "PATRIOT",
+      "price": "5.96",
+      "discount": 11,
+      "image": "img2",
+      "category": "Fuente",
+      "description": "congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in"
+   },
+   {
+      "id": 49,
+      "name": "disco sólido interno Kingston SA400S37/480G 480GB negro",
+      "marca": "DELL",
+      "price": "4.78",
+      "discount": 49,
+      "image": "img10",
+      "category": "Laptop",
+      "description": "tellus nisi eu orci mauris lacinia sapien quis libero nullam"
+   },
+   {
+      "id": 50,
+      "name": "",
+      "marca": "ASUS",
+      "price": "0.57",
+      "discount": 21,
+      "image": "img22",
+      "category": "Teclados",
+      "description": "at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac"
+   },
+   {
+      "id": 51,
+      "name": "",
+      "marca": "CISCO",
+      "price": "7.92",
+      "discount": 34,
+      "image": "img12",
+      "category": "Motherboard",
+      "description": "vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros"
+   },
+   {
+      "id": 52,
+      "name": "disco sólido interno Kingston SA400S37/480G 480GB negro",
+      "marca": "ASUSS ROG",
+      "price": "9.91",
+      "discount": 19,
+      "image": "img20",
+      "category": "Cooling",
+      "description": "quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis"
+   },
+   {
+      "id": 53,
+      "name": "",
+      "marca": "HYPERX",
+      "price": "6.19",
+      "discount": 12,
+      "image": "img33",
+      "category": "Motherboard",
+      "description": "mauris non ligula pellentesque ultrices phasellus id sapien in sapien"
+   },
+   {
+      "id": 54,
+      "name": "Inspiron 16 Plus",
+      "marca": "ID Cooling",
+      "price": "5.67",
+      "discount": 27,
+      "image": "img7",
+      "category": "Licencias y seguridad",
+      "description": "mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum"
+   },
+   {
+      "id": 55,
+      "name": "",
+      "marca": "HYPERX",
+      "price": "9.82",
+      "discount": 41,
+      "image": "img30",
+      "category": "CPU",
+      "description": "et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum"
+   },
+   {
+      "id": 56,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "THERMALTAKE",
+      "price": "9.90",
+      "discount": 43,
+      "image": "img22",
+      "category": "Headset",
+      "description": "vel nulla eget eros elementum pellentesque quisque porta volutpat erat"
+   },
+   {
+      "id": 57,
+      "name": "disco sólido interno Kingston SA400S37/480G 480GB negro",
+      "marca": "RED DRAGON",
+      "price": "3.34",
+      "discount": 27,
+      "image": "img3",
+      "category": "Motherboard",
+      "description": "sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae"
+   },
+   {
+      "id": 58,
+      "name": "XPS 16",
+      "marca": "ASUSS ROG",
+      "price": "0.88",
+      "discount": 72,
+      "image": "img37",
+      "category": "Licencias y seguridad",
+      "description": "tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in"
+   },
+   {
+      "id": 59,
+      "name": "",
+      "marca": "ASUSS ROG",
+      "price": "2.30",
+      "discount": 7,
+      "image": "img13",
+      "category": "Desktop",
+      "description": "convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum"
+   },
+   {
+      "id": 60,
+      "name": "uente de alimentación para PC Thermaltake Technology TR2 Series TR2-500NL2NC 500W black 115V/230V",
+      "marca": "CRUCIAL",
+      "price": "1.88",
+      "discount": 67,
+      "image": "img32",
+      "category": "CPU",
+      "description": "non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra"
+   },
+   {
+      "id": 61,
+      "name": "",
+      "marca": "NISUTA",
+      "price": "0.76",
+      "discount": 21,
+      "image": "img7",
+      "category": "HDD",
+      "description": "quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie"
+   },
+   {
+      "id": 62,
+      "name": "Intel® Core™ i",
+      "marca": "SAMSUNG",
+      "price": "1.25",
+      "discount": 30,
+      "image": "img13",
+      "category": "CPU",
+      "description": "lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin"
+   },
+   {
+      "id": 63,
+      "name": "disco sólido interno Kingston SA400S37/480G 480GB negro",
+      "marca": "AORUS",
+      "price": "3.14",
+      "discount": 1,
+      "image": "img30",
+      "category": "HDD",
+      "description": "id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam"
+   },
+   {
+      "id": 64,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "NVIDIA",
+      "price": "2.26",
+      "discount": 55,
+      "image": "img5",
+      "category": "USB",
+      "description": "potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis"
+   },
+   {
+      "id": 65,
+      "name": "",
+      "marca": "THERMALTAKE",
+      "price": "2.44",
+      "discount": 45,
+      "image": "img26",
+      "category": "Ram",
+      "description": "tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum"
+   },
+   {
+      "id": 66,
+      "name": "disco sólido interno Kingston SA400S37/480G 480GB negro",
+      "marca": "XFX",
+      "price": "4.03",
+      "discount": 25,
+      "image": "img21",
+      "category": "Ram",
+      "description": "tellus in sagittis dui vel nisl duis ac nibh fusce lacus"
+   },
+   {
+      "id": 67,
+      "name": "Intel® Core™ i",
+      "marca": "SEAGATE",
+      "price": "6.75",
+      "discount": 47,
+      "image": "img35",
+      "category": "Headset",
+      "description": "ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis"
+   },
+   {
+      "id": 68,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "GEIL TEAM",
+      "price": "0.28",
+      "discount": 70,
+      "image": "img27",
+      "category": "Mouse",
+      "description": "non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel"
+   },
+   {
+      "id": 69,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "GEIL TEAM",
+      "price": "5.01",
+      "discount": 51,
+      "image": "",
+      "category": "Headset",
+      "description": "justo eu massa donec dapibus duis at velit eu est"
+   },
+   {
+      "id": 70,
+      "name": "XPS 15",
+      "marca": "LOGITECH",
+      "price": "0.20",
+      "discount": 45,
+      "image": "img34",
+      "category": "Licencias y seguridad",
+      "description": "semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed"
+   },
+   {
+      "id": 71,
+      "name": "",
+      "marca": "HP",
+      "price": "1.48",
+      "discount": 20,
+      "image": "img13",
+      "category": "Desktop",
+      "description": "adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc"
+   },
+   {
+      "id": 72,
+      "name": "",
+      "marca": "ID Cooling",
+      "price": "8.20",
+      "discount": 30,
+      "image": "img19",
+      "category": "Monitor",
+      "description": "augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus"
+   },
+   {
+      "id": 73,
+      "name": "placa de video Nvidia Colorful iGame GeForce RTX 30 Series RTX 3060 GeForce RTX 3060 Advanced OC 12G L-V 12GB",
+      "marca": "COUGAR",
+      "price": "0.75",
+      "discount": 6,
+      "image": "img35",
+      "category": "Conectividad",
+      "description": "interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa"
+   },
+   {
+      "id": 74,
+      "name": "XPS 16",
+      "marca": "ASSUS TUF",
+      "price": "8.33",
+      "discount": 9,
+      "image": "img34",
+      "category": "CPU",
+      "description": "est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique"
+   },
+   {
+      "id": 75,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "ID Cooling",
+      "price": "0.43",
+      "discount": 32,
+      "image": "img23",
+      "category": "Laptop",
+      "description": "integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in"
+   },
+   {
+      "id": 76,
+      "name": "uente de alimentación para PC Thermaltake Technology TR2 Series TR2-500NL2NC 500W black 115V/230V",
+      "marca": "HP",
+      "price": "5.21",
+      "discount": 30,
+      "image": "img7",
+      "category": "Motherboard",
+      "description": "pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit"
+   },
+   {
+      "id": 77,
+      "name": "",
+      "marca": "XTRIKE",
+      "price": "8.73",
+      "discount": 48,
+      "image": "img6",
+      "category": "CPU",
+      "description": "adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at"
+   },
+   {
+      "id": 78,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "AORUS",
+      "price": "0.55",
+      "discount": 35,
+      "image": "img38",
+      "category": "Motherboard",
+      "description": "semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan"
+   },
+   {
+      "id": 79,
+      "name": "Inspiron 16 Plus",
+      "marca": "ASUS",
+      "price": "4.65",
+      "discount": 55,
+      "image": "img13",
+      "category": "Conectividad",
+      "description": "sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit"
+   },
+   {
+      "id": 80,
+      "name": "XPS 16",
+      "marca": "RED DRAGON",
+      "price": "5.60",
+      "discount": 13,
+      "image": "img2",
+      "category": "Conectividad",
+      "description": "auctor gravida sem praesent id massa id nisl venenatis lacinia aenean"
+   },
+   {
+      "id": 81,
+      "name": "",
+      "marca": "COUGAR",
+      "price": "1.30",
+      "discount": 42,
+      "image": "img11",
+      "category": "USB",
+      "description": "quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec"
+   },
+   {
+      "id": 82,
+      "name": "",
+      "marca": "ADATA",
+      "price": "9.66",
+      "discount": 3,
+      "image": "img30",
+      "category": "Laptop",
+      "description": "velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum"
+   },
+   {
+      "id": 83,
+      "name": "XPS 15",
+      "marca": "PATRIOT",
+      "price": "7.02",
+      "discount": 47,
+      "image": "img27",
+      "category": "HDD",
+      "description": "suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non"
+   },
+   {
+      "id": 84,
+      "name": "",
+      "marca": "GEIL TEAM",
+      "price": "2.71",
+      "discount": 45,
+      "image": "img21",
+      "category": "GPU",
+      "description": "sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra"
+   },
+   {
+      "id": 85,
+      "name": "placa de video Nvidia Colorful iGame GeForce RTX 30 Series RTX 3060 GeForce RTX 3060 Advanced OC 12G L-V 12GB",
+      "marca": "RAZE",
+      "price": "6.14",
+      "discount": 7,
+      "image": "img34",
+      "category": "Laptop",
+      "description": "aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis"
+   },
+   {
+      "id": 86,
+      "name": "placa de video Nvidia Colorful iGame GeForce RTX 30 Series RTX 3060 GeForce RTX 3060 Advanced OC 12G L-V 12GB",
+      "marca": "COOLER MASTER",
+      "price": "2.80",
+      "discount": 45,
+      "image": "img27",
+      "category": "Monitor",
+      "description": "ante ipsum primis in faucibus orci luctus et ultrices posuere"
+   },
+   {
+      "id": 87,
+      "name": "XPS 15",
+      "marca": "SAMSUNG",
+      "price": "3.05",
+      "discount": 26,
+      "image": "img24",
+      "category": "HDD",
+      "description": "hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero"
+   },
+   {
+      "id": 88,
+      "name": "Inspiron 16 Plus",
+      "marca": "THERMALTAKE",
+      "price": "4.67",
+      "discount": 66,
+      "image": "",
+      "category": "Headset",
+      "description": "aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet"
+   },
+   {
+      "id": 89,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "GEFORCE",
+      "price": "1.29",
+      "discount": 14,
+      "image": "img1",
+      "category": "Cooling",
+      "description": "vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna"
+   },
+   {
+      "id": 90,
+      "name": "XPS 16",
+      "marca": "PATRIOT",
+      "price": "7.37",
+      "discount": 41,
+      "image": "img38",
+      "category": "Motherboard",
+      "description": "rutrum ac lobortis vel dapibus at diam nam tristique tortor"
+   },
+   {
+      "id": 91,
+      "name": "",
+      "marca": "STEEL SERIES",
+      "price": "2.85",
+      "discount": 1,
+      "image": "img5",
+      "category": "Teclados",
+      "description": "amet cursus id turpis integer aliquet massa id lobortis convallis tortor"
+   },
+   {
+      "id": 92,
+      "name": "Intel® Core™ i",
+      "marca": "DEEP COOL",
+      "price": "7.53",
+      "discount": 16,
+      "image": "img35",
+      "category": "Headset",
+      "description": "vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim"
+   },
+   {
+      "id": 93,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "ID Cooling",
+      "price": "5.89",
+      "discount": 75,
+      "image": "img7",
+      "category": "GPU",
+      "description": "velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus"
+   },
+   {
+      "id": 94,
+      "name": "Intel® Core™ i",
+      "marca": "THERMALTAKE",
+      "price": "9.23",
+      "discount": 66,
+      "image": "img22",
+      "category": "Monitor",
+      "description": "eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis"
+   },
+   {
+      "id": 95,
+      "name": "uente de alimentación para PC Thermaltake Technology TR2 Series TR2-500NL2NC 500W black 115V/230V",
+      "marca": "GEFORCE",
+      "price": "7.90",
+      "discount": 19,
+      "image": "img6",
+      "category": "Motherboard",
+      "description": "luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit"
+   },
+   {
+      "id": 96,
+      "name": "uente de alimentación para PC Thermaltake Technology TR2 Series TR2-500NL2NC 500W black 115V/230V",
+      "marca": "ASUS",
+      "price": "2.64",
+      "discount": 45,
+      "image": "img4",
+      "category": "Monitor",
+      "description": "potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient"
+   },
+   {
+      "id": 97,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "LOGITECH",
+      "price": "2.05",
+      "discount": 33,
+      "image": "img31",
+      "category": "Teclados",
+      "description": "vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam"
+   },
+   {
+      "id": 98,
+      "name": "",
+      "marca": "AORUS",
+      "price": "8.27",
+      "discount": 32,
+      "image": "img31",
+      "category": "Mouse",
+      "description": "eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum"
+   },
+   {
+      "id": 99,
+      "name": "XPS 16",
+      "marca": "INTEL",
+      "price": "8.42",
+      "discount": 74,
+      "image": "img20",
+      "category": "Monitor",
+      "description": "dolor vel est donec odio justo sollicitudin ut suscipit a feugiat"
+   },
+   {
+      "id": 100,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "DEEP COOL",
+      "price": "5.20",
+      "discount": 32,
+      "image": "img34",
+      "category": "Ram",
+      "description": "scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem"
+   },
+   {
+      "id": 101,
+      "name": "placa de video Nvidia Colorful iGame GeForce RTX 30 Series RTX 3060 GeForce RTX 3060 Advanced OC 12G L-V 12GB",
+      "marca": "GEIL TEAM",
+      "price": "3.62",
+      "discount": 8,
+      "image": "img21",
+      "category": "Laptop",
+      "description": "at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget"
+   },
+   {
+      "id": 102,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "STEEL SERIES",
+      "price": "9.90",
+      "discount": 74,
+      "image": "img24",
+      "category": "USB",
+      "description": "sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean"
+   },
+   {
+      "id": 103,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "HYPERX",
+      "price": "8.79",
+      "discount": 39,
+      "image": "img6",
+      "category": "Mouse",
+      "description": "elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit"
+   },
+   {
+      "id": 104,
+      "name": "",
+      "marca": "CISCO",
+      "price": "3.48",
+      "discount": 19,
+      "image": "img13",
+      "category": "Ram",
+      "description": "augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis"
+   },
+   {
+      "id": 105,
+      "name": "XPS 15",
+      "marca": "COUGAR",
+      "price": "0.72",
+      "discount": 37,
+      "image": "img8",
+      "category": "Headset",
+      "description": "non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia"
+   },
+   {
+      "id": 106,
+      "name": "",
+      "marca": "DELL",
+      "price": "3.11",
+      "discount": 27,
+      "image": "img35",
+      "category": "CPU",
+      "description": "in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam"
+   },
+   {
+      "id": 107,
+      "name": "Inspiron 16 Plus",
+      "marca": "CISCO",
+      "price": "7.97",
+      "discount": 39,
+      "image": "img37",
+      "category": "Cooling",
+      "description": "montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id"
+   },
+   {
+      "id": 108,
+      "name": "XPS 16",
+      "marca": "GEFORCE",
+      "price": "5.99",
+      "discount": 70,
+      "image": "img34",
+      "category": "Cooling",
+      "description": "dapibus duis at velit eu est congue elementum in hac"
+   },
+   {
+      "id": 109,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "ASUSS ROG",
+      "price": "6.16",
+      "discount": 31,
+      "image": "img31",
+      "category": "Motherboard",
+      "description": "sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum"
+   },
+   {
+      "id": 110,
+      "name": "placa de video Nvidia Colorful iGame GeForce RTX 30 Series RTX 3060 GeForce RTX 3060 Advanced OC 12G L-V 12GB",
+      "marca": "ASROCK",
+      "price": "9.82",
+      "discount": 11,
+      "image": "img39",
+      "category": "Desktop",
+      "description": "duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus in"
+   },
+   {
+      "id": 111,
+      "name": "Inspiron 16 Plus",
+      "marca": "GEIL TEAM",
+      "price": "3.90",
+      "discount": 52,
+      "image": "img32",
+      "category": "Conectividad",
+      "description": "lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id"
+   },
+   {
+      "id": 112,
+      "name": "uente de alimentación para PC Thermaltake Technology TR2 Series TR2-500NL2NC 500W black 115V/230V",
+      "marca": "DEEP COOL",
+      "price": "0.51",
+      "discount": 63,
+      "image": "img29",
+      "category": "Monitor",
+      "description": "suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus"
+   },
+   {
+      "id": 113,
+      "name": "Intel® Core™ i",
+      "marca": "AMD",
+      "price": "3.30",
+      "discount": 47,
+      "image": "img1",
+      "category": "Fuente",
+      "description": "ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis"
+   },
+   {
+      "id": 114,
+      "name": "disco sólido interno Kingston SA400S37/480G 480GB negro",
+      "marca": "ASSUS TUF",
+      "price": "2.89",
+      "discount": 38,
+      "image": "img6",
+      "category": "Fuente",
+      "description": "a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique"
+   },
+   {
+      "id": 115,
+      "name": "placa de video Nvidia Colorful iGame GeForce RTX 30 Series RTX 3060 GeForce RTX 3060 Advanced OC 12G L-V 12GB",
+      "marca": "SEAGATE",
+      "price": "3.04",
+      "discount": 33,
+      "image": "img15",
+      "category": "HDD",
+      "description": "eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum"
+   },
+   {
+      "id": 116,
+      "name": "XPS 15",
+      "marca": "ASUS",
+      "price": "2.50",
+      "discount": 39,
+      "image": "img39",
+      "category": "Headset",
+      "description": "luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum"
+   },
+   {
+      "id": 117,
+      "name": "uente de alimentación para PC Thermaltake Technology TR2 Series TR2-500NL2NC 500W black 115V/230V",
+      "marca": "SAMSUNG",
+      "price": "6.31",
+      "discount": 47,
+      "image": "img39",
+      "category": "Conectividad",
+      "description": "odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla"
+   },
+   {
+      "id": 118,
+      "name": "disco sólido interno Kingston SA400S37/480G 480GB negro",
+      "marca": "SAMSUNG",
+      "price": "2.37",
+      "discount": 11,
+      "image": "img38",
+      "category": "Conectividad",
+      "description": "in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed"
+   },
+   {
+      "id": 119,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "HYPERX",
+      "price": "7.27",
+      "discount": 28,
+      "image": "img6",
+      "category": "USB",
+      "description": "venenatis non sodales sed tincidunt eu felis fusce posuere felis sed"
+   },
+   {
+      "id": 120,
+      "name": "water Cooler Evga 240mm Clc Aio Rgb Led CPU Amd Intel Logg",
+      "marca": "SEAGATE",
+      "price": "3.72",
+      "discount": 49,
+      "image": "img32",
+      "category": "Fuente",
+      "description": "eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien"
+   },
+   {
+      "id": 121,
+      "name": "",
+      "marca": "SAMSUNG",
+      "price": "6.05",
+      "discount": 2,
+      "image": "img10",
+      "category": "Licencias y seguridad",
+      "description": "ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam"
+   },
+   {
+      "id": 122,
+      "name": "disco sólido interno Kingston SA400S37/480G 480GB negro",
+      "marca": "GEIL TEAM",
+      "price": "4.14",
+      "discount": 72,
+      "image": "img7",
+      "category": "Teclados",
+      "description": "id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate"
+   },
+   {
+      "id": 123,
+      "name": "Inspiron 16 Plus",
+      "marca": "AORUS",
+      "price": "2.59",
+      "discount": 65,
+      "image": "img25",
+      "category": "Teclados",
+      "description": "arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci"
+   },
+   {
+      "id": 124,
+      "name": "uente de alimentación para PC Thermaltake Technology TR2 Series TR2-500NL2NC 500W black 115V/230V",
+      "marca": "SAMSUNG",
+      "price": "9.94",
+      "discount": 23,
+      "image": "img15",
+      "category": "HDD",
+      "description": "donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien"
+   },
+   {
+      "id": 125,
+      "name": "XPS 15",
+      "marca": "ID Cooling",
+      "price": "6.00",
+      "discount": 55,
+      "image": "img12",
+      "category": "Headset",
+      "description": "vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam"
+   },
+   {
+      "id": 126,
+      "name": "Inspiron 16 Plus",
+      "marca": "ASUSS ROG",
+      "price": "3.85",
+      "discount": 37,
+      "image": "",
+      "category": "GPU",
+      "description": "id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam"
+   },
+   {
+      "id": 127,
+      "name": "",
+      "marca": "RADEON",
+      "price": "3.15",
+      "discount": 44,
+      "image": "img36",
+      "category": "Ram",
+      "description": "vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum"
+   },
+   {
+      "id": 128,
+      "name": "Nuevo XPS 13",
+      "marca": "HP",
+      "price": "3.51",
+      "discount": 8,
+      "image": "img1",
+      "category": "Teclados",
+      "description": "justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse"
+   },
+   {
+      "id": 129,
+      "name": "uente de alimentación para PC Thermaltake Technology TR2 Series TR2-500NL2NC 500W black 115V/230V",
+      "marca": "HP",
+      "price": "7.73",
+      "discount": 43,
+      "image": "img23",
+      "category": "Fuente",
+      "description": "placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi"
+   },
+   {
+      "id": 130,
+      "name": "Intel® Core™ i",
+      "marca": "RADEON",
+      "price": "6.20",
+      "discount": 35,
+      "image": "img21",
+      "category": "USB",
+      "description": "platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer"
+   },
+   {
+      "id": 131,
+      "name": "placa de video Nvidia Colorful iGame GeForce RTX 30 Series RTX 3060 GeForce RTX 3060 Advanced OC 12G L-V 12GB",
+      "marca": "HP",
+      "price": "5.61",
+      "discount": 26,
+      "image": "img18",
+      "category": "Conectividad",
+      "description": "sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada"
+   },
+   {
+      "id": 132,
+      "name": "",
+      "marca": "NISUTA",
+      "price": "2.51",
+      "discount": 66,
+      "image": "img21",
+      "category": "GPU",
+      "description": "cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae"
+   },
+   {
+      "id": 133,
+      "name": "",
+      "marca": "MSI",
+      "price": "7.01",
+      "discount": 56,
+      "image": "img35",
+      "category": "Cooling",
+      "description": "est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis"
+   },
+   {
+      "id": 134,
+      "name": "Nuevo XPS 13",
+      "marca": "RADEON",
+      "price": "0.16",
+      "discount": 34,
+      "image": "img1",
+      "category": "Mouse",
+      "description": "vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes"
+   },
+   {
+      "id": 135,
+      "name": "Intel® Core™ i",
+      "marca": "ID Cooling",
+      "price": "8.56",
+      "discount": 68,
+      "image": "img3",
+      "category": "GPU",
+      "description": "tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus"
+   },
+   {
+      "id": 136,
+      "name": "Inspiron 16 Plus",
+      "marca": "MSI",
+      "price": "5.01",
+      "discount": 17,
+      "image": "img18",
+      "category": "Desktop",
+      "description": "aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor"
+   },
+   {
+      "id": 137,
+      "name": "placa de video Nvidia Colorful iGame GeForce RTX 30 Series RTX 3060 GeForce RTX 3060 Advanced OC 12G L-V 12GB",
+      "marca": "SAMSUNG",
+      "price": "6.51",
+      "discount": 53,
+      "image": "img9",
+      "category": "HDD",
+      "description": "amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere"
+   },
+   {
+      "id": 138,
+      "name": "",
+      "marca": "XFX",
+      "price": "5.82",
+      "discount": 18,
+      "image": "img22",
+      "category": "Ram",
+      "description": "sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus"
+   },
+   {
+      "id": 139,
+      "name": "placa de video Nvidia Colorful iGame GeForce RTX 30 Series RTX 3060 GeForce RTX 3060 Advanced OC 12G L-V 12GB",
+      "marca": "GEIL TEAM",
+      "price": "0.60",
+      "discount": 17,
+      "image": "img18",
+      "category": "Fuente",
+      "description": "sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis"
+   },
+   {
+      "id": 140,
+      "name": "uente de alimentación para PC Thermaltake Technology TR2 Series TR2-500NL2NC 500W black 115V/230V",
+      "marca": "AMD",
+      "price": "1.28",
+      "discount": 13,
+      "image": "img19",
+      "category": "Desktop",
+      "description": "eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat"
+   },
+   {
+      "id": 141,
+      "name": "Nuevo XPS 13",
+      "marca": "COUGAR",
+      "price": "0.67",
+      "discount": 10,
+      "image": "img29",
+      "category": "Ram",
+      "description": "pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate"
+   },
+   {
+      "id": 142,
+      "name": "disco sólido interno Kingston SA400S37/480G 480GB negro",
+      "marca": "ASROCK",
+      "price": "8.55",
+      "discount": 68,
+      "image": "img4",
+      "category": "Ram",
+      "description": "id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel"
+   },
+   {
+      "id": 143,
+      "name": "disco sólido interno Kingston SA400S37/480G 480GB negro",
+      "marca": "HYPERX",
+      "price": "0.53",
+      "discount": 25,
+      "image": "img39",
+      "category": "Desktop",
+      "description": "rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet"
+   },
+   {
+      "id": 144,
+      "name": "",
+      "marca": "XFX",
+      "price": "8.82",
+      "discount": 54,
+      "image": "img10",
+      "category": "Desktop",
+      "description": "nec molestie sed justo pellentesque viverra pede ac diam cras"
+   },
+   {
+      "id": 145,
+      "name": "Nuevo XPS 13",
+      "marca": "PATRIOT",
+      "price": "6.05",
+      "discount": 5,
+      "image": "img38",
+      "category": "GPU",
+      "description": "ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl"
+   },
+   {
+      "id": 146,
+      "name": "Inspiron 16 Plus",
+      "marca": "GEFORCE",
+      "price": "1.28",
+      "discount": 74,
+      "image": "img19",
+      "category": "Laptop",
+      "description": "id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam"
+   },
+   {
+      "id": 147,
+      "name": "XPS 15",
+      "marca": "GENIUS",
+      "price": "7.73",
+      "discount": 25,
+      "image": "img10",
+      "category": "Teclados",
+      "description": "mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue"
+   },
+   {
+      "id": 148,
+      "name": "disco sólido interno Kingston SA400S37/480G 480GB negro",
+      "marca": "CISCO",
+      "price": "4.05",
+      "discount": 54,
+      "image": "img20",
+      "category": "Cooling",
+      "description": "cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit"
+   },
+   {
+      "id": 149,
+      "name": "uente de alimentación para PC Thermaltake Technology TR2 Series TR2-500NL2NC 500W black 115V/230V",
+      "marca": "LG",
+      "price": "1.70",
+      "discount": 74,
+      "image": "img28",
+      "category": "USB",
+      "description": "nisl venenatis lacinia aenean sit amet justo morbi ut odio cras"
+   },
+   {
+      "id": 150,
+      "name": "XPS 16",
+      "marca": "GENIUS",
+      "price": "7.21",
+      "discount": 16,
+      "image": "img27",
+      "category": "Teclados",
+      "description": "eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing"
+   },
+   {
+      "id": 151,
+      "name": "disco sólido interno Kingston SA400S37/480G 480GB negro",
+      "marca": "ID Cooling",
+      "price": "0.96",
+      "discount": 28,
+      "image": "img3",
+      "category": "Cooling",
+      "description": "rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus"
+   },
+   {
+      "id": 152,
+      "name": "disco sólido interno Kingston SA400S37/480G 480GB negro",
+      "marca": "CORSAIR",
+      "price": "2.32",
+      "discount": 44,
+      "image": "img25",
+      "category": "Licencias y seguridad",
+      "description": "aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet"
+   },
+   {
+      "id": 153,
+      "name": "placa de video Nvidia Colorful iGame GeForce RTX 30 Series RTX 3060 GeForce RTX 3060 Advanced OC 12G L-V 12GB",
+      "marca": "AORUS",
+      "price": "7.52",
+      "discount": 68,
+      "image": "img4",
+      "category": "Conectividad",
+      "description": "venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et"
+   },
+   {
+      "id": 154,
+      "name": "",
+      "marca": "INTEL",
+      "price": "8.14",
+      "discount": 1,
+      "image": "img17",
+      "category": "Fuente",
+      "description": "arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci"
+   },
+   {
+      "id": 155,
+      "name": "Inspiron 16 Plus",
+      "marca": "DEEP COOL",
+      "price": "8.50",
+      "discount": 18,
+      "image": "",
+      "category": "Mouse",
+      "description": "ut at dolor quis odio consequat varius integer ac leo pellentesque"
+   },
+   {
+      "id": 156,
+      "name": "uente de alimentación para PC Thermaltake Technology TR2 Series TR2-500NL2NC 500W black 115V/230V",
+      "marca": "WESTERN DIGITAL",
+      "price": "6.32",
+      "discount": 8,
+      "image": "img28",
+      "category": "Teclados",
+      "description": "augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi"
+   },
+   {
+      "id": 157,
+      "name": "Nuevo XPS 13",
+      "marca": "ASSUS TUF",
+      "price": "4.88",
+      "discount": 17,
+      "image": "img38",
+      "category": "Cooling",
+      "description": "turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis"
+   },
+   {
+      "id": 158,
+      "name": "uente de alimentación para PC Thermaltake Technology TR2 Series TR2-500NL2NC 500W black 115V/230V",
+      "marca": "LENOVO",
+      "price": "9.22",
+      "discount": 51,
+      "image": "img24",
+      "category": "Licencias y seguridad",
+      "description": "ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat"
+   },
+   {
+      "id": 159,
+      "name": "placa de video Nvidia Colorful iGame GeForce RTX 30 Series RTX 3060 GeForce RTX 3060 Advanced OC 12G L-V 12GB",
+      "marca": "GEFORCE",
+      "price": "0.27",
+      "discount": 70,
+      "image": "img22",
+      "category": "Licencias y seguridad",
+      "description": "euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis"
+   },
+   {
+      "id": 160,
+      "name": "",
+      "marca": "DELL",
+      "price": "0.04",
+      "discount": 52,
+      "image": "img19",
+      "category": "Desktop",
+      "description": "a odio in hac habitasse platea dictumst maecenas ut massa quis augue"
    }
 ]

@@ -18,7 +18,32 @@ Se desempeño haciendo los formularios de login y registro.
 
 Al momento de mergear surgian conflictos, cuando estos sucedian consultabamos por medio de whatsapp, que es nuestro sitio de comunicacion mas frecuente o implementabamos una daily y optabamos por el cambio mas conveniente.
 
+# Resumen de tareas completadas-4TO SPRINT
+
+## Juan Cruz Morán
+
+Realizo el filtrado de productos. Elaboro el CRUD aplicando funcionalidades a las vistas que asi lo requieran.
+
+## Jorge Godoy Duarte
+
+Actualizo el tablero de trabajo, definio los campos necesarios para los productos y genero el archivo JSON.
+
+## Diaz Emanuel
+
+Se encargo de los campos necesarios para los usuarios, crear el archivo JSON y la retrospectiva consultando previamente a cada integrante.
+
+# Impedimentos encontrados
+
+No poder filtrar dos atributos en el mismo JSON para la barra de búsqueda.
+Complicaciones al momento de pushear los cambios.
 
 
+
+
+
+
+## 3er sprint 
+
+# Resumen de tareas completadas
 
 

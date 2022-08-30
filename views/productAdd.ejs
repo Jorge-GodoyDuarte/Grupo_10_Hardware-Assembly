@@ -26,37 +26,47 @@
                 <small class="form_text_error">El nombre es obligatorio</small>
             </div>
             <div class="form_box">
-                <label class="form_label" for="marca">Marca:</label>
-                <input class="form_input" type="text" id="marca" name="marca">
-                <small class="form_text_error">Coloca la marca de tu producto</small>
+                <label class="form_label" for="section">Coloca una marca:</label>
+                <select name="marca" id="marca">
+                    <option value="" selected hidden> seleccione ..</option>
+                     <% brands.forEach(brand => { %>
+                        <option value="<%=brand%>"> <%=brand%> </option>
+                        
+                    <% }) %>
+                </select>
             </div>
 
             <div class="form_box">
-                <label class="form_label" for="modelo">Modelo:</label>
-                <input class="form_input" type="text" id="modelo" name="modelo">
-                <small class="form_text_error">Coloca el modelo de tu producto</small>
-            </div>
-            <div class="form_box">
-                <label class="form_label" for="price">Precio:</label>
+                <label class="form_label" for="price"> Precio:</label>
                 <input class="form_input" type="number" id="price" name="price">
                 <small class="form_text_error">Coloca un precio a tu producto</small>
             </div>
             <div class="form_box">
                 <label class="form_label" for="discount">Descuento:</label>
                 <input class="form_input" type="number" id="discount" name="discount">
-                <small class="form_text_error">seleccione un Descuento a tu producto</small>
+                <small class="form_text_error">Seleccione un Descuento a tu producto</small>
             </div>
             <div class="form_box">
-                <label class="form_label" for="section">Coloca una sección:</label>
-                <select name="section" id="section">
+                <input type="file" name="imageupload" accept="image/png, .jpeg, .jpg, image/gif" multiple>
+
+            </div>
+            <div class="form_box">
+                <label class="form_label" for="category">Seleccione una categoria:</label>
+                <select name="category" id="category">
                     <option value="" selected hidden> seleccione ..</option>
-                     <% brands.forEach(brand => { %>
-                        <option value="<%=brand%>"> <%=brand%> </option>
+                     <% category.forEach(category => { %>
+                        <option value="<%=category%>"> <%=category%> </option>
                      
                     <% }) %>
-                </select>
+                </select>   
             </div>
-               <div>
+            <div class="form_box">
+                <label class="form_label" for="description">Descripción:</label>
+                <input class="form_input" type="text" id="description" name="description" value="<%=products.description%>">
+                <small class="form_text_error">Coloca una descripción a tu producto </small>
+            </div>
+            
+               <div class="form_box">
                 <button><a href="/">Cancelar</a></button>
                 <button type="submit">Guardar</button>
                </div>

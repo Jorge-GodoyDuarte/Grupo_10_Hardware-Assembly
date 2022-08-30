@@ -19,9 +19,9 @@
                 </div>
                 <div class="detail__main-price-discount">
                     <% if (product.discount) { %>
-                        <h4> $<%= (product.price) - (product.price * product.discount / 100) %> </h4> <p class="detail__discount"> $<%= product.price%> </p>
+                        <h4> $<%= toThousand((product.price) - (product.price * product.discount / 100)) %> </h4> <p class="detail__discount"> $<%= product.price%> </p>
                     <% } else { %>
-                        <h4> $<%=product.price%>
+                        <h4> $<%= toThousand(product.price)%>
                     <% } %>
                     <% if (product.discount > 0) { %>
                         <h5> %<%= product.discount%> OFF </h5>
@@ -34,8 +34,8 @@
                 
                 <article class="detail__main-info">
                    <div class="detail__main-info-product">
-                    <p>Modelo</p>
-                    <p><%= product.modelo%></p>
+                    <p>Familia</p>
+                    <p><%= product.marca%></p>
                    </div>
                    <div class="detail__main-info-product">
                     <p>Socket</p>
@@ -66,8 +66,8 @@
                     <p>4300 mhz</p>
                    </div>
                    <div class="detail__main-info-product">
-                    <p>Familia</p>
-                    <p><%= product.marca%></p>
+                    <p>Descripción</p>
+                    <p><%= product.description%></p>
                    </div>
                 </article>
                 
@@ -79,6 +79,9 @@
                 <div class="detail__main-button"></div>
                     <button class="detail__button2"> <h4 class="title-detail"> COMPRAR </h4></button>
                 </div>
+                <form action="/products/delete/<%= product.id%>?_method=DELETE" method="POST">
+                <button type="submit">Eliminar</button>
+            </form>
             </article>
         </section>
     </main>

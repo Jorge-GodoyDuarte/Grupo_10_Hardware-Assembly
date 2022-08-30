@@ -10,23 +10,23 @@
     
     <main>
         <div class="cuadro_categorias">
-            <div class="producto"><a href=""><img src="/images/logos-categorias/mother.bmp" alt=""></a></div>
-            <div class="producto"><a href="/products/filter?section=procesador"><img src="/images/logos-categorias/cpu.bmp" alt=""></a></div>
-            <div class="producto"><a href=""><img src="/images/logos-categorias/ram.bmp" alt=""></a></div>
-            <div class="producto"><a href=""><img src="/images/logos-categorias/fuente.bmp" alt=""></a></div>
-            <div class="producto"><a href=""><img src="/images/logos-categorias/hdd.bmp" alt=""></a></div>
-            <div class="producto"><a href=""><img src="/images/logos-categorias/gpu.bmp" alt=""></a></div>
-            <div class="producto"><a href="/products/filter?section=cooler"><img src="/images/logos-categorias/cooling.bmp" alt=""></a></div>
-            <div class="producto"><a href="/products/filter?section=monitor"><img src="/images/logos-categorias/display.bmp" alt=""></a></div>
-            <div class="producto"><a href=""><img src="/images/logos-categorias/teclados.bmp" alt=""></a></div>
-            <div class="producto"><a href=""><img src="/images/logos-categorias/mouse.bmp" alt=""></a></div>
-            <div class="producto"><a href=""><img src="/images/logos-categorias/headset.bmp" alt=""></a></div>
-            <div class="producto"><a href=""><img src="/images/logos-categorias/conectividad.bmp" alt=""></a></div>
-            <div class="producto"><a href=""><img src="/images/logos-categorias/licenciasyseguridad.bmp" alt=""></a>
+            <div class="producto"><a href="/products/filter?category=Motherboard"><img src="/images/logos-categorias/mother.bmp" alt=""></a></div>
+            <div class="producto"><a href="/products/filter?category=CPU"><img src="/images/logos-categorias/cpu.bmp" alt=""></a></div>
+            <div class="producto"><a href="/products/filter?category=Ram"><img src="/images/logos-categorias/ram.bmp" alt=""></a></div>
+            <div class="producto"><a href="/products/filter?category=Fuente"><img src="/images/logos-categorias/fuente.bmp" alt=""></a></div>
+            <div class="producto"><a href="/products/filter?category=HDD"><img src="/images/logos-categorias/hdd.bmp" alt=""></a></div>
+            <div class="producto"><a href="/products/filter?category=GPU"><img src="/images/logos-categorias/gpu.bmp" alt=""></a></div>
+            <div class="producto"><a href="/products/filter?category=Cooling"><img src="/images/logos-categorias/cooling.bmp" alt=""></a></div>
+            <div class="producto"><a href="/products/filter?category=Monitor"><img src="/images/logos-categorias/display.bmp" alt=""></a></div>
+            <div class="producto"><a href="/products/filter?category=Teclados"><img src="/images/logos-categorias/teclados.bmp" alt=""></a></div>
+            <div class="producto"><a href="/products/filter?category=Mouse"><img src="/images/logos-categorias/mouse.bmp" alt=""></a></div>
+            <div class="producto"><a href="/products/filter?category=Headset"><img src="/images/logos-categorias/headset.bmp" alt=""></a></div>
+            <div class="producto"><a href="/products/filter?category=Conectividad"><img src="/images/logos-categorias/conectividad.bmp" alt=""></a></div>
+            <div class="producto"><a href="/products/filter?category=Licencias y seguridad"><img src="/images/logos-categorias/licenciasyseguridad.bmp" alt=""></a>
             </div>
-            <div class="producto"><a href=""><img src="/images/logos-categorias/desktop.bmp" alt=""></a></div>
-            <div class="producto"><a href=""><img src="/images/logos-categorias/laptop.bmp" alt=""></a></div>
-            <div class="producto"><a href=""><img src="/images/logos-categorias/USB.bmp" alt=""></a></div>
+            <div class="producto"><a href="/products/filter?category=Desktop"><img src="/images/logos-categorias/desktop.bmp" alt=""></a></div>
+            <div class="producto"><a href="/products/filter?category=Laptop"><img src="/images/logos-categorias/laptop.bmp" alt=""></a></div>
+            <div class="producto"><a href="/products/filter?category=USB"><img src="/images/logos-categorias/USB.bmp" alt=""></a></div>
 
         </div>
         <div class="desarrollo_producto">
@@ -61,7 +61,7 @@
                     </section>
                     <section class="valores-tarjeta">
                         <h2 class="nombre"><%= name %></h2>
-                        <h2 class="precio"> $<%= price %></h2>
+                        <h2 class="precio"> $<%= toThousand(price) %></h2>
                     </section>
                     <a href="/products/detail/<%= id%>" class="boton">ver producto</a>
                 </div>
@@ -71,23 +71,9 @@
 
         </div>
     </main>
-    <footer>
-        <section class="logos_redes">
-            <nav class="logos"><a href=""> <i class="fa-brands fa-facebook"></i></a>
-                <a href=""> <i class="fa-brands fa-instagram"></i></a>
-                <a href=""> <i class="fa-brands fa-twitter"></i></a>
-                <a href=""> <i class="fa-brands fa-twitch"></i></a>
-                <a href=""> <i class="fa-brands fa-linkedin"></i></a>
-                <a href=""> <i class="fa-brands fa-google-play"></i> </a>
-            </nav>
-        </section>
-        <section class="logo_pagina">
-            <img src="" alt="">
-        </section>
-        <section>
-            <p class="terminos_condiciones"><a href="terminos&condiciones">Terminos&Condiciones</a></p>
-        </section>
-    </footer>
+    
+    <%- include('./partials/footer') %> 
+
 </body>
 
 </html>
