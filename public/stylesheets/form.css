@@ -108,7 +108,8 @@
 
 
 .form_select{
-    width:82.5%;
+    
+    
     align-items: center;
     margin-left: 10%;
     margin-right: 10%;
@@ -229,17 +230,20 @@
        }
    
        .form_select{
-        width:77%;
+        
         align-items: center;
-        margin-left: 10%;
-        margin-right: 10%;
-        margin-top:10px;
-        padding: 10px;
         border: 1px solid silver;
         background-color: #fff;
-        margin-left: 10%;
-        margin-right: 10%;
-        
+        justify-content: center;
+       
+    }
+
+    .form_input{
+        justify-content: center;
+    }
+
+    small.form__text--error{
+        text-align: center;
     }
 
 }

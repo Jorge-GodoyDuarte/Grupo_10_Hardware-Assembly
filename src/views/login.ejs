@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head')  %> 
+
+<body>
+    
+    <%- include('./partials/header')  %>
+
+    <main class="home_main_register">
+
+        <section class="register_main">
+            
+        
+            <h1 class="form_title">Ingresá</h1>
+    
+    
+            <form action="/users/login" class="form" method="POST" >
+    
+                <div class="form_box">
+                    
+                      
+                        <input class="form_input" placeholder="Gmail" type="email" id="email" name="email" value="<%= locals.old && old.email ? old.email:null %>">
+                        <small class="form__text--error"><%= locals.errors && errors.email? errors.email.msg :null %></small>
+                      
+                    </div>
+                    <div class="form_box">
+                    <input class="form_input" placeholder="Contraseña" type="password" id="password" name="password">
+                    <small class="form__text--error"><%= locals.errors && errors.password? errors.password.msg :null %></small>
+                    </div>
+
+                    <div class="form_box">
+                    <button class="form__button form_button_send" type="submit">Ingresar</button>
+                    <h4 class="recordar">¿Olvidaste tu contraseña?</h4>
+                </div>
+                </div>
+    
+                
+                    
+    
+            </form>
+         
+    </section>
+                
+        </main >
+
+        <%- include('./partials/footer') %> 
+
+</body>
+
+</html>
