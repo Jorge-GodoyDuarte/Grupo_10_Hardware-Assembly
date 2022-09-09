@@ -1,18 +1,18 @@
 [
    {
       "id": 1,
-      "firstName": "Emanuel",
-      "lastName": "Diaz",
-      "email": "demanuel269@gmail.com",
-      "password": "$2a$10$nPK0YyQ8dADGEH51./DVZ.bbUJed5qXb3NNvF8Ee1CP0Ta6S6JBAe",
-      "password2": null,
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "password2": "",
       "rol": "user",
       "avatar": null,
       "gender": null,
       "hobbies": [],
       "address": null,
-      "city": null,
-      "province": null,
+      "city": "",
+      "province": "",
       "about": null
    },
    {
@@ -77,6 +77,150 @@
       "address": null,
       "city": null,
       "province": null,
+      "about": null
+   },
+   {
+      "id": 6,
+      "firstName": "Celeste",
+      "lastName": "Diaz",
+      "email": "trucho@gmail.com",
+      "password": "$2a$10$gK/ut.1XCMtoCzSY1L7d3O65kVL8QLOsn0Cgru77il5GwVnd7NVb.",
+      "password2": null,
+      "rol": "user",
+      "avatar": null,
+      "gender": null,
+      "hobbies": [],
+      "address": null,
+      "cities": [
+         "Neuquén",
+         "Buenos Aires",
+         "Plaza Huincul",
+         "San Miguel"
+      ],
+      "provinces": [
+         "Neuquen",
+         "Buenos Aires"
+      ],
+      "about": null
+   },
+   {
+      "id": 7,
+      "firstName": "Ema",
+      "lastName": "suarez",
+      "email": "capo@gmail.com",
+      "password": "$2a$10$yVGo3udL9q4gdPMIJBZDx.V0gVYxJVcheV90/fAA0LWmT9yOBsVRe",
+      "password2": null,
+      "rol": "user",
+      "avatar": null,
+      "gender": null,
+      "hobbies": [],
+      "address": null,
+      "cities": [
+         "Neuquén",
+         "Buenos Aires",
+         "Plaza Huincul",
+         "San Miguel"
+      ],
+      "provinces": [
+         "Neuquen",
+         "Buenos Aires"
+      ],
+      "about": null
+   },
+   {
+      "id": 8,
+      "firstName": "Ema",
+      "lastName": "suarez",
+      "email": "capao@gmail.com",
+      "password": "$2a$10$WEeHR8wPWv4e9U.bSywoPu1V3NZgATEi0Rqo4mNwUU2pY1t/lU/CW",
+      "password2": null,
+      "rol": "user",
+      "avatar": null,
+      "gender": null,
+      "hobbies": [],
+      "address": null,
+      "cities": [
+         "Neuquén",
+         "Buenos Aires",
+         "Plaza Huincul",
+         "San Miguel"
+      ],
+      "provinces": [
+         "Neuquen",
+         "Buenos Aires"
+      ],
+      "about": null
+   },
+   {
+      "id": 9,
+      "firstName": "Ema",
+      "lastName": "suarez",
+      "email": "locoo@gmail.com",
+      "password": "$2a$10$wBp48TNl0k3VvQN6wxfPRuEW0uEraZQoajSnb/Y5FMLNWh4FDYFrO",
+      "password2": null,
+      "rol": "user",
+      "avatar": null,
+      "gender": null,
+      "hobbies": [],
+      "address": null,
+      "cities": [
+         "Neuquén",
+         "Buenos Aires",
+         "Plaza Huincul",
+         "San Miguel"
+      ],
+      "provinces": [
+         "Neuquen",
+         "Buenos Aires"
+      ],
+      "about": null
+   },
+   {
+      "id": 10,
+      "firstName": "Ema",
+      "lastName": "suarez",
+      "email": "dale@gmail.com",
+      "password": "$2a$10$dz4dZCrAAKAZXWYMH6TTQu3UvIGSm6/dFurX9n3PPsKTEqCNnKAGy",
+      "password2": null,
+      "rol": "user",
+      "avatar": null,
+      "gender": null,
+      "hobbies": [],
+      "address": null,
+      "cities": [
+         "Neuquén",
+         "Buenos Aires",
+         "Plaza Huincul",
+         "San Miguel"
+      ],
+      "provinces": [
+         "Neuquen",
+         "Buenos Aires"
+      ],
+      "about": null
+   },
+   {
+      "id": 11,
+      "firstName": "Ema",
+      "lastName": "suarez",
+      "email": "anda@gmail.com",
+      "password": "$2a$10$V3ku2YICszqv1SMGbGxzGeyk5f8z8b4qGO/bYLsPTBha79CpamkDu",
+      "password2": null,
+      "rol": "user",
+      "avatar": null,
+      "gender": null,
+      "hobbies": [],
+      "address": null,
+      "cities": [
+         "Neuquén",
+         "Buenos Aires",
+         "Plaza Huincul",
+         "San Miguel"
+      ],
+      "provinces": [
+         "Neuquen",
+         "Buenos Aires"
+      ],
       "about": null
    }
 ]

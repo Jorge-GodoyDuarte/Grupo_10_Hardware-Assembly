@@ -29,8 +29,8 @@ module.exports = {
             gender:null,
             hobbies :[],
             address:null,
-            city:null,
-            province:null,
+            cities : require('../data/cities'),
+            provinces:require('../data/provinces'),
             about:null
             
         }
@@ -56,7 +56,16 @@ module.exports = {
         const errors = validationResult(req)
        
         if(errors.isEmpty()){
-                
+            
+        let {id, firstName,rol, avatar}=loadUsers().find(user=>user.email=== req.body.email)
+
+        req.session.userLogin = (
+            id,
+            firstName,
+            rol,
+            avatar
+        )
+
         return res.redirect('/')
 
     }else{
@@ -69,6 +78,11 @@ module.exports = {
     },
     logout:(req,res)=>{
 
-    }
-   
+    },
+   update:(req,res)=>{
+
+    
+return res.send(req.body)
+   }
+
 }

@@ -10,10 +10,6 @@ module.exports =[
 
         body('password')
             .notEmpty().withMessage('La contraseña es obligatoria').bail()
-            .isLength({
-                min:6,
-                max:12
-            }).withMessage('La contraseña debe tener entre 6 y 12 caracteres')
             .custom((value,{req})=>{
                 const user = loadUsers().find(user => user.email === req.body.email && compareSync(value,user.password));
                 return !user ? false:true

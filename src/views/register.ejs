@@ -16,36 +16,33 @@
             <h1 class="form_title">Registrate</h1>
     
     
-            <form action="" class="form" method="POST">
+            <form action="/users/update/1?_method=PUT" class="form" enctype="multipart/form-data" method="POST">
     
 
                 
             <div class="form_box">
                 <label class="form_label" for="nombre">Nombre:</label>
                 <input class="form_input" type="text" id="nombre" name="firstName" value="<%= locals.old && old.firstName ? old.firstName:null %>">
+                <div>
                 <small class="form__text--error"><%= locals.errors && errors.firstName? errors.firstName.msg :null %></small>
-              
+                </div>
             </div>
             <div class="form_box">
                 <label class="form_label" for="apellido">Apellido:</label>
                 <input class="form_input" type="text" id="apellido" name="lastName" value="<%= locals.old && old.lastName ? old.lastName:null%>">
-            <div>    
+                  <div>    
             <small class="form__text--error"><%= locals.errors && errors.lastName? errors.lastName.msg :null %></small>
-        </div> 
+                 </div> 
             </div>
 
             <div class="form_box">
-                <label class="form_label" for="email">Gmail:</label>
-                <input class="form_input" type="email" id="email" name="email" value="<%= locals.old && old.email ? old.email:null %>">
+                <label class="form_label" for="email">Email:</label>
+                <input class="form_input" type="email" id="email" name="email" value="<%= locals.old && old.email ? old.email:null %>" >
+                  <div>
                 <small class="form__text--error"><%= locals.errors && errors.email? errors.email.msg :null %></small>
-              
+                </div>
             </div>
 
-            <div class="form_box">
-                <label class="form_label" for="date">Fecha de nacimiento:</label>
-                <input class="form_input" type="date" id="date" name="birthday">
-                
-            </div>
 
             <div class="form_box form_box_column">
 
@@ -56,15 +53,14 @@
 
                 <select class="form_select" name="city" id="city">
                     <option value="" hidden selected>Seleccione su ciudad...</option>
-                    <option value="cutral co">Cutral Có</option>
-                    <option value="buenos aires">San Miguel</option>
+  
+               
 
                 </select>
 
                 <select class="form_select" name="province" id="province">
                     <option value="" hidden selected>Seleccione su provincia...</option>
-                    <option value="buenos aires">Buenos Aires</option>
-                    <option value="neuquen">Neuquén</option>
+               
             
                 </select>
             </div>
@@ -73,8 +69,8 @@
               
                 <h5 class="form_subtitle">Perfil de usuario</h5>
 
-                <label for="comprador"><input class="form_input--radio" value="comprador" type="radio" id="comprador" name="gender">Comprador</label>
-                <label for="vendedor"><input class="form_input--radio" value="vendedor" type="radio" id="vendedor" name="gender">Vendedor</label>
+                <label for="comprador"><input class="form_input--radio" <%= locals.gender ==="c" && 'checked' %> value="c" type="radio" id="comprador" name="gender">Comprador</label>
+                <label for="vendedor"><input class="form_input--radio" <%= locals.gender ==="v" && 'checked' %> value="v" type="radio" id="vendedor" name="gender">Vendedor</label>
                  
             </div>
                 
@@ -82,16 +78,23 @@
             <div class="form_box">
                 <label class="form_label" for="password">Contraseña:</label>
                 <input class="form_input" type="password" id="password" name="password">
-                <small class="form__text--error"><%= locals.errors && errors.password? errors.password.msg :null %></small>
+                <div>
+                    <small class="form__text--error"><%= locals.errors && errors.password? errors.password.msg :null %></small>
+                </div>
             </div>
 
             <div class="form_box">
                 <label class="form_label" for="password2">Confirma contraseña:</label>
                 <input class="form_input" type="password" id="password2" name="password2">
+                <div>
                 <small class="form__text--error"><%= locals.errors && errors.password2? errors.password2.msg :null %></small>
-            
+                </div>
             </div>
 
+            <div class="form_box">
+            <label class="form_label" for="avatar">Seleccione un imagen de perfil</label>
+            <input  class="form_input" type="file" id="avatar" name="avatar">
+        </div>
 
             <div class="form_box">
                 <div class="form_box--flex">

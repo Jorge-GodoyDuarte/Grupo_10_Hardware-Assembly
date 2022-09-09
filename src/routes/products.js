@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {detail,carrito, filter, search, add, store, edit, update, remove} = require('../../controllers/productController')
+const {detail,carrito, filter, search, add, store, edit, update, remove} = require('../controllers/productController')
 
 /* /products */
 

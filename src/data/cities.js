@@ -1,0 +1,1 @@
+module.exports = ['Neuquén', 'Buenos Aires', 'Plaza Huincul', 'San Miguel']
