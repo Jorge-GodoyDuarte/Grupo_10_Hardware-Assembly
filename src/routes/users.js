@@ -9,13 +9,15 @@ const registerValidator=require('../validations/registerValidator')
 
 const upload = require('../middlewares/uploadFiles')
 
+const userSessionCheck = require('../middlewares/userSessionCheck');
 
 /* /users */
 router
+  
   .get('/register',register)
   .post('/register',registerValidator,processRegister)
   .put('/update/:id',upload.single('avatar'), update)
-  .get('/login',login)
+  .get('/login',userSessionCheck,login)
   .post('/login',loginValidator,processLogin)
   .get('/logout',logout)
   

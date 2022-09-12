@@ -43,36 +43,7 @@
                 </div>
             </div>
 
-
-            <div class="form_box form_box_column">
-
-                <label class="form_label" for="date">Domicilio:</label>
-
-                    
-                    
-
-                <select class="form_select" name="city" id="city">
-                    <option value="" hidden selected>Seleccione su ciudad...</option>
-  
-               
-
-                </select>
-
-                <select class="form_select" name="province" id="province">
-                    <option value="" hidden selected>Seleccione su provincia...</option>
-               
             
-                </select>
-            </div>
-
-            <div class="form_box form_box_column">
-              
-                <h5 class="form_subtitle">Perfil de usuario</h5>
-
-                <label for="comprador"><input class="form_input--radio" <%= locals.gender ==="c" && 'checked' %> value="c" type="radio" id="comprador" name="gender">Comprador</label>
-                <label for="vendedor"><input class="form_input--radio" <%= locals.gender ==="v" && 'checked' %> value="v" type="radio" id="vendedor" name="gender">Vendedor</label>
-                 
-            </div>
                 
 
             <div class="form_box">
@@ -93,7 +64,7 @@
 
             <div class="form_box">
             <label class="form_label" for="avatar">Seleccione un imagen de perfil</label>
-            <input  class="form_input" type="file" id="avatar" name="avatar">
+            <input  class="form_input" type="file" id="avatar"   name="avatar">
         </div>
 
             <div class="form_box">
