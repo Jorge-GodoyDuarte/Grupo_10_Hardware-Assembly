@@ -37,30 +37,32 @@
                 <small class="form_text_error">Debes ser mayor de edad</small>
             </div>
 
-            <div class="form_box form_box_column">
+            <div class="form_box">
 
                 <label class="form_label" for="date">Domicilio:</label>
 
                     
                 <input class="form_input" placeholder="Calle" type="text" id:"calle" >
                     
+                <div class="for__select-div"> 
+                    <select class="form_select" name="city" id="city">
+                        <option value="" hidden selected>Seleccione su ciudad...</option>
+                        <option value="cutral co">Cutral Có</option>
+                        <option value="buenos aires">San Miguel</option>
+    
+                    </select>
+    
+                    <select class="form_select" name="province" id="province">
+                        <option value="" hidden selected>Seleccione su provincia...</option>
+                        <option value="buenos aires">Buenos Aires</option>
+                        <option value="neuquen">Neuquén</option>
+                
+                    </select>
 
-                <select class="form_select" name="city" id="city">
-                    <option value="" hidden selected>Seleccione su ciudad...</option>
-                    <option value="cutral co">Cutral Có</option>
-                    <option value="buenos aires">San Miguel</option>
-
-                </select>
-
-                <select class="form_select" name="province" id="province">
-                    <option value="" hidden selected>Seleccione su provincia...</option>
-                    <option value="buenos aires">Buenos Aires</option>
-                    <option value="neuquen">Neuquén</option>
-            
-                </select>
+                </div>
             </div>
 
-            <div class="form_box form_box_column">
+            <div class="form_box">
               
                 <h5 class="form_subtitle">Perfil de usuario</h5>
 

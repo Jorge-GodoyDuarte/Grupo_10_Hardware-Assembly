@@ -23,8 +23,14 @@
 }
 
 .form_box{
+    width:80%;
+    margin: 0%;
+    padding: 0%;
+}
+.for__select-div {
     width:100%;
-    margin: 0 auto;
+    margin: 0%;
+    padding: 0%;
 }
 
 
