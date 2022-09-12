@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head')  %>
+
+<body>
+ 
+        <%- include('./partials/header')  %>
+    
+
+    <main class="home_main_register">
+
+        <section class="register_main_section">
+            
+        
+            <h1 class="form_title">Registrate</h1>
+    
+    
+            <form action="/users/update/1?_method=PUT" class="form" enctype="multipart/form-data" method="POST">
+    
+
+                
+            <div class="form_box">
+                <label class="form_label" for="nombre">Nombre:</label>
+                <input class="form_input" type="text" id="nombre" name="firstName" value="<%= locals.old && old.firstName ? old.firstName:null %>">
+                <div>
+                <small class="form__text--error"><%= locals.errors && errors.firstName? errors.firstName.msg :null %></small>
+                </div>
+            </div>
+            <div class="form_box">
+                <label class="form_label" for="apellido">Apellido:</label>
+                <input class="form_input" type="text" id="apellido" name="lastName" value="<%= locals.old && old.lastName ? old.lastName:null%>">
+                  <div>    
+            <small class="form__text--error"><%= locals.errors && errors.lastName? errors.lastName.msg :null %></small>
+                 </div> 
+            </div>
+
+            <div class="form_box">
+                <label class="form_label" for="email">Email:</label>
+                <input class="form_input" type="email" id="email" name="email" value="<%= locals.old && old.email ? old.email:null %>" >
+                  <div>
+                <small class="form__text--error"><%= locals.errors && errors.email? errors.email.msg :null %></small>
+                </div>
+            </div>
+
+            
+                
+
+            <div class="form_box">
+                <label class="form_label" for="password">Contraseña:</label>
+                <input class="form_input" type="password" id="password" name="password">
+                <div>
+                    <small class="form__text--error"><%= locals.errors && errors.password? errors.password.msg :null %></small>
+                </div>
+            </div>
+
+            <div class="form_box">
+                <label class="form_label" for="password2">Confirma contraseña:</label>
+                <input class="form_input" type="password" id="password2" name="password2">
+                <div>
+                <small class="form__text--error"><%= locals.errors && errors.password2? errors.password2.msg :null %></small>
+                </div>
+            </div>
+
+            <div class="form_box">
+            <label class="form_label" for="avatar">Seleccione un imagen de perfil</label>
+            <input  class="form_input" type="file" id="avatar"   name="avatar">
+        </div>
+
+            <div class="form_box">
+                <div class="form_box--flex">
+  <button class="form__button form_button_send" type="submit">Registrate</button>
+                <button class="form__button form_button_cancel" type="reset">Cancelar</button>
+            </div>
+            </div>
+    
+                
+                    
+    
+            </form>
+         
+    </section>
+                
+        </main >
+
+        <%- include('./partials/footer') %> 
+
+</body>
+
+</html>

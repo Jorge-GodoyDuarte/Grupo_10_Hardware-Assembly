@@ -1,12 +1,28 @@
 <header class="header">
 
     <div class="ingreso_registro">
-        <a href="/users/login">
-            <h3>Logueate! <i class="fa-solid fa-user-shield"></i></h3>
-        </a>
-        <a href="/users/register">
-            <h3>Registrate! <i class="fa-solid fa-id-card"></i></h3>
-        </a>
+        <% if (locals.userLogin) { %>
+
+              <h3><a href=><%= userLogin.firstName %></a></h3>
+            
+        
+                <h3><a href="/users/logout">Salir</a></h3>
+        
+            <% if (userLogin.rol === "admin") { %>
+                
+                    <a href="/products/add">Agregar</a>
+                    
+            <% } %>
+        <% }else{ %>
+            <a href="/users/login">
+                <h3>Logueate! <i class="fa-solid fa-user-shield"></i></h3>
+            </a>
+            <a href="/users/register">
+                <h3>Registrate! <i class="fa-solid fa-id-card"></i></h3>
+            </a>
+        <% } %>
+    </ul>
+        
     </div>
     <section class="header__section">
         <article class="header__article">

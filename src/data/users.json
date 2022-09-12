@@ -1,0 +1,74 @@
+[
+   {
+      "id": 9,
+      "firstName": "Ema",
+      "lastName": "suarez",
+      "email": "locoo@gmail.com",
+      "password": "$2a$10$wBp48TNl0k3VvQN6wxfPRuEW0uEraZQoajSnb/Y5FMLNWh4FDYFrO",
+      "password2": null,
+      "rol": "user",
+      "avatar": null,
+      "gender": null,
+      "hobbies": [],
+      "address": null,
+      "cities": [
+         "Neuquén",
+         "Buenos Aires",
+         "Plaza Huincul",
+         "San Miguel"
+      ],
+      "provinces": [
+         "Neuquen",
+         "Buenos Aires"
+      ],
+      "about": null
+   },
+   {
+      "id": 10,
+      "firstName": "Ema",
+      "lastName": "suarez",
+      "email": "dale@gmail.com",
+      "password": "$2a$10$dz4dZCrAAKAZXWYMH6TTQu3UvIGSm6/dFurX9n3PPsKTEqCNnKAGy",
+      "password2": null,
+      "rol": "user",
+      "avatar": null,
+      "gender": null,
+      "hobbies": [],
+      "address": null,
+      "cities": [
+         "Neuquén",
+         "Buenos Aires",
+         "Plaza Huincul",
+         "San Miguel"
+      ],
+      "provinces": [
+         "Neuquen",
+         "Buenos Aires"
+      ],
+      "about": null
+   },
+   {
+      "id": 11,
+      "firstName": "Ema",
+      "lastName": "suarez",
+      "email": "anda@gmail.com",
+      "password": "$2a$10$V3ku2YICszqv1SMGbGxzGeyk5f8z8b4qGO/bYLsPTBha79CpamkDu",
+      "password2": null,
+      "rol": "user",
+      "avatar": null,
+      "gender": null,
+      "hobbies": [],
+      "address": null,
+      "cities": [
+         "Neuquén",
+         "Buenos Aires",
+         "Plaza Huincul",
+         "San Miguel"
+      ],
+      "provinces": [
+         "Neuquen",
+         "Buenos Aires"
+      ],
+      "about": null
+   }
+]

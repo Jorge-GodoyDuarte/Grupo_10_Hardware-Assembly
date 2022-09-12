@@ -1598,5 +1598,16 @@
       "image": "img19",
       "category": "Desktop",
       "description": "a odio in hac habitasse platea dictumst maecenas ut massa quis augue"
+   },
+   {
+      "id": 161,
+      "name": "",
+      "marca": "",
+      "price": 0,
+      "discount": 0,
+      "imageupload": "",
+      "category": "",
+      "description": "",
+      "image": "intelcorei3-mini.jpg"
    }
 ]

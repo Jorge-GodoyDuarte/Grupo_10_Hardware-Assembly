@@ -26,3 +26,6 @@ Como resaltamos en el sprint anterior, nuestro contraproducente es el tiempo, pe
 Vamos por un muy buen camino, somos conscientes de que cada vez falta menos para la finalización de este gran trabajo que estamos desarrollando. Continuaremos por esta senda, con esfuerzo y dedicación lo lograremos.
 
 
+  //   <% provinces.forEach(province => { %>
+                        <option value="<%= province %>"><%= province %></option>
+                       <% }) %> *//
