@@ -1,7 +1,13 @@
+<figure class="form_box">
+    <img  src="/images/users/<%= user.avatar ? user.avatar : 'default.png' %>" alt="avatar" width="100px" style="border-radius: 50%;">
+</figure>
+
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('./partials/head')  %>
+    <%- include('./partials/head',{
+        title : 'Perfil de usuario'
+    })  %> 
 
 <body>
  
@@ -13,9 +19,7 @@
         <section class="register_main_section">
             
         
-            <h1 class="form_title">Registrate</h1>
-    
-    
+            <h1 class="form_title">Perfil de usuario</h1>
             <form action="" class="form" enctype="multipart/form-data" method="POST">
     
 
@@ -64,7 +68,7 @@
 
             <div class="form_box">
                 <label class="form_label" for="avatar">Seleccione un imagen de perfil</label>
-                <input  class="form_input" type="file" accept="png,jpg" id="avatar"   name="avatar">
+                <input  class="form_input" type="file" id="avatar"   name="avatar">
             </div>
 
             

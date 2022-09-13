@@ -70,5 +70,29 @@
          "Buenos Aires"
       ],
       "about": null
+   },
+   {
+      "id": 12,
+      "firstName": "Juan",
+      "lastName": "Moran",
+      "email": "Juancruzmoran@outlook.es",
+      "password": "$2a$10$ts4vy5QMg5U/yFi75ZgDi.BUNW/fP5qH9D8No/kFrpSVg4Qe/2nYy",
+      "password2": null,
+      "rol": "user",
+      "avatar": "avatar-1663030317164.jpg",
+      "gender": null,
+      "hobbies": [],
+      "address": null,
+      "cities": [
+         "Neuquén",
+         "Buenos Aires",
+         "Plaza Huincul",
+         "San Miguel"
+      ],
+      "provinces": [
+         "Neuquen",
+         "Buenos Aires"
+      ],
+      "about": null
    }
 ]

@@ -30,8 +30,8 @@ app.use(express.static(path.join(__dirname, '../','public')));
 app.use(methodOverride('_method'));
 app.use(session({
   secret:'hardware-assemblyforever',
-  resave:true,
-  saveUninitialized:false
+  resave: false,
+  saveUninitialized:true
 }))
 
 app.use(localsUserCheck)

@@ -3,7 +3,6 @@ const {validationResult}=require('express-validator')
 const bcryptjs =require('bcryptjs')
 const fs = require('fs');
 const path = require('path');
-
 module.exports = {
     register : (req, res) => {
         
@@ -15,9 +14,8 @@ module.exports = {
     },
     processRegister:(req,res)=>{
         const errors = validationResult(req)
-
        
-       
+    
         if(errors.isEmpty()){
 
         const {firstName, lastName, email, password }= req.body
@@ -32,7 +30,7 @@ module.exports = {
             password:bcryptjs.hashSync(password.trim(),10),
             password2:null,
             rol:'user',
-            avatar,
+            avatar: req.file ? req.file.filename : null,
             gender:null,
             hobbies :[],
             address:null,
@@ -52,7 +50,7 @@ module.exports = {
             old: req.body
         })
     }
-   
+    
        
 
     },
@@ -66,7 +64,7 @@ module.exports = {
        
         if(errors.isEmpty()){
             
-        let {id, firstName,rol, avatar}=loadUsers().find(user=>user.email=== req.body.email)
+        let {id, firstName,rol, avatar}= loadUsers().find(user=>user.email=== req.body.email);
 
         req.session.userLogin = {
             id,
@@ -75,7 +73,7 @@ module.exports = {
             avatar
         }
 
-        return res.redirect('/')
+        return res.redirect('/users/profile')
 
     }else{
         return res.render('login',{
@@ -90,6 +88,14 @@ module.exports = {
         return res.redirect('/')
     },
    
+    profile: (req,res) =>     {
+        let user = loadUsers().find(user = user.id === req.session.userLogin.id);
+        return res.render('profile', {
+            user,
+            cities: require('../data/provinces'),
+            provinces : require('../data/provinces')
+        })  
+    },
     update:(req,res)=>{
 
         const {firstName, lastName, birthday, address, city, province, about} = req.body;

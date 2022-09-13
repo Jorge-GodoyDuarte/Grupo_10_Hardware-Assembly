@@ -2,12 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 
-const {login, processLogin,logout, register, processRegister, update} = require('../controllers/userController');
+const {login, processLogin,logout, register, processRegister, update, profile} = require('../controllers/userController');
 const loginValidator = require('../validations/loginValidator');
 
 const registerValidator=require('../validations/registerValidator')
 
-const upload = require('../middlewares/uploadFiles')
+
+const {upload,filefilter} = require('../middlewares/uploadFiles')
 
 const userSessionCheck = require('../middlewares/userSessionCheck');
 
@@ -15,10 +16,11 @@ const userSessionCheck = require('../middlewares/userSessionCheck');
 router
   
   .get('/register',register)
-  .post('/register',registerValidator,processRegister)
-  .put('/update/:id',upload.single('avatar'), update)
-  .get('/login',userSessionCheck,login)
+  .post('/register',upload.single('avatar'),registerValidator,processRegister)
+  .put('/update/:id', update)
+  .get('/login',login) // users/login
   .post('/login',loginValidator,processLogin)
+  .get('/profile',userSessionCheck,profile) // /users/profile
   .get('/logout',logout)
   
 module.exports = router;
