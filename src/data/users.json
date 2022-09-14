@@ -94,5 +94,77 @@
          "Buenos Aires"
       ],
       "about": null
+   },
+   {
+      "id": 13,
+      "firstName": "asdasd",
+      "lastName": "asdasd",
+      "email": "asd@h.com",
+      "password": "$2a$10$Nf71x7NsWuQYCduz0/KdPOTes3L3fCSaooDpmdMA7R0c9j0mSaO2y",
+      "password2": null,
+      "rol": "user",
+      "avatar": null,
+      "gender": null,
+      "hobbies": [],
+      "address": null,
+      "cities": [
+         "Neuquén",
+         "Buenos Aires",
+         "Plaza Huincul",
+         "San Miguel"
+      ],
+      "provinces": [
+         "Neuquen",
+         "Buenos Aires"
+      ],
+      "about": null
+   },
+   {
+      "id": 14,
+      "firstName": "asdasd",
+      "lastName": "asdasd",
+      "email": "asd@asd.com",
+      "password": "$2a$10$LG7FA1.7Uos8AMd8hHeJ5O5laLDWAKDF5U3FFockY7XMfDqXTHnMu",
+      "password2": null,
+      "rol": "user",
+      "avatar": null,
+      "gender": null,
+      "hobbies": [],
+      "address": null,
+      "cities": [
+         "Neuquén",
+         "Buenos Aires",
+         "Plaza Huincul",
+         "San Miguel"
+      ],
+      "provinces": [
+         "Neuquen",
+         "Buenos Aires"
+      ],
+      "about": null
+   },
+   {
+      "id": 15,
+      "firstName": "asdaaaa",
+      "lastName": "asdaaa",
+      "email": "asdaa@hotmail.com",
+      "password": "$2a$10$TV0soE8.WWpYjo5AeKqIleh1.jziBRbO0fb87jcQ1miCWd/nzR1m.",
+      "password2": null,
+      "rol": "user",
+      "avatar": "avatar-1663108390194.jpg",
+      "gender": null,
+      "hobbies": [],
+      "address": null,
+      "cities": [
+         "Neuquén",
+         "Buenos Aires",
+         "Plaza Huincul",
+         "San Miguel"
+      ],
+      "provinces": [
+         "Neuquen",
+         "Buenos Aires"
+      ],
+      "about": null
    }
 ]

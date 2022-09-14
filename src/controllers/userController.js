@@ -89,11 +89,11 @@ module.exports = {
     },
    
     profile: (req,res) =>     {
-        let user = loadUsers().find(user = user.id === req.session.userLogin.id);
+        let user = loadUsers().find(user => user.id === req.session.userLogin.id);
         return res.render('profile', {
             user,
-            cities: require('../data/provinces'),
-            provinces : require('../data/provinces')
+            cities: require('../data/cities'),
+            provinces : require('../data/provinces'),
         })  
     },
     update:(req,res)=>{
@@ -125,5 +125,5 @@ module.exports = {
 
         storeUsers(usersModify);
         return res.redirect('/users/login')
-    }
+    },
 }

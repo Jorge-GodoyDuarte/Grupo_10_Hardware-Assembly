@@ -1,0 +1,23 @@
+.home__body__profile {
+    background-color: #0C0C2B;
+}
+.avatar__profile {
+    text-align: center;
+    padding-top: 3%;
+    margin: 0px;
+}
+.register__main__profile {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 10px;
+    padding-top: 0px;
+    margin-bottom: 10%;
+    margin-top:  2%;
+    color: #fff;
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 16px;
+}
+.form__box__profile{
+background-color: #01012c;
+}

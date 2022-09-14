@@ -43,8 +43,5 @@ module.exports =[
                     return false
                 }
                 return true
-            }).withMessage('Las contraseñas no coinciden'),
-            check('avatar')
-            .notEmpty().withMessage('Debe de subir un avatar para tu perfil')
-
+            }).withMessage('Las contraseñas no coinciden')
 ]
