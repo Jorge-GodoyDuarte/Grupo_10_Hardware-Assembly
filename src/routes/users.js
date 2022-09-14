@@ -8,7 +8,7 @@ const loginValidator = require('../validations/loginValidator');
 const registerValidator=require('../validations/registerValidator')
 
 
-const {upload,filefilter} = require('../middlewares/uploadFiles')
+const {upload} = require('../middlewares/uploadFiles')
 
 const userSessionCheck = require('../middlewares/userSessionCheck');
 
@@ -21,6 +21,7 @@ router
   .get('/login',login) // users/login
   .post('/login',loginValidator,processLogin)
   .get('/profile',userSessionCheck,profile) // /users/profile
+  .put('/profile/:id', processRegister,update)
   .get('/logout',logout)
   
 module.exports = router;

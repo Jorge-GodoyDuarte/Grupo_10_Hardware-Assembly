@@ -1,4 +1,4 @@
-/* aca empiesa el  harcodeo  de nuestros estilos */
+/* aca empieza el  harcodeo  de nuestros estilos */
 
 /*header*/
 .header__agregar {
@@ -55,7 +55,6 @@
 }
 .header {
   background-color: #012677;
-  padding-bottom: 5px;
   background: linear-gradient(45deg, red, blue, green, black);
   background-size: 400% 400%;
   position: relative;
