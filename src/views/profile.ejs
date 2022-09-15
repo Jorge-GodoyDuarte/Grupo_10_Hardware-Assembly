@@ -21,20 +21,20 @@
             </h1>
     
     
-                <form action="/users/profile/<%=user.id%>?_method=PUT" class="form" method="POST"></form>
+                <form action="/users/profile/<%=user.id%>?_method=PUT" class="form" method="POST">
     
 
                 
             <div class="form__box__profile">
                 <label class="form_label" for="nombre">Nombre:</label>
-                <input class="form_input" type="text" id="nombre" name="firstName" value="<%= locals.old && old.firstName ? old.firstName:null %>">
+                <input class="form_input" type="text" id="nombre" name="firstName" value="<%= locals.old && old.firstName ? old.firstName: user.firstName  %>">
                 <div>
                 <small class="form__text--error"><%= locals.errors && errors.firstName? errors.firstName.msg :null %></small>
                 </div>
             </div>
             <div class="form__box__profile">
                 <label class="form_label_   " for="apellido">Apellido:</label>
-                <input class="form_input" type="text" id="apellido" name="lastName" value="<%= locals.old && old.lastName ? old.lastName:null%>">
+                <input class="form_input" type="text" id="apellido" name="lastName" value="<%= locals.old && old.lastName ? old.lastName: user.lastName %>">
                   <div>    
             <small class="form__text--error"><%= locals.errors && errors.lastName? errors.lastName.msg :null %></small>
                  </div> 
@@ -42,7 +42,7 @@
 
             <div class="form__box__profile">
                 <label class="form_label" for="email">Email:</label>
-                <input class="form_input" type="email" id="email" name="email" value="<%= locals.old && old.email ? old.email:null %>" >
+                <input class="form_input" type="email" id="email" name="email" value="<%= locals.old && old.email ? old.email: user.email %>" >
                   <div>
                 <small class="form__text--error"><%= locals.errors && errors.email? errors.email.msg :null %></small>
                 </div>
@@ -69,15 +69,15 @@
 
             <div class="form__box__profile">
                 <label class="form_label" for="avatar">Modificar imagen de perfil</label>
-                <input  class="form_input" type="file" accept="png,jpg" id="avatar"   name="avatar">
+                <input  class="form_input" type="file" accept="png,jpg" id="avatar" name="avatar">
             </div>
 
             
 
             <div class="form__box__profile">
                 <div class="form_box--flex">
-  <button class="form__button form_button_send" type="submit">Editar perfil</button>
-                <button class="form__button form_button_cancel" type="reset">Cancelar</button>
+  <button class="form__button form_button_send" type="submit">Editar perfil </button>
+                <button class="form__button form_button_cancel" type="reset">Cancelar </button>
             </div>
             </div>
     

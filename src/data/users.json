@@ -166,5 +166,29 @@
          "Buenos Aires"
       ],
       "about": null
+   },
+   {
+      "id": 16,
+      "firstName": "juann",
+      "lastName": "moran",
+      "email": "asdaa@hotmail.com",
+      "password": "$2a$10$1U0BLVzKJAiXSKMPoD2uguHdoRcd.79.aVCcMNtvaKaLMhU3OhTKi",
+      "password2": null,
+      "rol": "user",
+      "avatar": null,
+      "gender": null,
+      "hobbies": [],
+      "address": null,
+      "cities": [
+         "Neuquén",
+         "Buenos Aires",
+         "Plaza Huincul",
+         "San Miguel"
+      ],
+      "provinces": [
+         "Neuquen",
+         "Buenos Aires"
+      ],
+      "about": null
    }
 ]
