@@ -72,6 +72,11 @@ module.exports = {
             rol,
             avatar
         }
+        if(req.body.remember){
+            res.cookie('userHassembly',req.session.userLogin,{
+                maxAge : 1000 * 60
+            })
+        }
 
         return res.redirect('/users/profile')
 
@@ -89,11 +94,11 @@ module.exports = {
     },
    
     profile: (req,res) =>     {
-        let user = loadUsers().find(user => user.id === req.session.userLogin.id);
+        let user = loadUsers().find(user = user.id === req.session.userLogin.id);
         return res.render('profile', {
             user,
-            cities: require('../data/cities'),
-            provinces : require('../data/provinces'),
+            cities: require('../data/provinces'),
+            provinces : require('../data/provinces')
         })  
     },
     update:(req,res)=>{
@@ -125,5 +130,5 @@ module.exports = {
 
         storeUsers(usersModify);
         return res.redirect('/users/login')
-    },
+    }
 }
