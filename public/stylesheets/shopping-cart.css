@@ -122,16 +122,20 @@
 
 .shopping__header__button{ 
 
-    background: linear-gradient(45deg,red,blue,green,black);
+    background: linear-gradient(45deg,rgb(51, 51, 51),rgb(127, 127, 133),rgb(222, 228, 222));
     background-size: 400% 400%;
     position: relative;
-    animation: cambiar 3s ease-in-out infinite;
+    animation: cambiar 15s ease-in-out infinite;
     border-style: none;
 border: 2px solid #a0a0a0;
 font-size: 15px;
 height: 25px;
 margin-bottom: 24px;
-color: #a0a0a0;
+color: red;
+}
+::placeholder {
+    color: rgb(70, 248, 165);
+    font-family: var(--tipografiaTitulos)
 }
 /* MAIN  */
 .shopping_main {

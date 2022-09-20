@@ -16,14 +16,14 @@
             <h1 class="form_title">Agregar producto</h1>
     
     
-            <form action="" class="form" method="POST">
+            <form action="" class="form" enctype="multipart/form-data" method="POST">
     
 
                 
             <div class="form_box">
-                <label class="form_label" for="nombre">Nombre del producto:</label>
-                <input class="form_input" type="text" id="nombre" name="name">
-                <small class="form_text_error">El nombre es obligatorio</small>
+                <label class="form_label" for="name">Nombre del producto:</label>
+                <input class="form_input" type="text" id="name" name="name">
+                <small class="form_text_error"><%= locals.errors && errors.name? errors.name.msg :null %></small>
             </div>
             <div class="form_box">
                 <label class="form_label" for="section">Coloca una marca:</label>

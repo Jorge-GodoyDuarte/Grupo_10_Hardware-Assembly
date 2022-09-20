@@ -190,5 +190,53 @@
          "Buenos Aires"
       ],
       "about": null
+   },
+   {
+      "id": 17,
+      "firstName": "asdaaaa",
+      "lastName": "asdaaa",
+      "email": "juancruzmoran@hotmail.com",
+      "password": "$2a$10$oN7tHTenYfYzXk9hnS9uhuZ5/rWOzBhVvkJs.f2ZdIdc.4lZtkUt2",
+      "password2": null,
+      "rol": "user",
+      "avatar": null,
+      "gender": null,
+      "hobbies": [],
+      "address": null,
+      "cities": [
+         "Neuquén",
+         "Buenos Aires",
+         "Plaza Huincul",
+         "San Miguel"
+      ],
+      "provinces": [
+         "Neuquen",
+         "Buenos Aires"
+      ],
+      "about": null
+   },
+   {
+      "id": 18,
+      "firstName": "asdaaaa",
+      "lastName": "asdaaa",
+      "email": "asdaa@hotmail.com",
+      "password": "$2a$10$mG.dEICOP2a0tqaz87hbYuOYuAsLVjU3pNEH6WT9Fmkod7inrAqZu",
+      "password2": null,
+      "rol": "user",
+      "avatar": null,
+      "gender": null,
+      "hobbies": [],
+      "address": null,
+      "cities": [
+         "Neuquén",
+         "Buenos Aires",
+         "Plaza Huincul",
+         "San Miguel"
+      ],
+      "provinces": [
+         "Neuquen",
+         "Buenos Aires"
+      ],
+      "about": null
    }
 ]

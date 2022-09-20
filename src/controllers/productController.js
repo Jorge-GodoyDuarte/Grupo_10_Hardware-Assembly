@@ -4,7 +4,8 @@ const { search } = require('../routes');
 const products = require('../data/db_Module').loadProducts();
 const brands = require('../data/db_Module').loadBrands();
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const {storeProducts, loadBrands, loadProducts, loadCategory} = require('../data/db_Module')
+const {storeProducts, loadBrands, loadProducts, loadCategory} = require('../data/db_Module');
+const productsValidator = require('../validations/productsValidator');
 module.exports = {
     add : (req,res) => {
         
@@ -51,7 +52,6 @@ module.exports = {
     },
     update : (req,res) => {
         const {name,marca,description,price,discount,} =req.body;
-
         const productsModify = products.map(product => {
             if (product.id === +req.params.id) {
                 return {

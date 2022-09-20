@@ -2,22 +2,81 @@
     background-color: #0C0C2B;
 }
 .avatar__profile {
-    text-align: center;
+    text-align: right;
     padding-top: 3%;
     margin: 0px;
+    padding: 0px;
+    margin-left: 2vh;
+    margin-right: 2vh;
 }
 .register__main__profile {
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-bottom: 10px;
-    padding-top: 0px;
-    margin-bottom: 10%;
-    margin-top:  2%;
     color: #fff;
     text-align: center;
     font-family: 'Roboto';
-    font-size: 16px;
+    font-size: 15px;
+    background-image: url(/images/background_image/fondo_mobile.jpg);   
+    background-size: 100%;
+    background-repeat: no-repeat;
+    box-shadow: 10px 10px 61px 12px rgb(22, 22, 189);
+    display: flex;      
+    flex-direction: row;
+    margin-top: 2vh;        
 }
+.form_title-div {
+    width: 100%;
+    height: 100%;
+    display: flex;  
+    position: relative;
+    align-items:flex-start;
+    flex-direction: column;
+    
+}
+
 .form__box__profile{
-background-color: #01012c;
+display: flex;
+flex-wrap: wrap;
+width: 100%;
+}
+.form__label__profile{
+display: flex;
+flex-wrap: wrap;
+width: 100%;
+}
+.form__input__profile{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    height: 50%;
+    width: 90%;
+}
+
+
+.profile__button__send {
+    background-color: #1e90ff;
+    cursor: pointer;
+    border-radius: 7px;
+    color:#fff;
+    padding: 7px;
+    padding-left: 3px;
+    margin-top:21.7px;
+    flex-direction: row;
+    width: 100% ;
+}
+.profile__button__send:hover{
+    background-color: rgb(7, 86, 175)
+}
+
+.profile__buton__cancel{
+    background-color: red;
+    cursor: pointer;
+    border-radius: 7px;
+    color:#fff;
+    padding: 7px;
+    padding-left: 3px;
+    margin-top:21.7px;
+    flex-direction: row;
+    width: 100% ;
+}
+.profile__buton__cancel:hover{
+    background-color: grey;
 }

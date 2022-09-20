@@ -4,36 +4,7 @@
     <%- include('./partials/head')  %>
 
 <body class="shopping__body">
-    <header class="shopping__header">
-        <section class="shopping__header__section">
-            <article class="shopping__header__article">
-                <div class="shopping__header__user">
-                    <span>Usuario</span>
-                    <div class="shopping__header__user-icon">
-                        <a href="/login"> <i class="fa-solid fa-user"></i></a>
-                    </div>
-                    
-                </div>
-                <div class="shopping__header__search">
-                    <input class="shopping__header__button" type="search" name="busquedaproducto"
-                    value="Buscar productos, marcas y más ..">
-                </div>
-                
-            </article>
-            <div class="shopping__burger-menu">
-                <button class="shopping__burger-button"><i class="fa-solid fa-bars"></i></button>
-            </div>
-            <nav class="shopping__header__nav">
-                <ul class="shopping__list">
-                    <li><a href="">Carrito (4)</a></li>
-                    <hr>
-                    <li><a href="">Favoritos (cantidad)</a></li>
-                    <hr>
-                </ul>
-            </nav>
-        </section>
-
-    </header>
+    <%- include('./partials/header') %> 
     <main class="shopping_main">
         <section class="shopping__main__section">
             <article class="shopping__main__article">
