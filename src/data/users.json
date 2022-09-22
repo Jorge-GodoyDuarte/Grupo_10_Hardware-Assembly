@@ -248,5 +248,115 @@
       "password2": null,
       "rol": "user",
       "avatar": null
+   },
+   {
+      "id": 20,
+      "firstName": "juanito",
+      "lastName": "asdaaa",
+      "email": "asdaa@hotmail.com",
+      "password": "$2a$10$yB5tIev7KtNnUSg6CIg1DOWHk/taBLSaUdbCkFRdwXS7HXq5tnory",
+      "password2": null,
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 21,
+      "firstName": "asdaaaa",
+      "lastName": "asdaaa",
+      "email": "asdaa@hotmail.com",
+      "password": "$2a$10$pSi/ej0.8pSqVR1jhFZW2eYUblTtITQ/hhTSQJHtrejbwY6r6x8L.",
+      "password2": null,
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 22,
+      "firstName": "asdaaaa",
+      "lastName": "asdaaa",
+      "email": "asdaa@hotmail.com",
+      "password": "$2a$10$3lgLOrD3HliM3QqDUQLZXOrrTiSmjoXXkxBiP2LC9NrkhhDzJ4IXa",
+      "password2": null,
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 23,
+      "firstName": "asdaaaa",
+      "lastName": "asdaaa",
+      "email": "asdaa@hotmail.com",
+      "password": "$2a$10$vYujGJiVWAbSK9i97Vjn0upPw6SseUB3v9uDYt9lzSZHOXyMLg2Ey",
+      "password2": null,
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 24,
+      "firstName": "asdaaaa",
+      "lastName": "asdaaa",
+      "email": "asdaa@hotmail.com",
+      "password": "$2a$10$upt/7m/WKmkgGPjwO20XJOK9dHHPR4RnHOep/4UYTYMcZ/n1tDoUe",
+      "password2": null,
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 25,
+      "firstName": "asdaaaa",
+      "lastName": "asdaaa",
+      "email": "asdaa@hotmail.com",
+      "password": "$2a$10$H8wv3jXW8maduV64FXlJ2u876.FkN9BPZYOp2giS1xjnu380OpToa",
+      "password2": null,
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 26,
+      "firstName": "asdaaaa",
+      "lastName": "asdaaa",
+      "email": "asdaa@hotmail.com",
+      "password": "$2a$10$2ym5edh9vX0Tno2LCMKhReWHxcJoCVC4E76nAMQ4e/FmPa6UAEhsC",
+      "password2": null,
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 27,
+      "firstName": "asdaaaa",
+      "lastName": "asdaaa",
+      "email": "asdaa@hotmail.com",
+      "password": "$2a$10$COeNUpUHIfBA8QUlxetjkuHOmwzp6iF73WKgJIpVy9yYS3G2mAGaq",
+      "password2": null,
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 28,
+      "firstName": "asdaaaa",
+      "lastName": "asdaaa",
+      "email": "asdaa@hotmail.com",
+      "password": "$2a$10$TiFd.5eMLCGkhH0zgMrkdO2ZT7gfg/5l4wEju3h93CCE/HxNMkXym",
+      "password2": null,
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 29,
+      "firstName": "asdaaaa",
+      "lastName": "asdaaa",
+      "email": "asdaa@hotmail.com",
+      "password": "$2a$10$7FhLrjNcVqBKh0qaWBKoPuuY09P9g7f4vFu0hQHUFT82dlxGt/Xbq",
+      "password2": null,
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 30,
+      "firstName": "asdaaaa",
+      "lastName": "asdaaa",
+      "email": "asdaa@hotmail.com",
+      "password": "$2a$10$H8j0qIMQmw5RA8qdFh8Yme79ukjsJSCjbYLSfcmU5ctqz1ITrVJcO",
+      "password2": null,
+      "rol": "user",
+      "avatar": null
    }
 ]
