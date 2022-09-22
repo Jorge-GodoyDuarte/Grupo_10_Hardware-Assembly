@@ -3,7 +3,7 @@
     "AMD",
     "NVIDIA",
     "ASUS",
-    "RAZE",
+    "RAZER",
     "LOGITECH",
     "HYPERX",
     "SAMSUNG",
@@ -14,11 +14,8 @@
     "KINGSTON",
     "AORUS",
     "DELL",
-    "ASUSS ROG",
-    "ASSUS TUF",
     "WESTERN DIGITAL",
     "SEAGATE",
-    "GEFORCE",
     "MSI",
     "RED DRAGON",
     "STEEL SERIES",
@@ -36,6 +33,5 @@
     "GEIL TEAM",
     "ADATA",
     "CORSAIR",
-    "PATRIOT",
     "CRUCIAL"
 ]
