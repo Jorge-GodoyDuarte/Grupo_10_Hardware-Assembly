@@ -1,14 +1,14 @@
 [
    {
       "id": 1,
-      "name": "aaaaaaaaaaaaaaaaaaaaaaaaa",
-      "price": 11,
+      "name": "aaaaaaaaaasdassdad",
+      "price": 112,
       "discount": 49,
       "image": "intelcorei3-mini.jpg",
       "category": "GPU",
       "description": "purus sit amet nulla quisque arcu libero rutrum ac lobortis vel dapibus",
       "marca": "INTEL",
-      "brands": "ADATA"
+      "brands": "INTEL"
    },
    {
       "id": 2,

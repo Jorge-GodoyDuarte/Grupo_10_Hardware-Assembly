@@ -6,35 +6,35 @@
 </div>
 
 <body class="home__body__profile">
-        <%- include('./partials/header')  %>
     
-
         
     <main class="home__main__profile">
 
-        <section class="register__main__profile">
-            <div class="form_title-div">
-                <h1 class="form_title">Perfil de usuario</h1>
-                <figure class="avatar__profile">
-                    <img  src="/images/users/<%= user.avatar ? user.avatar : 'default.png' %>" alt="avatar" width="100px" style="border-radius: 50%;">
-                </figure>
-        </div>
-
-    
-    
-                <form action="/users/profile/<%=user.id%>?_method=PUT" class="form" method="POST">
-    
-
-                
+        
+            <div class="container-page__profile">
+                <div class="contatiner-page__form">
+                    
+                    
+                    <figure class="avatar__profile">
+                        <img  src="/images/users/<%= user.avatar ? user.avatar : 'default.png' %>" alt="avatar" class="avatar__img">
+                    </figure>
+                    
+                    <h1 class="form_title">Perfil de usuario</h1>
+                    <div>
+                        <form action="/users/profile/<%=user.id%>?_method=PUT" class="form" method="POST">
+                            <div class="form_title-div">
+                                
+                            </div>
+                        </div>
             <div class="form__box__profile">
-                <label class="form__label__profile" for="nombre">Nombre:</label>
+                <label class="form__label__profile" for="nombre"> <span>Nombre:</span> </label>
                 <input class="form__input__profile" type="text" id="nombre" name="firstName" value="<%= locals.old && old.firstName ? old.firstName: user.firstName  %>">
                 <div>
                 <small class="form__text--error"><%= locals.errors && errors.firstName? errors.firstName.msg :null %></small>
                 </div>
             </div>
             <div class="form__box__profile">
-                <label class="form__label__profile" for="apellido">Apellido:</label>
+                <label class="form__label__profile" for="apellido"> <span>Apellido:</span></label>
                 <input class="form__input__profile" type="text" id="apellido" name="lastName" value="<%= locals.old && old.lastName ? old.lastName: user.lastName %>">
                   <div>    
             <small class="form__text--error"><%= locals.errors && errors.lastName? errors.lastName.msg :null %></small>
@@ -42,7 +42,7 @@
             </div>
 
             <div class="form__box__profile">
-                <label class="form__label__profile" for="email">Modificar Email:</label>
+                <label class="form__label__profile" for="email"><span>Modificar Email:</span></label>
                 <input class="form__input__profile" type="email" id="email" name="email" value="<%= locals.old && old.email ? old.email: user.email %>" >
                   <div>
                 <small class="form__text--error"><%= locals.errors && errors.email? errors.email.msg :null %></small>
@@ -53,7 +53,7 @@
                 
 
             <div class="form__box__profile">
-                <label class="form__label__profile" for="password">Cambiar contraseña:</label>
+                <label class="form__label__profile" for="password"><span>Cambiar contraseña:</span></label>
                 <input class="form__input__profile" type="password" id="password" name="password">
                 <div>
                     <small class="form__text--error"><%= locals.errors && errors.password? errors.password.msg :null %></small>
@@ -61,7 +61,7 @@
             </div>
 
             <div class="form__box__profile">
-                <label class="form__label__profile" for="password2">Confirmar contraseña:</label>
+                <label class="form__label__profile" for="password2"><span>Confirmar contraseña:</span></label>
                 <input class="form__input__profile" type="password" id="password2" name="password2">
                 <div>
                 <small class="form__text--error"><%= locals.errors && errors.password2? errors.password2.msg :null %></small>
@@ -69,29 +69,19 @@
             </div>
 
             <div class="form__box__profile">
-                <label class="form_label" for="avatar">Modificar imagen de perfil</label>
+                <label class="form__label__profile" for="avatar"><span>Modificar imagen de perfil</span></label>
                 <input  class="form__input__profile" type="file" accept="png,jpg" id="avatar" name="avatar">
             </div>
 
-            
-
-            <div class="form__box__profile">
-                <div class="form_box--flex">
   <button class="profile__button__send" type="submit">Editar perfil </button>
                 <button class="profile__buton__cancel" type="reset">Cancelar </button>
-            </div>
-            </div>
-    
-                
-                    
-    
             </form>
-         
-    </section>
+        </div>
+                
+        </div>
                 
         </main >
 
-        <%- include('./partials/footer') %> 
 
 </body>
 
