@@ -31,13 +31,17 @@ module.exports = {
             password2:null,
             rol:'user',
             avatar: req.file ? req.file.filename : null,
+/*           [   AÚN NO IMPLEMENTTADO   ]   
+
+
             gender:null,
-            hobbies :[],
             address:null,
             cities : require('../data/cities'),
             provinces:require('../data/provinces'),
             about:null
+
             
+             */
         }
         const usersModify = [...users, newUser]
 
@@ -89,12 +93,12 @@ module.exports = {
 
     },
     logout:(req,res)=>{
-        req.session.destroy()
+        delete req.session.userLogin
         return res.redirect('/')
     },
    
     profile: (req,res) =>     {
-        let user = loadUsers().find(user = user.id === req.session.userLogin.id);
+        let user = loadUsers().find( user => user.id === req.session.userLogin.id);
         return res.render('profile', {
             user,
             cities: require('../data/provinces'),

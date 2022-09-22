@@ -4,7 +4,8 @@ const { search } = require('../routes');
 const products = require('../data/db_Module').loadProducts();
 const brands = require('../data/db_Module').loadBrands();
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const {storeProducts, loadBrands, loadProducts, loadCategory} = require('../data/db_Module')
+const {storeProducts, loadBrands, loadProducts, loadCategory} = require('../data/db_Module');
+const { validationResult } = require('express-validator');
 module.exports = {
     add : (req,res) => {
         
@@ -13,8 +14,8 @@ module.exports = {
         return res.render('productAdd',{
             title: 'productadd',
             brands : brands.sort(),
-            products,
-            category,
+            products: products.sort(),
+            category: category.sort(),
             
         })  
         
@@ -27,8 +28,8 @@ module.exports = {
         const newProduct = {
             id : id + 1,
             ...req.body,
-            name: name.trim(),
-            marca: marca.trim(),
+            name: name,
+            marca: marca,
             description: description.trim(),
             price: +price,
             discount: +discount,
@@ -49,31 +50,45 @@ module.exports = {
             category
         })
     },
-    update : (req,res) => {
-        const {name,marca,description,price,discount,} =req.body;
-
-        const productsModify = products.map(product => {
-            if (product.id === +req.params.id) {
-                return {
-                    ...product,
-                    ...req.body,
-                    name: name.trim(),
-                    marca: marca,
-                    price: +price,
-                    discount: +discount,
-                    image : "intelcorei3-mini.jpg",
-                    description: description.trim()
-                }
-            } else {
-                return product
-            }
+    updateEdit : (req,res) => {
+        let errors = validationResult(req);
+        console.log(errors)
+        console.log("body", req.body)
+        if(errors.isEmpty()) {
+            const products = loadProducts();
+            const {category,name,brands,description,price,discount} =req.body;
+            const productsModify = products.map(product => {
+                if (product.id === +req.params.id) {
+                    return {
+                        ...product,
+                        ...req.body,
+                        name: name.trim(),
+                        brands: brands.trim(),
+                        category: category.trim(),
+                        price: +price,
+                        discount: +discount,
+                        image : "intelcorei3-mini.jpg",
+                        description: description.trim()
+                    }
+         }
+         return product
         })
 
         storeProducts(productsModify)
         return res.redirect('/products/detail/' + req.params.id)
         
-    },
-    detail: (req,res)=>{
+    } else {
+        return res.render('productEdit',{
+            category : loadCategory().sort(),
+            product : loadProducts().find(product => product.id === +req.params.id),
+            brands: loadBrands().sort(),
+            errors : errors.mapped(),
+
+        })
+    }
+  },
+  
+  detail: (req,res)=>{
         const products = loadProducts();
         const product = products.find(product => product.id === +req.params.id);
         return res.render('detail',{

@@ -12,18 +12,18 @@
   font-size: 18px;
 }
 
-.ingreso_registro a {
+.c a {
   display: inline-flex;
-
+  font-family: var(--tipografiaTitulos);
   color: black;
-  background-color: whitesmoke;
+  ;
 }
 .ingreso_registro {
   display: flex;
-  background-color: whitesmoke;
   flex-direction: row;
   align-items: flex-end;
   justify-content: flex-end;
+
 }
 ._main__button {
   cursor: pointer;
@@ -57,8 +57,10 @@
   background-color: #012677;
   background: linear-gradient(45deg, red, blue, green, black);
   background-size: 400% 400%;
+  background-op;
   position: relative;
-  animation: cambiar 3s ease-in-out infinite;
+  animation: cambiar 10s ease-in-out infinite;
+  border: none;
 }
 .burger-button {
   top: 50px;
@@ -142,18 +144,6 @@
   border: none;
 }
 
-.header__button {
-  background: linear-gradient(45deg, red, blue, green, black);
-  background-size: 400% 400%;
-  position: relative;
-  animation: cambiar 3s ease-in-out infinite;
-  border-style: none;
-  border: 2px solid #a0a0a0;
-  font-size: 15px;
-  height: 25px;
-  margin-bottom: 24px;
-  color: #a0a0a0;
-}
 
 /*main*/
 .contenedor{

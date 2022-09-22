@@ -1,9 +1,9 @@
 <header class="header">
-
+    <section class="header__section">
     <div class="ingreso_registro">
         <% if (locals.userLogin) { %>
 
-              <h3><a href=><%= userLogin.firstName %></a></h3>
+              <h3><a href="/users/profile"><%= userLogin.firstName %></a></h3>
             
         
                 <h3><a href="/users/logout">Salir</a></h3>
@@ -14,7 +14,7 @@
                     
             <% } %>
         <% }else{ %>
-            <a href="/users/login">
+            <a href="/users/login"> 
                 <h3>Logueate! <i class="fa-solid fa-user-shield"></i></h3>
             </a>
             <a href="/users/register">
@@ -24,7 +24,7 @@
     </ul>
         
     </div>
-    <section class="header__section">
+    
         <article class="header__article">
             <div class="header__user">
 
@@ -48,5 +48,5 @@
         <div class="burger-menu">
             <button class="burger-button"><i class="fa-solid fa-bars"></i></button>
         </div>
-
+    </section>
 </header>

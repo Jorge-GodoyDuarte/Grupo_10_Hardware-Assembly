@@ -1,13 +1,14 @@
 [
    {
       "id": 1,
-      "name": "Intel® Core™ i",
-      "price": 0.43,
+      "name": "aaaaaaaaaasdassdad",
+      "price": 112,
       "discount": 49,
       "image": "intelcorei3-mini.jpg",
       "category": "GPU",
       "description": "purus sit amet nulla quisque arcu libero rutrum ac lobortis vel dapibus",
-      "marca": "INTEL"
+      "marca": "INTEL",
+      "brands": "INTEL"
    },
    {
       "id": 2,
@@ -91,13 +92,14 @@
    },
    {
       "id": 10,
-      "name": "placa de video Nvidia Colorful iGame GeForce RTX 30 Series RTX 3060 GeForce RTX 3060 Advanced OC 12G L-V 12GB",
+      "name": "",
       "marca": "AMD",
-      "price": "7.14",
+      "price": 7.14,
       "discount": 2,
-      "image": "img10",
+      "image": "intelcorei3-mini.jpg",
       "category": "USB",
-      "description": "congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget"
+      "description": "congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget",
+      "brands": "INTEL"
    },
    {
       "id": 11,
@@ -541,13 +543,14 @@
    },
    {
       "id": 55,
-      "name": "",
+      "name": "aaaaaaaa",
       "marca": "HYPERX",
-      "price": "9.82",
-      "discount": 41,
-      "image": "img30",
+      "price": 16.82,
+      "discount": 20,
+      "image": "intelcorei3-mini.jpg",
       "category": "CPU",
-      "description": "et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum"
+      "description": "et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum",
+      "brands": "INTEL"
    },
    {
       "id": 56,
@@ -1588,26 +1591,5 @@
       "image": "img22",
       "category": "Licencias y seguridad",
       "description": "euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis"
-   },
-   {
-      "id": 160,
-      "name": "",
-      "marca": "DELL",
-      "price": "0.04",
-      "discount": 52,
-      "image": "img19",
-      "category": "Desktop",
-      "description": "a odio in hac habitasse platea dictumst maecenas ut massa quis augue"
-   },
-   {
-      "id": 161,
-      "name": "",
-      "marca": "",
-      "price": 0,
-      "discount": 0,
-      "imageupload": "",
-      "category": "",
-      "description": "",
-      "image": "intelcorei3-mini.jpg"
    }
 ]
