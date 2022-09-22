@@ -35,7 +35,6 @@ module.exports = {
 
 
             gender:null,
-            hobbies :[],
             address:null,
             cities : require('../data/cities'),
             provinces:require('../data/provinces'),
@@ -89,7 +88,7 @@ module.exports = {
 
     },
     logout:(req,res)=>{
-        delete req.session.userLogin 
+        delete req.session.userLogin
         return res.redirect('/')
     },
    

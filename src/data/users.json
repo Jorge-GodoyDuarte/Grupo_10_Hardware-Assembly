@@ -238,5 +238,15 @@
          "Buenos Aires"
       ],
       "about": null
+   },
+   {
+      "id": 19,
+      "firstName": "wwwwww",
+      "lastName": "wwwee",
+      "email": "asdaa@hotmail.com",
+      "password": "$2a$10$2eiv5C0gThn7U07chKRJwecVyDYz3/boAEhW5/5Tkfj8siv6.60Ya",
+      "password2": null,
+      "rol": "user",
+      "avatar": null
    }
 ]
