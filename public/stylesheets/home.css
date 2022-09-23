@@ -68,10 +68,14 @@
   border: none;
   font-size: 150%;
   height: 20px;
+  
 }
 
 .burger-menu {
-  width: 150px;
+
+  width: 150px; 
+  
+  
 }
 
 .cart_icon {
@@ -196,6 +200,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
   margin-top: 20px;
 }
+
 .tarjeta-producto {
   display: inline-flex;
   flex-direction: column;
