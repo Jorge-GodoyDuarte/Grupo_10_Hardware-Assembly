@@ -145,11 +145,11 @@
    },
    {
       "id": 15,
-      "firstName": "asdaaaa",
+      "firstName": "juanito",
       "lastName": "asdaaa",
       "email": "asdaa@hotmail.com",
       "password": "$2a$10$TV0soE8.WWpYjo5AeKqIleh1.jziBRbO0fb87jcQ1miCWd/nzR1m.",
-      "password2": null,
+      "password2": "",
       "rol": "user",
       "avatar": "avatar-1663108390194.jpg",
       "gender": null,
