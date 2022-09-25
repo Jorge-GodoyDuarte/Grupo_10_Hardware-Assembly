@@ -1,0 +1,130 @@
+.home__body__profile {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    background-image: url('../images/background_image/background-image.jpg');
+    background-size: 100vh;
+
+}
+.container-page__profile{
+    height: 70vh;
+    width: 50vw;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    transition: 0.5s;
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid white;
+    backdrop-filter: blur(10px);
+}
+.contatiner-page__form{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+form {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.form__box__profile{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    margin: 1vh 0;
+}
+.form__label__profile{
+    font-size: 18px;
+}
+.input__email {
+    opacity: 0.7;
+}
+.form__input__profile{
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #cbcbcb;
+    outline: none;
+    margin-bottom: 1rem;
+    color: white;
+}
+.avatar__profile {
+    display: flex;
+    justify-content: center;
+
+}
+.avatar__img {
+    width: 6vw;
+    height: 20vh;
+    border-radius: 50%;
+}
+
+.form_title-div {
+    display: flex;
+
+} 
+
+.profile__button__send {
+    width: 100%;
+    height: 45px;
+    border-radius: 55px;
+    background: rgba(255, 255, 255, 0.315);
+    color: rgba(255, 255, 255, 0.685);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 2px solid white;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-top: 4rem;
+    opacity: 0.6;
+}
+.profile__button__send:hover{
+    opacity: 1;
+}
+
+.profile__buton__cancel{
+    width: 100%;
+    height: 45px;
+    border-radius: 55px;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 2px solid white;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: 0.5s;
+    opacity: 0.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.profile__buton__cancel:hover{
+    opacity: 1;
+    background: rgba(73, 37, 37, 0.781);
+}
+.home__profile__redirect-button{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}

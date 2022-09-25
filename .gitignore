@@ -1,2 +1,9 @@
 node_modules
 package-lock.json
+
+
+//*<div class="form_box">
+                <label class="form_label" for="date">Fecha de nacimiento:</label>
+                <input class="form_input" type="date" id="date" name="birthday">
+                
+            </div>*//

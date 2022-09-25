@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head')  %>
+
+<body>
+  
+    <%- include('./partials/header')  %>
+
+    <main>
+        <section>
+            <article class="detail__main-article">
+                <div class="detail__main-img">
+                    <img src="/images/<%=product.image%>" alt="">
+                </div>
+
+                <div class="detail__main-tittle">
+                    <h4><%= product.name%></h4>
+                </div>
+                <div class="detail__main-price-discount">
+                    <% if (product.discount) { %>
+                        <h4> $<%= toThousand((product.price) - (product.price * product.discount / 100)) %> </h4> <p class="detail__discount"> $<%= product.price%> </p>
+                    <% } else { %>
+                        <h4> $<%= toThousand(product.price)%>
+                    <% } %>
+                    <% if (product.discount > 0) { %>
+                        <h5> %<%= product.discount%> OFF </h5>
+                    <% } %>
+
+                </div>
+                <div class="detail__main-subtittle">
+                    <h4>CARACTERISTICAS GENERALES </h4>
+                </div>
+                
+                <article class="detail__main-info">
+                   <div class="detail__main-info-product">
+                    <p>Familia</p>
+                    <p><%= product.marca%></p>
+                   </div>
+                   <div class="detail__main-info-product">
+                    <p>Socket</p>
+                    <p>1200 Comet Lake</p>
+                   </div>
+                   <div class="detail__main-info-product"> 
+                    <p>Núcleos</p>
+                    <p>4</p>
+                    </div>
+                    <div class="detail__main-info-product">
+                    <p>Frecuencia</p>
+                    <p>3600.00 mhz</p>
+                    </div>
+                   <div class="detail__main-info-product">
+                    <p>Proceso de fabricación</p>
+                    <p>14nm</p>
+                   </div>
+                   <div class="detail__main-info-product">
+                    <p>Chipset Gpu</p>
+                    <p>NO POSEE GRÁFICOS INTEGRADOS</p>
+                   </div>
+                   <div class="detail__main-info-product">
+                    <p>Hilos</p>
+                    <p>8</p>
+                   </div>
+                   <div class="detail__main-info-product">
+                    <p>Frecuencia turbo</p>
+                    <p>4300 mhz</p>
+                   </div>
+                   <div class="detail__main-info-product">
+                    <p>Descripción</p>
+                    <p><%= product.description%></p>
+                   </div>
+                </article>
+                
+            </article>
+            <article class="detail__main-article-button">
+                <div class="detail__main-button">
+                    <button class="detail__button1"> <a href="/products/edit/<%=product.id%>"><h4 class="title-detail"> EDITAR </h4></a></button>
+                </div>
+                <div class="detail__main-button"></div>
+                    <button class="detail__button2"> <h4 class="title-detail"> COMPRAR </h4></button>
+                </div>
+                <form action="/products/delete/<%= product.id%>?_method=DELETE" method="POST">
+                <button type="submit">Eliminar</button>
+            </form>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>

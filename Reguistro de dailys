@@ -1,0 +1,21 @@
+20/08
+se inicio  a implementar el crud en el proyecto
+
+
+24/08
+se empeso a implementar crud en  el json de  productos  que creamos ese dia
+
+
+28/08
+se implementaron las validaciones y creamos el  json   de usuarios 
+
+
+08/09
+Se realizaron las validaciones correspondientes al formulario de login y register,
+aplicando multer y hasheo de contraseñas.
+
+Una vez logueado aplicamos la funcionalidad de redireccionar al Home y en las opciones aparecen nombre del usuario y
+salida para que de esta forma se pueda desloguear
+
+Se implemento la subida del AVATAR para el usuario.
+Obtuvimos un impedimiento al intentar que el AVATAR sea preferiblemente (jpg|jpeg|png|gif|webp). 

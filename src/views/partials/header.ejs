@@ -1,0 +1,52 @@
+<header class="header">
+    <section class="header__section">
+    <div class="ingreso_registro">
+        <% if (locals.userLogin) { %>
+
+              <h3><a href="/users/profile"><%= userLogin.firstName %></a></h3>
+            
+        
+                <h3><a href="/users/logout">Salir</a></h3>
+        
+            <% if (userLogin.rol === "admin") { %>
+                
+                    <a href="/products/add">Agregar</a>
+                    
+            <% } %>
+        <% }else{ %>
+            <a href="/users/login"> 
+                <h3>Logueate! <i class="fa-solid fa-user-shield"></i></h3>
+            </a>
+            <a href="/users/register">
+                <h3>Registrate! <i class="fa-solid fa-id-card"></i></h3>
+            </a>
+        <% } %>
+    </ul>
+        
+    </div>
+    
+        <article class="header__article">
+            <div class="header__user">
+
+                <div class="cart_icon">
+                    <a href="/products/shopping-cart">
+
+
+                        <i class="fa-solid fa-cart-plus"></i></a>
+                </div>
+
+
+            </div>
+            <form action="/products/search" class="header__search" method="GET">
+                <input class="shopping__header__button" type="text" name="keywords"
+                    value="" placeholder="Buscar productos, marcas y más ..">
+            </form>
+            <div>
+                <li class="header__agregar"><a href="/products/add"> <h3>Agregar</h3> </a></li>
+            </div>
+        </article>
+        <div class="burger-menu">
+            <button class="burger-button"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </section>
+</header>
