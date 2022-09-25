@@ -94,6 +94,9 @@ module.exports = {
     },
     logout:(req,res)=>{
         delete req.session.userLogin
+            res.cookie('userHassembly',null,{
+                maxAge : -1
+            })
         return res.redirect('/')
     },
    
@@ -108,12 +111,13 @@ module.exports = {
     update:(req,res)=>{
 
         const {firstName, lastName, birthday, address, city, province, about} = req.body;
-
+        let user = loadUsers().find(user => user.id == req.session.userLogin.id)
         let usersModify = loadUsers().map(user => {
             if(user.id === +req.params.id){
                 return {
                     ...user,
                     ...req.body,
+                    password : req.body.password ? bcryptjs.hashSync(req.body.password, 10) : user.password,
                     avatar : req.file ? req.file.filename : req.session.userLogin.avatar
                 }
             }
@@ -133,6 +137,6 @@ module.exports = {
         }
 
         storeUsers(usersModify);
-        return res.redirect('/users/login')
+        return res.redirect('/')
     }
 }
