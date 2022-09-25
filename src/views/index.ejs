@@ -55,50 +55,40 @@
                         category="conectividad" title="conectividad"><img
                             src="/images/logos-categorias/conectividad.bmp" alt=""></a></div>
             </section>
-        
-        <div class="desarrollo_producto">
-            <aside class="filtros_lateral">
-                <form action="">
-                    <label for="Categoria_Elegida">
-                        <h4>Categoria</h4>
-                    </label>
-                    <label for="Quitar_filtros">
-                        <h3> Quitar Filtros</h3> <span><input type="checkbox" name="Quitar_Filtros"
-                                value="Quitar Filtros"></span>
-                    </label>
-                    <label for="Mayor_precio">
-                        <h3> Mayor Precio</h3> <span><input type="checkbox" name="Mayor_precio"
-                                value="Mayor Precio"></span>
-                    </label>
-                    <label for="Menor_precio">
-                        <h3>Menor Precio</h3><span><input type="checkbox" name="Menor_precio"
-                                value="Menor Precio"></span>
-                    </label>
-                    <label for="Mas_populares">
-                        <h3> Populares</h3> <span><input type="checkbox" name="Mas_populares"
-                                value="Mas Populares"></span>
-                    </label>
-
-                </form>
-            </aside>
-            <% products.forEach(({id,name,image,price}) => { %>
-                <div class="tarjeta-producto">
-                    <section class="img-tarjeta">
-                        <img src="/images/<%= image %>" alt="">
-                    </section>
-                    <section class="valores-tarjeta">
-                        <h2 class="nombre"><%= name %></h2>
-                        <h2 class="precio"> $<%= toThousand(price) %></h2>
-                    </section>
-                    <a href="/products/detail/<%= id%>" class="boton">ver producto</a>
-                </div>
-             
-            <% }) %>
-
-
-        </div>
-    </main>
+            <div class="flex-contenedor">
+              <% products.forEach(({id,name,brand,image,price})=> { %>
+                <div class="el-wrapper">
+                  <div class="box-up">
+                    <img class="img" src="/images/<%= image %>" alt="">
+                    <div class="img-info">
+                      <div class="info-inner">
+                        <span class="p-name">
+                          <%= name %>
+                        </span>
+                        <span class="p-company">
+                          <%= brand %>
+                        </span>
+                      </div>
     
+                    </div>
+                  </div>
+    
+                  <div class="box-down <%= id%>">
+                    <div class="h-bg">
+                      <div class="h-bg-inner"></div>
+                    </div>
+    
+                    
+                      <span class="price">$<%= toThousand(price) %></span>
+                      <span class="go-description">
+                        <a class="txt" href="/products/detail/<%= id%>"><span class="txt">VER-PRODUCTO</span></a>
+                      </span>
+                    
+                  </div>
+                </div>
+                <% }) %>
+            </div>
+
     <%- include('./partials/footer') %> 
 
 </body>
