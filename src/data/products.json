@@ -140,7 +140,17 @@
       "image": "fuente-tr-500w-thermaltake.jpg",
       "category": "Fuente",
       "description": "lectus suspendisse potenti in eleifend quam a odio in hac habitasse"
+   },
+   {
+      "id": 15,
+      "price": null,
+      "discount": null,
+      "image": "intelcorei3-mini.jpg"
+   },
+   {
+      "id": 16,
+      "price": null,
+      "discount": null,
+      "image": "intelcorei3-mini.jpg"
    }
-   
-   
 ]

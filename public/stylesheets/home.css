@@ -12,7 +12,7 @@
   font-size: 18px;
 }
 .header__nav a {
-  font-size: 30px;
+  font-size: 40px;
 }
 .header__nav ul {
   list-style:none;
@@ -25,7 +25,9 @@
   float:right;  
   margin:0;
   padding:0;
+  
 }
+
 .header__nav ul a {
   display:block;
   color:#fff;
@@ -52,9 +54,13 @@
 .header__nav ul ul a {
   line-height:120%;
   padding:10px 15px;
+  width: 40px;
+}
+.header__nav ul li a{
+  font-size: 40px;
 }
 .header__nav ul li:hover {
-  background:#5b78a7;
+  background:#655ba7;
 }
 .header__nav ul li:hover ul {
   display:block;
