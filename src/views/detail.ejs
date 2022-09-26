@@ -21,7 +21,7 @@
                     <% if (product.discount) { %>
                         <h4> $<%= toThousand((product.price) - (product.price * product.discount / 100)) %> </h4> <p class="detail__discount"> $<%= product.price%> </p>
                     <% } else { %>
-                        <h4> $<%= toThousand(product.price)%>
+                        <h4> $<%= product.price     %>
                     <% } %>
                     <% if (product.discount > 0) { %>
                         <h5> %<%= product.discount%> OFF </h5>

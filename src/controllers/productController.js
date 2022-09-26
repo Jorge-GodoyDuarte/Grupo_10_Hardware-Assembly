@@ -45,7 +45,7 @@ module.exports = {
         const brands = loadBrands();
         return res.render('productEdit', {
             brands,
-            product,
+            product : products.find(product => product.id === +req.params.id),
             title : 'edit',
             category
         })
