@@ -201,7 +201,7 @@
 }
 
 
-/main/
+
 .contenedor{
   display: flex;
   flex-wrap:wrap;
@@ -529,14 +529,16 @@ w
   position: relative;
 }
 
-/footer/
+
 .logos_redes {
   display: flex;
+ 
   text-align: center;
   align-content: space-around;
   margin-top: 50px;
   color: black;
   border: 1px #a0a0a0;
+  
 }
 .logos {
   display: flex;
