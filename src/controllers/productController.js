@@ -51,7 +51,7 @@ module.exports = {
         })
     },
     updateEdit : (req,res) => {
-        let errors = validationResult(req);
+        let errors = validationResult(req); 
         console.log(errors)
         console.log("body", req.body)
         if(errors.isEmpty()) {

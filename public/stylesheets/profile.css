@@ -63,6 +63,13 @@ form {
     margin-bottom: 1rem;
     color: white;
 }
+input:focus {
+    border-color: #121212;
+    transition: 0.4s;
+}
+.input__email:focus {
+    border-bottom: 2px solid #cbcbcb;
+ }
 .avatar__profile {
     display: flex;
     justify-content: center;
