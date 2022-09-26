@@ -1,42 +1,11 @@
 [
    {
       "id": 1,
-      "firstName": "asdasd",
-      "lastName": "asdasd",
-      "email": "asdaa@hotmail.com",
-      "password": "$2a$10$iJTIQiicb9GwboGi05pJL.oFDicrrpvqg3oxH2tTrmXMDiawg7BKi",
-      "password2": null,
+      "firstName": "juancho",
+      "lastName": "Moran",
+      "email": "juancho@hotmail.com",
+      "password": "$2a$10$k.qK1U5/XSHEhtgLQe7jTOFVs23RemGGAKft.UJrcIrHC9.ZAIsQW",
       "rol": "user",
-      "avatar": null
-   },
-   {
-      "id": 31,
-      "firstName": "jorge",
-      "lastName": "gdt",
-      "email": "aasd@gmail.com",
-      "password": "$2a$10$iz9wYhplFDhZWzHwyKVNF.xJuH/FMUtRCAGNjoAFQhVABtPUH3jFm",
-      "password2": null,
-      "rol": "user",
-      "avatar": "avatar-1663870763960.bmp"
-   },
-   {
-      "id": 32,
-      "firstName": "jorge",
-      "lastName": "gdt",
-      "email": "aasd@gmail.com",
-      "password": "$2a$10$Z4nOgsMkPKZKxdlXU8/o0eSQy6ABWk87r9ahdS5bWhB95pbfcjg3.",
-      "password2": null,
-      "rol": "user",
-      "avatar": null
-   },
-   {
-      "id": 33,
-      "firstName": "jorge",
-      "lastName": "gdt",
-      "email": "aasd@gmail.com",
-      "password": "$2a$10$pGZXTMf/RPHLuEESFSlt6.Upk/ITPMnVtQEIN.6wTHFnzWGVJzB7K",
-      "password2": null,
-      "rol": "user",
-      "avatar": null
+      "avatar": "default.png"
    }
 ]

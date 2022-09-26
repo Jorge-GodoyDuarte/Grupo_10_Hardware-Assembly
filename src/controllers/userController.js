@@ -3,6 +3,7 @@ const {validationResult}=require('express-validator')
 const bcryptjs =require('bcryptjs')
 const fs = require('fs');
 const path = require('path');
+const session = require('express-session');
 module.exports = {
     register : (req, res) => {
         
@@ -82,7 +83,7 @@ module.exports = {
             })
         }
 
-        return res.redirect('/users/profile')
+        return res.redirect('/' )
 
     }else{
         return res.render('login',{
@@ -103,9 +104,7 @@ module.exports = {
     profile: (req,res) =>     {
         let user = loadUsers().find( user => user.id === req.session.userLogin.id);
         return res.render('profile', {
-            user,
-            cities: require('../data/provinces'),
-            provinces : require('../data/provinces')
+            user : loadUsers().find( user => user.id === req.session.userLogin.id),
         })  
     },
     update:(req,res)=>{
@@ -138,5 +137,50 @@ module.exports = {
 
         storeUsers(usersModify);
         return res.redirect('/')
-    }
+    },
+    updateEdit : (req,res) => {
+        const errors = validationResult(req)
+        if(errors.isEmpty()) {
+            const {firstName,lastName,email,password} = req.body;
+            let user = loadUsers().find(user => user.id === req.session.userLogin.id);
+            const users = loadUsers()
+            const userModify = users.map( user => {
+                if( user.id === req.session.userLogin.id) {
+                    if(req.file && req.session.userLogin.avatar){
+                        if(fs.existsSync(path.resolve(__dirname,'..','public','images','users',req.session.userLogin.avatar))){
+                            console.log('>>>>>>>>>>',req.session.userLogin.avatar);
+                            fs.unlinkSync(path.resolve(__dirname,'..','public','images','users',req.session.userLogin.avatar))
+                        }
+                    }
+                    return {
+                        id: user[users.length-1] ? users[users.length-1].id+1:1,
+                        firstName : firstName.trim(),
+                        lastName : lastName.trim(),
+                        email : email.trim(),
+                        password : bcryptjs.hashSync(password.trim(),10),
+                        rol: 'user',
+                        avatar : req.file ? req.file.filename : req.session.userLogin.avatar,
+                    }
+                    
+                }
+
+                return user
+            })
+            if(req.file && req.session.userLogin.avatar){
+                if(fs.existsSync(path.resolve(__dirname,'..','public','images','users',req.session.userLogin.avatar))){
+                    console.log('>>>>>>>>>>',req.session.userLogin.avatar);
+                    fs.unlinkSync(path.resolve(__dirname,'..','public','images','users',req.session.userLogin.avatar))
+                }
+            }
+            
+            storeUsers(userModify);
+            return res.redirect('/users/profile')
+        } else {
+            return res.render('profile',{
+            errors: errors.mapped(),
+            old: req.body,
+            user : loadUsers().find( user => user.id === req.session.userLogin.id),
+            })
+     }
+    } 
 }

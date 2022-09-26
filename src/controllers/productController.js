@@ -30,7 +30,7 @@ module.exports = {
             ...req.body,
             name: name,
             marca: marca,
-            description: description.trim(),
+            description: description,
             price: +price,
             discount: +discount,
             image : "intelcorei3-mini.jpg"

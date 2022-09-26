@@ -160,5 +160,17 @@
       "image": "img7",
       "category": "Headset",
       "description": "justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique"
+   },
+   {
+      "id": 17,
+      "price": null,
+      "discount": null,
+      "image": "intelcorei3-mini.jpg"
+   },
+   {
+      "id": 18,
+      "price": null,
+      "discount": null,
+      "image": "intelcorei3-mini.jpg"
    }
 ]
