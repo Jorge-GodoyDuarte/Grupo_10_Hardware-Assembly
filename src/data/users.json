@@ -7,5 +7,24 @@
       "password": "$2a$10$k.qK1U5/XSHEhtgLQe7jTOFVs23RemGGAKft.UJrcIrHC9.ZAIsQW",
       "rol": "user",
       "avatar": "default.png"
+   },
+   {
+      "id": 2,
+      "firstName": "jorge",
+      "lastName": "gdt",
+      "email": "aasd@gmail.com",
+      "password": "$2a$10$0NDpancm90W0kDdRdgwDtONXDsKLUJN1c3QvcnxWap4wxlSmEM4Uu",
+      "password2": null,
+      "rol": "user",
+      "avatar": "avatar-1664215699178.png"
+   },
+   {
+      "id": 1,
+      "firstName": "jorgeasd",
+      "lastName": "asd123",
+      "email": "1aasd@gmail.com",
+      "password": "$2a$10$Ejn54.PxYEpN7DBQ3j8Pw.ImDhSq7pfdhgHrsvvFIsiTOZY/GoGhu",
+      "rol": "user",
+      "avatar": null
    }
 ]
