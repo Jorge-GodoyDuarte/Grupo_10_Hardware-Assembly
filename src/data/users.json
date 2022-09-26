@@ -8,5 +8,35 @@
       "password2": null,
       "rol": "user",
       "avatar": null
+   },
+   {
+      "id": 31,
+      "firstName": "jorge",
+      "lastName": "gdt",
+      "email": "aasd@gmail.com",
+      "password": "$2a$10$iz9wYhplFDhZWzHwyKVNF.xJuH/FMUtRCAGNjoAFQhVABtPUH3jFm",
+      "password2": null,
+      "rol": "user",
+      "avatar": "avatar-1663870763960.bmp"
+   },
+   {
+      "id": 32,
+      "firstName": "jorge",
+      "lastName": "gdt",
+      "email": "aasd@gmail.com",
+      "password": "$2a$10$Z4nOgsMkPKZKxdlXU8/o0eSQy6ABWk87r9ahdS5bWhB95pbfcjg3.",
+      "password2": null,
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 33,
+      "firstName": "jorge",
+      "lastName": "gdt",
+      "email": "aasd@gmail.com",
+      "password": "$2a$10$pGZXTMf/RPHLuEESFSlt6.Upk/ITPMnVtQEIN.6wTHFnzWGVJzB7K",
+      "password2": null,
+      "rol": "user",
+      "avatar": null
    }
 ]
