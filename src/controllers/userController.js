@@ -1,3 +1,6 @@
+const db = require('../database/models');
+const sequelize = db.sequelize;
+
 const {loadUsers, storeUsers} = require ('../data/db_Module')
 const {validationResult}=require('express-validator')
 const bcryptjs =require('bcryptjs')

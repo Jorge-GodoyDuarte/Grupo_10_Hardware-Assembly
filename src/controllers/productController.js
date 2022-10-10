@@ -1,3 +1,6 @@
+const db = require('../database/models');
+const sequelize = db.sequelize;
+
 const { name } = require('ejs');
 const { search } = require('../routes');
 
