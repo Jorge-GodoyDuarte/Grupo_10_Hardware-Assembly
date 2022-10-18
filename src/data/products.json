@@ -1,8 +1,8 @@
 [
    {
       "id": 1,
-      "name": "aaaaaaaaaasdassdad",
-      "price": 112,
+      "name": "asdasd",
+      "price": 111,
       "discount": 49,
       "image": "intelcorei3-mini.jpg",
       "category": "CPU",
@@ -22,13 +22,14 @@
    },
    {
       "id": 3,
-      "name": "Inspiron 16 Plus",
+      "name": "Inspiron 16 Pluss",
       "marca": "GEIL TEAM",
-      "price": "3.03",
+      "price": 3.03,
       "discount": 57,
-      "image": "laptop-hp.jpg",
+      "image": "intelcorei3-mini.jpg",
       "category": "Laptop",
-      "description": "consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel"
+      "description": "consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel",
+      "brands": "INTEL"
    },
    {
       "id": 4,
@@ -140,17 +141,5 @@
       "image": "fuente-tr-500w-thermaltake.jpg",
       "category": "Fuente",
       "description": "lectus suspendisse potenti in eleifend quam a odio in hac habitasse"
-   },
-   {
-      "id": 15,
-      "price": null,
-      "discount": null,
-      "image": "intelcorei3-mini.jpg"
-   },
-   {
-      "id": 16,
-      "price": null,
-      "discount": null,
-      "image": "intelcorei3-mini.jpg"
    }
 ]

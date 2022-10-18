@@ -104,6 +104,7 @@ module.exports = {
     },
 
     filter: (req,res) => {
+        const products = loadProducts()
         const productsFilter = products.filter(product => product.section === req.query.section)
     return res.render('products', {
         products : productsFilter,
@@ -111,9 +112,11 @@ module.exports = {
     })
     },
     search : (req,res) => {
-        
-        const result = products.filter(product => product.name.toLowerCase().includes(req.query.keywords.toLowerCase()) || product.category.toLowerCase().includes(req.query.keywords.toLowerCase()));
+        const products = loadProducts();        
+        const result = products.filter(product => product.name?.toLowerCase().includes(req.query.keywords.toLowerCase()) ||
+         product.category?.toLowerCase().includes(req.query.keywords.toLowerCase()));
 
+        
         return res.render('products', {
             products : result,
             keywords : req.query.keywords,

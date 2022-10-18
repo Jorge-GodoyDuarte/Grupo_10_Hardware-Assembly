@@ -1,10 +1,10 @@
 [
    {
       "id": 1,
-      "firstName": "juancho",
+      "firstName": "Juanchox",
       "lastName": "Moran",
       "email": "juancho@hotmail.com",
-      "password": "$2a$10$k.qK1U5/XSHEhtgLQe7jTOFVs23RemGGAKft.UJrcIrHC9.ZAIsQW",
+      "password": "$2a$10$kGro1jxtcqhQSdk7grlKGeFrFxBp6MDYIASQdbwjZf28aZ9gNhiuS",
       "rol": "user",
       "avatar": "default.png"
    }
