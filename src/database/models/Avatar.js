@@ -12,5 +12,11 @@ module.exports  = (sequelize, DataTypes) =>  {
             allowNull: false,
             defaultValue: 'defaultAvatar.jpg'
         }
-    }
+    };
+
+let config = {
+    timestamps: true,
+    underscored: true,
+}
+
 }
