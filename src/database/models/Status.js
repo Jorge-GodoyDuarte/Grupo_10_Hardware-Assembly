@@ -2,7 +2,8 @@ module.exports = (sequelize, DataTypes) => {
     let alias = 'Status';
     let cols = {
         id: { 
-            type: DataTypes.INTEGER.UNSIGNED.UNIQUE,
+            type: DataTypes.INTEGER.UNSIGNED,
+            unique: true,
             primaryKey: true,
             allowNull: false,
             autoIncrement: true
@@ -15,5 +16,12 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.BOOLEAN,
             allowNull: false
         }
+    };
+    let config = {
+        timestamps: true,
+        underscored: true,
     }
+    const Status = sequelize.define(alias, cols , config)
+        
+    return Status
 }

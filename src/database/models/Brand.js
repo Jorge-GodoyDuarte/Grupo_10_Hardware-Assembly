@@ -2,7 +2,8 @@ module.exports = (sequelize, DataTypes) => {
     let alias = 'Brand';
     let cols = {
         id: { 
-            type: DataTypes.INTEGER.UNSIGNED.UNIQUE,
+            type: DataTypes.INTEGER.UNSIGNED,
+            unique: true,
             primaryKey: true,
             allowNull: false,
             autoIncrement: true
@@ -11,5 +12,12 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(255),
             allowNull: false
         }
+    };
+    let config = {
+        timestamps: true,
+        underscored: true,
     }
+    const Brand = sequelize.define(alias, cols , config)
+        
+    return Brand
 }
