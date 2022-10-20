@@ -7,7 +7,7 @@ const {updateEdit,detail,carrito, filter, search, add, store, edit, update, remo
 
 router
     .get('/add',add)
-    /* .post('/add',store) */
+    .post('/add',store)
     .put('add/:id', productsValidation , updateEdit)
     .get('/edit/:id', edit)
     .put('/update/:id',productsValidation, updateEdit)

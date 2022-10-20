@@ -1,6 +1,6 @@
 /* aca empieza el  harcodeo  de nuestros estilos */
 
-/*header*/
+/* header */
 .header__agregar {
   font-family: var(--tipografiaTitulos);
   text-decoration: none;
@@ -11,7 +11,60 @@
   color: white;
   font-size: 18px;
 }
+.header__nav a {
+  font-size: 40px;
+}
+.header__nav ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.header__nav ul li {
+  background-color:#10a4e997;
+  position:relative;
+  float:right;  
+  margin:0;
+  padding:0;
+  
+}
 
+.header__nav ul a {
+  display:block;
+  color:#fff;
+  text-decoration:none;
+  font-weight:400;
+  font-size: 18px;
+  padding:10px;
+  font-family: var(--tipografiaTitulos);
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+.header__nav ul ul {
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#eee;
+  padding:0;
+}
+.header__nav ul ul li {
+  float:none;
+  width:150px
+}
+.header__nav ul ul a {
+  line-height:120%;
+  padding:10px 15px;
+  width: 40px;
+}
+.header__nav ul li a{
+  font-size: 40px;
+}
+.header__nav ul li:hover {
+  background:#655ba7;
+}
+.header__nav ul li:hover ul {
+  display:block;
+}
 .c a {
   display: inline-flex;
   font-family: var(--tipografiaTitulos);
@@ -25,7 +78,7 @@
   justify-content: flex-end;
 
 }
-._main__button {
+.main_button {
   cursor: pointer;
 }
 
@@ -80,12 +133,21 @@
 
 .cart_icon {
   display: flex;
-
-  align-items: flex-end;
-  justify-content: flex-end;
   width: 100%;
+  height: 100%;
+  justify-content:flex-end;
 }
-
+.cart_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #012677;
+  opacity: 0.6;
+  border-radius: 50%;
+  font-size: 30px;
+  width: 4rem;
+  height: 4rem;
+}
 .header__user a i {
   display: flex;
   flex-wrap: wrap;
@@ -145,7 +207,7 @@
 }
 
 
-/*main*/
+
 .contenedor{
   display: flex;
   flex-wrap:wrap;
@@ -473,14 +535,16 @@ w
   position: relative;
 }
 
-/*footer*/
+
 .logos_redes {
   display: flex;
+ 
   text-align: center;
   align-content: space-around;
   margin-top: 50px;
   color: black;
   border: 1px #a0a0a0;
+  
 }
 .logos {
   display: flex;

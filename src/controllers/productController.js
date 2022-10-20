@@ -1,3 +1,6 @@
+const db = require('../database/models');
+const sequelize = db.sequelize;
+
 const { name } = require('ejs');
 const { search } = require('../routes');
 
@@ -30,7 +33,7 @@ module.exports = {
             ...req.body,
             name: name,
             marca: marca,
-            description: description.trim(),
+            description: description,
             price: +price,
             discount: +discount,
             image : "intelcorei3-mini.jpg"
@@ -45,13 +48,13 @@ module.exports = {
         const brands = loadBrands();
         return res.render('productEdit', {
             brands,
-            product,
+            product : products.find(product => product.id === +req.params.id),
             title : 'edit',
             category
         })
     },
     updateEdit : (req,res) => {
-        let errors = validationResult(req);
+        let errors = validationResult(req); 
         console.log(errors)
         console.log("body", req.body)
         if(errors.isEmpty()) {
@@ -111,9 +114,11 @@ module.exports = {
     })
     },
     search : (req,res) => {
-        
-        const result = products.filter(product => product.name.toLowerCase().includes(req.query.keywords.toLowerCase()) || product.category.toLowerCase().includes(req.query.keywords.toLowerCase()));
+        const products = loadProducts();        
+        const result = products.filter(product => product.name?.toLowerCase().includes(req.query.keywords.toLowerCase()) ||
+         product.category?.toLowerCase().includes(req.query.keywords.toLowerCase()));
 
+        
         return res.render('products', {
             products : result,
             keywords : req.query.keywords,

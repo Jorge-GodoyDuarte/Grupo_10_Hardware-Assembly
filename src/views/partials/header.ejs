@@ -1,12 +1,26 @@
 <header class="header">
     <section class="header__section">
-    <div class="ingreso_registro">
-        <% if (locals.userLogin) { %>
+        
+        
+        <div class="ingreso_registro">
+            <% if (locals.userLogin) { %>
+                
+                <nav class="header__nav">
+                    <ul>
+                        <li>
+                          <a href="/users/profile"><%= userLogin.firstName %></a> 
+                          <ul   >
+                              <li>
+                                <a href="/users/logout">Salir</a>
+                            </li>
+                            </ul>
+                        </li>
+                    </ul>
+                  </nav>
 
-              <h3><a href="/users/profile"><%= userLogin.firstName %></a></h3>
             
         
-                <h3><a href="/users/logout">Salir</a></h3>
+                
         
             <% if (userLogin.rol === "admin") { %>
                 
@@ -24,16 +38,15 @@
     </ul>
         
     </div>
-    
+    <!--  <div class="cart_icon">
+            <div class="cart_box">
+                
+                <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+            </div>
+        </div> -->
         <article class="header__article">
             <div class="header__user">
 
-                <div class="cart_icon">
-                    <a href="/products/shopping-cart">
-
-
-                        <i class="fa-solid fa-cart-plus"></i></a>
-                </div>
 
 
             </div>
@@ -45,8 +58,8 @@
                 <li class="header__agregar"><a href="/products/add"> <h3>Agregar</h3> </a></li>
             </div>
         </article>
-        <div class="burger-menu">
+<!--         <div class="burger-menu">
             <button class="burger-button"><i class="fa-solid fa-bars"></i></button>
-        </div>
+        </div> -->
     </section>
 </header>
