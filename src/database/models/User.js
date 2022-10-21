@@ -54,6 +54,37 @@ module.exports = (sequelize, DataTypes) => {
         underscored: true,
     }
     const User = sequelize.define(alias, cols , config)
-    
+
+/*         ASOCIACIONES       */
+
+    User.associate = (models) => {
+        User.belongsTo(models.Role, {
+            as: "rol",
+            foreingKey : "rol_id"
+         })
+};
+    User.associate = (models) => {
+        User.belongsTo(models.Avatar, {
+            as: "avatar",
+            foreingKey : "avatar_id"
+         })
+};
+
+    User.associate = (models) => {
+        User.belongsTo(models.Payment, {
+            as: "payment",
+            foreingKey : "payment_id"
+         })
+};
+
+
+
+    User.associate = (models) => {
+        User.hasMany(models.Order, {
+            as :"order",
+            foreingKey : "user_id"
+        })
+    };
+
     return User
 }

@@ -18,6 +18,21 @@ module.exports = (sequelize, DataTypes) => {
         underscored: true,
     }
     const Payment = sequelize.define(alias, cols , config)
-        
+           
+    /*         ASOCIACIONES       */
+
+    Payment.associate = (models) => {
+        Payment.hasMany(models.Order, {
+            as :"order",
+            foreingKey : "payment_id"
+        })
+    };
+
+ /*    Payment.associate = (models) => {
+        Payment.hasMany(models.User, {
+            as :"user",
+            foreingKey : "payment_id"
+        })
+    } */
     return Payment
 }

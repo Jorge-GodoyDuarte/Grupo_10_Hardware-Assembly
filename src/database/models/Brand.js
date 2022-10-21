@@ -18,6 +18,22 @@ module.exports = (sequelize, DataTypes) => {
         underscored: true,
     }
     const Brand = sequelize.define(alias, cols , config)
-        
+       
+    /*         ASOCIACIONES       */
+
+    Brand.associate = (models) => {
+        Brand.hasMany(models.Discount, {
+            as: "discount",
+            foreingKey : "brand_id"
+        })
+    };
+
+
+    Brand.associate = (models) => {
+        Brand.hasMany(models.Product, {
+            as :"product",
+            foreingKey : "brand_id"
+        })
+    };
     return Brand
 }

@@ -22,6 +22,14 @@ module.exports = (sequelize, DataTypes) => {
         underscored: true,
     }
     const Status = sequelize.define(alias, cols , config)
-        
+
+    /*         ASOCIACIONES       */
+
+    Status.associate = (models) => {
+        Status.hasMany(models.Order, {
+            as :"order",
+            foreingKey : "status_id"
+        })
+    }
     return Status
 }

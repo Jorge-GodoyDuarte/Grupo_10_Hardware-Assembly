@@ -8,10 +8,6 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        category_id : {
-            type: DataTypes.INTEGER.UNSIGNED,
-            allowNull: false,
-        },
         brand_id : {
             type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false
@@ -47,5 +43,52 @@ module.exports = (sequelize, DataTypes) => {
     }
     const Product = sequelize.define(alias, cols , config)
         
+    /*         ASOCIACIONES       */
+
+    Product.associate = (models) => {
+        Product.hasMany(models.Order, {
+            as :"order",
+            foreingKey : "product_id"
+        })
+    };
+    Product.associate = (models) => {
+        Product.hasMany(models.Status, {
+            as :"status",
+            foreingKey : "status_id"
+        })
+    };
+
+
+    Product.associate = (models) => {
+        Product.belongsTo(models.Category, {
+            as: "category",
+            foreingKey : "category_id"
+        })
+    };
+    Product.associate = (models) => {
+        Product.belongsTo(models.Brand, {
+            as: "brand",
+            foreingKey : "brand_id"
+        })
+    };
+    Product.associate = (models) => {
+        Product.belongsTo(models.Price, {
+            as: "price",
+            foreingKey : "price_id"
+        })
+    };
+    Product.associate = (models) => {
+        Product.belongsTo(models.Discount, {
+            as: "discount",
+            foreingKey : "discount_id"
+        })
+    };
+    Product.associate = (models) => {
+        Product.belongsTo(models.Image_product, {
+            as: "image",
+            foreingKey : "image_id"
+        })
+    };
+
     return Product
 }

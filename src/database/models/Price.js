@@ -19,6 +19,17 @@ module.exports = (sequelize, DataTypes) => {
         underscored: true,
     }
     const Price = sequelize.define(alias, cols , config)
-        
+    
+    /*         ASOCIACIONES       */
+
+    Price.associate = (models) => {
+        Price.hasMany(models.Product, {
+            as :"order",
+            foreingKey : "price_id"
+        })
+    };
+
+
+
     return Price
 }

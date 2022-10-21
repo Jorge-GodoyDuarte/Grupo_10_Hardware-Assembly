@@ -34,11 +34,39 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: 0
         }
     };
+
     let config = {
         timestamps: true,
         underscored: true,
-    }
+    };
+
     const Order = sequelize.define(alias, cols , config)
-        
+       
+    /*         ASOCIACIONES       */
+
+        Order.associate = (models) => {
+            Order.belongsTo(models.User, {
+                as :"user",
+                foreingKey : "user_id"
+            })
+        };
+        Order.associate = (models) => {
+            Order.belongsTo(models.Product, {
+                as :"product",
+                foreingKey : "product_id"
+            })
+        };
+        Order.associate = (models) => {
+            Order.belongsTo(models.Status, {
+                as :"status",
+                foreingKey : "status_id"
+            })
+        };
+        Order.associate = (models) => {
+            Order.belongsTo(models.Payment, {
+                as :"payment",
+                foreingKey : "payment_id"
+            })
+        }
     return Order
 }

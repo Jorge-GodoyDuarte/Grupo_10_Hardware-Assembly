@@ -26,6 +26,28 @@ module.exports = (sequelize, DataTypes) => {
         underscored: true,
     }
     const Discount = sequelize.define(alias, cols , config)
-        
+       
+    /*         ASOCIACIONES       */
+
+    Discount.associate= (models) => {
+        Discount.belongsTo(models.Category, {
+            as:"category",
+            foreingKey: "category_id"
+        })
+    }
+    Discount.associate = (models) => {
+        Discount.belongsTo(models.Brand, {
+            as: "brand",
+            foreingKey : "brand_id"
+        })
+    }
+
+
+    Discount.associate = (models) => {
+        Discount.hasMany(models.Product, {
+            as :"product",
+            foreingKey : "discount_id"
+        })
+    };
     return Discount
 }

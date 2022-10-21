@@ -18,6 +18,24 @@ module.exports = (sequelize, DataTypes) => {
         underscored: true,
     }
     const Category = sequelize.define(alias, cols , config)
-        
+       
+    /*         ASOCIACIONES       */
+
+    Category.associate= (models) => {
+        Category.hasMany(models.Discount, {
+            as:"discount",
+            foreingKey: "category_id"
+        });
+    };
+
+
+
+    Category.associate = (models) => {
+        Category.hasMany(models.Product, {
+            as :"product",
+            foreingKey : "category_id"
+        })
+    }
+
     return Category
-}
+} 

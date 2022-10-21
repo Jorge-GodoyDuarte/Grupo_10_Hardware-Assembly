@@ -17,7 +17,17 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: true,
         underscored: true,
     }
-    const Discount = sequelize.define(alias, cols , config)
-        
-    return Discount
+    const Image_product = sequelize.define(alias, cols , config)
+           
+    /*         ASOCIACIONES       */
+
+    Image_product.associate = (models) => {
+        Image_product.hasMany(models.Order, {
+            as :"order",
+            foreingKey : "image_id"
+        })
+    };
+
+
+    return Image_product
 }

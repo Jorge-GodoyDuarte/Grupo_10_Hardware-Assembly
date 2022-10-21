@@ -7,17 +7,14 @@ const loginValidator = require('../validations/loginValidator');
 
 const registerValidator = require('../validations/registerValidator')
 const profileValidator = require('../validations/profileValidator')
-
-
-const {upload} = require('../middlewares/uploadFiles')
-
 const userSessionCheck = require('../middlewares/userSessionCheck');
+const upload = require('../middlewares/uploadFiles');
 
 /* /users */
 router
   
   .get('/register',register)
-  .post('/register',upload.single('avatar'),registerValidator,processRegister)
+  .post('/register',registerValidator,processRegister)
   .put('/update/:id', update)
   .get('/login',login) // users/login
   .post('/login',loginValidator,processLogin)
