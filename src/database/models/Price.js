@@ -22,14 +22,5 @@ module.exports = (sequelize, DataTypes) => {
     
     /*         ASOCIACIONES       */
 
-    Price.associate = (models) => {
-        Price.hasMany(models.Product, {
-            as :"order",
-            foreingKey : "price_id"
-        })
-    };
-
-
-
     return Price
 }

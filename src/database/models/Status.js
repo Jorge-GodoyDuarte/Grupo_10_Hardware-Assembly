@@ -24,12 +24,5 @@ module.exports = (sequelize, DataTypes) => {
     const Status = sequelize.define(alias, cols , config)
 
     /*         ASOCIACIONES       */
-
-    Status.associate = (models) => {
-        Status.hasMany(models.Order, {
-            as :"order",
-            foreingKey : "status_id"
-        })
-    }
     return Status
 }

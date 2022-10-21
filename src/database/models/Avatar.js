@@ -22,15 +22,7 @@ module.exports  = (sequelize, DataTypes) =>  {
     const Avatar = sequelize.define(alias, cols , config)
        
     /*         ASOCIACIONES       */
-
-
-/*     Avatar.associate = (models) => {
-        Avatar.hasMany(models.User, {
-            as :"user",
-            foreingKey : "avatar_id"
-        })
-    } */
-        
+ 
     return Avatar
 
 }

@@ -77,14 +77,5 @@ module.exports = (sequelize, DataTypes) => {
          })
 };
 
-
-
-    User.associate = (models) => {
-        User.hasMany(models.Order, {
-            as :"order",
-            foreingKey : "user_id"
-        })
-    };
-
     return User
 }

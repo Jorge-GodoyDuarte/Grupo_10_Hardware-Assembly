@@ -43,11 +43,6 @@ module.exports = (sequelize, DataTypes) => {
     }
 
 
-    Discount.associate = (models) => {
-        Discount.hasMany(models.Product, {
-            as :"product",
-            foreingKey : "discount_id"
-        })
-    };
+
     return Discount
 }

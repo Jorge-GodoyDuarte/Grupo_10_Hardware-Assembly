@@ -21,19 +21,5 @@ module.exports = (sequelize, DataTypes) => {
        
     /*         ASOCIACIONES       */
 
-    Brand.associate = (models) => {
-        Brand.hasMany(models.Discount, {
-            as: "discount",
-            foreingKey : "brand_id"
-        })
-    };
-
-
-    Brand.associate = (models) => {
-        Brand.hasMany(models.Product, {
-            as :"product",
-            foreingKey : "brand_id"
-        })
-    };
     return Brand
 }

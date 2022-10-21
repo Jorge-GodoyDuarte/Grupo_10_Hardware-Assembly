@@ -21,21 +21,6 @@ module.exports = (sequelize, DataTypes) => {
        
     /*         ASOCIACIONES       */
 
-    Category.associate= (models) => {
-        Category.hasMany(models.Discount, {
-            as:"discount",
-            foreingKey: "category_id"
-        });
-    };
-
-
-
-    Category.associate = (models) => {
-        Category.hasMany(models.Product, {
-            as :"product",
-            foreingKey : "category_id"
-        })
-    }
 
     return Category
 } 

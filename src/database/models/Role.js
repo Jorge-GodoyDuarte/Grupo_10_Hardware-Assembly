@@ -21,12 +21,5 @@ module.exports = (sequelize, DataTypes) => {
         
     /*         ASOCIACIONES       */
 
- /*    Role.associate = (models) => {
-        Role.hasMany(models.User, {
-            as :"user",
-            foreingKey : "rol_id"
-        })
-    } */
-
     return Role
 }

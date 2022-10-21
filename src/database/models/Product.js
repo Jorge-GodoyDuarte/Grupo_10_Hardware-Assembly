@@ -46,20 +46,6 @@ module.exports = (sequelize, DataTypes) => {
     /*         ASOCIACIONES       */
 
     Product.associate = (models) => {
-        Product.hasMany(models.Order, {
-            as :"order",
-            foreingKey : "product_id"
-        })
-    };
-    Product.associate = (models) => {
-        Product.hasMany(models.Status, {
-            as :"status",
-            foreingKey : "status_id"
-        })
-    };
-
-
-    Product.associate = (models) => {
         Product.belongsTo(models.Category, {
             as: "category",
             foreingKey : "category_id"

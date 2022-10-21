@@ -21,13 +21,6 @@ module.exports = (sequelize, DataTypes) => {
            
     /*         ASOCIACIONES       */
 
-    Image_product.associate = (models) => {
-        Image_product.hasMany(models.Order, {
-            as :"order",
-            foreingKey : "image_id"
-        })
-    };
-
 
     return Image_product
 }

@@ -21,18 +21,5 @@ module.exports = (sequelize, DataTypes) => {
            
     /*         ASOCIACIONES       */
 
-    Payment.associate = (models) => {
-        Payment.hasMany(models.Order, {
-            as :"order",
-            foreingKey : "payment_id"
-        })
-    };
-
- /*    Payment.associate = (models) => {
-        Payment.hasMany(models.User, {
-            as :"user",
-            foreingKey : "payment_id"
-        })
-    } */
     return Payment
 }
