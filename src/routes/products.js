@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const productsValidation = require('../validations/productsValidator')
-const {updateEdit,detail,carrito, filter, search, add, store, edit, update, remove} = require('../controllers/productController')
-
+const {updateEdit,detail,carrito, filter, search, add, store, edit, update, remove} = require('../controllers/productController');
+const {products} = require('../controllers/productController')
 /* /products */
 
 router

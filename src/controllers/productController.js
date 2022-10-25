@@ -9,6 +9,11 @@ const brands = require('../data/db_Module').loadBrands();
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const {storeProducts, loadBrands, loadProducts, loadCategory} = require('../data/db_Module');
 const { validationResult } = require('express-validator');
+
+
+
+
+
 module.exports = {
     add : (req,res) => {
         

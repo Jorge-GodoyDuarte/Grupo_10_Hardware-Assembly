@@ -9,11 +9,11 @@ const registerValidator = require('../validations/registerValidator')
 const profileValidator = require('../validations/profileValidator')
 const userSessionCheck = require('../middlewares/userSessionCheck');
 const upload = require('../middlewares/uploadFiles');
-
+const userController = require('../controllers/userController');
 /* /users */
 router
   
-  .get('/register',register)
+  .get('/register',userController.register)
   .post('/register',registerValidator,processRegister)
   .put('/update/:id', update)
   .get('/login',login) // users/login

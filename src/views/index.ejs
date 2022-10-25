@@ -56,17 +56,17 @@
                             src="/images/logos-categorias/conectividad.bmp" alt=""></a></div>
             </section>
             <div class="flex-contenedor">
-              <% products.forEach(({id,name,brand,image,price})=> { %>
+              <% products.forEach(({id,name,brand_id,image_id,price_id})=> { %>
                 <div class="el-wrapper">
                   <div class="box-up">
-                    <img class="img" src="/images/<%= image %>" alt="">
+                    <img class="img" src="/images/<%= image_id %>" alt="">
                     <div class="img-info">
                       <div class="info-inner">
                         <span class="p-name">
                           <%= name %>
                         </span>
                         <span class="p-company">
-                          <%= brand %>
+                          <%= brand_id %>
                         </span>
                       </div>
     
@@ -79,7 +79,7 @@
                     </div>
     
                     
-                      <span class="price">$<%= price %></span>
+                      <span class="price">$<%= price_id.price %></span>
                       <span class="go-description">
                         <a class="txt" href="/products/detail/<%= id%>"><span class="txt">VER-PRODUCTO</span></a>
                       </span>

@@ -16,6 +16,15 @@ const userController = {
         .then(user  =>  {
             res.send('profile.ejs', {user})
         })
+    },
+
+    'register' : (req, res) => {
+            res.send('register.ejs')
+                
+        },
+    
+    'processRegister' : (req,res) => {
+        
     }
 }
 

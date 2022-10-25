@@ -34,9 +34,8 @@
             <small class="form__text--error"><%= locals.errors && errors.lastName? errors.lastName.msg :null %></small>
                  </div> 
             </div>
-
             <div class="form_box">
-                <label class="form_label" for="email">Email:</label>
+                <label class="form_label" for="email"> Email:  </label>
                 <input class="form_input" type="email" id="email" name="email" value="<%= locals.old && old.email ? old.email:null %>" >
                   <div>
                 <small class="form__text--error"><%= locals.errors && errors.email? errors.email.msg :null %></small>

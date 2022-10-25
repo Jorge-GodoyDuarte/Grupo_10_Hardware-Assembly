@@ -21,6 +21,5 @@ module.exports = (sequelize, DataTypes) => {
        
     /*         ASOCIACIONES       */
 
-
     return Category
 } 
