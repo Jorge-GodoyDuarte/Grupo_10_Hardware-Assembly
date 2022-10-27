@@ -1,3 +1,4 @@
+
 module.exports = (sequelize, DataTypes) => {
     let alias = 'Product';
     let cols = {
@@ -27,6 +28,7 @@ module.exports = (sequelize, DataTypes) => {
         image_id : {
             type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false,
+            defaultValue: 'defaultAvatar.jpg'
         },
         description : {
             type: DataTypes.TEXT,
@@ -41,40 +43,38 @@ module.exports = (sequelize, DataTypes) => {
         underscored: true,
         timestamps: false
     }
-    const Product = sequelize.define(alias, cols , config)
-        
+    const Product = sequelize.define(alias, cols , config)        
     /*         ASOCIACIONES       */
+    Product.associate=(models)=>{
+        Product.belongsTo(models.Category,{
+            as:'categoria',
+            foreignKey:'categories_id'
+        })};
 
-    Product.associate = (models) => {
-        Product.belongsTo(models.Category, {
-            as: "category",
-            foreingKey : "category_id"
-        })
-    };
     Product.associate = (models) => {
         Product.belongsTo(models.Brand, {
             as: "brand",
-            foreingKey : "brand_id"
+            foreignkey : "brand_id"
         })
     };
     Product.associate = (models) => {
         Product.belongsTo(models.Price, {
             as: "price",
-            foreingKey : "price_id"
+            foreignkey : "price_id"
         })
     };
     Product.associate = (models) => {
         Product.belongsTo(models.Discount, {
             as: "discount",
-            foreingKey : "discount_id"
+            foreignkey : "discount_id"
         })
     };
-    Product.associate = (models) => {
+/*     Product.associate = (models) => {
         Product.belongsTo(models.Image_product, {
             as: "image",
             foreingKey : "image_id"
         })
-    };
+    }; */
 
     return Product
 }

@@ -10,7 +10,8 @@ module.exports = (sequelize, DataTypes) => {
         },
         name : {
             type: DataTypes.STRING(50),
-            allowNull: false
+            allowNull: false,
+            defaultValue: 'defaultProduct.jpg'
         }
     };
     let config = {

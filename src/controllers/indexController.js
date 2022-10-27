@@ -3,12 +3,9 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require('../database/models');
 module.exports = {
   home: (req,res) => {
-    let products = db.Product.findAll({
-     /*  attributes : [
-        'id','name','brand','price','discount','description'
-      ], */
-    /*     include : [{
-            association: 'category'},
+    let products = db.Product.findAll(
+      {
+        include : ['categoria']/* ,
         {
             association: 'brand'
         },
@@ -20,9 +17,9 @@ module.exports = {
         },
         {
             association: 'image'
-        },
-    ] */
-    } )
+        }, */
+     
+    })
     Promise.all([products])
     .then(([products]) => {
        /*  res.render('index.ejs', {
