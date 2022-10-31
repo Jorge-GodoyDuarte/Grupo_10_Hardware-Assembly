@@ -3,143 +3,27 @@
       "id": 1,
       "name": "i3 11va asdasd",
       "price": 112,
-      "discount": 49,
-      "image": "intelcorei3-mini.jpg",
-      "category": "CPU",
+      "discount_id": 49,
+      "categories_id":1,
       "description": "purus sit amet nulla quisque arcu libero rutrum ac lobortis vel dapibus",
-      "marca": "INTEL",
-      "brands": "INTEL"
+      "brand_id":1
    },
    {
-      "id": 2,
+      "id" : 2,
       "name": "water Cooler Evga 240mm Clc Aio Rgb Led",
-      "marca": "PATRIOT",
-      "price": 2880.07,
-      "discount": 65,
-      "image": "intelcorei3-mini.jpg",
-      "category": "CPU",
+      "price": 3000,
+      "discount_id": 65,
+      "categories_id":1,
       "description": "cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus",
-      "brands": "ADATA"
+      "brand_id":2
    },
    {
-      "id": 3,
+      "id" : 3,
       "name": "Inspiron 16 Plus",
-      "marca": "GEIL TEAM",
-      "price": "356.03",
-      "discount": 57,
-      "image": "laptop-hp.jpg",
-      "category": "Laptop",
-      "description": "consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel"
-   },
-   {
-      "id": 4,
-      "name": "h192 steelseries",
-      "marca": "steelseries",
-      "price": "104.82",
-      "discount": 29,
-      "image": "mouse-pro-steelseries.jpg",
-      "category": "Mouse",
-      "description": "in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis"
-   },
-   {
-      "id": 5,
-      "name": "parlantes",
-      "marca": "GENIUS",
-      "price": "14.82",
-      "discount": 21,
-      "image": "parlantes-genius.jpg",
-      "category": "Headset",
-      "description": "erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus"
-   },
-   {
-      "id": 6,
-      "name": "ssd gold",
-      "marca": "CORSAIR",
-      "price": "100.68",
-      "discount": 8,
-      "image": "ssd-gold-adata.jpg",
-      "category": "HDD",
-      "description": "potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam"
-   },
-   {
-      "id": 7,
-      "name": "Monitor Samsung",
-      "marca": "SAMSUNG",
-      "price": "816.62",
-      "discount": 58,
-      "image": "MonitorSamsung.jpg",
-      "category": "Desktop",
-      "description": "ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices"
-   },
-   {
-      "id": 8,
-      "name": "RAM RGB",
-      "marca": "CRUCIAL",
-      "price": "116.20",
-      "discount": 32,
-      "image": "ramcrucial.jpg",
-      "category": "Ram",
-      "description": "ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed"
-   },
-   {
-      "id": 9,
-      "name": "B550 ASROCK",
-      "marca": "",
-      "price": "348.12",
-      "discount": 8,
-      "image": "motherb550asrock.jpg",
-      "category": "Motherboard",
-      "description": "elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus"
-   },
-   {
-      "id": 10,
-      "name": "ryzen  5",
-      "marca": "AMD",
-      "price": "756.14",
-      "discount": 2,
-      "image": "cpur5amd.jpg",
-      "category": "CPU",
-      "description": "congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget",
-      "brands": "AMD"
-   },
-   {
-      "id": 11,
-      "name": "mother b360 aorus",
-      "marca": "AORUS",
-      "price": "458.52",
-      "discount": 19,
-      "image": "motherb360aorus.jpg",
-      "category": "Motherboard",
-      "description": "neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit"
-   },
-   {
-      "id": 12,
-      "name": "rtx 3070",
-      "marca": "RADEON",
-      "price": "1108.78",
-      "discount": 64,
-      "image": "placa-video-radeon-rx_42070_1.jpeg",
-      "category": "GPU",
-      "description": "vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus"
-   },
-   {
-      "id": 13,
-      "name": "intel i9",
-      "marca": "INTEL",
-      "price": "144.12",
-      "discount": 48,
-      "image": "i9.jpg",
-      "category": "CPU",
-      "description": "ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor"
-   },
-   {
-      "id": 14,
-      "name": "uente de alimentación para PC Thermaltake Technology TR2 Series TR2-500NL2NC 500W black 115V/230V",
-      "marca": "ASUS",
-      "price": "158.46",
-      "discount": 67,
-      "image": "fuente-tr-500w-thermaltake.jpg",
-      "category": "Fuente",
-      "description": "lectus suspendisse potenti in eleifend quam a odio in hac habitasse"
+      "price": 5000,
+      "discount_id": 57,
+      "categories_id":1,
+      "description": "consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel",
+      "brand_id":3
    }
 ]
