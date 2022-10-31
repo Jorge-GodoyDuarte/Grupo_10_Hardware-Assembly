@@ -1,3 +1,4 @@
+require('dotenv').config()
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -57,4 +58,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.listen('3001', () => console.log('Servidor corriendo en el puerto 3001, TUKI'));
 module.exports = app;

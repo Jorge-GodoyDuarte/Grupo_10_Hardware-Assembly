@@ -1,3 +1,6 @@
+const db = require('../database/models');
+const sequelize = db.sequelize;
+
 const { name } = require('ejs');
 const { search } = require('../routes');
 
@@ -6,8 +9,13 @@ const brands = require('../data/db_Module').loadBrands();
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const {storeProducts, loadBrands, loadProducts, loadCategory} = require('../data/db_Module');
 const { validationResult } = require('express-validator');
+
+
+
+
+
 module.exports = {
-    add : (req,res) => {
+   /*  add : (req,res) => {
         
         const products = loadProducts();
         const category = loadCategory()
@@ -87,17 +95,27 @@ module.exports = {
         })
     }
   },
-  
-  detail: (req,res)=>{
-        const products = loadProducts();
-        const product = products.find(product => product.id === +req.params.id);
-        return res.render('detail',{
-            title:'Detalle de producto',
-            product,
-            toThousand
+   */
+  detail: (req, res) => {
+    // Do the magic
+    let products = db.Product.findByPk(req.params.id);
+    let images = db.Image.findByPk(req.params.id);
+    let brands = db.Brand.findByPk(req.params.id);
+    
+    Promise.all([products,images,brands])
+        .then(([products,images,brands]) => {
+             return res.render('detail', {
+        products,
+        images,
+        brands,
+        toThousand
+        
+        })  
         })
-    },
-    carrito: (req,res)=>{
+        .catch(error => console.log(error))
+    
+},
+    /* carrito: (req,res)=>{
         return res.render('shopping-cart',{
             
         })
@@ -110,19 +128,37 @@ module.exports = {
         products : productsFilter,
         
     })
-    },
-    search : (req,res) => {
-        const products = loadProducts();        
-        const result = products.filter(product => product.name?.toLowerCase().includes(req.query.keywords.toLowerCase()) ||
-         product.category?.toLowerCase().includes(req.query.keywords.toLowerCase()));
+    }, */
+/* 	search: (req, res) => {
+		// Do the magic
+		let { keywords } = req.query;
 
-        
-        return res.render('products', {
-            products : result,
-            keywords : req.query.keywords,
-            
-        })
-    },
+		db.Product.findAll({
+			where: {
+				[Op.or]: [
+					{
+						name: {
+							[Op.substring]: keywords,
+						},
+					},
+					{
+						description: {
+							[Op.substring]: keywords,
+						},
+					},
+				],
+			},
+			include: ["images"],
+		})
+			.then((result) => {
+				return res.render("search", {
+					result,
+					toThousand,
+					keywords,
+				});
+			})
+			.catch((error) => console.log(error));
+	},
     remove : (req,res) => {
         const products = loadProducts();
         const productsModify = products.filter(product => product.id !== +req.params.id);
@@ -130,5 +166,5 @@ module.exports = {
         storeProducts(productsModify)
         return res.redirect('/')
         
-    }
+    } */
 }

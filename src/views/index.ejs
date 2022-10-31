@@ -56,36 +56,40 @@
                             src="/images/logos-categorias/conectividad.bmp" alt=""></a></div>
             </section>
             <div class="flex-contenedor">
-              <% products.forEach(({id,name,brand,image,price})=> { %>
+              <% products.forEach(({id:id_product,name:name_product,brand_id,price})=> { %>
+                <% images.slice(-1).forEach(({id:id_image,name:name_image}) => { %>
                 <div class="el-wrapper">
                   <div class="box-up">
-                    <img class="img" src="/images/<%= image %>" alt="">
+                    
+                    
+                    <img class="img" src="<%= name_image%> " alt="" width="50%" height="50%">
                     <div class="img-info">
                       <div class="info-inner">
                         <span class="p-name">
-                          <%= name %>
+                          <%= name_product %>
                         </span>
                         <span class="p-company">
-                          <%= brand %>
+                          <%= brand_id %>
                         </span>
                       </div>
     
                     </div>
                   </div>
     
-                  <div class="box-down <%= id%>">
+                  <div class="box-down">
                     <div class="h-bg">
                       <div class="h-bg-inner"></div>
                     </div>
     
                     
-                      <span class="price">$<%= price %></span>
+                      <span class="price">$<%= new Intl.NumberFormat(['ban', 'id']).format(price) %></span>
                       <span class="go-description">
-                        <a class="txt" href="/products/detail/<%= id%>"><span class="txt">VER-PRODUCTO</span></a>
+                        <a class="txt" href="/products/detail/<%= id_product%>"><span class="txt">VER-PRODUCTO</span></a>
                       </span>
                     
                   </div>
                 </div>
+                <% }) %>
                 <% }) %>
             </div>
 

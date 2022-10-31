@@ -1,14 +1,16 @@
-const {loadProducts,loadCategory} = require('../data/db_Module');
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const db = require('../database/models');
 module.exports = {
-    index: (req, res) => {
-      const category = loadCategory()
-      const products=loadProducts();
-       return  res.render('index', { 
-          title: 'home', 
-          products,
-          category,
-          toThousand
-        });
+  home: (req,res) => {
+    let products = db.Product.findAll();
+    let images = db.Image.findAll({
+		})
+    Promise.all([products,images])
+    .then(([products,images]) => {
+        res.render('index.ejs', {
+            products,images
+        })  
+
+    })
+    .catch(error => console.log(error))
       }
 }

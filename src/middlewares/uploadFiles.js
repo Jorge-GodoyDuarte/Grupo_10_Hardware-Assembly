@@ -6,14 +6,10 @@ const storage = multer.diskStorage({
         callback(null, './public/images/users')
     },
     filename :(req,file,callback)=>{
-        callback(null, `avatar-${Date.now()}${path.extname(file.originalname)}`)
+        callback(null, `avatar-${Date.now()}_users${path.extname(file.originalname)}`)
     }
-})
-
+});
 const upload = multer({
-    storage
+    storage    
 })
-
-module.exports= {
-    upload
-}
+module.exports = upload;

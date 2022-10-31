@@ -1,9 +1,41 @@
+const db = require('../database/models');
+const sequelize = db.sequelize;
+
 const {loadUsers, storeUsers} = require ('../data/db_Module')
 const {validationResult}=require('express-validator')
 const bcryptjs =require('bcryptjs')
 const fs = require('fs');
 const path = require('path');
 const session = require('express-session');
+
+/*     CRUD DATABASE     */
+
+const userController = {
+    'profile': (req,res)  =>  {
+        db.User.findByPk( req.params.id)
+        .then(user  =>  {
+            res.send('profile.ejs', {user})
+        })
+    },
+
+    'register' : (req, res) => {
+            res.send('register.ejs')
+                
+        },
+    
+    'processRegister' : (req,res) => {
+        
+    }
+}
+
+
+
+
+
+
+
+
+
 module.exports = {
     register : (req, res) => {
         
@@ -104,8 +136,8 @@ module.exports = {
     profile: (req,res) =>     {
         let user = loadUsers().find( user => user.id === req.session.userLogin.id);
         return res.render('profile', {
-            user : loadUsers().find( user => user.id === req.session.userLogin.id),
-        })  
+            user
+        })
     },
     update:(req,res)=>{
 
@@ -142,10 +174,9 @@ module.exports = {
         const errors = validationResult(req)
         if(errors.isEmpty()) {
             const {firstName,lastName,email,password} = req.body;
-            let user = loadUsers().find(user => user.id === req.session.userLogin.id);
             const users = loadUsers()
             const userModify = users.map( user => {
-                if( user.id === req.session.userLogin.id) {
+                if( users.id === req.session.userLogin.id) {
                     if(req.file && req.session.userLogin.avatar){
                         if(fs.existsSync(path.resolve(__dirname,'..','public','images','users',req.session.userLogin.avatar))){
                             console.log('>>>>>>>>>>',req.session.userLogin.avatar);
@@ -153,7 +184,7 @@ module.exports = {
                         }
                     }
                     return {
-                        id: user[users.length-1] ? users[users.length-1].id+1:1,
+                        id: user.id,
                         firstName : firstName.trim(),
                         lastName : lastName.trim(),
                         email : email.trim(),

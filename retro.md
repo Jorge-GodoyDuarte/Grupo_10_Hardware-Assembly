@@ -26,6 +26,10 @@ Como resaltamos en el sprint anterior, nuestro contraproducente es el tiempo, pe
 Vamos por un muy buen camino, somos conscientes de que cada vez falta menos para la finalización de este gran trabajo que estamos desarrollando. Continuaremos por esta senda, con esfuerzo y dedicación lo lograremos.
 
 
-  //   <% provinces.forEach(province => { %>
-                        <option value="<%= province %>"><%= province %></option>
-                       <% }) %> *//
+# Retrospectiva del 5to sprint
+
+Como podemos observar, ya nos encontramos a mitad de camino de esta maravillosa cursada. En el transcurso del año hemos conformado un buen grupo el cual trabaja en conjunto hacia un objetivo colectivo de manera eficiente.
+
+Nuestros conflictos han sido el mergeo de datos, mala conectividad y/o funcionamiento de herramienta de trabajo(netbook),lo cual afectaba bastante a la hora de realizar las dailys.
+
+Creemos que podemos seguir mejorando nuestro proyecto, complementandolo junto al contenido que vamos aprendiendo en cada clase. Tenemos una gran idea entre manos, solo hay que seguir encaminandolo para continuar creciendo juntos!!
