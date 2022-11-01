@@ -15,6 +15,60 @@ const { validationResult } = require('express-validator');
 
 
 module.exports = {
+    create: (req, res) => {
+		// Do the magic
+		let categories =db.Category.findAll({
+			order : ['name'] 
+		});
+       let brands = db.Brand.findAll({
+            order : ['name'] 
+        })
+        Promise.all([categories,brands])
+			.then(([categories,brands ])=> { 
+                return res.render('productAdd', {
+					categories,
+                    brands
+				}) 
+			})
+			.catch(error => console.log(error))
+	},
+    detail: (req, res) => {
+        // Do the magic
+        let products = db.Product.findByPk(req.params.id);
+        let images = db.Image.findByPk(req.params.id);
+        let brands = db.Brand.findByPk(req.params.id);
+        
+        Promise.all([products,images,brands])
+            .then(([products,images,brands]) => {
+                 return res.render('detail', {
+            products,
+            images,
+            brands,
+            toThousand
+            
+            })  
+            })
+            .catch(error => console.log(error))
+        
+    },
+    store : (req,res) => {
+        const {price,discount,description,brand_id,categories_id} = req.body;
+
+		db.Product.create({
+			name : 'hola',
+			price : +price,
+			discount : +discount,
+            description,
+			brand_id,
+			categories_id 
+		})
+        .then(product => { /* return res.redirect('/detail' + product.id) */
+        res.send(product)
+       
+        })
+        .catch(error =>  console.log(error))
+        
+    },
    /*  add : (req,res) => {
         
         const products = loadProducts();
@@ -27,25 +81,6 @@ module.exports = {
             
         })  
         
-    },
-    store : (req,res) => {
-        const {name,marca,description,price,discount,} =req.body;
-        
-        const id = products[products.length - 1].id;
-
-        const newProduct = {
-            id : id + 1,
-            ...req.body,
-            name: name,
-            marca: marca,
-            description: description,
-            price: +price,
-            discount: +discount,
-            image : "intelcorei3-mini.jpg"
-        }
-        const productsNew = [...products, newProduct] 
-        storeProducts(productsNew)
-        return res.redirect('/')
     },
     edit : (req,res) => {
         const product = products.find(product => product.id === +req.params.id);
@@ -96,25 +131,7 @@ module.exports = {
     }
   },
    */
-  detail: (req, res) => {
-    // Do the magic
-    let products = db.Product.findByPk(req.params.id);
-    let images = db.Image.findByPk(req.params.id);
-    let brands = db.Brand.findByPk(req.params.id);
-    
-    Promise.all([products,images,brands])
-        .then(([products,images,brands]) => {
-             return res.render('detail', {
-        products,
-        images,
-        brands,
-        toThousand
-        
-        })  
-        })
-        .catch(error => console.log(error))
-    
-},
+  
     /* carrito: (req,res)=>{
         return res.render('shopping-cart',{
             

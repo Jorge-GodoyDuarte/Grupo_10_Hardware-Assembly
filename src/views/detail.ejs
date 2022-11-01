@@ -24,7 +24,7 @@
                 <div class="detail__main-price-discount">
                     
                     <% if (products.discount) { %>
-                        <h4> $<%= toThousand((products.price) - (products.price * products.discount / 100)) %> </h4> <p class="detail__discount"> $<%= products.price%> </p>
+                        <h4> PRECIO $<%= toThousand(new Intl.NumberFormat().format(Math.trunc((products.price) - (products.price * products.discount / 100))))%> </h4> <p class="detail__discount">  $<%= new Intl.NumberFormat().format(products.price)%> </p>
                     <% } else { %>
                         <h4> $<%= products.price     %>
                     <% } %>
