@@ -16,7 +16,7 @@
             <h1 class="form_title">Agregar producto</h1>
     
     
-            <form action="" class="form" enctype="multipart/form-data" method="POST">
+    <form action="/products/add/store" class="form" method="POST" enctype="multipart/form-data">
     
 
                 
@@ -51,8 +51,8 @@
             </div>
             <div class="form_box">
                 <label class="form_label" for="categories_id">Seleccione una categoria:</label>
-                <select name="categories_id" id="categories_id" required>
-                    <option value="" disabled selected> seleccione ..</option>    
+                <select name="categories_id" id="categories_id">
+                    <option value="" hidden selected> seleccione ..</option>    
                     <% categories.forEach((categories) => {  %>
                         <option value="<%= categories.id%>"><%=categories.name %></option>
                         <% }) %>
@@ -68,7 +68,7 @@
                 <button><a href="/">Cancelar</a></button>
                 <button type="submit">Guardar</button>
                </div>
-            </form>
+        </form>
          
     </section>
                 

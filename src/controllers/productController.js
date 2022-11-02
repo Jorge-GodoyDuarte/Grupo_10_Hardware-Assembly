@@ -52,15 +52,14 @@ module.exports = {
         
     },
     store : (req,res) => {
-        const {price,discount,description,brand_id,categories_id} = req.body;
-
+        const {name,price,discount,description,brand_id,categories_id} = req.body;
 		db.Product.create({
-			name : 'hola',
+			name /* : name.trim() */,
 			price : +price,
 			discount : +discount,
-            description,
-			brand_id,
-			categories_id 
+            description /* : description.trim() */,
+			brand_id : +brand_id,
+			categories_id : +categories_id
 		})
         .then(product => { /* return res.redirect('/detail' + product.id) */
         res.send(product)
