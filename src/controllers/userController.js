@@ -37,6 +37,9 @@ const userController = {
 
 
 module.exports = {
+    login: (req, res) => {
+        return res.render("login");
+      },
     register : (req, res) => {
         
         return res.render('register',{
@@ -44,6 +47,34 @@ module.exports = {
             
                 
         })
+    }, processLogin:(req,res)=>{
+        let errors = validationResult(req)
+       
+        if(errors.isEmpty()){
+            
+        let {id, firstName,rol, avatar}= loadUsers().find(user=>user.email=== req.body.email);
+
+        req.session.userLogin = {
+            id,
+            firstName,
+            rol,
+            avatar
+        }
+        if(req.body.remember){
+            res.cookie('userHassembly',req.session.userLogin,{
+                maxAge : 1000 * 60
+            })
+        }
+
+        return res.redirect('/' )
+
+    }else{
+        return res.render('login',{
+            errors: errors.mapped(),
+            old: req.body
+        })
+    }
+
     },
     processRegister:(req,res)=>{
         const errors = validationResult(req)
@@ -89,40 +120,6 @@ module.exports = {
     }
     
        
-
-    },
-    login : (req, res) => {
-        return res.render('login',{
-            title :'Login'
-        })
-    },
-    processLogin:(req,res)=>{
-        let errors = validationResult(req)
-       
-        if(errors.isEmpty()){
-            
-        let {id, firstName,rol, avatar}= loadUsers().find(user=>user.email=== req.body.email);
-
-        req.session.userLogin = {
-            id,
-            firstName,
-            rol,
-            avatar
-        }
-        if(req.body.remember){
-            res.cookie('userHassembly',req.session.userLogin,{
-                maxAge : 1000 * 60
-            })
-        }
-
-        return res.redirect('/' )
-
-    }else{
-        return res.render('login',{
-            errors: errors.mapped(),
-            old: req.body
-        })
-    }
 
     },
     logout:(req,res)=>{

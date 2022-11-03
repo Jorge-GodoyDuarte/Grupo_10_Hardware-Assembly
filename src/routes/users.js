@@ -12,11 +12,12 @@ const upload = require('../middlewares/uploadFiles');
 const userController = require('../controllers/userController');
 /* /users */
 router
-  
-/*   .get('/register',userController.register)
+.get('/login',login) // users/login
+.get('/register',register)
+/*   
   .post('/register',registerValidator,processRegister)
   .put('/update/:id', update)
-  .get('/login',login) // users/login
+
   .post('/login',loginValidator,processLogin)
   .get('/profile',userSessionCheck,profile) // /users/profile
   .put('/profile/:id',upload.single('avatar'),profileValidator,updateEdit)

@@ -16,7 +16,7 @@
             <h1 class="form_title">Agregar producto</h1>
     
     
-    <form action="/products/add/store" class="form" method="POST" enctype="multipart/form-data">
+    <form action="/products/add/store" class="form" method="POST"> <!-- enctype="multipart/form-data" -->
     
 
                 
@@ -32,8 +32,9 @@
                     <% brands.forEach(brands => {  %>
                      <option value="<%=brands.id%>"> <%=brands.name%> </option>
                      <% }) %>
+                    </select>
             </div>
-        </select>
+       
             <div class="form_box">
                 <label for="price" class="form_label">Precio:</label>
                 <input type="number" id="price" name="price" placeholder="Ej: 5678" class="form_input">

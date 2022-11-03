@@ -1,97 +1,130 @@
-const db = require('../database/models');
+const db = require("../database/models");
 const sequelize = db.sequelize;
 
-const { name } = require('ejs');
-const { search } = require('../routes');
+const { name } = require("ejs");
+const { search } = require("../routes");
 
-const products = require('../data/db_Module').loadProducts();
-const brands = require('../data/db_Module').loadBrands();
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const {storeProducts, loadBrands, loadProducts, loadCategory} = require('../data/db_Module');
-const { validationResult } = require('express-validator');
-
-
-
-
+const products = require("../data/db_Module").loadProducts();
+const brands = require("../data/db_Module").loadBrands();
+const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const {
+  storeProducts,
+  loadBrands,
+  loadProducts,
+  loadCategory,
+} = require("../data/db_Module");
+const { validationResult } = require("express-validator");
+const { Association } = require("sequelize");
 
 module.exports = {
-    create: (req, res) => {
-		// Do the magic
-		let categories =db.Category.findAll({
-			order : ['name'] 
-		});
-       let brands = db.Brand.findAll({
-            order : ['name'] 
-        })
-        Promise.all([categories,brands])
-			.then(([categories,brands ])=> { 
-                return res.render('productAdd', {
-					categories,
-                    brands
-				}) 
+  create: (req, res) => {
+    // Do the magic
+    let categories = db.Category.findAll({
+      order: ["name"],
+    });
+    let brands = db.Brand.findAll({
+      order: ["name"],
+    });
+    Promise.all([categories, brands])
+      .then(([categories, brands]) => {
+        return res.render("productAdd", {
+          categories,
+          brands,
+        });
+      })
+      .catch((error) => console.log(error));
+  },
+  detail: (req, res) => {
+    // Do the magic
+    let products = db.Product.findByPk(req.params.id, {
+        include : ['marcas']
+    });
+    let images = db.Image.findByPk(req.params.id);
+
+    Promise.all([products, images, brands])
+      .then(([products, images, brands]) => {
+        return res.render("detail", {
+          products,
+          images,
+          brands,
+          toThousand,
+        });
+      })
+      .catch((error) => console.log(error));
+  },
+  store: (req, res) => {
+    const { name, price, discount, description, brand_id, categories_id } =
+      req.body;
+    db.Product.create({
+      name : name.trim(),
+      price: +price,
+      discount: +discount,
+      description : description.trim(),
+      brand_id: +brand_id,
+      categories_id: +categories_id,
+    })
+      .then((product) => {
+        return res.redirect("/products/detail/" + product.id);
+      })
+      .catch((error) => console.log(error));
+  },
+
+  editProduct: (req, res) => {
+    /*   const product = products.find(product => product.id === +req.params.id); */
+    let products = db.Product.findByPk(req.params.id, {
+      include: ["images"],
+    });
+    let categories = db.Category.findAll();
+    let brands = db.Brand.findAll();
+    Promise.all([products, categories, brands])
+      .then(([products, categories, brands]) => {
+        res.render("productEdit", {
+          products,
+          categories,
+          brands,
+        });
+      })
+      .catch((error) => console.log(error));
+  },
+  updateEdit: (req, res) => {
+    const { name, price, discount, description, brand_id, categories_id } = req.body;
+
+    db.Product.update(
+      {
+        name: name.trim(),
+        price: +price,
+        discount: +discount,
+        description: description.trim(),
+        brand_id: +brand_id,
+        categories_id: +categories_id,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    )
+      .then((product) => {
+        return res.redirect("/products/detail/" + product.id);
+      })
+      .catch((error) => console.log(error));
+  },
+  
+   remove : (req, res) => {
+
+		db.Product.destroy({
+			where : {
+				id : req.params.id
+			}
+		})
+			.then(() => {
+				return res.redirect('/');
 			})
 			.catch(error => console.log(error))
-	},
-    detail: (req, res) => {
-        // Do the magic
-        let products = db.Product.findByPk(req.params.id);
-        let images = db.Image.findByPk(req.params.id);
-        let brands = db.Brand.findByPk(req.params.id);
-        
-        Promise.all([products,images,brands])
-            .then(([products,images,brands]) => {
-                 return res.render('detail', {
-            products,
-            images,
-            brands,
-            toThousand
-            
-            })  
-            })
-            .catch(error => console.log(error))
-        
-    },
-    store : (req,res) => {
-        const {name,price,discount,description,brand_id,categories_id} = req.body;
-		db.Product.create({
-			name /* : name.trim() */,
-			price : +price,
-			discount : +discount,
-            description /* : description.trim() */,
-			brand_id : +brand_id,
-			categories_id : +categories_id
-		})
-        .then(product => { /* return res.redirect('/detail' + product.id) */
-        res.send(product)
-       
-        })
-        .catch(error =>  console.log(error))
-        
-    },
-   /*  add : (req,res) => {
-        
-        const products = loadProducts();
-        const category = loadCategory()
-        return res.render('productAdd',{
-            title: 'productadd',
-            brands : brands.sort(),
-            products: products.sort(),
-            category: category.sort(),
-            
-        })  
-        
-    },
-    edit : (req,res) => {
-        const product = products.find(product => product.id === +req.params.id);
-        const category = loadCategory();
-        const brands = loadBrands();
-        return res.render('productEdit', {
-            brands,
-            product : products.find(product => product.id === +req.params.id),
-            title : 'edit',
-            category
-        })
-    },
+    
+} ,
+
+/*  
     updateEdit : (req,res) => {
         let errors = validationResult(req); 
         console.log(errors)
@@ -130,8 +163,8 @@ module.exports = {
     }
   },
    */
-  
-    /* carrito: (req,res)=>{
+
+  /* carrito: (req,res)=>{
         return res.render('shopping-cart',{
             
         })
@@ -144,7 +177,7 @@ module.exports = {
         
     })
     }, */
-/* 	search: (req, res) => {
+  /* 	search: (req, res) => {
 		// Do the magic
 		let { keywords } = req.query;
 
@@ -174,12 +207,5 @@ module.exports = {
 			})
 			.catch((error) => console.log(error));
 	},
-    remove : (req,res) => {
-        const products = loadProducts();
-        const productsModify = products.filter(product => product.id !== +req.params.id);
-        
-        storeProducts(productsModify)
-        return res.redirect('/')
-        
-    } */
-}
+    */
+};
