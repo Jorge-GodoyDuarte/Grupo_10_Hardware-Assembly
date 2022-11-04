@@ -1,6 +1,8 @@
 const db = require("../database/models");
 const sequelize = db.sequelize;
 
+const Op = sequelize.Op;
+
 const { name } = require("ejs");
 const { search } = require("../routes");
 
@@ -111,7 +113,6 @@ module.exports = {
   },
   
    remove : (req, res) => {
-
 		db.Product.destroy({
 			where : {
 				id : req.params.id
@@ -123,46 +124,35 @@ module.exports = {
 			.catch(error => console.log(error))
     
 } ,
+/* search: (req, res) => {
 
-/*  
-    updateEdit : (req,res) => {
-        let errors = validationResult(req); 
-        console.log(errors)
-        console.log("body", req.body)
-        if(errors.isEmpty()) {
-            const products = loadProducts();
-            const {category,name,brands,description,price,discount} =req.body;
-            const productsModify = products.map(product => {
-                if (product.id === +req.params.id) {
-                    return {
-                        ...product,
-                        ...req.body,
-                        name: name.trim(),
-                        brands: brands.trim(),
-                        category: category.trim(),
-                        price: +price,
-                        discount: +discount,
-                        image : "intelcorei3-mini.jpg",
-                        description: description.trim()
-                    }
-         }
-         return product
-        })
+  const {keywords} = req.query;
 
-        storeProducts(productsModify)
-        return res.redirect('/products/detail/' + req.params.id)
-        
-    } else {
-        return res.render('productEdit',{
-            category : loadCategory().sort(),
-            product : loadProducts().find(product => product.id === +req.params.id),
-            brands: loadBrands().sort(),
-            errors : errors.mapped(),
+  db.Product.findAll({ 
+      where : {
+      [Op.or] : 
+      [{
+          title : {
+            [Op.or] : keywords
+          }
+        },
+        {
+          description : {
+            [Op.or] : keywords
+          }
+        }
+      ]},
 
-        })
-    }
-  },
-   */
+    include : ['images']
+  }).then(results => {
+    return res.render('products',{
+      results,
+      keywords,
+      toThousand
+    })
+  }).catch(error => console.log(error))
+} */
+}
 
   /* carrito: (req,res)=>{
         return res.render('shopping-cart',{
@@ -177,35 +167,3 @@ module.exports = {
         
     })
     }, */
-  /* 	search: (req, res) => {
-		// Do the magic
-		let { keywords } = req.query;
-
-		db.Product.findAll({
-			where: {
-				[Op.or]: [
-					{
-						name: {
-							[Op.substring]: keywords,
-						},
-					},
-					{
-						description: {
-							[Op.substring]: keywords,
-						},
-					},
-				],
-			},
-			include: ["images"],
-		})
-			.then((result) => {
-				return res.render("search", {
-					result,
-					toThousand,
-					keywords,
-				});
-			})
-			.catch((error) => console.log(error));
-	},
-    */
-};
