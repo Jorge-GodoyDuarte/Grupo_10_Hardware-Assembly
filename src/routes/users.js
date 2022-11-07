@@ -14,8 +14,9 @@ const userController = require('../controllers/userController');
 router
 .get('/login',login) // users/login
 .get('/register',register)
+.post('/register/add',registerValidator,processRegister)
 /*   
-  .post('/register',registerValidator,processRegister)
+
   .put('/update/:id', update)
 
   .post('/login',loginValidator,processLogin)

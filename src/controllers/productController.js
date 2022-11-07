@@ -1,7 +1,7 @@
 const db = require("../database/models");
 const sequelize = db.sequelize;
 
-const Op = sequelize.Op;
+const {Op} = require('sequelize')
 
 const { name } = require("ejs");
 const { search } = require("../routes");
@@ -89,7 +89,7 @@ module.exports = {
       .catch((error) => console.log(error));
   },
   updateEdit: (req, res) => {
-    const { name, price, discount, description, brand_id, categories_id } = req.body;
+    const { name, price, discount, description, brands, category } = req.body;
 
     db.Product.update(
       {
@@ -97,8 +97,8 @@ module.exports = {
         price: +price,
         discount: +discount,
         description: description.trim(),
-        brand_id: +brand_id,
-        categories_id: +categories_id,
+        brand_id: +brands,
+        categories_id: +category,
       },
       {
         where: {
@@ -107,7 +107,7 @@ module.exports = {
       }
     )
       .then((product) => {
-        return res.redirect("/products/detail/" + product.id);
+        return res.redirect("/products/detail/" + req.params.id);
       })
       .catch((error) => console.log(error));
   },
@@ -124,35 +124,44 @@ module.exports = {
 			.catch(error => console.log(error))
     
 } ,
-/* search: (req, res) => {
-
-  const {keywords} = req.query;
-
-  db.Product.findAll({ 
-      where : {
-      [Op.or] : 
-      [{
-          title : {
-            [Op.or] : keywords
-          }
-        },
-        {
-          description : {
-            [Op.or] : keywords
-          }
-        }
-      ]},
-
-    include : ['images']
-  }).then(results => {
-    return res.render('products',{
-      results,
-      keywords,
-      toThousand
-    })
-  }).catch(error => console.log(error))
-} */
+ 	search: (req, res) => {
+		// Do the magic
+		let { keywords } = req.query;
+    
+		let product = db.Product.findAll({
+			where: {
+				[Op.or]: [
+					{
+						name: {
+							[Op.substring]: keywords,
+						},
+					},
+					{
+						description: {
+							[Op.substring]: keywords,
+						},
+					},
+				],
+			},
+		})
+    let images = db.Image.findAll({
+      include : ['products']
+    });
+    Promise.all([product,images])
+			.then(([result,images]) => {
+return res.render("search", {
+					result,
+					toThousand,
+					keywords,
+          images,
+          product 
+				});  
+        res.send(images)
+			})
+			.catch((error) => console.log(error));
+	},
 }
+
 
   /* carrito: (req,res)=>{
         return res.render('shopping-cart',{

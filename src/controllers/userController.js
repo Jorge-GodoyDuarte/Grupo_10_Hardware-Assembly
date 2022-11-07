@@ -78,39 +78,31 @@ module.exports = {
     },
     processRegister:(req,res)=>{
         const errors = validationResult(req)
-       
+        /* res.send(req.body) */
     
-        if(errors.isEmpty()){
+        if(errors.isEmpty()){ 
 
-        const {firstName, lastName, email, password }= req.body
+        const {firstname, lastname, email, password, city, street, phone }= req.body
+       
 
-        const users = loadUsers()
-        
-        const newUser={
-            id: users[users.length-1] ? users[users.length-1].id+1:1,
-            firstName : firstName.trim(),
-            lastName : lastName.trim(),
-            email : email.trim(),
-            password:bcryptjs.hashSync(password.trim(),10),
+      db.User.create({
+            firstname : firstname,
+            lastname : lastname,
+            email : email,
+            password: bcryptjs.hashSync(password,10),
             password2:null,
-            rol:'user',
-            avatar: req.file ? req.file.filename : null,
-/*           [   AÚN NO IMPLEMENTTADO   ]   
-
-
-            gender:null,
-            address:null,
-            cities : require('../data/cities'),
-            provinces:require('../data/provinces'),
-            about:null
-
-            
-             */
+            avatar: 'default.png',
+            role_id : 1,
+            payment_id: 3,
+            city : city,
+            street : street,
+            phone : +phone
         }
-        const usersModify = [...users, newUser]
+        )
+        .then( () => {
+            return res.redirect('/users/login')  
 
-        storeUsers(usersModify)
-        return res.redirect('/users/login')
+        }).catch(error => console.log(error));
 
     }else{
         return res.render('register',{
@@ -118,7 +110,6 @@ module.exports = {
             old: req.body
         })
     }
-    
        
 
     },

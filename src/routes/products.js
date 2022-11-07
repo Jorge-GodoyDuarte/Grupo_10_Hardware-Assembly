@@ -12,9 +12,7 @@ router
 .get('/edit/:id', editProduct)
 .put('/update/:id', updateEdit)
 .delete('/delete/:id', remove)
-
-
-/* .get('/search', search) */
+.get('/search', search)
 /*     .put('add/:id', productsValidation , updateEdit)
     .get('/edit/:id', edit)
     .put('/update/:id',productsValidation, updateEdit)
