@@ -15,11 +15,12 @@ router
 .get('/login',login) // users/login
 .get('/register',register)
 .post('/register/add',registerValidator,processRegister)
+.post('/login',loginValidator,processLogin)
 /*   
 
   .put('/update/:id', update)
 
-  .post('/login',loginValidator,processLogin)
+ 
   .get('/profile',userSessionCheck,profile) // /users/profile
   .put('/profile/:id',upload.single('avatar'),profileValidator,updateEdit)
   .get('/logout',logout) */

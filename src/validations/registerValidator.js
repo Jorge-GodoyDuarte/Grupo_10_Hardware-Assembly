@@ -1,5 +1,4 @@
 const {check, body} = require('express-validator')
-const {loadUsers}= require('../data/db_Module')
 const db = require('../database/models')
 
 module.exports =[
@@ -12,7 +11,7 @@ module.exports =[
         .withMessage('Minimo 3 caracteres')
         .bail()
         .isAlpha('es-ES')
-        .withMessage('Solo caracteres alfabeticos'),
+        .withMessage('Sólo caracteres alfabeticos'),
 
         check('lastname')
         .notEmpty()
@@ -20,16 +19,51 @@ module.exports =[
         .bail()
         .isLength({
             min:3
-        }).withMessage('Minimo 3 caracteres')
+        })
+        .withMessage('Minimo 3 caracteres')
         .bail()
         .isAlpha('es-ES')
-        .withMessage('Solo caracteres alfabeticos'),
+        .withMessage('Sólo caracteres alfabeticos'),
+
+        check('street')
+        .notEmpty()
+        .withMessage('Coloca una calle')
+        .bail()
+        .isAlpha('es-ES')
+        .withMessage('Sólo caracteres alfabeticos'),
+             
+        check('city')
+        .notEmpty()
+        .withMessage('Coloca una ciudad')
+        .bail()
+        .isAlpha('es-ES')
+        .withMessage('Sólo caracteres alfabeticos'),
+
+        check('phone')
+        .notEmpty()
+        .withMessage('El numéro es obligatorio')
+        .bail()
+        .isNumeric()
+        .withMessage('Debe contener sólo números'),
 
         body('email')
-            .notEmpty().withMessage('El email es obligatorio')
+            .notEmpty()
+            .withMessage('El email es obligatorio')
             .bail()
-            .isEmail().withMessage('Debe ser un email valido')
-            .bail(),
+            .isEmail()
+            .withMessage('Debe ser un email valido')
+            .bail()
+/*             .custom(value => {
+                return db.User.findOne({
+                    where : {
+                        email : value
+                    }
+                }).then(user => {
+                    if(user){
+                        return Promise.reject()
+                      }
+                }).catch(() => Promise.reject('Este email ya se encuentra registrado!'))
+            }) */,
 
             check('password')
             .notEmpty()
