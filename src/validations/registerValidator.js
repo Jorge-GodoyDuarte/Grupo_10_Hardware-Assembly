@@ -10,7 +10,7 @@ module.exports =[
         })
         .withMessage('Minimo 3 caracteres')
         .bail()
-        .isAlpha('es-ES')
+        .isAlpha('es-ES',{ignore : " "})
         .withMessage('Sólo caracteres alfabeticos'),
 
         check('lastname')
@@ -22,21 +22,21 @@ module.exports =[
         })
         .withMessage('Minimo 3 caracteres')
         .bail()
-        .isAlpha('es-ES')
+        .isAlpha('es-ES',{ignore : " "})
         .withMessage('Sólo caracteres alfabeticos'),
 
         check('street')
         .notEmpty()
         .withMessage('Coloca una calle')
         .bail()
-        .isAlpha('es-ES')
+        .isAlpha('es-ES',{ignore : " "})
         .withMessage('Sólo caracteres alfabeticos'),
              
         check('city')
         .notEmpty()
         .withMessage('Coloca una ciudad')
         .bail()
-        .isAlpha('es-ES')
+        .isAlpha('es-ES',{ignore : " "})
         .withMessage('Sólo caracteres alfabeticos'),
 
         check('phone')
@@ -53,17 +53,20 @@ module.exports =[
             .isEmail()
             .withMessage('Debe ser un email valido')
             .bail()
-/*             .custom(value => {
+            .custom((value,{req}) => {
                 return db.User.findOne({
                     where : {
-                        email : value
+                        email : value.trim()
                     }
                 }).then(user => {
                     if(user){
                         return Promise.reject()
                       }
-                }).catch(() => Promise.reject('Este email ya se encuentra registrado!'))
-            }) */,
+                }).catch(error =>{
+                    console.log(error)
+                    return Promise.reject('Este email ya se encuentra registrado!')
+                })
+            }),
 
             check('password')
             .notEmpty()
