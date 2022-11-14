@@ -1,27 +1,26 @@
+'use strict';
+const {
+  Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    let alias = 'Status';
-    let cols = {
-        id: { 
-            type: DataTypes.INTEGER.UNSIGNED,
-            unique: true,
-            primaryKey: true,
-            allowNull: false,
-            autoIncrement: true
-        },
-        send_date : {
-            type: DataTypes.INTEGER.UNSIGNED,
-            allowNull: false
-        },
-        delivery_status : {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
-        }
-    };
-    let config = {
-        timestamps: true,
-        underscored: true,
+  class Statu extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
     }
-    const Status = sequelize.define(alias, cols , config)
-        
-    return Status
-}
+  }
+  Statu.init({
+    delivery_status: DataTypes.INTEGER,
+    send_date: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'Statu',
+    paranoid : true,
+    timestamps: false
+  });
+  return Statu;
+};

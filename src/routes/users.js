@@ -7,22 +7,22 @@ const loginValidator = require('../validations/loginValidator');
 
 const registerValidator = require('../validations/registerValidator')
 const profileValidator = require('../validations/profileValidator')
-
-
-const {upload} = require('../middlewares/uploadFiles')
-
 const userSessionCheck = require('../middlewares/userSessionCheck');
-
+const upload = require('../middlewares/uploadFiles');
+const userController = require('../controllers/userController');
 /* /users */
 router
-  
-  .get('/register',register)
-  .post('/register',upload.single('avatar'),registerValidator,processRegister)
+.get('/login',login) // users/login
+.get('/register',register)
+.post('/register/add',registerValidator,processRegister)
+.post('/login',loginValidator,processLogin)
+/*   
+
   .put('/update/:id', update)
-  .get('/login',login) // users/login
-  .post('/login',loginValidator,processLogin)
+
+ 
   .get('/profile',userSessionCheck,profile) // /users/profile
   .put('/profile/:id',upload.single('avatar'),profileValidator,updateEdit)
-  .get('/logout',logout)
+  .get('/logout',logout) */
   
 module.exports = router;
