@@ -16,7 +16,7 @@
             <h1 class="form_title">Registrate</h1>
     
     
-            <form action="/users/register/add" class="form"  method="POST"> <!-- enctype="multipart/form-data" -->
+            <form  id="form-register" action="/users/register/add" class="form"  method="POST"> <!-- enctype="multipart/form-data" -->
     
 
                 
@@ -67,6 +67,7 @@
             <div class="form_box">
                 <label class="form_label" for="password">Contraseña:</label>
                 <input class="form_input" type="password" id="password" name="password">
+                <span class="input-group-text" style="cursor: pointer;" id="btn-show-pass"><i class="fa-solid fa-eye-slash" ></i></span>
                 
                     <small class="form__text--error"><%= locals.errors && errors.password? errors.password.msg :null %></small>
             </div>
@@ -102,6 +103,7 @@
         </main >
 
         <%- include('./partials/footer') %> 
+        <script src="/javascripts/userRegister.js"></script>
 
 </body>
 
