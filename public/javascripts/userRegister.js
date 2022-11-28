@@ -55,7 +55,7 @@ const verifyEmail = async (email) => {
   }
 };
 
-$("name").addEventListener("blur", function ({ target }) {
+$("firstname").addEventListener("blur", function ({ target }) {
   switch (true) {
     case !this.value.trim():
       msgError("errorNombre", "El nombre es obligatorio", target);

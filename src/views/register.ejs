@@ -23,7 +23,8 @@
             <div class="form_box">
                 <label class="form_label" for="firstname">Nombre:</label>
                 <input class="form_input" type="text" id="firstname" name="firstname" value="<%= locals.old && old.firstname ? old.firstname:null %>">
-                <small class="form__text--error"><%= locals.errors && errors.firstname? errors.firstname.msg :null %></small>
+                <small  class="form__text--error"><%= locals.errors && errors.firstname? errors.firstname.msg :null %></small>
+                <small id="errorNombre"></small>
             </div>
             <div class="form_box">
                 <label class="form_label" for="lastname">Apellido:</label>
