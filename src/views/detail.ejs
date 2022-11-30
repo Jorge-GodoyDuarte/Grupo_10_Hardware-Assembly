@@ -11,10 +11,11 @@
         <section>
             
             <article class="detail__main-article">
+                <% if (images) { %>
                 <div class="detail__main-img">
                     <img src="<%=images.name%>" alt="" width="50%" height="50%">
                 </div>
-                    
+                <% }%>
                    
                 </div>
 
@@ -40,7 +41,7 @@
                 <article class="detail__main-info">
                    <div class="detail__main-info-product">
                     <p>Familia</p>
-                    <p><%= brands.name%></p>
+                    <p><%= products.marcas.name%></p>
                    </div>
                    <div class="detail__main-info-product">
                     <p>Socket</p>
