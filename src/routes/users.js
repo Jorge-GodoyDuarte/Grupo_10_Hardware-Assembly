@@ -16,13 +16,17 @@ router
 .get('/register',register)
 .post('/register/add',registerValidator,processRegister)
 .post('/login',loginValidator,processLogin)
+.get('/logout',logout) 
+.get('/profile',userSessionCheck,profile) // /users/profile
+.put('/profile/:id',/* upload.single('avatar'), */profileValidator,updateEdit)
+
 /*   
 
-  .put('/update/:id', update)
+ 
 
  
-  .get('/profile',userSessionCheck,profile) // /users/profile
-  .put('/profile/:id',upload.single('avatar'),profileValidator,updateEdit)
-  .get('/logout',logout) */
+ 
+
+  */
   
 module.exports = router;

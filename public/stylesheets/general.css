@@ -4,6 +4,7 @@
 @import './form.css';
 @import './detail.css';
 @import './profile.css';
+@import './header.css';
 
 :root {
     --tipografiaTitulos: 'Roboto';
@@ -26,6 +27,10 @@ a{
     text-decoration: none;
 }
 
+body {
+    margin: 0px;
+    padding: 0px;
+}
 
 
 
