@@ -1,46 +1,89 @@
-<header class="header">
-    <section class="header__section">
-        <div class="ingreso_registro">
-            <nav class="header__nav">
-            <% if (locals.userLogin) { %>  
-                    <ul class="username">
-                        <li>
-                          <a href="/users/profile" ><%= userLogin.firstname %></a> 
-                        </li>
-                        <li>
-                            <a href="/users/logout">Salir</a>
-                        </li>
-                    </ul>
-                  
-            <% if (userLogin.role_id === 2) { %>
-                <div>
-                    <li class="header__agregar"><a href="/products/add"> <h3>Agregar</h3> </a></li>
-                </div>
-            <% } %>
-        <% }else{ %>
-                    <a href="/users/login"> 
-                    <h3>Logueate! <i class="fa-solid fa-user-shield"></i></h3>
-                </a>
-                    <a href="/users/register">
-                        <h3>Registrate! <i class="fa-solid fa-id-card"></i></h3>
-                    </a>
-        <% } %>
-    
-</nav>
+<header>
+  <!--       <div class="icon-profile">
+                <i class="fa-regular fa-user"></i>
+            </div> -->
+
+  <!--    <div class="dashboard">
+            <ul>
+                <li>Nombre de usuario</li>
+                <li>correo electronico</li>
+                <li>editar usuario</li>
+                <li>Contactanos</li>
+            </ul>
+        </div> -->
+
+  <section class="section-header">
+    <div class="burger">
+      <button><i class="fa-solid fa-bars"></i></button>
     </div>
-    <!--  <div class="cart_icon">
-            <div class="cart_box">
-                
-                <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-            </div>
-        </div> -->
-        <article class="header__article">
-            <form action="/products/search" class="header__search" method="GET">
-                <input class="shopping__header__button" type="text" name="keywords" id="keywords" placeholder="Buscar productos, marcas y más ..">
-            </form>
-        </article>
-<!--         <div class="burger-menu">
-            <button class="burger-button"><i class="fa-solid fa-bars"></i></button>
-        </div> -->
-    </section>
+    <div class="div-nav-bar">
+      <nav class="nav-bar active">
+        <% if (locals.userLogin) { %>
+        <ul>
+          <li>
+            <a href="/users/profile">Perfil</a>
+          </li>
+          <li>
+            <a href="">Carrito</a>
+          </li>
+          <% if (userLogin.role_id === 2) { %>
+            <li>
+                <a href="/products/add">Agregar</a>
+              </li>
+              <% } %>
+          <li>
+            <a href="/users/logout" class="logout">Salir</a>
+          </li>
+          
+        </ul>
+        <% }else{ %>
+            <ul>
+                <li>
+                    <a href="/users/login" class="login">Iniciar sesión</a>
+                  </li>
+                  <li>
+                    <a href="/users/register">Registrate</a>
+                  </li>
+            </ul>
+
+              <% } %>
+      </nav>
+    </div>
+    <div class="theme-web">
+      <div class="toggle-title">
+        <p style="color: white" class="toggle-title2">MODO OSCURO</p>
+      </div>
+      <div class="toggle">
+        <i class="indicator"></i>
+      </div>
+    </div>
+    <div class="banner">
+      <img src="banner2.jpg" alt="" />
+    </div>
+  </section>
+
+  <script>
+    hamburger = document.querySelector(".burger");
+    navBar = document.querySelector(".nav-bar");
+    conteiner = document.querySelector(".contenedor");
+    hamburger.addEventListener("click", function () {
+      navBar.classList.toggle("active");
+    });
+
+    const toggle = document.querySelector(".toggle");
+    const body = document.querySelector(".body");
+    const profile = document.querySelector("profile")
+    const toggleTitle = document.querySelector(".toggle-title2");
+
+    toggle.addEventListener("click", (e) => {
+      toggle.classList.toggle("active");
+      body.classList.toggle("dark");
+      profile.classList.toggle("dark");
+      if (toggle.classList.contains("active")) {
+        toggleTitle.innerHTML = '<p style="color: white;">MODO CLARO</p>';
+      } else {
+        toggleTitle.innerHTML = '<p style="color: white;">MODO OSCURO</p>';
+      }
+    });
+  </script>
 </header>
