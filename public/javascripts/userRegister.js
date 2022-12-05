@@ -35,7 +35,7 @@ const validPass = (element, exReg, value) => {
 
 const verifyEmail = async (email) => {
   try {
-    let response = await fetch("/api/users/verify-email", {
+    let response = await fetch("/api/users/verify-email", {  //puede haber error
       method: "POST",
       body: JSON.stringify({
         email: email,
@@ -76,7 +76,7 @@ $("firstname").addEventListener("blur", function ({ target }) {
   }
 });
 
-$("surname").addEventListener("blur", function ({ target }) {
+$("lastname").addEventListener("blur", function ({ target }) {
   switch (true) {
     case !this.value.trim():
       msgError("errorApellido", "El apellido es obligatorio", target);
@@ -114,11 +114,11 @@ $("email").addEventListener("blur", async function ({ target }) {
   }
 });
 
-$("pass").addEventListener("focus", () => {
+$("password").addEventListener("focus", () => {
   $("msgPass").hidden = false;
 });
 
-$("pass").addEventListener("blur", function ({ target }) {
+$("password").addEventListener("blur", function ({ target }) {
   $("msgPass").hidden = true;
   switch (true) {
     case !this.value.trim():
@@ -137,7 +137,7 @@ $("pass").addEventListener("blur", function ({ target }) {
   }
 });
 
-$("pass").addEventListener("keyup", function ({ target }) {
+$("password").addEventListener("keyup", function ({ target }) {
   validPass("mayu", exRegs.exRegMayu, target.value);
   validPass("minu", exRegs.exRegMinu, target.value);
   validPass("num", exRegs.exRegNum, target.value);
@@ -146,12 +146,12 @@ $("pass").addEventListener("keyup", function ({ target }) {
   validPass("max", exRegs.exRegMax, target.value);
 });
 
-$("pass2").addEventListener("blur", function ({ target }) {
+$("password2").addEventListener("blur", function ({ target }) {
     switch (true) {
       case !this.value.trim():
         msgError("errorPass2", "Debes verificar la contraseña", target);
         break;
-      case this.value.trim() !== $('pass').value.trim():
+      case this.value.trim() !== $('password').value.trim():
         msgError(
           "errorPass2",
           "Las contraseñas no coinciden",

@@ -24,20 +24,21 @@
                 <label class="form_label" for="firstname">Nombre:</label>
                 <input class="form_input" type="text" id="firstname" name="firstname" value="<%= locals.old && old.firstname ? old.firstname:null %>">
                 <small  class="form__text--error"><%= locals.errors && errors.firstname? errors.firstname.msg :null %></small>
-                <small id="errorNombre"></small>
+                <small id="errorNombre" class="text-danger"></small>
+
             </div>
             <div class="form_box">
                 <label class="form_label" for="lastname">Apellido:</label>
                 <input class="form_input" type="text" id="lastname" name="lastname" value="<%= locals.old && old.lastname ? old.lastname:null%>">
-                      
-            <small class="form__text--error"><%= locals.errors && errors.lastname? errors.lastname.msg :null %></small>
- 
+                      <small class="form__text--error"><%= locals.errors && errors.lastname? errors.lastname.msg :null %></small>
+                      <small id="errorApellido" class="text-danger"></small>
             </div>
             <div class="form_box">
                 <label class="form_label" for="email"> Email:  </label>
                 <input class="form_input" type="email" id="email" name="email" value="<%= locals.old && old.email ? old.email:null %>" >
                   
                 <small class="form__text--error"><%= locals.errors && errors.email? errors.email.msg :null %></small>
+                <small id="errorEmail" class="text-danger"></small>
             </div>
 
 
@@ -71,6 +72,15 @@
                 <span class="input-group-text" style="cursor: pointer;" id="btn-show-pass"><i class="fa-solid fa-eye-slash" ></i></span>
                 
                     <small class="form__text--error"><%= locals.errors && errors.password? errors.password.msg :null %></small>
+                    <small id="errorPass" class="text-danger"></small>
+                    <ul id="msgPass" hidden>
+                        <li id="mayu">Una mayúscula</li>
+                        <li id="minu">Una minúscula</li>
+                        <li id="num">Un número</li>
+                        <li id="esp">Un caracter especial ($@$!%*?&)</li>
+                        <li id="min">Mínimo 6 caracteres</li>
+                        <li id="max">Máximo 8 caracteres</li>
+                      </ul>
             </div>
 
             <div class="form_box">
@@ -78,6 +88,7 @@
                 <input class="form_input" type="password" id="password2" name="password2">
                 
                 <small class="form__text--error"><%= locals.errors && errors.password2? errors.password2.msg :null %></small>
+                <small id="errorPass2" class="text-danger"></small>
             </div>
 
             <div class="form_box">
