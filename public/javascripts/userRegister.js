@@ -1,4 +1,7 @@
 console.log("userRegister.js connected!");
+const apiUrlBase = "https://apis.datos.gob.ar/georef/api"
+
+
 
 const exRegs = {
   exRegAlfa: /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/,
@@ -165,16 +168,21 @@ $("password2").addEventListener("blur", function ({ target }) {
   });
 
 $("form-register").addEventListener("submit", function (e) {
-  e.preventDefault();
+  e.preventDefault(); //chequea todos los eventos
+
+let error = false;
 
   const elements = this.elements;
     for (let i = 0; i < elements.length - 1; i++) {
         
         if(!elements[i].value.trim() || elements[i].classList.contains('is-invalid')){
             elements[i].classList.add('is-invalid')
-           $('msgError').innerText = 'Llená bien formulario men!'
+           $('msgError').innerText = 'Hay campos con errores o estan vacios!'
+           error = true;
         }
     }
+
+    !error && this.submit()
 
   /*  Swal.fire({
         position: "center",
@@ -199,3 +207,23 @@ $("btn-show-pass").addEventListener("click", ({ target }) => {
     $("password").type = $("password").type === "text" ? "password" : "text";
   }
 });
+const getProvinces = async () => {
+  try {
+
+      const response = await fetch(`${apiUrlBase}/provincias`);
+      const result = await response.json();
+
+      console.log(result.provincias)
+      
+  } catch (error) {
+      console.error
+  }
+
+}
+
+
+window.addEventListener('load', () => {
+
+  getProvinces()
+
+})

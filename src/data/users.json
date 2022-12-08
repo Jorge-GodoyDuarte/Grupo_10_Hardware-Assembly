@@ -1,11 +1,14 @@
 [
    {
       "id": 1,
-      "firstName": "Juanchox",
+      "firstName": "admin",
       "lastName": "Moran",
-      "email": "juancho@hotmail.com",
-      "password": "$2a$10$kGro1jxtcqhQSdk7grlKGeFrFxBp6MDYIASQdbwjZf28aZ9gNhiuS",
-      "rol": "user",
+      "email": "admin@hotmail.com",
+      "password": "$2a$10$k.qK1U5/XSHEhtgLQe7jTOFVs23RemGGAKft.UJrcIrHC9.ZAIsQW",
+      "role_id": 2,
+      "city" : "Buenos Aires",
+      "payment_id" : 1,
+      "phone" : 1135257423,
       "avatar": "default.png"
    }
 ]

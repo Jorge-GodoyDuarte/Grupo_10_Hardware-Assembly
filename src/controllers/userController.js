@@ -8,6 +8,7 @@ const path = require("path");
 const session = require("express-session");
 const jwt = require("jsonwebtoken");
 const authConfig = require("../database/config/auth");
+const { all } = require("../routes/users");
 /*     CRUD DATABASE     */
 module.exports = {
   login: (req, res) => {
@@ -20,76 +21,71 @@ module.exports = {
     });
   },
 
-
   processLogin: async (req, res) => {
     const errors = validationResult(req);
 
     /*  res.send(errors) */
-    if(errors.isEmpty()){
+    if (errors.isEmpty()) {
+      let { email } = req.body;
 
-    let { email } = req.body;
-
-    db.User.findOne({
-      where: {
-        email,
-      },
-      include: [
-        {
-          association: "roles",
+      db.User.findOne({
+        where: {
+          email,
         },
-      ],
-    })
-      .then(({id, firstname, lastname, role_id}) => {
-        
-        req.session.userLogin = {
-          id,
-          firstname,
-          lastname,
-          role_id
-        }
-
-        /* guardar la cookie */
-
-        return res.redirect("/");
+        include: [
+          {
+            association: "roles",
+          },
+        ],
       })
-      .catch(error => console.log(error))
-    }else {
+        .then(({ id, firstname, lastname, role_id,email }) => {
+          req.session.userLogin = {
+            id: +id,
+            firstname: firstname.trim(),
+            lastname: lastname.trim(),
+            role_id: +role_id,
+            email
+          };
+
+          /* guardar la cookie */
+
+          return res.redirect("/");
+        })
+        .catch((error) => console.log(error));
+    } else {
       return res.render("login", {
-        errors : errors.mapped()
+        errors: errors.mapped(),
       });
     }
-
   },
   processRegister: async (req, res) => {
     const errors = validationResult(req);
-       const { firstname, lastname, email, city, street, phone, password} = req.body;
+    const { firstname, lastname, email, city, street, phone, password } =
+      req.body;
 
-       // VALIDACIONES
-      if (errors.isEmpty()) {
-        // CREACIÓN DEL USUARIO
+    // VALIDACIONES
+    if (errors.isEmpty()) {
+      // CREACIÓN DEL USUARIO
       db.User.create({
-          firstname: firstname && firstname.trim(),
-          lastname: lastname && lastname.trim(),
-          email: email && email.trim(),
-          password : bcryptjs.hashSync(password, 10),
-          role_id: 1,
-          payment_id: 3,
-          city: city && city.trim(),
-          street: street && street.trim(),
-          phone: +phone,
-        }).then((user) => {
-            return res.redirect('/users/login')
-        })
-
-      } else{
-        return res.render('register',{
-            errors: errors.mapped(),
-            old: req.body
-        })
+        firstname: firstname && firstname.trim(),
+        lastname: lastname && lastname.trim(),
+        email: email && email.trim(),
+        password: bcryptjs.hashSync(password, 10),
+        role_id: 1,
+        payment_id: 3,
+        city: city && city.trim(),
+        street: street && street.trim(),
+        phone: +phone,
+      }).then((user) => {
+        return res.redirect("/users/login");
+      });
+    } else {
+      return res.render("register", {
+        errors: errors.mapped(),
+        old: req.body,
+      });
     }
-
   },
-
 
   logout: (req, res) => {
     delete req.session.userLogin;
@@ -100,144 +96,48 @@ module.exports = {
   },
 
   profile: (req, res) => {
-    let user = loadUsers().find((user) => user.id === req.session.userLogin.id);
-    return res.render("profile", {
-      user,
-    });
+    db.User.findByPk(req.session.userLogin.id, {
+      include: ["roles", "metodos"]
+    })
+      .then((user) => {
+        return res.render("profile", {
+          user,
+        });
+      })
+      .catch((error) => console.log(error));
   },
-  update: (req, res) => {
-    const { firstName, lastName, birthday, address, city, province, about } =
-      req.body;
-    let user = loadUsers().find((user) => user.id == req.session.userLogin.id);
-    let usersModify = loadUsers().map((user) => {
-      if (user.id === +req.params.id) {
-        return {
-          ...user,
-          ...req.body,
-          password: req.body.password
-            ? bcryptjs.hashSync(req.body.password, 10)
-            : user.password,
-          avatar: req.file ? req.file.filename : req.session.userLogin.avatar,
-        };
-      }
-      return user;
-    });
-    if (req.file && req.session.userLogin.avatar) {
-      if (
-        fs.existsSync(
-          path.resolve(
-            __dirname,
-            "..",
-            "public",
-            "images",
-            "users",
-            req.session.userLogin.avatar
-          )
-        )
-      ) {
-        console.log(">>>>>>>>>>", req.session.userLogin.avatar);
-        fs.unlinkSync(
-          path.resolve(
-            __dirname,
-            "..",
-            "public",
-            "images",
-            "users",
-            req.session.userLogin.avatar
-          )
-        );
-      }
-    }
-
-    req.session.userLogin = {
-      ...req.session.userLogin,
-      firstName,
-      avatar: req.file ? req.file.filename : req.session.userLogin.avatar,
-    };
-
-    storeUsers(usersModify);
-    return res.redirect("/");
-  },
-  updateEdit: (req, res) => {
+  updateEdit: async (req, res) => {
+        // VALIDACIONES
     const errors = validationResult(req);
+        // EDITAR USUARIO
     if (errors.isEmpty()) {
       const { firstName, lastName, email, password } = req.body;
-      const users = loadUsers();
-      const userModify = users.map((user) => {
-        if (users.id === req.session.userLogin.id) {
-          if (req.file && req.session.userLogin.avatar) {
-            if (
-              fs.existsSync(
-                path.resolve(
-                  __dirname,
-                  "..",
-                  "public",
-                  "images",
-                  "users",
-                  req.session.userLogin.avatar
-                )
-              )
-            ) {
-              console.log(">>>>>>>>>>", req.session.userLogin.avatar);
-              fs.unlinkSync(
-                path.resolve(
-                  __dirname,
-                  "..",
-                  "public",
-                  "images",
-                  "users",
-                  req.session.userLogin.avatar
-                )
-              );
-            }
-          }
-          return {
-            id: user.id,
-            firstName: firstName.trim(),
-            lastName: lastName.trim(),
+      await db.User.findByPk(req.session.userLogin.id)
+      .then(user => {
+        db.User.update(
+          {
+            firstname: firstName.trim(),
+            lastname: lastName.trim(),
             email: email.trim(),
-            password: bcryptjs.hashSync(password.trim(), 10),
-            rol: "user",
-            avatar: req.file ? req.file.filename : req.session.userLogin.avatar,
-          };
-        }
+            password : password ? bcryptjs.hashSync(password, 10) : user.password,
+          },
+          {
+            where : {
+              id : req.session.userLogin.id
+            }
+            
+          }
+        )
+      }).then( () => {
+       res.redirect("/") 
+      })
+      
 
-        return user;
-      });
-      if (req.file && req.session.userLogin.avatar) {
-        if (
-          fs.existsSync(
-            path.resolve(
-              __dirname,
-              "..",
-              "public",
-              "images",
-              "users",
-              req.session.userLogin.avatar
-            )
-          )
-        ) {
-          console.log(">>>>>>>>>>", req.session.userLogin.avatar);
-          fs.unlinkSync(
-            path.resolve(
-              __dirname,
-              "..",
-              "public",
-              "images",
-              "users",
-              req.session.userLogin.avatar
-            )
-          );
-        }
-      }
-
-      storeUsers(userModify);
-      return res.redirect("/users/profile");
     } else {
       return res.render("profile", {
         errors: errors.mapped(),
         old: req.body,
-        user: loadUsers().find((user) => user.id === req.session.userLogin.id),
+        user : await db.User.findByPk(req.session.userLogin.id)
       });
     }
   },
