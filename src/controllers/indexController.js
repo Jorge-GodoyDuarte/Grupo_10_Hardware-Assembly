@@ -12,6 +12,13 @@ module.exports = {
         })   
           
     })
+    
     .catch(error => console.log(error))
+      },
+      terms : (req,res) => {
+        res.render('terms.ejs')
       }
+
 }
+
+
