@@ -28,14 +28,14 @@
                         </div>
             <div class="form__box__profile">
                 <label class="form__label__profile" for="nombre"> <span>Nombre:</span> </label>
-                <input class="form__input__profile" type="text" id="nombre" name="firstName" value="<%= user.firstName%>">
+                <input class="form__input__profile" type="text" id="nombre" name="firstName" value="<%= user.firstname%>">
                 <div>
                 <small class="form__text--error"><%= locals.errors && errors.firstName? errors.firstName.msg :null %></small>
                 </div>
             </div>
             <div class="form__box__profile">
                 <label class="form__label__profile" for="apellido"> <span>Apellido:</span></label>
-                <input class="form__input__profile" type="text" id="apellido" name="lastName" value="<%=user.lastName %>">
+                <input class="form__input__profile" type="text" id="apellido" name="lastName" value="<%=user.lastname %>">
                   <div>    
             <small class="form__text--error"><%= locals.errors && errors.lastName? errors.lastName.msg :null %></small>
                  </div> 

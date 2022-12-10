@@ -129,6 +129,7 @@ module.exports = {
 		let { keywords } = req.query;
     
 		let product = db.Product.findAll({
+      include : ['marcas','categorias','images'],
 			where: {
 				[Op.or]: [
 					{
@@ -156,12 +157,18 @@ return res.render("search", {
           images,
           product 
 				});  
-        res.send(images)
 			})
 			.catch((error) => console.log(error));
 	},
+  filter: (req,res) => {
+    const products = db.Product.findAll()
+    const productsFilter = products.filter(product => product.section === req.query.section)
+return res.render('products', {
+    products : productsFilter,
+    
+})
 }
-
+}
 
   /* carrito: (req,res)=>{
         return res.render('shopping-cart',{
@@ -169,10 +176,5 @@ return res.render("search", {
         })
     },
 
-    filter: (req,res) => {
-        const productsFilter = products.filter(product => product.section === req.query.section)
-    return res.render('products', {
-        products : productsFilter,
-        
-    })
+    
     }, */
