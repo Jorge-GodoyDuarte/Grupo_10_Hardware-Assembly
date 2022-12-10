@@ -120,31 +120,13 @@
 }
 
 
-.shopping__header__button{ 
 
-    background: linear-gradient(45deg,rgb(51, 51, 51),rgb(127, 127, 133),rgb(222, 228, 222));
-    background-size: 400% 400%;
-    position: relative;
-    animation: cambiar 15s ease-in-out infinite;
-    border-style: none;
-border: 2px solid #a0a0a0;
-font-size: 15px;
-height: 25px;
-margin-bottom: 24px;
-color: red;
-}
-::placeholder {
-    color: rgb(70, 248, 165);
-    font-family: var(--tipografiaTitulos)
-}
+
 /* MAIN  */
 .shopping_main {
     margin: 0px;
     padding: 0px;
     height: 100%;
-}
-.shopping__main__section {
-
 }
 
 .shopping__main__article {
@@ -319,12 +301,7 @@ box-shadow: -2px 8px 21px -4px rgba(0,0,0,0.31);
         font-size: 250%;
         
     }
-    .shopping__header__button{
-        font-size: 15px;
-        height: 24px;
-        width: 35%;
-        margin-bottom: 50px;
-    }
+
     .shopping__main__shipping-price {
         font-size: 16px;
         top: 45px;
