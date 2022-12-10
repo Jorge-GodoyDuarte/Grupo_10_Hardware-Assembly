@@ -1,97 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('./partials/head')  %>
+<%- include('./partials/head') %>
 
-<body>
-  
-    <%- include('./partials/header')  %>
+    <body>
 
-    <main>
-        <section>
-            
-            <article class="detail__main-article">
-                <% if (images) { %>
-                <div class="detail__main-img">
-                    <img src="<%=images.name%>" alt="" width="50%" height="50%">
-                </div>
-                <% }%>
-                   
-                </div>
+        <%- include('./partials/header') %>
+        <script type="text/javascript">
+            function showContent() {
+                element = document.getElementById("content");
+                check = document.getElementById("check");
+                if (check.checked) {
+                    element.style.display='block';
+                }
+                else {
+                    element.style.display='none';
+                }
+            }
+        </script>
+            <main>
+                <section>
 
-                <div class="detail__main-tittle">
-                    <h4><%= products.name%></h4>
-                </div>
-                <div class="detail__main-price-discount">
-                    
-                    <% if (products.discount) { %>
-                        <h4> PRECIO $<%= toThousand(new Intl.NumberFormat().format(Math.trunc((products.price) - (products.price * products.discount / 100))))%> </h4> <p class="detail__discount">  $<%= new Intl.NumberFormat().format(products.price)%> </p>
-                    <% } else { %>
-                        <h4> $<%= products.price     %>
-                    <% } %>
-                    <% if (products.discount > 0) { %>
-                        <h5> %<%= products.discount%> OFF </h5>
-                    <% } %>
+                    <article class="detail__main-article">
+                        <div class="detail__main-tittle">
+                            <h4>
+                                <%= products.name%>
+                            </h4>
+                        </div>
 
-                </div>
-                <div class="detail__main-subtittle">
-                    <h4>CARACTERISTICAS GENERALES </h4>
-                </div>
-                
-                <article class="detail__main-info">
-                   <div class="detail__main-info-product">
-                    <p>Familia</p>
-                    <p><%= products.marcas.name%></p>
-                   </div>
-                   <div class="detail__main-info-product">
-                    <p>Socket</p>
-                    <p>1200 Comet Lake</p>
-                   </div>
-                   <div class="detail__main-info-product"> 
-                    <p>Núcleos</p>
-                    <p>4</p>
-                    </div>
-                    <div class="detail__main-info-product">
-                    <p>Frecuencia</p>
-                    <p>3600.00 mhz</p>
-                    </div>
-                   <div class="detail__main-info-product">
-                    <p>Proceso de fabricación</p>
-                    <p>14nm</p>
-                   </div>
-                   <div class="detail__main-info-product">
-                    <p>Chipset Gpu</p>
-                    <p>NO POSEE GRÁFICOS INTEGRADOS</p>
-                   </div>
-                   <div class="detail__main-info-product">
-                    <p>Hilos</p>
-                    <p>8</p>
-                   </div>
-                   <div class="detail__main-info-product">
-                    <p>Frecuencia turbo</p>
-                    <p>4300 mhz</p>
-                   </div>
-                   <div class="detail__main-info-product">
-                    <p>Descripción</p>
-                    <p><%= products.description%></p>
-                   </div>
-                 
-                </article>
-                
-            </article>
-            <article class="detail__main-article-button">
-                <div class="detail__main-button">
-                    <button class="detail__button1"> <a href="/products/edit/<%=products.id%>"><h4 class="title-detail"> EDITAR </h4></a></button>
-                </div>
-                <div class="detail__main-button"></div>
-                    <button class="detail__button2"> <h4 class="title-detail"> COMPRAR </h4></button>
-                </div>
-                <form action="/products/delete/<%= products.id%>?_method=DELETE" method="POST">
-                <button type="submit">Eliminar</button>
-            </form>
-            </article>
-        </section>
-    </main>
-</body>
+                       <div class="superior-img-lateral">
+                       
+                        <% if (images) { %>
+                            <div class="detail__main-img">
+                                <img src="<%=images.name%>" alt="" width="50%" height="50%">
+                            </div>
+                            <% }%>
+
+                                
+
+                                <section class="lateral1">
+
+
+                                    <div class="detail__main-price-discount">
+
+                                        <% if (products.discount) { %>
+                                            <div class="price-1">
+                                                <h4> PRECIO $<%= toThousand(new
+                                                        Intl.NumberFormat().format(Math.trunc((products.price) -
+                                                        (products.price * products.discount / 100))))%>
+                                                </h4>
+                                            </div>
+                                            <div class="price2">
+                                                <p class="detail__discount"> $<%= new
+                                                        Intl.NumberFormat().format(products.price)%>
+
+                                                </p>
+                                                <% } else { %>
+                                                    <h4> $<%= products.price %>
+                                                    </h4>
+                                                    <% } %>
+                                                        <% if (products.discount> 0) { %>
+                                                            <h5>
+                                                                <%= products.discount%>%OFF
+                                                            </h5>
+                                                            <% } %>
+                                            </div>
+
+                                    </div>
+                                    <div class="boton-pedidos">
+                                        <form action="" method="post">
+                                            <button type="submit" class="boton-carrito"><i
+                                                    class="fa-solid fa-cart-flatbed-suitcase"></i></button>
+                                        </form>
+                                    </div>
+                                </section>
+                       </div>
+
+                       
+                                <div class="detail__main-subtittle">
+                                    <div class="arriba">
+                                        <label for="check">
+                                            <h4 class="caracteristicas">
+                                                <input type="checkbox" name="check" id="check" value="1" onchange="javascript:showContent()" class="ocultar">CARACTERISTICAS GENERALES
+                                               </h4>
+                                        </label>
+                                    </div>
+                                    
+                                </div>
+
+                               
+                                <article class="detail__main-info" id="content">
+                                    <div class="detail__main-info-product">
+                                        <p>marca</p>
+                                        <p>
+                                            <%= products.marcas.name%>
+                                        </p>
+                                    </div>
+                                  
+                                
+                                    <div class="detail__main-info-product">
+                                        <p>Descripción de producto</p>
+                                        <p>
+                                            <%= products.description%>
+                                        </p>
+                                    </div>
+
+                                </article>
+                              
+
+                    </article>
+                    <article class="detail__main-article-button">
+                        <div class="detail__main-button">
+                            <button class="detail__button1"> <a href="/products/edit/<%=products.id%>">
+                                    <h4 class="title-detail"> EDITAR </h4>
+                                </a></button>
+                        </div>
+
+                        <form action="/products/delete/<%= products.id%>?_method=DELETE" method="POST">
+
+                        </form>
+                    </article>
+                </section>
+            </main>
+            <%- include('./partials/footer') %> 
+    </body>
 
 </html>

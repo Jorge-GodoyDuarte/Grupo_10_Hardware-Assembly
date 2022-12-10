@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+<<<<<<<<< Temporary merge branch 1
+=======
+<<<<<<< HEAD
+>>>>>>> 86d34edef5bfcf7ac5b650dd18f755b869846179
 /* MAIN */
 .detail__main-article {
     display: flex;
@@ -84,6 +88,188 @@ background-color: #C1C1C1;
     border: 1px solid #ebebeb;
     width: 100%;
 }
+<<<<<<< HEAD
+=========
+
+/*header*/
+
+.ingreso_registro a {
+    display: inline-flex;
+  
+    color: black;
+    background-color: whitesmoke;
+  }
+  .ingreso_registro {
+    display: flex;
+    background-color: whitesmoke;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  ._main__button {
+    cursor: pointer;
+  }
+  
+  .body {
+    margin: 0px;
+    padding: 0%;
+  }
+  
+  .head {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+  .header__section {
+    width: 100%;
+  }
+  
+  .header__article {
+    width: 100%;
+    height: 100%;
+  }
+  .header__search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header {
+    background-color: #012677;
+    padding-bottom: 5px;
+    background: linear-gradient(45deg, red, blue, green, black);
+    background-size: 400% 400%;
+    position: relative;
+    animation: cambiar 3s ease-in-out infinite;
+  }
+  .burger-button {
+    top: 50px;
+    background-color: transparent;
+    border: none;
+    font-size: 150%;
+    height: 20px;
+  }
+  
+  .burger-menu {
+    width: 150px;
+  }
+  
+  .cart_icon {
+    display: flex;
+  
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  
+  .header__user a i {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    color: #fff;
+    border-radius: 50%;
+    border: 1px solid black;
+    padding: 10px;
+    width: 35px;
+    height: 35px;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    background-color: black;
+    font-size: 20px;
+  }
+  
+  .header__user span {
+    font-size: 15px;
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+    color: #fff;
+    font-family: var(--tipografiaTitulos);
+    font-weight: 200;
+  }
+  
+  .header__nav ul li a {
+    text-decoration: none;
+    font-size: 13px;
+    color: #fff;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--tipografiaTitulos);
+    font-weight: 400;
+  }
+  
+  .list {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    padding: 0px 5px;
+  }
+  
+  .list hr {
+    height: 5px;
+    width: 150px;
+    left: 0px;
+    position: absolute;
+    top: 18px;
+    background-color: black;
+    border: none;
+  }
+  
+  .header__button {
+    background: linear-gradient(45deg, red, blue, green, black);
+    background-size: 400% 400%;
+    position: relative;
+    animation: cambiar 3s ease-in-out infinite;
+    border-style: none;
+    border: 2px solid #a0a0a0;
+    font-size: 15px;
+    height: 25px;
+    margin-bottom: 24px;
+    color: #a0a0a0;
+  }
+
+  /*main*/
+    
+
+
+
+/*footer*/
+
+
+.logos_redes {
+    display: flex;
+    text-align: center;
+    align-content: space-around;
+    margin-top: 50px;
+    color: black;
+    border: 1px #a0a0a0;
+  }
+  .logos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .logo_pagina {
+  }
+  .terminos_condiciones {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    color: black;
+  }
+>>>>>>>>> Temporary merge branch 2
+=======
 .title-detail {
 color: #ffff;
 }
@@ -105,3 +291,4 @@ color: #ffff;
 }
 =======
 >>>>>>> b725a3ebdd26e6fd9dc4337c9975bcac4711e1e0
+>>>>>>> 86d34edef5bfcf7ac5b650dd18f755b869846179
