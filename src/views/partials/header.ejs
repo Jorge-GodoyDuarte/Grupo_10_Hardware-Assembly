@@ -1,4 +1,46 @@
+
 <header>
+
+  <section>
+    <div>
+      <div class="button-dashboard">
+        <i class="fa-solid fa-gears tuerca"></i>
+      </div> 
+    </div>
+    <div class="menu-dashboard">
+      <!-- TOP MENU -->
+      <div class="top-menu">
+          <div class="logo">
+              <i><img src="../../../public/lgo.jpg" alt=""></i>
+              <span>Hardware Assembly</span>
+          </div>
+      </div>
+      <!-- MENU -->
+      <div class="menu">
+          <div class="enlace">
+            <i class="fa-solid fa-user"></i>
+              <span>Perfil</span>
+          </div>
+  
+          <div class="enlace">
+            <i class="fa-solid fa-cart-shopping"></i>
+              <span>Carrito de compras</span>
+          </div>
+  
+          <div class="enlace">
+            <i class="fa-regular fa-heart"></i>
+              <span>Favoritos</span>
+          </div>
+  
+          <div class="enlace">
+            <i class="fa-brands fa-instagram"></i>
+              <span>Redes sociales</span>
+          </div>
+      </div>
+  </div>
+  </section>
+
+  
   <!--       <div class="icon-profile">
                 <i class="fa-regular fa-user"></i>
             </div> -->
@@ -14,9 +56,24 @@
 
   <section class="section-header">
     <div class="burger">
-      <button><i class="fa-solid fa-bars"></i></button>
+      <div class="burger-menu"></div>
     </div>
+  </div> 
+
+ 
+  <div>
     <div class="div-nav-bar">
+      <div class="header__search">
+        <div class="header__form">
+          <input class="shopping__header__button" type="text" name="keywords"
+          value="" placeholder="Buscar productos, marcas y más .." >
+          <button>
+            <i class="fa-solid fa-magnifying-glass glass" ></i>
+          </button>
+          
+        </div>
+          
+      </div>  
       <nav class="nav-bar active">
         <% if (locals.userLogin) { %>
         <ul>
@@ -47,6 +104,8 @@
             </ul>
 
               <% } %>
+
+
       </nav>
     </div>
     <div class="theme-web">
@@ -66,24 +125,50 @@
     hamburger = document.querySelector(".burger");
     navBar = document.querySelector(".nav-bar");
     conteiner = document.querySelector(".contenedor");
+    let menuOpen = false;
     hamburger.addEventListener("click", function () {
+      
+      if(menuOpen == true){
+        hamburger.classList.add('open');
+        menuOpen = false;
+      } else {
+        hamburger.classList.remove('open');
+        menuOpen = true;
+      }
       navBar.classList.toggle("active");
     });
 
     const toggle = document.querySelector(".toggle");
     const body = document.querySelector(".body");
-    const profile = document.querySelector("profile")
-    const toggleTitle = document.querySelector(".toggle-title2");
-
+    const toggleTitle = document.querySelector(".toggle-title");
+    
     toggle.addEventListener("click", (e) => {
       toggle.classList.toggle("active");
+      toggleTitle.classList.toggle("active");
       body.classList.toggle("dark");
-      profile.classList.toggle("dark");
-      if (toggle.classList.contains("active")) {
+      if (toggleTitle.classList.contains("active")) {
         toggleTitle.innerHTML = '<p style="color: white;">MODO CLARO</p>';
       } else {
         toggleTitle.innerHTML = '<p style="color: white;">MODO OSCURO</p>';
       }
     });
+
+
+const toggledash = document.querySelector(".toggledash")
+const menuDashboard = document.querySelector(".menu-dashboard")
+const iconoMenu = toggle.querySelector("i")
+const enlacesMenu = document.querySelectorAll(".enlace")
+const geat = document.querySelector(".tuerca")
+geat.addEventListener("click", () => {
+    menuDashboard.classList.toggle("active")
+    geat.classList.toggle("activa")
+})
+
+enlacesMenu.forEach(enlace => {
+    enlace.addEventListener("click", () => {
+        menuDashboard.classList.add("active")
+        iconoMenu.classList.replace("bx-menu", "bx-x")
+    })
+})  
   </script>
 </header>
