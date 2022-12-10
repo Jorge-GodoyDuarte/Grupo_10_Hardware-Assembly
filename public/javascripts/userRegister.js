@@ -29,7 +29,7 @@ const validField = (element, target) => {
 
 const validPass = (element, exReg, value) => {
   if (!exReg.test(value)) {
-    $(element).classList.add("text-danger");
+    $(element).classList.add("form__text--error");
   } else {
     $(element).classList.add("text-success");
     $(element).classList.remove("text-danger");
@@ -130,7 +130,7 @@ $("password").addEventListener("blur", function ({ target }) {
     case !exRegs.exRegPass.test(this.value):
       msgError(
         "errorPass",
-        "La contraseña debe tener un símbolo, una número, una mayúscula, una minúscula y entre 6 y 8 caracteres",
+        "La contraseña debe tener un símbolo, un número, una mayúscula, una minúscula y entre 6 y 8 caracteres",
         target
       );
       break;

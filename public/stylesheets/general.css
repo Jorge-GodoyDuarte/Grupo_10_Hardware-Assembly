@@ -5,6 +5,7 @@
 @import './detail.css';
 @import './profile.css';
 @import './header.css';
+@import './login.css';
 
 :root {
     --tipografiaTitulos: 'Roboto';
