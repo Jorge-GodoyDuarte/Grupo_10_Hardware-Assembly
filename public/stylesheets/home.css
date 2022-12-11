@@ -1,7 +1,32 @@
 /* aca empieza el  harcodeo  de nuestros estilos */
 
 /* header */
-
+.header__agregar {
+  font-family: var(--tipografiaTitulos);
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
+.header__agregar h3 {
+  color: white;
+  font-size: 18px;
+}
+.header__nav a {
+  font-size: 40px;
+}
+.header__nav ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.header__nav ul li {
+  background-color:#10a4e997;
+  position:relative;
+  float:right;  
+  margin:0;
+  padding:0;
+  
+}
 .username {
   width: 100%;
   margin-bottom: 5px;
@@ -14,7 +39,43 @@
   margin-bottom: 20px;
 }
 
-
+.header__nav ul a {
+  display:block;
+  color:#fff;
+  text-decoration:none;
+  font-weight:400;
+  font-size: 18px;
+  padding:10px;
+  font-family: var(--tipografiaTitulos);
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+.header__nav ul ul {
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#eee;
+  padding:0;
+}
+.header__nav ul ul li {
+  float:none;
+  width:150px
+}
+.header__nav ul ul a {
+  line-height:120%;
+  padding:10px 15px;
+  width: 40px;
+}
+.header__nav ul li a{
+  font-size: 40px;
+}
+.header__nav ul li:hover {
+  background:#655ba7;
+}
+.header__nav ul li:hover ul {
+  display:block;
+}
 .c a {
   display: inline-flex;
   font-family: var(--tipografiaTitulos);
@@ -36,9 +97,37 @@
   margin: 0px;
   margin-top: 0px;
   padding: 0%;
-  transition: all 2.5s ease;
 }
 
+.head {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.header__section {
+  width: 100%;
+  margin-top: 0px;
+}
+
+.header__article {
+  width: 100%;
+  height: 100%;
+}
+.header__search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header {
+  background-color: #012677;
+  background: linear-gradient(45deg, red, blue, green, black);
+  background-size: 400% 400%;
+  opacity:  2.2;
+  position: relative;
+  animation: cambiar 10s ease-in-out infinite;
+  border: none;
+}
 .burger-button {
   top: 50px;
   background-color: transparent;
