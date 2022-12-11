@@ -15,7 +15,7 @@ module.exports = {
     .catch(error => console.log(error))
       },
       Terms : (req,res) => {
-        res.render('terms.html')
+        res.render('terms.ejs')
       }
     }
     
