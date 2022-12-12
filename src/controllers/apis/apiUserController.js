@@ -11,7 +11,26 @@ const authConfig = require("../database/config/auth");
 /*     CRUD DATABASE     */
 
 module.exports = {
-  
+  getAll : async (req,res) => {
+    try {
+
+        let {count, rows : users} = await db.User.findAndCountAll({
+            attributes : ['id','firstname','lastname','email']
+        })
+
+        return res.status(200).json({
+            ok : true,
+            total : count,
+            users
+        })
+        
+    } catch (error) {
+        return res.status(error.status || 500).json({
+            ok : false,
+            msg : error.message || '¡Ha ocurrido un error! Comunicate con el admnistrador'
+        })
+    }
+},
   processLogin: async (req, res) => {
     const errors = validationResult(req);
 
@@ -35,7 +54,7 @@ try {
     /* if(!user || !compareSync(password, user.password)){
         throw createError(401, 'Credenciales inválidas');
     } */
-    const token = jwt.sign(
+/*     const token = jwt.sign(
         {
           id,
           role_id,
@@ -44,7 +63,7 @@ try {
         {
           expiresIn: authConfig.expires,
         }
-      );
+      ); */
       return res.status(200).json({
         ok: true,
         status: 200,
@@ -65,10 +84,6 @@ try {
     try {
       const { firstname, lastname, email, city, street, phone, password} = req.body;
       
-                // ENCRIPTACIÓN DE CONTRASEÑA
-
-       /* const password = bcryptjs.hashSync((req.body.password,10)) */
-
        // VALIDACIONES
       if (errors.isEmpty()) {
         // CREACIÓN DEL USUARIO
@@ -76,7 +91,7 @@ try {
           firstname: firstname && firstname.trim(),
           lastname: lastname && lastname.trim(),
           email: email && email.trim(),
-          password : password.trim(),
+          password : bcryptjs.hashSync((password,10)),
           avatar: "default.png",
           role_id: 1,
           payment_id: 3,
@@ -85,7 +100,7 @@ try {
           phone: +phone,
         });
 
-            // CREACIÓN DE TOKEN
+/*             // CREACIÓN DE TOKEN
         const token = jwt.sign(
           {
             id,
@@ -95,7 +110,7 @@ try {
           {
             expiresIn: authConfig.expires,
           }
-        );
+        ); */
         return res.status(201).json({
             ok: true,
             status: 201,
@@ -114,88 +129,26 @@ try {
       }); 
     }
   },
+  verifyEmail : async (req,res) => {
 
-  updateEdit: (req, res) => {
-    const errors = validationResult(req);
-    if (errors.isEmpty()) {
-      const { firstName, lastName, email, password } = req.body;
-      const users = loadUsers();
-      const userModify = users.map((user) => {
-        if (users.id === req.session.userLogin.id) {
-          if (req.file && req.session.userLogin.avatar) {
-            if (
-              fs.existsSync(
-                path.resolve(
-                  __dirname,
-                  "..",
-                  "public",
-                  "images",
-                  "users",
-                  req.session.userLogin.avatar
-                )
-              )
-            ) {
-              console.log(">>>>>>>>>>", req.session.userLogin.avatar);
-              fs.unlinkSync(
-                path.resolve(
-                  __dirname,
-                  "..",
-                  "public",
-                  "images",
-                  "users",
-                  req.session.userLogin.avatar
-                )
-              );
+    try {
+        const {email} = req.body;
+        let user = await db.User.findOne({
+            where : {
+                email
             }
-          }
-          return {
-            id: user.id,
-            firstName: firstName.trim(),
-            lastName: lastName.trim(),
-            email: email.trim(),
-            password: bcryptjs.hashSync(password.trim(), 10),
-            rol: "user",
-            avatar: req.file ? req.file.filename : req.session.userLogin.avatar,
-          };
-        }
+        })
 
-        return user;
-      });
-      if (req.file && req.session.userLogin.avatar) {
-        if (
-          fs.existsSync(
-            path.resolve(
-              __dirname,
-              "..",
-              "public",
-              "images",
-              "users",
-              req.session.userLogin.avatar
-            )
-          )
-        ) {
-          console.log(">>>>>>>>>>", req.session.userLogin.avatar);
-          fs.unlinkSync(
-            path.resolve(
-              __dirname,
-              "..",
-              "public",
-              "images",
-              "users",
-              req.session.userLogin.avatar
-            )
-          );
-        }
-      }
+        return res.status(200).json({
+            ok : true,
+            verified : user ? true : false
+        })
 
-      storeUsers(userModify);
-      return res.redirect("/users/profile");
-    } else {
-      return res.render("profile", {
-        errors: errors.mapped(),
-        old: req.body,
-        user: loadUsers().find((user) => user.id === req.session.userLogin.id),
-      });
+    } catch (error) {
+        return res.status(error.status || 500).json({
+            ok : false,
+            error : error.message
+        })
     }
-  },
+}
 };

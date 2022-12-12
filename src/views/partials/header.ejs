@@ -40,19 +40,6 @@
   </div>
   </section>
 
-  
-  <!--       <div class="icon-profile">
-                <i class="fa-regular fa-user"></i>
-            </div> -->
-
-  <!--    <div class="dashboard">
-            <ul>
-                <li>Nombre de usuario</li>
-                <li>correo electronico</li>
-                <li>editar usuario</li>
-                <li>Contactanos</li>
-            </ul>
-        </div> -->
 
   <section class="section-header">
     <div class="burger">
@@ -66,7 +53,7 @@
       <div class="header__search">
         <div class="header__form">
           <input class="shopping__header__button" type="text" name="keywords"
-          value="" placeholder="Buscar productos, marcas y más .." >
+          value="submit" placeholder="Buscar productos, marcas y más .." >
           <button>
             <i class="fa-solid fa-magnifying-glass glass" ></i>
           </button>
@@ -116,14 +103,12 @@
         <i class="indicator"></i>
       </div>
     </div>
-    <div class="banner">
-      <img src="banner.jpg" alt="" /> 
-    </div>
-  </section>
+  
+</section>
+  
 
   <script>
     hamburger = document.querySelector(".burger");
-    navBar = document.querySelector(".nav-bar");
     conteiner = document.querySelector(".contenedor");
     let menuOpen = false;
     hamburger.addEventListener("click", function () {
@@ -135,17 +120,16 @@
         hamburger.classList.remove('open');
         menuOpen = true;
       }
-      navBar.classList.toggle("active");
     });
 
     const toggle = document.querySelector(".toggle");
-    const body = document.querySelector(".body");
+    const body = document.querySelectorAll(".body");
     const toggleTitle = document.querySelector(".toggle-title");
     
-    toggle.addEventListener("click", (e) => {
-      toggle.classList.toggle("active");
-      toggleTitle.classList.toggle("active");
-      body.classList.toggle("dark");
+    toggle.addEventListener("click", async (e) => {
+      await toggle.classList.toggle("active");
+      await toggleTitle.classList.toggle("active");
+      await body.classList.toggle("dark");
       if (toggleTitle.classList.contains("active")) {
         toggleTitle.innerHTML = '<p style="color: white;">MODO CLARO</p>';
       } else {
@@ -156,7 +140,6 @@
 
 const toggledash = document.querySelector(".toggledash")
 const menuDashboard = document.querySelector(".menu-dashboard")
-const iconoMenu = toggle.querySelector("i")
 const enlacesMenu = document.querySelectorAll(".enlace")
 const geat = document.querySelector(".tuerca")
 geat.addEventListener("click", () => {
@@ -167,7 +150,7 @@ geat.addEventListener("click", () => {
 enlacesMenu.forEach(enlace => {
     enlace.addEventListener("click", () => {
         menuDashboard.classList.add("active")
-        iconoMenu.classList.replace("bx-menu", "bx-x")
+        
     })
 })  
   </script>

@@ -4,6 +4,8 @@ font-family: 'Raleway', sans-serif;
 background-color: var(--colorDark);
 }
 .container-terms{
+    display: grid;
+    place-items: center;
     width: 300px;
     height: 700px;
     background-color: rgb(207, 221, 236);
