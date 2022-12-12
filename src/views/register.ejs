@@ -43,11 +43,19 @@
 
 
             <div class="form_box">
-                <label class="form_label" for="city">Ciudad:</label> 
-                <input class="form_input" type="text" id="city" name="city" value="<%= locals.old && old.city ? old.city:null%>  " > 
+                  <label class="form_label" for="province-select">Provincia:</label> 
+                <input class="form_input" type="text" id="province-input" name="province" value="<%= locals.old && old.city ? old.city:null%>  " > 
                 <select class="form-input" id="province-select" name="province">
 
+
                 </select>
+              <!--  <label class="form-label" for="province-select">Provincia</label>
+                <input type="text" class="form-input" id="province-input" value="<%= locals.old && old.city ? old.city:null%>  "
+                  hidden>
+                <select class="form-input" id="province-select" name="province">
+
+                </select>-->
+
                
             <small class="form__text--error"><%= locals.errors && errors.city? errors.city.msg :null %></small>
  
@@ -81,7 +89,8 @@
 
             <div class="form_box">
                 <label class="form_label" for="avatar">Seleccione un imagen de perfil</label>
-                <input  class="form_input" type="file" accept="png,jpg" id="avatar"   name="avatar">
+                <input  class="form_input" type="file" accept="image/*" id="avatar"   name="avatar">
+                <small class="form__text--error" id="msgErrorAvatar"></small>
             </div>
 
             
@@ -105,32 +114,13 @@
 
         <%- include('./partials/footer') %> 
         <script src="/javascripts/userRegister.js"></script>
-
+       
 
          <!-- <script src="/js/userProfile.js"></script> -->
 
          <script>
-            console.log("userProfile.js connected!");
-            const allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
-            const apiUrlBase = "https://apis.datos.gob.ar/georef/api"
-  
-            $('avatar').addEventListener('change', function ({ target }) {
-  
-              if (!allowedExtensions.exec(target.value)) {
-                $("msgErrorAvatar").innerText = "Solo archivos de imagen!"
-                target.value = null;
-  
-              } else {
-                let reader = new FileReader();
-  
-                reader.readAsDataURL(target.files[0]);
-  
-                reader.onload = () => {
-                  $('imagePreview').src = reader.result
-                }
-              }
-  
-            });
+
+          const apiUrlBase = "https://apis.datos.gob.ar/georef/api"
   
   
             const getProvinces = async () => {
@@ -168,15 +158,14 @@
   
             window.addEventListener('load', async () => {
   
-  
+   
               let provincias = await getProvinces();
+              $('province-select').innerHTML = `<option selected hidden>Seleccione...</option>`;
               provincias.forEach(provincia => {
                 $('province-select').innerHTML += `<option value="${provincia.nombre}"  ${provincia.nombre === $('province-input').value && 'selected'}>${provincia.nombre}</option>`
               });
   
-              $('province-select').addEventListener('change', async ({target}) => {
-                $('city-select').innerHTML = `<option selected hidden>Cargando...</option>`;
-  
+          /*   $('province-select').addEventListener('change', async ({target}) => {
                 let localidades = await getCities(target.value);
                 $('city-select').innerHTML = `<option selected hidden>Seleccione...</option>`;
                 localidades.forEach(localidad => {
@@ -184,8 +173,8 @@
               });
               })
   
-  
-            })
+            */})
+            
           </script>
 
 </body>

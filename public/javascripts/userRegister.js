@@ -1,5 +1,6 @@
 console.log("userRegister.js connected!");
 const apiUrlBase = "https://apis.datos.gob.ar/georef/api"
+const allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
 
 
 
@@ -15,6 +16,26 @@ const exRegs = {
   exRegMin: /.{6,}/,
   exRegMax: /.{8}/,
 };
+
+
+$('avatar').addEventListener('change', function ({ target }) {
+    
+  if(!allowedExtensions.exec(target.value)){
+      $("msgErrorAvatar").innerText = "Solo archivos de imagen!"
+      target.value = null;
+
+  }else{
+
+  let reader = new FileReader();
+
+  reader.readAsDataURL(target.files[0]);
+
+  reader.onload = () => {
+      $('imagePreview').src = reader.result
+  }
+}
+})
+
 
 const msgError = (element, msg, target) => {
   $(element).innerText = msg;
@@ -207,6 +228,8 @@ $("btn-show-pass").addEventListener("click", ({ target }) => {
     $("password").type = $("password").type === "text" ? "password" : "text";
   }
 });
+
+
 const getProvinces = async () => {
   try {
 
