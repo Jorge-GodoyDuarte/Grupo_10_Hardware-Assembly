@@ -96,6 +96,7 @@ module.exports = {
   },
 
   profile: (req, res) => {
+    
     db.User.findByPk(req.session.userLogin.id, {
       include: ["roles", "metodos"]
     })

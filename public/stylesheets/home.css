@@ -317,7 +317,18 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 15px;
   margin: 15px 15px;
   background-color: #fff;
- display: inline-block;
+  display: inline-block;
+  transition: all 1.5s ease;
+}
+.el-wrapper.active {
+  background-color: #0D1329;
+  transition: all 1.5s ease;
+}
+.el-wrapper.active .p-name {
+  color: #fff;
+}
+.el-wrapper.active .price {
+  color: #99fdecda;
 }
 
 @media (max-width: 991px) {

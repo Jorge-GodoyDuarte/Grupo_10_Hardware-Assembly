@@ -2,31 +2,24 @@ var express = require('express');
 var router = express.Router();
 
 
-const {login, processLogin,logout, register, processRegister, update, profile, updateEdit} = require('../controllers/userController');
+const {login, processLogin,logout, register, processRegister, profile, updateEdit} = require('../controllers/userController');
 const loginValidator = require('../validations/loginValidator');
-
 const registerValidator = require('../validations/registerValidator')
 const profileValidator = require('../validations/profileValidator')
-const userSessionCheck = require('../middlewares/userSessionCheck');
-const upload = require('../middlewares/uploadFiles');
-const userController = require('../controllers/userController');
+
+/* MIDDLEWARES  */
+const { userCheck, checkRedirect } = require('../middlewares');
+
 /* /users */
+
 router
-.get('/login',login) // users/login
-.get('/register',register)
+.get('/login',checkRedirect,login) // users/login
+.get('/register', checkRedirect, register)
 .post('/register/add',registerValidator,processRegister)
 .post('/login',loginValidator,processLogin)
 .get('/logout',logout) 
-.get('/profile',userSessionCheck,profile) // /users/profile
+.get('/profile',userCheck,profile) // /users/profile
 .put('/profile/:id',/* upload.single('avatar'), */profileValidator,updateEdit)
 
-/*   
-
- 
-
- 
- 
-
-  */
   
 module.exports = router;

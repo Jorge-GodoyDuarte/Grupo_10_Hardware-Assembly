@@ -4,9 +4,14 @@
 <%- include('./partials/head')  %> 
 
 
-<body>
-
-    <%- include('./partials/header') %> 
+<body class="body" id="body">
+    <header>
+      <%- include('./partials/header') %> 
+      <div class="banner">
+        <img src="banner.jpg" alt="" /> 
+      </div>
+    </header>
+    
     
     <main>
      
@@ -56,7 +61,7 @@
                             src="/images/logos-categorias/conectividad.bmp" alt=""></a></div>
             </section>
             <div class="flex-contenedor">
-              <% products/* .slice(-5) */.forEach(({id:id_product,name:name_product,brand_id,price,discount,marcas})=> { %>
+              <% products.slice(-10).forEach(({id:id_product,name:name_product,brand_id,price,discount,marcas})=> { %>
                 <% images.slice(-1).forEach(({id:id_image,name:name_image}) => { %>
                 <div class="el-wrapper">
                   <div class="box-up">
@@ -98,5 +103,24 @@
     <script src="/javascripts/index.js"></script>
 
 </body>
+<script>
+const tarjet = document.querySelectorAll(".el-wrapper")
+
+toggle.addEventListener("click", async (e) => {
+  
+   for (let i = 0; i < tarjet.length; i++) {
+    const elem = tarjet[i];
+    await elem.classList.toggle('active')
+  }
+} 
+)
+  
+
+
+
+
+
+
+</script>
 
 </html>

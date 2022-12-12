@@ -5,7 +5,12 @@
 @import './detail.css';
 @import './profile.css';
 @import './header.css';
+<<<<<<< HEAD
 @import './login.css';
+=======
+@import './terms.css';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+>>>>>>> 32d83c24c62a2bac1c2e66cee0bfc0c7ac506693
 
 :root {
     --tipografiaTitulos: 'Roboto';
@@ -17,13 +22,11 @@
     --colorGrisClaro: #ebebeb;
     --colorVerde: #39b54a;
     --colorRojo: rgb(253, 74, 74);
+    --colorDark: #0D1329;
+    --colorButton: rgb(19, 95, 196);
 
 }
-@keyframes cambiar{
-    0%{background-position: 0 50%;}
-    50%{background-position: 100% 50%;}
-    100%{background-position: 0 50%;}
-}
+
 a{
     text-decoration: none;
 }
