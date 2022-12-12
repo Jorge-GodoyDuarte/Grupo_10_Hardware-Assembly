@@ -264,7 +264,7 @@ header {
 text-align: left;
 }
 .dashboard ul {
-  display: flex;
+  display: flex;  
   list-style: none;
   justify-content: end;
 }

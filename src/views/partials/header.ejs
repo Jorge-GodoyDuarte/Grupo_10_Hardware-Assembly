@@ -123,13 +123,13 @@
     });
 
     const toggle = document.querySelector(".toggle");
-    const body = document.querySelectorAll(".body");
+    const body = document.getElementById("body");
     const toggleTitle = document.querySelector(".toggle-title");
     
     toggle.addEventListener("click", async (e) => {
-      await toggle.classList.toggle("active");
-      await toggleTitle.classList.toggle("active");
-      await body.classList.toggle("dark");
+       toggle.classList.toggle("active");
+       toggleTitle.classList.toggle("active");
+       body.classList.toggle("dark");
       if (toggleTitle.classList.contains("active")) {
         toggleTitle.innerHTML = '<p style="color: white;">MODO CLARO</p>';
       } else {
