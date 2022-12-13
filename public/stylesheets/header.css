@@ -281,19 +281,7 @@ text-align: left;
 .logout {
   background-color: rgb(189, 6, 6);
 }
-.banner {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 450px;
-  border: 22px;
-  border-color: yellowgreen;
-}
-.banner img {
-  width: 85%;
-  height: 430px;
-  text-align: end;
-}
+
 .logo__header img {
   width: 100%;
   height: 100%;
@@ -319,10 +307,12 @@ text-align: left;
   display: block;
   color: #fefefe;
   font-size: 18px;
-  padding: 10px 25px;
+  padding: 10px;
+  text-align: center;
   border-radius: 50px;
   transition: 0.2s;
   margin: 0 5px;
+  width: 150px;
 
 }
 .nav-bar ul li a:hover {
@@ -352,9 +342,7 @@ text-align: left;
     display: none;
   }
   .meu
-  .banner {
-    display: none;
-  }
+ 
   header {
     cursor: pointer;
   }
@@ -426,6 +414,7 @@ text-align: left;
   }
   .nav-bar.active {
     height: 450px;
+    margin-top: 67px;
     margin-bottom: 500px;
     z-index: 1;
   }

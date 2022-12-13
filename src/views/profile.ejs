@@ -16,7 +16,8 @@
                     
                     
                     <figure class="avatar__profile">
-                        <img  src="/images/users/<%= user.avatar ? user.avatar : 'default.png' %>" alt="avatar" class="avatar__img">
+                        <img  src="/images/users/<%= user.avatar ? user.avatar : 'default.png' %>" alt="avatar" class="avatar__img" id="imagePreview">
+                        <p class="text-danger" id="msgErrorAvatar"></p>
                     </figure>
                     
                     <h1 class="form_title">Perfil de usuario</h1>
@@ -71,6 +72,7 @@
             <div class="form__box__profile">
                 <label class="form__label__profile" for="avatar"><span>Modificar imagen de perfil</span></label>
                 <input  class="form__input__profile" type="file" accept="png,jpg" id="avatar" name="avatar">
+                
             </div>
 
   <button class="profile__button__send" type="submit">Editar perfil </button>
@@ -82,6 +84,7 @@
                 
         </main >
 
+        <script src="/javascripts/userProfile.js"></script>
 
 </body>
 

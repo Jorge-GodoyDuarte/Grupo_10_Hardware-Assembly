@@ -3,7 +3,7 @@
 /*cajas*/
 
 
-.form{
+/*.form{
     display:flex;
     flex-wrap: wrap;
     gap:30px;
@@ -133,12 +133,76 @@
 .form_text_error{
     color: red;
 }
+*/
+.form__text--error{
+    color:red
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.register_main_section {
+    width: 400px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+  }
+  
+  .form_input {
+    width: 100%;
+    background: #24303c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: white;
+  }
+
+  .register_main_section h1{
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
 
 
+  .register_main_section .botons{
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+    cursor:pointer
+  }
+
+  .register_main_section .cancel{
+    width: 100%;
+    background: red;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+    cursor:pointer
+  }
+
+  
 
 /*botones*/
 
 
+
+/*
 .form__button{
     border:none;
     border-radius: 5px;

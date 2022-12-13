@@ -1,10 +1,10 @@
 "use strict";
 const array = require("../../data/users.json");
 const users = array.map(
-  ({firstname, lastname, email, password, role_id,city,payment_id,phone,street}) => {
+  ({firstName, lastName, email, password, role_id,city,payment_id,phone,street}) => {
     return {
-      firstname,
-      lastname,
+      firstName,
+      lastName,
       email,
       password,
       role_id,
@@ -19,7 +19,7 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert("Users", users, {});
   },
-​
+
   async down(queryInterface, Sequelize) {
     await queryInterface.bulkDelete("Users", null, {});
   },

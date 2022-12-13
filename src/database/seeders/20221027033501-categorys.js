@@ -1,8 +1,9 @@
 'use strict';
 const array = require('../../data/category.json');
-const categories= array.map((name)=>{
+const categories= array.map(({name,image})=>{
   return {
-    name/* ,
+    name,
+    image/* ,
     createdAt: new Date() */
   }
 })

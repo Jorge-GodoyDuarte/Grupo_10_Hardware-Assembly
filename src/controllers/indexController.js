@@ -1,24 +1,24 @@
-const db = require('../database/models');
+const db = require("../database/models");
 module.exports = {
-  home: (req,res) => {
+  home: (req, res) => {
     let products = db.Product.findAll({
-      include :  ['marcas','categorias']  
-  }); 
-  let images = db.Image.findAll();
-    Promise.all([products,images])
-    .then(([products,images]) => {res.render('index.ejs', {
-            products,
-            images
-        })   
-          
+      include: ["marcas", "categorias"],
+      limit: 10,
+      include: ["images","brand"],
     })
-    
-    .catch(error => console.log(error))
-      },
-      Terms : (req,res) => {
-        res.render('terms.ejs')
-      }
+    let categories = db.Category.findAll()
+    Promise.all(([products,categories]))
+      .then(([products,categories]) => {
+        //return res.send(categories)
+        return res.render("index.ejs", {
+          products,
+          categories
+        });
+      })
 
-}
-
-
+      .catch((error) => console.log(error));
+  },
+  Terms: (req, res) => {
+    res.render("terms.ejs");
+  },
+};
