@@ -10,5 +10,17 @@
       "payment_id" : 1,
       "phone" : 1135257423,
       "avatar": "default.png"
+   },
+   {
+      "id": 1,
+      "firstName": "user",
+      "lastName": "Moran",
+      "email": "user@hotmail.com",
+      "password": "$2a$10$k.qK1U5/XSHEhtgLQe7jTOFVs23RemGGAKft.UJrcIrHC9.ZAIsQW",
+      "role_id": 1,
+      "city" : "Buenos Aires",
+      "payment_id" : 1,
+      "phone" : 1135257423,
+      "avatar": "default.png"
    }
 ]

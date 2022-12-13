@@ -10,13 +10,13 @@ module.exports = (sequelize, DataTypes) => {
         static associate(models) {
             // define association here
             Product.belongsTo(models.Brand, {
-                as: "marcas",
+                as: "brand",
                 foreignKey: "brand_id",
                 onDelete: 'cascade',
                 onUpdate: 'cascade'
             });
             Product.belongsTo(models.Category, {
-                as: "categorias",
+                as: "category",
                 foreignKey: "categories_id",
                 onDelete: 'cascade',
                 onUpdate: 'cascade'
