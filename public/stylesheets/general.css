@@ -5,12 +5,9 @@
 @import './detail.css';
 @import './profile.css';
 @import './header.css';
-<<<<<<< HEAD
 @import './login.css';
-=======
 @import './terms.css';
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
->>>>>>> 32d83c24c62a2bac1c2e66cee0bfc0c7ac506693
 
 :root {
     --tipografiaTitulos: 'Roboto';

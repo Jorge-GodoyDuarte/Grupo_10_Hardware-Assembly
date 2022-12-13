@@ -188,7 +188,7 @@ $("password2").addEventListener("blur", function ({ target }) {
     }
   });
 
-$("form-register").addEventListener("submit", function (e) {
+/*$("form-register").addEventListener("submit", function (e) {
   e.preventDefault(); //chequea todos los eventos
 
 let error = false;
@@ -203,7 +203,7 @@ let error = false;
         }
     }
 
-    !error && this.submit()
+    !error && this.submit() 
 
   /*  Swal.fire({
         position: "center",
@@ -216,8 +216,8 @@ let error = false;
         if (result.isConfirmed) {
             this.submit();
         }
-    }); */
-});
+    }); 
+}); */
 
 $("btn-show-pass").addEventListener("click", ({ target }) => {
   if (target.localName === "i") {

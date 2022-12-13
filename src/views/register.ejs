@@ -44,22 +44,39 @@
 
             <div class="form_box">
                   <label class="form_label" for="province-select">Provincia:</label> 
-                <input class="form_input" type="text" id="province-input" name="province" value="<%= locals.old && old.city ? old.city:null%>  " > 
+                <input class="form_input" type="text" id="province-input" name="province" value=" <%= locals.old && old.city ? old.city:null%>  " > 
                 <select class="form-input" id="province-select" name="province">
-
+                
 
                 </select>
+
+              </div>
               <!--  <label class="form-label" for="province-select">Provincia</label>
-                <input type="text" class="form-input" id="province-input" value="<%= locals.old && old.city ? old.city:null%>  "
+                <input type="text" class="form-input" id="province-input" value=" <%= locals.old && old.city ? old.city:null%>  "
                   hidden>
                 <select class="form-input" id="province-select" name="province">
 
                 </select>-->
 
+                <div class="form_box">
+                  <label class="form_label" for="city-select">Ciudad:</label> 
+                <input class="form_input" type="text" id="city-input" name="city" value=" <%= locals.old && old.city ? old.city:null%>  " > 
+                <select class="form-input" id="city-select" name="city">
+                </select>
                
             <small class="form__text--error"><%= locals.errors && errors.city? errors.city.msg :null %></small>
  
             </div>
+
+            <div class="form_box">
+              <label class="form_label" for="street-select">Calle:</label> 
+            <input class="form_input" type="text" id="street-input" name="street" value=" <%= locals.old && old.street ? old.street:null%>  " > 
+          
+           
+        <small class="form__text--error"><%= locals.errors && errors.stret? errors.street.msg :null %></small>
+
+        </div>
+        
 
 
             <div class="form_box">
