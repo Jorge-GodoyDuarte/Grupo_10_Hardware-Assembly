@@ -27,6 +27,20 @@
   padding:0;
   
 }
+
+.banner {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 450px;
+  border: 22px;
+  border-color: yellowgreen;
+}
+.banner img {
+  width: 100%;
+  height: 430px;
+  text-align: end;
+}
 .username {
   width: 100%;
   margin-bottom: 5px;
@@ -252,6 +266,7 @@
 .caja{
   display: inline-flex;
   flex-wrap: wrap;
+  width: 12%;
 }
 .category_item{
   overflow: hidden;
@@ -332,12 +347,26 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 @media (max-width: 991px) {
+  .caja{
+ 
+    width: 21%;
+  }
   .el-wrapper {
     width: 345px;
+  }
+
+  .banner {
+    display: none;
+
   }
 }
 
 @media (max-width: 767px) {
+
+  .caja{
+ 
+    width: 50%;
+  }
   .el-wrapper {
     width: 290px;
     margin: 30px 30px;

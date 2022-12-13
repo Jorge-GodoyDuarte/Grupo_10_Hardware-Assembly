@@ -40,7 +40,7 @@ module.exports = {
         }
       },
       phone: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING,
       },
       role_id: {
@@ -54,7 +54,7 @@ module.exports = {
         }
       },
       street: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING
       },
       /*       createdAt: {
