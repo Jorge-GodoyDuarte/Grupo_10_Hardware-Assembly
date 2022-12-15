@@ -2,9 +2,9 @@ const db = require("../database/models");
 module.exports = {
   home: (req, res) => {
     let products = db.Product.findAll({
-      include: ["marcas", "categorias"],
+      include: ["marcas", "categorias","images"],
       limit: 10,
-      include: ["images","brand"],
+     
     })
     let categories = db.Category.findAll()
     Promise.all(([products,categories]))
