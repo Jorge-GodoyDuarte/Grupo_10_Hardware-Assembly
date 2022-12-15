@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Category.init({
     name: DataTypes.STRING,
+    image : DataTypes.STRING
     /* createdAt: {
       type:DataTypes.DATEONLY,
       get() {
