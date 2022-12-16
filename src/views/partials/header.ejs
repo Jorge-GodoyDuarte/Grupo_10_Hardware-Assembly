@@ -31,7 +31,9 @@
             <a href="/users/profile">Perfil</a>
           </li>
           <li>
-            <a href="">Carrito</a>
+            <li id="btn-cart"><button type="button" class="btn fs-4" data-bs-toggle="modal" data-bs-target="#cartModal">
+							Mis compras <i class="fas fa-shopping-basket"></i>
+						  </button></li>
           </li>
           <% if (userLogin.role_id === 2) { %>
             <li>

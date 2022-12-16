@@ -281,15 +281,10 @@ return res.render('products', {
     products : productsFilter,
     
 })
-}
-}
+},
+carrito: (req,res)=>{
+  return res.render('cart')
+},
 
-  /* carrito: (req,res)=>{
-        return res.render('shopping-cart',{
-            
-        })
-    },
-
-    
-    }, */
-  
+}
+   

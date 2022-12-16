@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 /* const productsValidation = require('../validations/productsValidator') */
-const {detail,store,create,editProduct, updateEdit, remove, search} = require('../controllers/productController');
+const {detail,store,create,editProduct, updateEdit, remove, search,carrito} = require('../controllers/productController');
 const {adminCheck } = require('../middlewares')
 /* /products */
 
@@ -13,9 +13,8 @@ router
 .put('/update/:id', updateEdit)
 .delete('/delete/:id', remove)
 .get('/search', search)
-/*     
-    .get('/shopping-cart', carrito)
-    .get('/filter', filter)
+    
+    .get('/cart', carrito),
 
-     */ 
+     
 module.exports = router
