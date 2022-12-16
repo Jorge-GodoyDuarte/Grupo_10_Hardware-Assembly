@@ -1,3 +1,5 @@
+
+
 console.log("userLogin.js connected!");
 const apiUrlBase = "https://apis.datos.gob.ar/georef/api"
 
@@ -15,6 +17,51 @@ const exRegs = {
     exRegMin: /.{6,}/,
     exRegMax: /.{8}/,
   };
+
+
+  
+
+const msgError = (element, msg, target) => {
+  $(element).innerText = msg;
+  target.classList.add("is-invalid");
+};
+
+const validField = (element, target) => {
+  $(element).innerText = null;
+  target.classList.remove("is-invalid");
+  target.classList.add("is-valid");
+};
+
+const validPass = (element, exReg, value) => {
+  if (!exReg.test(value)) {
+    $(element).classList.add("form__text--error");
+  } else {
+    $(element).classList.add("text-success");
+    $(element).classList.remove("text-danger");
+  }
+};
+
+const verifyEmail = async (email) => {
+  try {
+    let response = await fetch("/api/users/verify-email", {  //puede haber error
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    let result = await response.json();
+
+    console.log(result);
+
+    return result.verified;
+  } catch (error) {
+    console.error;
+  }
+};
 
 
 
@@ -49,3 +96,19 @@ $("password").addEventListener("focus", () => {
         break;
     }
   });
+
+  $("btn-show-pass").addEventListener("click", ({ target }) => {
+    if (target.localName === "i") {
+      target.classList.toggle("fa-eye");
+      $("password").type = $("password").type === "text" ? "password" : "text";
+    } else {
+      target.childNodes[0].classList.toggle("fa-eye");
+      $("password").type = $("password").type === "text" ? "password" : "text";
+    }
+  });
+
+
+
+  $("form-loginn").addEventListener("submit", function (e) {
+    e.preventDefault(); //chequea todos los eventos
+  })

@@ -19,4 +19,6 @@ window.addEventListener('load', () => {
         timer: 1500
       }) */
 });
+
+
    

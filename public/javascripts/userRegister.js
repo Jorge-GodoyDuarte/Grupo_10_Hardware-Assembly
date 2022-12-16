@@ -190,11 +190,15 @@ $("password2").addEventListener("blur", function ({ target }) {
 
 $("form-register").addEventListener("submit", function (e) {
   e.preventDefault(); //chequea todos los eventos
+ 
+  
+
+ 
 
 let error = false;
 
   const elements = this.elements;
-    for (let i = 0; i < elements.length - 1; i++) {
+    for (let i = 0; i < elements.length - 2; i++) {
         
         if(!elements[i].value.trim() || elements[i].classList.contains('is-invalid')){
             elements[i].classList.add('is-invalid')
@@ -203,7 +207,7 @@ let error = false;
         }
     }
 
-    !error && this.submit()
+    !error && this.submit() 
 
   /*  Swal.fire({
         position: "center",

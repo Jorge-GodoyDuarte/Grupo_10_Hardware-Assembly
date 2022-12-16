@@ -42,22 +42,24 @@
             </div>
 
 
-            <div class="form_box">
+         <!--   <div class="form_box">
                   <label class="form_label" for="province-select">Provincia:</label> 
                 <input class="form_input" type="text" id="province-input" name="province" value="<%= locals.old && old.city ? old.city:null%>  " > 
-                <select class="form-input" id="province-select" name="province">
+      
+             
+                          <select class="form-input" id="province-select" name="province">
 
 
                 </select>
-              <!--  <label class="form-label" for="province-select">Provincia</label>
-                <input type="text" class="form-input" id="province-input" value="<%= locals.old && old.city ? old.city:null%>  "
+                
+
                   hidden>
                 <select class="form-input" id="province-select" name="province">
 
                 </select>-->
 
                
-            <small class="form__text--error"><%= locals.errors && errors.city? errors.city.msg :null %></small>
+              
  
             </div>
 
@@ -87,11 +89,7 @@
                 <small id="errorPass2" class="form__text--error"></small>
             </div>
 
-            <div class="form_box">
-                <label class="form_label" for="avatar">Seleccione un imagen de perfil</label>
-                <input  class="form_input" type="file" accept="image/*" id="avatar"   name="avatar">
-                <small class="form__text--error" id="msgErrorAvatar"></small>
-            </div>
+            
 
             
 
