@@ -29,7 +29,7 @@
                 <label class="form_label" for="brands">Coloca una marca:</label>
                 <select name="brands" id="brands">
                     <% brands.forEach(brands => { %>
-                        <option value="<%= brands.id %>" <%= products.brand_id === brands       .id ? 'selected' : null %>><%= brands.name %> </option>
+                        <option value="<%= brands.id %>" <%= products.brand_id === brands.id ? 'selected' : null %>><%= brands.name %> </option>
                         
                         <% }) %>
                     </select>

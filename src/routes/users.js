@@ -8,7 +8,7 @@ const registerValidator = require('../validations/registerValidator')
 const profileValidator = require('../validations/profileValidator')
 
 /* MIDDLEWARES  */
-const { userCheck, checkRedirect } = require('../middlewares');
+const { userCheck, checkRedirect, adminCheck } = require('../middlewares');
 
 /* /users */
 

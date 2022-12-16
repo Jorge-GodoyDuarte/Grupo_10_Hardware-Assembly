@@ -17,6 +17,7 @@
                     element.style.display='none';
                 }
             }
+            
         </script>
             <main>
                 <section>
@@ -24,17 +25,17 @@
                     <article class="detail__main-article">
                         <div class="detail__main-tittle">
                             <h4>
-                                <%= products.name%>
+                                <%= product.name%>
                             </h4>
                         </div>
 
                        <div class="superior-img-lateral">
                        
-                        <% if (images) { %>
+                       
                             <div class="detail__main-img">
-                                <img src="<%=images.name%>" alt="" width="50%" height="50%">
+                                <img src="/images/<%= product.images.name ? product.images.name : 'default.png' %>" alt="" width="50%" height="50%">
                             </div>
-                            <% }%>
+                            
 
                                 
 
@@ -43,25 +44,25 @@
 
                                     <div class="detail__main-price-discount">
 
-                                        <% if (products.discount) { %>
+                                        <% if (product.discount) { %>
                                             <div class="price-1">
                                                 <h4> PRECIO $<%= toThousand(new
-                                                        Intl.NumberFormat().format(Math.trunc((products.price) -
-                                                        (products.price * products.discount / 100))))%>
+                                                        Intl.NumberFormat().format(Math.trunc((product.price) -
+                                                        (product.price * product.discount / 100))))%>
                                                 </h4>
                                             </div>
                                             <div class="price2">
                                                 <p class="detail__discount"> $<%= new
-                                                        Intl.NumberFormat().format(products.price)%>
+                                                        Intl.NumberFormat().format(product.price)%>
 
                                                 </p>
                                                 <% } else { %>
-                                                    <h4> $<%= products.price %>
+                                                    <h4> $<%= product.price %>
                                                     </h4>
                                                     <% } %>
-                                                        <% if (products.discount> 0) { %>
+                                                        <% if (product.discount> 0) { %>
                                                             <h5>
-                                                                <%= products.discount%>%OFF
+                                                                <%= product.discount%>%OFF
                                                             </h5>
                                                             <% } %>
                                             </div>
@@ -91,17 +92,17 @@
                                
                                 <article class="detail__main-info" id="content">
                                     <div class="detail__main-info-product">
-                                        <p>marca</p>
+                                        <p>MARCA:</p>
                                         <p>
-                                            <%= products.marcas.name%>
+                                            <%= product.brand.name%>
                                         </p>
                                     </div>
                                   
                                 
                                     <div class="detail__main-info-product">
-                                        <p>Descripción de producto</p>
+                                        <p>DESCRIPCIÓN DEL PRODUCTO:</p>
                                         <p>
-                                            <%= products.description%>
+                                            <%= product.description%>
                                         </p>
                                     </div>
 
@@ -110,15 +111,17 @@
 
                     </article>
                     <article class="detail__main-article-button">
+                        <% if (locals.userLogin && userLogin.role_id === 2) { %>
                         <div class="detail__main-button">
-                            <button class="detail__button1"> <a href="/products/edit/<%=products.id%>">
+                            <button class="detail__button1"> <a href="/products/edit/<%=product.id%>">
                                     <h4 class="title-detail"> EDITAR </h4>
                                 </a></button>
                         </div>
 
-                        <form action="/products/delete/<%= products.id%>?_method=DELETE" method="POST">
+                        <form action="/products/delete/<%= product.id%>?_method=DELETE" method="POST">
 
                         </form>
+                        <% } %>
                     </article>
                 </section>
             </main>

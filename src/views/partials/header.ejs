@@ -1,59 +1,22 @@
 
 <header>
 
-  <section hidden>
-    <div>
-      <div class="button-dashboard">
-        <i class="fa-solid fa-gears tuerca"></i>
-      </div> 
-    </div>
-    <div class="menu-dashboard">
-      <!-- TOP MENU -->
-      <div class="top-menu">
-          <div class="logo">
-              <i><img src="../../../public/lgo.jpg" alt=""></i>
-              <span>Hardware Assembly</span>
-          </div>
-      </div>
-      <!-- MENU -->
-      <div class="menu">
-          <div class="enlace">
-            <i class="fa-solid fa-user"></i>
-              <span>Perfil</span>
-          </div>
-  
-          <div class="enlace">
-            <i class="fa-solid fa-cart-shopping"></i>
-              <span>Carrito de compras</span>
-          </div>
-  
-          <div class="enlace">
-            <i class="fa-regular fa-heart"></i>
-              <span>Favoritos</span>
-          </div>
-  
-          <div class="enlace">
-            <i class="fa-brands fa-instagram"></i>
-              <span>Redes sociales</span>
-          </div>
-      </div>
-  </div>
-  </section>
-
-
   <section class="section-header">
     <div class="burger">
       <div class="burger-menu"></div>
     </div>
   </div> 
-
  
   <div>
     <div class="div-nav-bar">
+      <div class="logo">
+        <a href="/"><h3>HardwareAssembly  </h3></a>
+      </div>
+      
       <div class="header__search">
         <div class="header__form">
-          <input class="shopping__header__button" type="text" name="keywords"
-          value="submit" placeholder="Buscar productos, marcas y más .." >
+          <input class="shopping__header__button" type="search" name="keywords"
+           placeholder="Buscar productos, marcas y más .." >
           <button>
             <i class="fa-solid fa-magnifying-glass glass" ></i>
           </button>
@@ -144,32 +107,17 @@
     });
 
 
-const toggledash = document.querySelector(".toggledash")
-const menuDashboard = document.querySelector(".menu-dashboard")
-const enlacesMenu = document.querySelectorAll(".enlace")
-const geat = document.querySelector(".tuerca")
-geat.addEventListener("click", () => {
-    menuDashboard.classList.toggle("active")
-    geat.classList.toggle("activa")
-})
-
-enlacesMenu.forEach(enlace => {
-    enlace.addEventListener("click", () => {
-        menuDashboard.classList.add("active")
-        
-    })
-})  
-
-window.addEventListener('load', () => {
+window.addEventListener('load',  () => {
   if(sessionStorage.getItem('modo') == 1) {
-                document.body.classList.toggle('dark')
+                 document.body.classList.toggle('dark')
                   toggleTitle.innerHTML = '<p style="color: white;">MODO OSCURO</p>';
-                  toggle.classList.add("active")
+                 
               }else{
-                toggleTitle.innerHTML = '<p style="color: black;">MODO CLARO</p>';
-                toggle.classList.remove("active")
-
+                 toggleTitle.innerHTML = '<p style="color: white;">MODO CLARO</p>';
+                 
+                 
               }
 })
+
   </script>
 </header>

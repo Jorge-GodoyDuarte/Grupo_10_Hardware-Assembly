@@ -1,22 +1,33 @@
-const db = require("../database/models");
+const db = require('../database/models');
+const { Op } = require('sequelize')
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 module.exports = {
   home: (req, res) => {
-    let products = db.Product.findAll({
-      include: ["marcas", "categorias"],
+    let product = db.Product.findAll({
       limit: 10,
-      include: ["images","brand"],
-    })
-    let categories = db.Category.findAll()
-    Promise.all(([products,categories]))
-      .then(([products,categories]) => {
-        //return res.send(categories)
-        return res.render("index.ejs", {
-          products,
-          categories
-        });
-      })
+			where: {
+				discount: {
+					[Op.gt]: 10
+				}
+			},
+			include: ['images', 'category','brand']
+		});
 
-      .catch((error) => console.log(error));
+		let newest = db.Product.findAll({
+			limit: 4,
+			include: ['images', 'category']
+		})
+   let category = db.Category.findAll()
+    Promise.all([product, newest, category])
+    .then(([product, newest, category]) => {
+      return res.render('index', {
+        product,
+        newest,
+        category,
+        toThousand
+      })
+    })
+    .catch(error => console.log(error))
   },
   Terms: (req, res) => {
     res.render("terms.ejs");

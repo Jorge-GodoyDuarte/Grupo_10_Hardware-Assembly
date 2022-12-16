@@ -10,26 +10,24 @@
      
     </header>
 
-
+    
     <main>
       <div class="banner">
-        <img src="banner.jpg" alt="" />
+        <%- include('./partials/carrousel') %>
       </div>
       <section class="contenedor">
-        <% for( let i=0; i < categories.length; i++ ) { %>
+        <% for( let i=0; i < category.length; i++ ) { %>
           <div class="caja">
-            <a href="/products/filter?category=<%= categories[i].id %>" class="category_item"
-              title="<%= categories[i].name %>">
-              <img src="/images/logos-categorias/<%= categories[i].image %> " alt="">
+            <a href="/products/filter?category=<%= category[i].id %>" class="category_item"
+              title="<%= category[i].name %>">
+              <img src="/images/logos-categorias/<%= category[i].image %> " alt="">
             </a>
           </div>
           <% } %>
-
-
       </section>
       <div class="flex-contenedor">
-        <% products.forEach(({id,name,price,discount,images,brand})=> { %>
-          <div class="el-wrapper">
+        <% product.forEach(({id,name,price,discount,images,brand})=> { %>
+          <div class="el-wrapper" id="el-wrapper" <%=  %> >
             <div class="box-up">
               <img class="img" src="/images/<%= images.length ? images[0].name : 'default.png' %> " alt="" width="50%"
                 height="50%">
@@ -63,23 +61,42 @@
           <% }) %>
       </div>
 
+      
       <%- include('./partials/footer') %>
 
         <script src="/javascripts/index.js"></script>
 
   </body>
   <script>
-    const tarjet = document.querySelectorAll(".el-wrapper")
-
-    toggle.addEventListener("click", async (e) => {
-
+    const tarjet = document.querySelectorAll(".el-wrapper");
+    
+    toggle.addEventListener("click", (e) => {
+      const mode = sessionStorage.getItem('modo');
       for (let i = 0; i < tarjet.length; i++) {
         const elem = tarjet[i];
-        await elem.classList.toggle('active')
+        if(sessionStorage.getItem('modo') == 1){
+          elem.classList.add('active')
+        } else {
+          elem.classList.remove('active')
+        }
       }
     }
     )
-
+    window.addEventListener('load', () => {
+      const mode = sessionStorage.getItem('modo');
+      for (let i = 0; i < tarjet.length; i++) {
+        const elem = tarjet[i];
+        if(sessionStorage.getItem('modo') == 1){
+          elem.classList.add('active')
+        } else {
+          elem.classList.remove('active')
+        }
+      }
+    })
+    
+    
+      
+     
 
 
 

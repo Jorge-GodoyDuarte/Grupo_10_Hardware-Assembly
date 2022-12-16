@@ -205,7 +205,7 @@ let error = false;
 
     !error && this.submit()
 
-  /*  Swal.fire({
+    Swal.fire({
         position: "center",
         icon: "info",
         title: "Recibirás un email para confirmar tu registración",
@@ -216,7 +216,7 @@ let error = false;
         if (result.isConfirmed) {
             this.submit();
         }
-    }); */
+    }); 
 });
 
 $("btn-show-pass").addEventListener("click", ({ target }) => {
@@ -230,19 +230,7 @@ $("btn-show-pass").addEventListener("click", ({ target }) => {
 });
 
 
-const getProvinces = async () => {
-  try {
 
-      const response = await fetch(`${apiUrlBase}/provincias`);
-      const result = await response.json();
-
-      console.log(result.provincias)
-      
-  } catch (error) {
-      console.error
-  }
-
-}
 
 
 window.addEventListener('load', () => {

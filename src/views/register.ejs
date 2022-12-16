@@ -43,9 +43,11 @@
 
 
             <div class="form_box">
-                  <label class="form_label" for="province-select">Provincia:</label> 
-                <input class="form_input" type="text" id="province-input" name="province" value="<%= locals.old && old.city ? old.city:null%>  " > 
-                <select class="form-input" id="province-select" name="province">
+                  <label class="form_label" for="province-select" id="province-select">Provincia:</label> 
+                  <input class="form_input" type="text" id="province-input" name="province" > 
+                
+                  
+                  
 
 
                 </select>
@@ -88,17 +90,9 @@
             </div>
 
             <div class="form_box">
-                <label class="form_label" for="avatar">Seleccione un imagen de perfil</label>
-                <input  class="form_input" type="file" accept="image/*" id="avatar"   name="avatar">
-                <small class="form__text--error" id="msgErrorAvatar"></small>
-            </div>
-
-            
-
-            <div class="form_box">
                 <div class="form_box--flex">
-  <button class="botons" type="submit">Registrate</button>
-  <span id="msgError" class="form__text--error"></span>
+              <button class="botons" type="submit">Registrate</button>
+                   <span id="msgError" class="form__text--error"></span>
                 <button class="cancel" type="reset">Cancelar</button>
             </div>
             </div>
@@ -116,15 +110,14 @@
         <script src="/javascripts/userRegister.js"></script>
        
 
-         <!-- <script src="/js/userProfile.js"></script> -->
 
          <script>
 
 
-          //const apiUrlBase = "https://apis.datos.gob.ar/georef/api"
+          const apiUrlBase = "https://apis.datos.gob.ar/georef/api"
   
   
-           /*  const getProvinces = async () => {
+               const getProvinces = async () => {
               try {
   
                 const response = await fetch(`${apiUrlBase}/provincias`);
@@ -153,22 +146,12 @@
               } catch (error) {
                 console.error
               }
-            } */
+            } 
   
   
   
-            window.addEventListener('load', async () => {
-  
-             /*  if(sessionStorage.getItem('modo') == 1) {
-                document.body.classList.toggle('dark')
-                  toggleTitle.innerHTML = '<p style="color: white;">MODO OSCURO</p>';
-                  toggle.classList.add("active")
-              }else{
-                toggleTitle.innerHTML = '<p style="color: black;">MODO CLARO</p>';
-                toggle.classList.remove("active")
-
-              }
- */
+           
+ 
 
               let provincias = await getProvinces();
               $('province-select').innerHTML = `<option selected hidden>Seleccione...</option>`;
@@ -176,7 +159,7 @@
                 $('province-select').innerHTML += `<option value="${provincia.nombre}"  ${provincia.nombre === $('province-input').value && 'selected'}>${provincia.nombre}</option>`
               });
   
-          /*   $('province-select').addEventListener('change', async ({target}) => {
+           $('province-select').addEventListener('change', async ({target}) => {
                 let localidades = await getCities(target.value);
                 $('city-select').innerHTML = `<option selected hidden>Seleccione...</option>`;
                 localidades.forEach(localidad => {
@@ -184,7 +167,7 @@
               });
               })
   
-            */})
+            
             
           </script>
 
