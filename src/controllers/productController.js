@@ -274,16 +274,11 @@ return res.render("search", {
     })
     }})
     
+})
+},
+carrito: (req,res)=>{
+  return res.render('cart')
+},
 
 }
-}
-
-  /* carrito: (req,res)=>{
-        return res.render('shopping-cart',{
-            
-        })
-    },
-
-    
-    }, */
-  
+   
