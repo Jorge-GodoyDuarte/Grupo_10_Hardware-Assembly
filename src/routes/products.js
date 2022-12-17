@@ -14,7 +14,7 @@ router
 .delete('/delete/:id', remove)
 .get('/search', search)
 .get('/filter', filter)
-.get('/shopping-cart', carrito)
+.get('/cart', carrito)
 
      
 module.exports = router

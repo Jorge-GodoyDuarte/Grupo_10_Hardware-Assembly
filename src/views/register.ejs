@@ -44,9 +44,9 @@
 
             <div class="form_box">
                   <label class="form_label" >Ciudad:</label> 
-                  <input type="text" class="form-input" id="province-input">
+                  <input type="text" class="form-input" id="city-option">
                   <select class="form-input" id="province-select" name="province">
-                        <option class="province-select" id="province-select"> <%= provincias %> </option>
+                        <option class="province-select" id="city-option"></option>
                 </select>
 
                
@@ -128,17 +128,19 @@
   
                 result.localidades.sort((a, b) => a.nombre > b.nombre ? 1 : a.nombre < b.nombre ? -1 : 0)
   
-                return result.localidades
+                return  result.localidades
   
               } catch (error) {
-                console.error
+                console.log(error)
               }
             } 
   
-  
-  
-           
- 
+              let cities = getCities();
+              $('#city-option').innerHTML = `<option selected hidden>Seleccione...</option>`;
+              cities.forEach(city => {
+                $('city-option').innerHTML += `<option value="${city.nombre}"  ${city.nombre === $('province-input').value && 'selected'}>${city.nombre}</option>`
+              });
+              
 
               let provincias =  getProvinces();
                $('province-select').innerHTML = `<option selected hidden>Seleccione...</option>`;
@@ -154,10 +156,11 @@
               });
               })
               window.addEventListener('load', async () => {
-
+                
             await getProvinces()
-            getCities()
-
+            await getCities()
+            console.log(result.localidades + 'asdadad')
+            console.log('asdada');
                     })
   
             
