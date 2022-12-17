@@ -1,14 +1,12 @@
 const db = require("../database/models");
 const sequelize = db.sequelize;
-const { loadUsers, storeUsers } = require("../data/db_Module");
 const { validationResult } = require("express-validator");
 const bcryptjs = require("bcryptjs");
 const fs = require("fs");
 const path = require("path");
 const session = require("express-session");
 const jwt = require("jsonwebtoken");
-const authConfig = require("../database/config/auth");
-const { all } = require("../routes/users");
+
 /*     CRUD DATABASE     */
 module.exports = {
   login: (req, res) => {
@@ -46,12 +44,58 @@ module.exports = {
             role_id: +role_id,
             email
           };
+        /* carrito */
+        db.Order.findOne({
+          where : {
+            userId : req.session.userLogin.id,
+            statusId : 1
+          },
+          include : [
+            {
+              association : 'carts',
+              attributes : ['id','quantity'],
+              include : [
+                {
+                  association : 'product',
+                  attributes : ['id','name','price','discount'],
+                  include : ['images']
+                }
+              ]
+            }
+          ]
+        }).then(order => {
+            if(order) {
+        
+              req.session.orderCart = {
+                id : order.id,
+                total : order.total,
+                items : order.carts
+              }
 
-          /* guardar la cookie */
+            }else {
 
-          return res.redirect("/");
-        })
-        .catch((error) => console.log(error));
+              db.Order.create({
+                date : new Date(),
+                total : 0,
+                userId : req.session.userLogin.id,
+                statusId : 1
+              }).then(order => {
+                
+                req.session.orderCart = {
+                  id : order.id,
+                  total : order.total,
+                  items : []
+                }
+  
+              })
+            }
+
+            return role_id === 1  ? res.redirect('http://localhost:3001') : res.redirect('/');
+
+        }).catch(error => console.log(error))
+
+
+      });
     } else {
       return res.render("login", {
         errors: errors.mapped(),

@@ -1,14 +1,11 @@
-const db = require("../database/models");
-const sequelize = db.sequelize;
-const { loadUsers, storeUsers } = require("../data/db_Module");
+const db = require("../../database/models");
 const { validationResult } = require("express-validator");
 const bcryptjs = require("bcryptjs");
 const fs = require("fs");
 const path = require("path");
 const session = require("express-session");
 const jwt = require("jsonwebtoken");
-const authConfig = require("../database/config/auth");
-/*     CRUD DATABASE     */
+
 
 module.exports = {
   getAll : async (req,res) => {

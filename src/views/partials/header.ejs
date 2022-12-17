@@ -12,18 +12,21 @@
       <div class="logo">
         <a href="/"><h3>HardwareAssembly  </h3></a>
       </div>
-      
+      <form action="/products/search" method="GET" class="search-form">
       <div class="header__search">
         <div class="header__form">
-          <input class="shopping__header__button" type="search" name="keywords"
+          
+            <input class="shopping__header__button" type="search" name="keywords"
            placeholder="Buscar productos, marcas y más .." >
-          <button>
-            <i class="fa-solid fa-magnifying-glass glass" ></i>
+         
+          <button type="submit" style="cursor: pointer;">
+            <i class="fa-solid fa-magnifying-glass glass" style="cursor: pointer;"></i>
           </button>
           
         </div>
           
       </div>  
+      </form>
       <nav class="nav-bar " id="navbar">
         <% if (locals.userLogin) { %>
         <ul>

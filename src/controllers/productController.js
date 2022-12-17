@@ -1,20 +1,9 @@
 const db = require("../database/models");
 const sequelize = db.sequelize;
-
 const {Op} = require('sequelize')
-
 const { name } = require("ejs");
 const { search } = require("../routes");
-
-const products = require("../data/db_Module").loadProducts();
-const brands = require("../data/db_Module").loadBrands();
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const {
-  storeProducts,
-  loadBrands,
-  loadProducts,
-  loadCategory,
-} = require("../data/db_Module");
 const { validationResult } = require("express-validator");
 const { Association } = require("sequelize");
 
@@ -44,11 +33,7 @@ module.exports = {
           order : [orderQuery],
           include : [
             {
-              association : 'images',
-              attributes : {
-                exclude : ['createdAt','updatedAt', 'deletedAt', 'id', 'file', 'productId'],
-                include : [[literal(`CONCAT('${req.protocol}://${req.get('host')}/api/products/image/',file)`),'url']]
-              },
+              association : 'images'
             },
             {
               association : 'category',
@@ -275,12 +260,21 @@ return res.render("search", {
 			.catch((error) => console.log(error));
 	},
   filter: (req,res) => {
-    const products = db.Product.findAll()
-    const productsFilter = products.filter(product => product.section === req.query.section)
-return res.render('products', {
-    products : productsFilter,
+    db.Product.findAll({
+      include: ['category'],
+      where : {
+        id : req.params.id
+      }
+    })
+    .then((category) => {{
+      return category
+      return res.render('products', {
+       category
+        
+    })
+    }})
     
-})
+
 }
 }
 

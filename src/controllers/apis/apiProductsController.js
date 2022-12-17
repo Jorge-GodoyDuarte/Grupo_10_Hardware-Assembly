@@ -8,7 +8,7 @@ module.exports = {
 
 		try {
 
-			let {limit = 4, page = 1, order = 'ASC', sortBy = 'id', search = "", sale = 0} = req.query;
+			let {limit = 5, page = 1, order = 'ASC', sortBy = 'id', search = "", sale = 0} = req.query;
 
 			/* paginación */
 			limit = limit > 16 ? 16 : +limit;
@@ -31,8 +31,8 @@ module.exports = {
 					{
 						association : 'images',
 						attributes : {
-							exclude : ['createdAt','updatedAt', 'deletedAt', 'id', 'file', 'productId'],
-							include : [[literal(`CONCAT('${req.protocol}://${req.get('host')}/api/products/image/',file)`),'url']]
+							exclude : ['createdAt','updatedAt', 'deletedAt', 'id', 'productId'],
+							
 						},
 					},
 					{
@@ -106,7 +106,7 @@ module.exports = {
 			const prev =  existPrev ? `${req.protocol}://${req.get('host')}${req.baseUrl}?page=${page - 1}${queryUrl}` : null;
 			const next = existNext ? `${req.protocol}://${req.get('host')}${req.baseUrl}?page=${page + 1}${queryUrl}` : null;
 
-			return res.send.status(200).json({
+			return res.status(200).json({
 				ok : true,
 				meta : {
 					total : count,
