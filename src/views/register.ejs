@@ -42,21 +42,21 @@
             </div>
 
 
-         <!--   <div class="form_box">
-                  <label class="form_label" for="province-select">Provincia:</label> 
-                <input class="form_input" type="text" id="province-input" name="province" value="<%= locals.old && old.city ? old.city:null%>  " > 
-      
-             
-                          <select class="form-input" id="province-select" name="province">
+            <div class="form_box">
+                  <label class="form_label" for="province-select" id="province-select">Provincia:</label> 
+                  <input class="form_input" type="text" id="province-input" name="province" > 
+                
+                  
+                  
 
 
                 </select>
                 
 
-                  hidden>
+                  
                 <select class="form-input" id="province-select" name="province">
 
-                </select>-->
+                </select>
 
                
               
@@ -89,14 +89,10 @@
                 <small id="errorPass2" class="form__text--error"></small>
             </div>
 
-            
-
-            
-
             <div class="form_box">
                 <div class="form_box--flex">
-  <button class="botons" type="submit">Registrate</button>
-  <span id="msgError" class="form__text--error"></span>
+              <button class="botons" type="submit">Registrate</button>
+                   <span id="msgError" class="form__text--error"></span>
                 <button class="cancel" type="reset">Cancelar</button>
             </div>
             </div>
@@ -111,17 +107,17 @@
         </main >
 
         <%- include('./partials/footer') %> 
-        <script src="/javascripts/userRegister.js"></script>
+        
        
 
-         <!-- <script src="/js/userProfile.js"></script> -->
 
-         <script>
+         <script src="/javascripts/userRegister.js">
+
 
           const apiUrlBase = "https://apis.datos.gob.ar/georef/api"
   
   
-            const getProvinces = async () => {
+               const getProvinces = async () => {
               try {
   
                 const response = await fetch(`${apiUrlBase}/provincias`);
@@ -140,8 +136,8 @@
             const getCities = async (provincia) => {
               try {
   
-                const response = await fetch(`${apiUrlBase}/localidades?provincia=${provincia}&max=4000`);
-                const result = await response.json();
+                const response =  fetch(`${apiUrlBase}/localidades?provincia=${provincia}&max=4000`);
+                const result =  response.json();
   
                 result.localidades.sort((a, b) => a.nombre > b.nombre ? 1 : a.nombre < b.nombre ? -1 : 0)
   
@@ -150,28 +146,28 @@
               } catch (error) {
                 console.error
               }
-            }
+            } 
   
   
   
-            window.addEventListener('load', async () => {
-  
-   
-              let provincias = await getProvinces();
+           
+ 
+
+              let provincias = getProvinces();
               $('province-select').innerHTML = `<option selected hidden>Seleccione...</option>`;
               provincias.forEach(provincia => {
                 $('province-select').innerHTML += `<option value="${provincia.nombre}"  ${provincia.nombre === $('province-input').value && 'selected'}>${provincia.nombre}</option>`
               });
   
-          /*   $('province-select').addEventListener('change', async ({target}) => {
-                let localidades = await getCities(target.value);
+           $('province-select').addEventListener('change', async ({target}) => {
+                let localidades =  getCities(target.value);
                 $('city-select').innerHTML = `<option selected hidden>Seleccione...</option>`;
                 localidades.forEach(localidad => {
                 $('city-select').innerHTML += `<option value="${localidad.nombre}">${localidad.nombre}</option>`
               });
               })
   
-            */})
+            
             
           </script>
 

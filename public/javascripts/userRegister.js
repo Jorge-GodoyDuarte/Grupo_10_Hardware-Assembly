@@ -9,57 +9,36 @@ const exRegs = {
   exRegEmail: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/,
   exRegPass:
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,8}/,
-  exRegMayu: /[A-Z]/,
-  exRegMinu: /[a-z]/,
-  exRegNum: /[0-9]/,
-  exRegEsp: /[$@$!%*?&]/,
-  exRegMin: /.{6,}/,
-  exRegMax: /.{8}/,
+  
 };
 
 
-$('avatar').addEventListener('change', function ({ target }) {
-    
-  if(!allowedExtensions.exec(target.value)){
-      $("msgErrorAvatar").innerText = "Solo archivos de imagen!"
-      target.value = null;
-
-  }else{
-
-  let reader = new FileReader();
-
-  reader.readAsDataURL(target.files[0]);
-
-  reader.onload = () => {
-      $('imagePreview').src = reader.result
-  }
-}
-})
 
 
 const msgError = (element, msg, target) => {
   $(element).innerText = msg;
-  target.classList.add("is-invalid");
+ 
 };
 
 const validField = (element, target) => {
   $(element).innerText = null;
-  target.classList.remove("is-invalid");
-  target.classList.add("is-valid");
+
 };
+
+
 
 const validPass = (element, exReg, value) => {
   if (!exReg.test(value)) {
     $(element).classList.add("form__text--error");
   } else {
     $(element).classList.add("text-success");
-    $(element).classList.remove("text-danger");
+    $(element).classList.remove("form__text--error");
   }
 };
 
 const verifyEmail = async (email) => {
   try {
-    let response = await fetch("/api/users/verify-email", {  //puede haber error
+    let response = await fetch("/a", {  //puede haber error
       method: "POST",
       body: JSON.stringify({
         email: email,
@@ -94,9 +73,10 @@ $("firstname").addEventListener("blur", function ({ target }) {
     case !exRegs.exRegAlfa.test(this.value):
       msgError("errorNombre", "El nombre debe tener solo letras", target);
       break;
-    default:
-      validField("errorNombre", target);
-      break;
+      default:
+        validField("errorNombre", target);
+        break;
+      
   }
 });
 
@@ -199,17 +179,20 @@ let error = false;
 
   const elements = this.elements;
     for (let i = 0; i < elements.length - 2; i++) {
+
+     console.log(error)
         
         if(!elements[i].value.trim() || elements[i].classList.contains('is-invalid')){
             elements[i].classList.add('is-invalid')
            $('msgError').innerText = 'Hay campos con errores o estan vacios!'
            error = true;
+           console.log(elements[i])
         }
     }
 
     !error && this.submit() 
 
-  /*  Swal.fire({
+    Swal.fire({
         position: "center",
         icon: "info",
         title: "Recibirás un email para confirmar tu registración",
@@ -220,7 +203,7 @@ let error = false;
         if (result.isConfirmed) {
             this.submit();
         }
-    }); */
+    }); 
 });
 
 $("btn-show-pass").addEventListener("click", ({ target }) => {
@@ -240,13 +223,15 @@ const getProvinces = async () => {
       const response = await fetch(`${apiUrlBase}/provincias`);
       const result = await response.json();
 
-      console.log(result.provincias)
+      
       
   } catch (error) {
       console.error
   }
 
 }
+
+
 
 
 window.addEventListener('load', () => {

@@ -1,102 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head')  %> 
+<%- include('./partials/head') %>
 
 
-<body>
+  <body class="body" id="body">
+    <header>
+      <%- include('./partials/header') %>
+     
+    </header>
 
-    <%- include('./partials/header') %> 
     
     <main>
-     
-            <section class="contenedor">
-
-                <div class="caja"></div><a href="/products/filter?category=Motherboard" class="category_item"
-                        category="mother" title="mother"><img src="/images/logos-categorias/mother.bmp"
-                            alt=""></a></div>
-                <div class="caja"> <a href="/products/filter?category=CPU" class="category_item" category="cpu" title="cpu"><img
-                            src="/images/logos-categorias/cpu.bmp"
-                            alt=""></a></div>
-                <div class="caja"> <a href="/products/filter?category=Ram"class="category_item" category="ram" title="ram"><img
-                            src="/images/logos-categorias/ram.bmp"
-                            alt=""></a></div>
-                <div class="caja"><a href="/products/filter?category=Fuente" class="category_item"
-                        category="fuente" title="fuente"><img
-                            src="/images/logos-categorias/fuente.bmp" alt=""></a></div>
-                <div class="caja"><a href="/products/filter?category=GPU" class="category_item" category="gpu" title="gpu"><img
-                            src="/images/logos-categorias/gpu.bmp"
-                            alt=""></a></div>
-                <div class="caja"> <a href="/products/filter?category=Monitor" class="category_item"
-                        category="display" title="display"><img
-                            src="/images/logos-categorias/display.bmp" alt=""></a></div>
-                <div class="caja"><a href="/products/filter?category=HDD" class="category_item" category="hdd" title="hdd"> <img
-                            src="/images/logos-categorias/hdd.bmp"
-                            alt=""></a></div>
-                <div class="caja"> <a href="/products/filter?category=Mouse" class="category_item"
-                        category="mouse" title="mouse"><img
-                            src="/images/logos-categorias/mouse.bmp" alt=""></a></div>
-                <div class="caja"><a href="/products/filter?category=Headset" class="category_item"
-                        category="headset" title="headset"><img
-                            src="/images/logos-categorias/headset.bmp" alt=""></a></div>
-                <div class="caja"><a href="/products/filter?category=Cooling" class="category_item"
-                        category="cooling" title="cooling"><img
-                            src="/images/logos-categorias/cooling.bmp" alt=""></a></div>
-                <div class="caja"> <a href="/products/filter?category=Desktop" class="category_item"
-                        category="desktop" title="desktop"><img
-                            src="/images/logos-categorias/desktop.bmp" alt=""></a></div>
-                <div class="caja"> <a href="/products/filter?category=Laptop" class="category_item"
-                        category="laptop" title="laptop"><img
-                            src="/images/logos-categorias/laptop.bmp" alt=""></a></div>
-                <div class="caja"> <a href="/products/filter?category=Licencias y seguridad" class="category_item"
-                        category="licencias-seguridad" title="licencia-seguridad"><img
-                            src="/images/logos-categorias/licenciasyseguridad.bmp" alt=""></a></div>
-                <div class="caja"><a href="/products/filter?category=Conectividad" class="category_item"
-                        category="conectividad" title="conectividad"><img
-                            src="/images/logos-categorias/conectividad.bmp" alt=""></a></div>
-            </section>
-            <div class="flex-contenedor">
-              <% products/* .slice(-5) */.forEach(({id:id_product,name:name_product,brand_id,price,discount,marcas})=> { %>
-                <% images.slice(-1).forEach(({id:id_image,name:name_image}) => { %>
-                <div class="el-wrapper">
-                  <div class="box-up">
-                    
-                    
-                    <img class="img" src="<%= name_image%> " alt="" width="50%" height="50%">
-                    <div class="img-info">
-                      <div class="info-inner">
-                        <span class="p-name">
-                          <%= name_product %>
-                        </span>
-                        <span class="p-company">
-                          <%= marcas.name %> 
-                        </span>
-                      </div>
-    
-                    </div>
-                  </div>
-    
-                  <div class="box-down">
-                    <div class="h-bg">
-                      <div class="h-bg-inner"></div>
-                    </div>
-    
-                    
-                      <span class="price">$<%= new Intl.NumberFormat().format(Math.trunc((price) - (price * discount / 100))) %></span>
-                      <span class="go-description">
-                        <a class="txt" href="/products/detail/<%= id_product%>"><span class="txt">VER-PRODUCTO</span></a>
-                      </span>
-                    
-                  </div>
+      <div class="banner">
+        <%- include('./partials/carrousel') %>
+      </div>
+      <section class="contenedor">
+        <% for( let i=0; i < category.length; i++ ) { %>
+          <div class="caja">
+            <a href="/products/filter?category=<%= category[i].id %>" class="category_item"
+              title="<%= category[i].name %>">
+              <img src="/images/logos-categorias/<%= category[i].image %> " alt="">
+            </a>
+          </div>
+          <% } %>
+      </section>
+      <div class="flex-contenedor">
+        <% product.forEach(({id,name,price,discount,images,brand})=> { %>
+          <div class="el-wrapper" id="el-wrapper" <%=  %> >
+            <div class="box-up">
+              <img class="img" src="/images/<%= images.length ? images[0].name : 'default.png' %> " alt="" width="50%"
+                height="50%">
+              <div class="img-info">
+                <div class="info-inner">
+                  <span class="p-name">
+                    <%= name %>
+                  </span>
+                  <span class="p-company">
+                    <%= brand.name %>
+                  </span>
                 </div>
-                <% }) %>
-                <% }) %>
+
+              </div>
             </div>
 
-    <%- include('./partials/footer') %> 
-    
-    <script src="/javascripts/index.js"></script>
+            <div class="box-down">
+              <div class="h-bg">
+                <div class="h-bg-inner"></div>
+              </div>
 
-</body>
+
+              <span class="price">$<%= new Intl.NumberFormat().format(Math.trunc((price) - (price * discount / 100))) %>
+              </span>
+              <span class="go-description">
+                <a class="txt" href="/products/detail/<%= id%>"><span class="txt">VER-PRODUCTO</span></a>
+              </span>
+
+            </div>
+          </div>
+          <% }) %>
+      </div>
+
+      
+      <%- include('./partials/footer') %>
+
+        <script src="/javascripts/index.js"></script>
+
+  </body>
+  <script>
+    const tarjet = document.querySelectorAll(".el-wrapper");
+    
+    toggle.addEventListener("click", (e) => {
+      const mode = sessionStorage.getItem('modo');
+      for (let i = 0; i < tarjet.length; i++) {
+        const elem = tarjet[i];
+        if(sessionStorage.getItem('modo') == 1){
+          elem.classList.add('active')
+        } else {
+          elem.classList.remove('active')
+        }
+      }
+    }
+    )
+    window.addEventListener('load', () => {
+      const mode = sessionStorage.getItem('modo');
+      for (let i = 0; i < tarjet.length; i++) {
+        const elem = tarjet[i];
+        if(sessionStorage.getItem('modo') == 1){
+          elem.classList.add('active')
+        } else {
+          elem.classList.remove('active')
+        }
+      }
+    })
+    
+    
+      
+     
+
+
+
+
+
+
+  </script>
 
 </html>

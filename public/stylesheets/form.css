@@ -146,7 +146,7 @@
 
 .register_main_section {
     width: 400px;
-    background: #24303c;
+    background: rgba(0,0,0,.5);
     padding: 30px;
     margin: auto;
     margin-top: 100px;
@@ -175,16 +175,28 @@
 
 
   .register_main_section .botons{
-    width: 100%;
-    background: #1f53c5;
-    border: none;
-    padding: 12px;
-    color: white;
-    margin: 16px 0;
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
     font-size: 16px;
-    cursor:pointer
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    background: rgba(0,0,0,.5);
   }
-
+  .register_main_section .botons:hover{
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+}
   .register_main_section .cancel{
     width: 100%;
     background: red;

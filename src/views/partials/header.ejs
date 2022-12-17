@@ -1,46 +1,123 @@
-<header class="header">
-    <section class="header__section">
-        <div class="ingreso_registro">
-            <nav class="header__nav">
-            <% if (locals.userLogin) { %>  
-                    <ul class="username">
-                        <li>
-                          <a href="/users/profile" ><%= userLogin.firstname %></a> 
-                        </li>
-                        <li>
-                            <a href="/users/logout">Salir</a>
-                        </li>
-                    </ul>
-                  
-            <% if (userLogin.role_id === 2) { %>
-                <div>
-                    <li class="header__agregar"><a href="/products/add"> <h3>Agregar</h3> </a></li>
-                </div>
-            <% } %>
-        <% }else{ %>
-                    <a href="/users/login"> 
-                    <h3>Logueate! <i class="fa-solid fa-user-shield"></i></h3>
-                </a>
-                    <a href="/users/register">
-                        <h3>Registrate! <i class="fa-solid fa-id-card"></i></h3>
-                    </a>
-        <% } %>
-    
-</nav>
+
+<header>
+
+  <section class="section-header">
+    <div class="burger">
+      <div class="burger-menu"></div>
     </div>
-    <!--  <div class="cart_icon">
-            <div class="cart_box">
-                
-                <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-            </div>
-        </div> -->
-        <article class="header__article">
-            <form action="/products/search" class="header__search" method="GET">
-                <input class="shopping__header__button" type="text" name="keywords" id="keywords" placeholder="Buscar productos, marcas y más ..">
-            </form>
-        </article>
-<!--         <div class="burger-menu">
-            <button class="burger-button"><i class="fa-solid fa-bars"></i></button>
-        </div> -->
-    </section>
+  </div> 
+ 
+  <div>
+    <div class="div-nav-bar">
+      <div class="logo">
+        <a href="/"><h3>HardwareAssembly  </h3></a>
+      </div>
+      
+      <div class="header__search">
+        <div class="header__form">
+          <input class="shopping__header__button" type="search" name="keywords"
+           placeholder="Buscar productos, marcas y más .." >
+          <button>
+            <i class="fa-solid fa-magnifying-glass glass" ></i>
+          </button>
+          
+        </div>
+          
+      </div>  
+      <nav class="nav-bar " id="navbar">
+        <% if (locals.userLogin) { %>
+        <ul>
+          <li>
+            <a href="/users/profile">Perfil</a>
+          </li>
+          <li>
+            <a href="">Carrito</a>
+          </li>
+          <% if (userLogin.role_id === 2) { %>
+            <li>
+                <a href="/products/add">Agregar</a>
+              </li>
+              <% } %>
+          <li>
+            <a href="/users/logout" class="logout">Salir</a>
+          </li>
+          
+        </ul>
+        <% }else{ %>
+            <ul>
+                <li>
+                    <a href="/users/login" class="login">Iniciar sesión</a>
+                  </li>
+                  <li>
+                    <a href="/users/register">Registrate</a>
+                  </li>
+            </ul>
+
+              <% } %>
+
+
+      </nav>
+    </div>
+    <div class="theme-web">
+      <div class="toggle-title">
+        <p style="color: white" class="toggle-title2">MODO OSCURO</p>
+      </div>
+      <div class="toggle">
+        <i class="indicator"></i>
+      </div>
+    </div>
+  
+</section>
+  
+
+  <script>
+    hamburger = document.querySelector(".burger");
+    conteiner = document.querySelector(".contenedor");
+    const navbar = document.getElementById('navbar')
+    let menuOpen = false;
+    hamburger.addEventListener("click", function () {
+      navbar.classList.toggle('active')
+
+      if(menuOpen == true){
+        hamburger.classList.add('open');
+        menuOpen = false;
+      } else {
+        hamburger.classList.remove('open');
+        menuOpen = true;
+      }
+    });
+
+    const toggle = document.querySelector(".toggle");
+    const body = document.body;
+    const toggleTitle = document.querySelector(".toggle-title");
+    
+    toggle.addEventListener("click", async (e) => {
+
+      sessionStorage.setItem('modo',sessionStorage.getItem('modo') == 1 ? 0 : 1);
+
+      
+      await toggle.classList.toggle("active");
+      await toggleTitle.classList.toggle("active");
+      await body.classList.toggle("dark");
+      if (toggleTitle.classList.contains("active")) {
+        toggleTitle.innerHTML = '<p style="color: white;">MODO CLARO</p>';
+      } else {
+        toggleTitle.innerHTML = '<p style="color: white;">MODO OSCURO</p>';
+      }
+    });
+
+
+window.addEventListener('load',  () => {
+  if(sessionStorage.getItem('modo') == 1) {
+                 document.body.classList.toggle('dark')
+                  toggleTitle.innerHTML = '<p style="color: white;">MODO OSCURO</p>';
+                 
+              }else{
+                 toggleTitle.innerHTML = '<p style="color: white;">MODO CLARO</p>';
+                 
+                 
+              }
+})
+
+  </script>
 </header>

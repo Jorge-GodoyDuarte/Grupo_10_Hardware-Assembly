@@ -11,47 +11,36 @@
         
             
             <body>
-                <section class="form-login">
-                    <h5>Ingresá</h5>
-    
-    
-                     <form id="form-loginn" action="/users/login"  method="POST" >
-    
-                      
-                        <input class="controls" for="email" placeholder="Email" type="email" id="email" name="email" value="<%= locals.old && old.email ? old.email:null %>">
 
-                            <div>
-                                <small class="form__text--error"><%= locals.errors && errors.email? errors.email.msg :null %></small>
-                                <small id="errorEmail" class="form__text--error"></small>
-                            </div>
-                 
-                          
-                        <input class="controls" for="password" placeholder="Contraseña" type="password" id="password" name="password">
-                        <span class="input-group-text" style="cursor: pointer;" id="btn-show-pass"><i class="fa-solid fa-eye-slash" ></i></span>
-                            <div>
-                                <small class="form__text--error"><%= locals.errors && errors.password? errors.password.msg :null %></small>
-                                <small id="errorPass" class="form__text--error"></small>
-                            </div>
-
-                            
-                           
-                    
-        
-                        <button class="buttons" type="submit">Ingresar</button>
-                        <p><a href="#">¿Olvidaste tu Contraseña?</a></p>
-                
-    
-                      </form>
-         
-    </section>
-
-                
-
-
-        <%- include('./partials/footer') %> 
-        <script src="/javascripts/userLogin.js"></script>
-    
-    </body>
-    
+                <div class="login-box">
+                    <h2>Login</h2>
+                    <form id="form-loginn">
+                      <div class="user-box">
+                        <input type="text" name="email" id="email" required="" autocomplete="off">
+                        <small id="errorEmail" class="form__text--error"></small>
+                        <label>Username</label>
+                      </div>
+                      <div class="user-box">
+                        <input type="password" name="password" id="password" required="" autocomplete="off" autofocus="off">
+                        <small id="errorPass" class="form__text--error"></small>
+                        <label>Password</label>
+                      </div>
+                      <a href="#">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Submit
+                      </a>
+                    </form>
+                  </div>
+            </body>
+    <script src="/javascripts/userLogin.js">
+       const submit = document.querySelector('submit');
+        submit.addEventListener('click', function () {
+            submit.submit()
+        })
+    </script>
+  
 
 </html>

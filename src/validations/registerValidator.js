@@ -27,10 +27,7 @@ module.exports =[
 
         check('street')
         .notEmpty()
-        .withMessage('Coloca una calle')
-        .bail()
-        .isAlpha('es-ES',{ignore : " "})
-        .withMessage('Sólo caracteres alfabeticos'),
+        .withMessage('Coloca una calle'),
              
         check('city')
         .notEmpty()

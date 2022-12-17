@@ -1,18 +1,66 @@
 [
-    "Conectividad",
-    "Cooling",
-    "CPU",
-    "Desktop",
-    "Monitor",
-    "Fuente",
-    "GPU",
-    "HDD",
-    "Headset",
-    "Laptop",
-    "licencias y seguridad",
-    "Motherboard",
-    "Mouse",
-    "Ram",
-    "Teclados",
-    "USB"
+    {
+        "name" : "Conectividad",
+        "image" :  "conectividad.bmp"
+    },
+    {
+        "name" : "Cooling",
+        "image" :  "cooling.bmp"
+    },
+    {
+        "name" : "CPU",
+        "image" :  "cpu.bmp"
+    },
+    {
+        "name" : "Desktop",
+        "image" :  "desktop.bmp"
+    },
+    {
+        "name" : "Monitor",
+        "image" :  "display.bmp"
+    },
+    {
+        "name" : "Fuente",
+        "image" :  "fuente.bmp"
+    },
+    {
+        "name" : "GPU",
+        "image" :  "gpu.bmp"
+    },
+    {
+        "name" : "HDD",
+        "image" :  "hdd.bmp"
+    },
+    {
+        "name" : "Headset",
+        "image" :  "headset.bmp"
+    },
+    {
+        "name" : "Laptop",
+        "image" :  "laptop.bmp"
+    },
+    {
+        "name" : "Licencias y Seguridad",
+        "image" :  "licenciasyseguridad.bmp"
+    },
+    {
+        "name" : "Motherboard",
+        "image" :  "mother.bmp"
+    },
+    {
+        "name" : "Mouse",
+        "image" :  "mouse.bmp"
+    },
+    {
+        "name" : "ram",
+        "image" :  "ram.bmp"
+    },
+    {
+        "name" : "Teclados",
+        "image" :  "teclados.bmp"
+    },
+    {
+        "name" : "USB",
+        "image" :  "USB.bmp"
+    }
 ]
