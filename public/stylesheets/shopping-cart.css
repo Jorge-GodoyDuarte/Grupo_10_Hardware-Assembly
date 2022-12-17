@@ -16,7 +16,8 @@ body {
 }
 
 .ph-x {
-    font-size: 30px;
+    font-size: 20px;
+    font-style: normal;
 }
 
 
@@ -46,7 +47,17 @@ body {
 }
 .cart-item__image{
     width: 50%;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.44);
+    width: auto;
+    max-width: 35%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 } 
+.cart-item__image{
+    object-fit: cover;
+} 
+
 .cart-item__name {
 
 
@@ -102,11 +113,11 @@ input {
 }
 .sector{
     display: flex;
-    flex-direction: column;
+ 
     align-items: center;
 }
 
-.cart-blabla {
+.cart-p {
     background: #f1f1f1;
     color: #000000;
     border-radius: 6px;
@@ -132,7 +143,7 @@ input {
     text-align: center;
     padding-inline: 24px;
     cursor: pointer;
-    user-select: none;
+  
     transition: 100ms ease;
 
 }
