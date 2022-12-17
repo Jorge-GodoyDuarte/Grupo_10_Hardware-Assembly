@@ -216,7 +216,7 @@ text-align: left;
 }
 .nav-bar ul li a.active {
   color: #0D1329;
-  backdrop-filter: #fefefe;
+ /* backdrop-filter: #fefefe;*/
 }
 .burger {
   display: none;
@@ -323,7 +323,7 @@ text-align: left;
   }
   .nav-bar ul {
     display: block;
-    width: fit-content;
+    /*width: fit-content;*/
     margin: 20px auto 0 auto;
     text-align: center;
     transition: 0.5s;
