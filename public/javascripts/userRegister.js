@@ -72,7 +72,40 @@ $("firstname").addEventListener("blur", function ({ target }) {
       break;
   }
 });
-
+$("street").addEventListener("blur", function ({ target }) {
+  switch (true) {
+    case !this.value.trim():
+      msgError("errorStreet", "la calle es obligatoria", target);
+      break;
+      
+    case this.value.trim().length < 2:
+      msgError(
+        "errorStreet",
+        "la calle como mínimino debe tener dos caracteres",
+        target
+      );
+      break;
+    default:
+      validField("errorStreet", target);
+      break;
+  }
+});
+$("phone").addEventListener("blur", function ({ target }) {
+  switch (true) {
+    case !this.value.trim():
+      msgError("errorPhone", "Número de celular obligatorio", target);
+      break;
+    case this.value.trim().length < 2:
+      msgError(
+        "errorPhone",
+        "El número como mínimino debe contener seis caracteres",
+        target
+      );
+    default:
+      validField("errorApellido", target);
+      break;
+  }
+});
 $("lastname").addEventListener("blur", function ({ target }) {
   switch (true) {
     case !this.value.trim():
@@ -114,6 +147,7 @@ $("email").addEventListener("blur", async function ({ target }) {
 $("password").addEventListener("focus", () => {
   $("msgPass").hidden = false;
 });
+
 
 $("password").addEventListener("blur", function ({ target }) {
   $("msgPass").hidden = true;
