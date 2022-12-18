@@ -13,8 +13,6 @@ const exRegs = {
 };
 
 
-
-
 const msgError = (element, msg, target) => {
   $(element).innerText = msg;
  
@@ -27,14 +25,7 @@ const validField = (element, target) => {
 
 
 
-const validPass = (element, exReg, value) => {
-  if (!exReg.test(value)) {
-    $(element).classList.add("form__text--error");
-  } else {
-    $(element).classList.add("text-success");
-    $(element).classList.remove("form__text--error");
-  }
-};
+
 
 const verifyEmail = async (email) => {
   try {
@@ -141,14 +132,7 @@ $("password").addEventListener("blur", function ({ target }) {
   }
 });
 
-$("password").addEventListener("keyup", function ({ target }) {
-  validPass("mayu", exRegs.exRegMayu, target.value);
-  validPass("minu", exRegs.exRegMinu, target.value);
-  validPass("num", exRegs.exRegNum, target.value);
-  validPass("esp", exRegs.exRegEsp, target.value);
-  validPass("min", exRegs.exRegMin, target.value);
-  validPass("max", exRegs.exRegMax, target.value);
-});
+
 
 $("password2").addEventListener("blur", function ({ target }) {
     switch (true) {
@@ -180,19 +164,19 @@ let error = false;
   const elements = this.elements;
     for (let i = 0; i < elements.length - 2; i++) {
 
-     console.log(error)
+    
         
-        if(!elements[i].value.trim() || elements[i].classList.contains('is-invalid')){
-            elements[i].classList.add('is-invalid')
+        if(!elements[i].value.trim()){
+    
            $('msgError').innerText = 'Hay campos con errores o estan vacios!'
            error = true;
-           console.log(elements[i])
+           
         }
     }
 
     !error && this.submit() 
 
-    Swal.fire({
+   /* Swal.fire({
         position: "center",
         icon: "info",
         title: "Recibirás un email para confirmar tu registración",
@@ -200,11 +184,11 @@ let error = false;
         allowOutsideClick: false,
         allowEscapeKey: false,
     }).then((result) => {
-        if (result.isConfirmed) {
-            this.submit();
-        }
-    }); 
-});
+      if (result.isConfirmed) {
+          this.submit();
+      }
+  }); */
+}); 
 
 $("btn-show-pass").addEventListener("click", ({ target }) => {
   if (target.localName === "i") {
@@ -234,8 +218,4 @@ const getProvinces = async () => {
 
 
 
-window.addEventListener('load', () => {
 
-  getProvinces()
-
-})

@@ -36,32 +36,23 @@
             <div class="form_box">
                 <label class="form_label" for="email"> Email:  </label>
                 <input class="form_input" type="email" id="email" name="email" value="<%= locals.old && old.email ? old.email:null %>" >
-                  
+
                 <small class="form__text--error"><%= locals.errors && errors.email? errors.email.msg :null %></small>
                 <small id="errorEmail" class="form__text--error"></small>
             </div>
 
 
-            <div class="form_box">
-                  <label class="form_label" for="province-select" id="province-select">Provincia:</label> 
-                  <input class="form_input" type="text" id="province-input" name="province" > 
-                
-                  
-                  
-
-
-                </select>
-                
-
-                  
-                <select class="form-input" id="province-select" name="province">
-
+          <!--  <div class="form_box">
+                  <label class="form_label" >Ciudad:</label> 
+                  <input type="text" class="form-input" id="city-option">
+                  <select class="form-input" id="province-select" name="province">
+                        <option class="province-select" id="city-option"></option>
                 </select>
 
                
               
  
-            </div>
+            </div>-->
 
 
             <div class="form_box">
@@ -107,11 +98,7 @@
         </main >
 
         <%- include('./partials/footer') %> 
-        
-       
-
-
-         <script src="/javascripts/userRegister.js">
+        <script src="/javascripts/userRegister.js">
 
 
           const apiUrlBase = "https://apis.datos.gob.ar/georef/api"
@@ -141,31 +128,40 @@
   
                 result.localidades.sort((a, b) => a.nombre > b.nombre ? 1 : a.nombre < b.nombre ? -1 : 0)
   
-                return result.localidades
+                return  result.localidades
   
               } catch (error) {
-                console.error
+                console.log(error)
               }
             } 
   
-  
-  
-           
- 
+              let cities = getCities();
+              $('#city-option').innerHTML = `<option selected hidden>Seleccione...</option>`;
+              cities.forEach(city => {
+                $('city-option').innerHTML += `<option value="${city.nombre}"  ${city.nombre === $('province-input').value && 'selected'}>${city.nombre}</option>`
+              });
+              
 
-              let provincias = getProvinces();
-              $('province-select').innerHTML = `<option selected hidden>Seleccione...</option>`;
+              let provincias =  getProvinces();
+               $('province-select').innerHTML = `<option selected hidden>Seleccione...</option>`;
               provincias.forEach(provincia => {
                 $('province-select').innerHTML += `<option value="${provincia.nombre}"  ${provincia.nombre === $('province-input').value && 'selected'}>${provincia.nombre}</option>`
               });
   
            $('province-select').addEventListener('change', async ({target}) => {
-                let localidades =  getCities(target.value);
+                let localidades = getCities(target.value);
                 $('city-select').innerHTML = `<option selected hidden>Seleccione...</option>`;
                 localidades.forEach(localidad => {
-                $('city-select').innerHTML += `<option value="${localidad.nombre}">${localidad.nombre}</option>`
+                $('city-select').innerHTML += `<option value="${localidad.nombre}">${localidad.nombre}</option>`;
               });
               })
+              window.addEventListener('load', async () => {
+                
+            await getProvinces()
+            await getCities()
+            console.log(result.localidades + 'asdadad')
+            console.log('asdada');
+                    })
   
             
             

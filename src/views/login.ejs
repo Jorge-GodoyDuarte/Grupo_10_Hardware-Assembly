@@ -14,15 +14,21 @@
 
                 <div class="login-box">
                     <h2>Login</h2>
-                    <form id="form-loginn">
+                    <form action="/users/login" class="form" method="POST" >
                       <div class="user-box">
-                        <input type="text" name="email" id="email" required="" autocomplete="off">
-                        <small id="errorEmail" class="form__text--error"></small>
+                        <input type="text" name="email" id="email" required="" autocomplete="off" value="<%= locals.old && old.email ? old.email:null %>">
+                        <div>
+                            <small class="form__text--error"><%= locals.errors && errors.email? errors.email.msg :null %></small>
+                            <small id="errorEmail" class="form__text--error"></small>
+                        </div>
                         <label>Username</label>
                       </div>
                       <div class="user-box">
                         <input type="password" name="password" id="password" required="" autocomplete="off" autofocus="off">
-                        <small id="errorPass" class="form__text--error"></small>
+                        <div>
+                            <small class="form__text--error"><%= locals.errors && errors.password? errors.password.msg :null %></small>
+                            <small id="errorPass" class="form__text--error"></small>
+                        </div>
                         <label>Password</label>
                       </div>
                       <a href="#">
@@ -36,11 +42,11 @@
                   </div>
             </body>
     <script src="/javascripts/userLogin.js">
-       const submit = document.querySelector('submit');
-        submit.addEventListener('click', function () {
-            submit.submit()
-        })
+      
     </script>
+
+    
+   
   
 
 </html>

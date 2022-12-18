@@ -1,148 +1,13 @@
 const db = require("../database/models");
 const sequelize = db.sequelize;
-
 const {Op} = require('sequelize')
-
 const { name } = require("ejs");
 const { search } = require("../routes");
-
-const products = require("../data/db_Module").loadProducts();
-const brands = require("../data/db_Module").loadBrands();
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const {
-  storeProducts,
-  loadBrands,
-  loadProducts,
-  loadCategory,
-} = require("../data/db_Module");
 const { validationResult } = require("express-validator");
 const { Association } = require("sequelize");
 
 module.exports = {
-  list: async (req, res) => {
-
-      try {
-          let {limit = 4, page = 1, order = 'ASC', sortBy = 'id', search = "", sale = 0} = req.query;
-          
-      
-        /* paginación */
-        limit = limit > 16 ? 16 : +limit;
-        page = +page;
-        let offset = +limit * (+page - 1);
-  
-        /* ordenamiento */
-        order = ['ASC','DESC'].includes(order.toUpperCase()) ? order : 'ASC';
-        sortBy =  ['id','name', 'price', 'discount', 'categories_id', 'brand_id', 'description'].includes(sortBy.toLowerCase()) ? sortBy : 'id';
-  
-        let orderQuery = sortBy === "categories_id" ? ['categories_id','name',order] : sortBy === "brand_id" ? ['createdAt', 'DESC'] : [sortBy, order]
-  
-        let options = {
-          /* subQuery:false, */
-          limit,
-                  distinct: true,
-          offset,
-          order : [orderQuery],
-          include : [
-            {
-              association : 'images',
-              attributes : {
-                exclude : ['createdAt','updatedAt', 'deletedAt', 'id', 'file', 'productId'],
-                include : [[literal(`CONCAT('${req.protocol}://${req.get('host')}/api/products/image/',file)`),'url']]
-              },
-            },
-            {
-              association : 'category',
-              attributes : ['name','id'],
-              
-            },
-                      {
-              association : 'brand',
-              attributes : ['name','id'],
-              
-            }
-          ],
-          attributes : {
-            exclude : ['updatedAt','deletedAt'],
-            include : [[literal(`CONCAT('${req.protocol}://${req.get('host')}/api/products/',Product.id)`),'url']]
-          },
-          where : {
-            [Op.or] : [
-              {
-                name : {
-                  [Op.substring] : search
-                }
-              },
-              {
-                description : {
-                  [Op.substring] : search
-                }
-              },
-            /* 	{
-                "$category.name$" : {
-                  [Op.substring] : search
-                }
-              } */
-            ],
-            [Op.and] : [
-              {
-                discount : {
-                  [Op.gte] : sale
-                }
-              }
-            ]
-          }
-          
-        
-        }
-  
-        const {count, rows : products} = await db.Product.findAndCountAll(options);
-  
-  
-        const queryKeys = {
-          limit,
-          order,
-          sortBy,
-          search,
-          sale
-        }
-  
-        let queryUrl = "";
-  
-        for (const key in queryKeys) {
-  
-          queryUrl += `&${key}=${queryKeys[key]}`
-        
-        }
-  
-  
-        const existPrev = page > 1;
-        const existNext = offset + limit < count;
-  
-        const prev =  existPrev ? `${req.protocol}://${req.get('host')}${req.baseUrl}?page=${page - 1}${queryUrl}` : null;
-        const next = existNext ? `${req.protocol}://${req.get('host')}${req.baseUrl}?page=${page + 1}${queryUrl}` : null;
-  
-        return res.status(200).json({
-          ok : true,
-          meta : {
-            total : count,
-            quantity : products.length,
-            page,
-            prev, 
-            next
-          },
-          data : products
-        })
-  
-  
-      } catch (error) {
-        let errors = sendSequelizeError(error);
-  
-              return res.status(error.status || 500).json({
-                  ok: false,
-                  errors,
-              });
-      }
-  },
   create: (req, res) => {
     // Do the magic
     let categories = db.Category.findAll({
@@ -275,21 +140,23 @@ return res.render("search", {
 			.catch((error) => console.log(error));
 	},
   filter: (req,res) => {
-    const products = db.Product.findAll()
-    const productsFilter = products.filter(product => product.section === req.query.section)
-return res.render('products', {
-    products : productsFilter,
+    db.Product.findAll({
+      include: ['category'],
+      where : {
+        id : req.params.id
+      }
+    })
+    .then((category) => {{
+      return category
+      return res.render('products', {
+       category
+        
+    })
+    }})
     
-})
+},
+carrito: (req,res)=>{
+  return res.render('cart')
 }
 }
-
-  /* carrito: (req,res)=>{
-        return res.render('shopping-cart',{
-            
-        })
-    },
-
-    
-    }, */
-  
+   

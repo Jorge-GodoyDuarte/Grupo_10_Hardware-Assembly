@@ -23,23 +23,15 @@ const exRegs = {
 
 const msgError = (element, msg, target) => {
   $(element).innerText = msg;
-  target.classList.add("is-invalid");
+  
 };
 
 const validField = (element, target) => {
   $(element).innerText = null;
-  target.classList.remove("is-invalid");
-  target.classList.add("is-valid");
+ 
 };
 
-const validPass = (element, exReg, value) => {
-  if (!exReg.test(value)) {
-    $(element).classList.add("form__text--error");
-  } else {
-    $(element).classList.add("text-success");
-    $(element).classList.remove("text-danger");
-  }
-};
+
 
 const verifyEmail = async (email) => {
   try {
