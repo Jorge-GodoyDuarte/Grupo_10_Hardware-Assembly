@@ -7,9 +7,9 @@ const {adminCheck } = require('../middlewares')
 
 router
 .get('/detail/:id', detail)
-.get('/add',adminCheck,create)
+.get('/add',/*adminCheck*/create)
 .post('/add/store',store)
-.get('/edit/:id', adminCheck, editProduct)
+.get('/edit/:id', /*adminCheck*/ editProduct)
 .put('/update/:id', updateEdit)
 .delete('/delete/:id', remove)
 .get('/search', search)
