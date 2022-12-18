@@ -21,7 +21,10 @@
     font-family: 'calibri';
     color: white;
     box-shadow: 7px 13px 37px #000;
+    margin-bottom: 100px;
+    padding-bottom: 100px;
   }
+
   
   .register_input {
     width: 100%;
