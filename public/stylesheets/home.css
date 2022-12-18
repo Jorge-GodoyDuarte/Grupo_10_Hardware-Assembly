@@ -499,8 +499,7 @@ w .el-wrapper:hover .price {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
+
   font-family: "Lato", sans-serif;
   font-weight: 700;
   text-decoration: none;
@@ -530,6 +529,8 @@ w .el-wrapper:hover .price {
   font-size: 25px;
   font-weight: bold;
   color: #252525;
+  margin-left: 20%;
+  margin-top: 5px;
 }
 
 .description .go-description {
@@ -548,8 +549,7 @@ w .el-wrapper:hover .price {
   transition-delay: 100ms;
   display: block;
   position: absolute;
-  top: 50%;
-  left: 110%;
+
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);

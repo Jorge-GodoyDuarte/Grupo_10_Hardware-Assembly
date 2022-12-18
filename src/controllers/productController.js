@@ -140,16 +140,20 @@ return res.render("search", {
 			.catch((error) => console.log(error));
 	},
   filter: (req,res) => {
-    db.Product.findAll({
-      include: ['category'],
+    let products = db.Product.findAll({
+      limit: 10,
+      include: ['category','images','brand'],
       where : {
-        id : req.params.id
+       categories_id : req.params.id
       }
     })
-    .then((category) => {{
-      return category
+    let category = db.Category.findAll()
+    Promise.all([products])
+    .then((products,categoria) => {{
+      return res.send(products)
       return res.render('products', {
-       category
+       products,
+       toThousand
         
     })
     }})

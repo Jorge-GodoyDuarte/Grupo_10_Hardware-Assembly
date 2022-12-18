@@ -8,7 +8,7 @@
     padding: 0;
     box-sizing: border-box;
   }
-.form-group {
+.form-groupr {
     width: 5px;
 }
 .register_main_section {
@@ -23,7 +23,7 @@
     box-shadow: 7px 13px 37px #000;
   }
   
-  .form_input {
+  .register_input {
     width: 100%;
     background: #24303c;
     padding: 10px;
