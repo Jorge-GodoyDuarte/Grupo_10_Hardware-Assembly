@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     send_date: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'Statu',
+    modelName: 'Status',
     paranoid : true,
     timestamps: false
   });

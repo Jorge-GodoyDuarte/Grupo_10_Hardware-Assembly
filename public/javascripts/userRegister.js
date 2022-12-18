@@ -1,5 +1,4 @@
 console.log("userRegister.js connected!");
-const apiUrlBase = "https://apis.datos.gob.ar/georef/api"
 const allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
 
 
@@ -29,14 +28,7 @@ const validField = (element, target) => {
   target.classList.add("is-valid");
 };
 
-const validPass = (element, exReg, value) => {
-  if (!exReg.test(value)) {
-    $(element).classList.add("form__text--error");
-  } else {
-    $(element).classList.add("text-success");
-    $(element).classList.remove("text-danger");
-  }
-};
+
 
 const verifyEmail = async (email) => {
   try {
@@ -142,15 +134,6 @@ $("password").addEventListener("blur", function ({ target }) {
   }
 });
 
-$("password").addEventListener("keyup", function ({ target }) {
-  validPass("mayu", exRegs.exRegMayu, target.value);
-  validPass("minu", exRegs.exRegMinu, target.value);
-  validPass("num", exRegs.exRegNum, target.value);
-  validPass("esp", exRegs.exRegEsp, target.value);
-  validPass("min", exRegs.exRegMin, target.value);
-  validPass("max", exRegs.exRegMax, target.value);
-});
-
 $("password2").addEventListener("blur", function ({ target }) {
     switch (true) {
       case !this.value.trim():
@@ -175,18 +158,19 @@ $("form-register").addEventListener("submit", function (e) {
 let error = false;
 
   const elements = this.elements;
-    for (let i = 0; i < elements.length - 1; i++) {
-        
-        if(!elements[i].value.trim() || elements[i].classList.contains('is-invalid')){
+    for (let i = 0; i < elements.length - 2; i++) {
+        console.log(elements[i]);
+        if(!elements[i].value.trim() || elements[i].classList.contains('is-invalid') && !$('province-input').classList.contains('is-invalid')){
             elements[i].classList.add('is-invalid')
            $('msgError').innerText = 'Hay campos con errores o estan vacios!'
            error = true;
+           console.log(document.querySelector('provincia') + 'zzzzzzzzzzzzzzzzzzzzzzzzzasd aca ')
         }
     }
 
     !error && this.submit()
 
-    Swal.fire({
+/*     Swal.fire({
         position: "center",
         icon: "info",
         title: "Recibirás un email para confirmar tu registración",
@@ -198,7 +182,8 @@ let error = false;
             this.submit();
         }
     }); 
-});
+    */
+}); 
 
 $("btn-show-pass").addEventListener("click", ({ target }) => {
   if (target.localName === "i") {
@@ -209,7 +194,53 @@ $("btn-show-pass").addEventListener("click", ({ target }) => {
     $("password").type = $("password").type === "text" ? "password" : "text";
   }
 });
+              const apiUrlBase = "https://apis.datos.gob.ar/georef/api"
 
+               const getProvinces = async () => {
+              try {
+  
+                const response = await fetch(`${apiUrlBase}/provincias`);
+                const result = await response.json();
+  
+                result.provincias.sort((a, b) => a.nombre > b.nombre ? 1 : a.nombre < b.nombre ? -1 : 0)
+  
+                return result.provincias
+  
+              } catch (error) {
+                console.error
+              }
+  
+            };
+  
+            const getCities = async (provincia) => {
+              try {
+  
+                const response = await fetch(`${apiUrlBase}/localidades?provincia=${provincia}&max=4000`);
+                const result = await response.json();
+  
+                result.localidades.sort((a, b) => a.nombre > b.nombre ? 1 : a.nombre < b.nombre ? -1 : 0)
+  
+                return  result.localidades
+  
+              } catch (error) {
+                console.log(error)
+              }
+            } 
+  
+
+              
+  
+                 window.addEventListener('load', async () => {
+                const provincias = await getProvinces();
+                $('city').innerHTML = `<option selected hidden>Seleccione...</option>`;
+               provincias.forEach( provincia => {
+                $('city').innerHTML += `<option value="${provincia.nombre}" >${provincia.nombre}</option>`
+               
+               });
+                    })
+
+  
+            
 
 
 

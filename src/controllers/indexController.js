@@ -3,6 +3,7 @@ const { Op } = require('sequelize')
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 module.exports = {
   home: (req, res) => {
+    const images = '/images/product-images'
     let product = db.Product.findAll({
       limit: 10,
 			where: {
@@ -18,8 +19,10 @@ module.exports = {
 			include: ['images', 'category']
 		})
    let category = db.Category.findAll()
+    
     Promise.all([product, newest, category])
     .then(([product, newest, category]) => {
+      
       return res.render('index', {
         product,
         newest,

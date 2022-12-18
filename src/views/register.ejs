@@ -18,11 +18,11 @@
     
             <form  id="form-register" action="/users/register/add" class="form"  method="POST"> <!-- enctype="multipart/form-data" -->
     
-
+                
                 
             <div class="form_box">
                 <label class="form_label" for="firstname">Nombre:</label>
-                <input class="form_input" type="text" id="firstname" name="firstname" value="<%= locals.old && old.firstname ? old.firstname:null %>">
+                <input class="form_input" type="text" id="firstname" name="firstname" value="<%= locals.old && old.firstname ? old.firstname:null %>" >
                 <small  class="form__text--error"><%= locals.errors && errors.firstname? errors.firstname.msg :null %></small>
                 <small id="errorNombre" class="form__text--error"></small>
 
@@ -40,21 +40,25 @@
                 <small class="form__text--error"><%= locals.errors && errors.email? errors.email.msg :null %></small>
                 <small id="errorEmail" class="form__text--error"></small>
             </div>
-
-
             <div class="form_box">
-                  <label class="form_label" >Ciudad:</label> 
-                  <input type="text" class="form-input" id="city-option">
-                  <select class="form-input" id="province-select" name="province">
-                        <option class="province-select" id="city-option"></option>
-                </select>
-
-               
-            <small class="form__text--error"><%= locals.errors && errors.city? errors.city.msg :null %></small>
- 
+                <label class="form_label" for="street"> Calle:  </label>
+                <input class="form_input" type="text" id="street" name="street" value="<%= locals.old && old.street ? old.street:null %>" >
+                <small class="form__text--error"><%= locals.errors && errors.street? errors.street.msg :null %></small>
+                <small id="errorStreet" class="form__text--error"></small>
             </div>
-
-
+            <div class="form_box">
+                <label class="form_label" for="phone"> Número de celular:  </label>
+                <input class="form_input" type="number" id="phone" name="phone" value="<%= locals.old && old.phone ? old.phone:null %>" >
+                <small class="form__text--error"><%= locals.errors && errors.phone? errors.phone.msg :null %></small>
+                <small id="errorPhone" class="form__text--error"></small>
+            </div>
+            <div class="form_box">
+                <label class="form-label provincia" for="city" id="ciudad">Provincia</label>
+           
+            <select class="form-input" id="city" name="city">
+              
+            </select>
+            </div>
             <div class="form_box">
                 <label class="form_label" for="password">Contraseña:</label>
                 <input class="form_input" type="password" id="password" name="password">
@@ -80,12 +84,20 @@
                 <small id="errorPass2" class="form__text--error"></small>
             </div>
 
+
             <div class="form_box">
                 <div class="form_box--flex">
-              <button class="botons" type="submit">Registrate</button>
-                   <span id="msgError" class="form__text--error"></span>
-                <button class="cancel" type="reset">Cancelar</button>
-            </div>
+                    <button type="submit" class="custom-button">
+                        
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Enviar 
+                    </button>
+                    <span id="msgError" class="form__text--error"></span>
+                    <button class="cancel" type="reset">Cancelar</button>
+                </div>
             </div>
     
                 
@@ -101,69 +113,7 @@
         <script src="/javascripts/userRegister.js">
 
 
-          const apiUrlBase = "https://apis.datos.gob.ar/georef/api"
-  
-  
-               const getProvinces = async () => {
-              try {
-  
-                const response = await fetch(`${apiUrlBase}/provincias`);
-                const result = await response.json();
-  
-                result.provincias.sort((a, b) => a.nombre > b.nombre ? 1 : a.nombre < b.nombre ? -1 : 0)
-  
-                return result.provincias
-  
-              } catch (error) {
-                console.error
-              }
-  
-            };
-  
-            const getCities = async (provincia) => {
-              try {
-  
-                const response = await fetch(`${apiUrlBase}/localidades?provincia=${provincia}&max=4000`);
-                const result = await response.json();
-  
-                result.localidades.sort((a, b) => a.nombre > b.nombre ? 1 : a.nombre < b.nombre ? -1 : 0)
-  
-                return  result.localidades
-  
-              } catch (error) {
-                console.log(error)
-              }
-            } 
-  
-              let cities = getCities();
-              $('#city-option').innerHTML = `<option selected hidden>Seleccione...</option>`;
-              cities.forEach(city => {
-                $('city-option').innerHTML += `<option value="${city.nombre}"  ${city.nombre === $('province-input').value && 'selected'}>${city.nombre}</option>`
-              });
-              
 
-              let provincias =  getProvinces();
-               $('province-select').innerHTML = `<option selected hidden>Seleccione...</option>`;
-              provincias.forEach(provincia => {
-                $('province-select').innerHTML += `<option value="${provincia.nombre}"  ${provincia.nombre === $('province-input').value && 'selected'}>${provincia.nombre}</option>`
-              });
-  
-           $('province-select').addEventListener('change', async ({target}) => {
-                let localidades = getCities(target.value);
-                $('city-select').innerHTML = `<option selected hidden>Seleccione...</option>`;
-                localidades.forEach(localidad => {
-                $('city-select').innerHTML += `<option value="${localidad.nombre}">${localidad.nombre}</option>`;
-              });
-              })
-              window.addEventListener('load', async () => {
-                
-            await getProvinces()
-            await getCities()
-            console.log(result.localidades + 'asdadad')
-            console.log('asdada');
-                    })
-  
-            
             
           </script>
 
