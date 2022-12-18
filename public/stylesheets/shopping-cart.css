@@ -76,17 +76,6 @@ body {
 }
 
 
-input {
-    width: 72px;
-    height: 48px;
-    border: 1px solid #eeeeee;
-    border-radius: 6px;
-    padding-inline: 16px;
-    background: transparent;
-    font: inherit;
-    color: inherit;
-}
-
 .total-price {
 
     justify-self: flex-end;
