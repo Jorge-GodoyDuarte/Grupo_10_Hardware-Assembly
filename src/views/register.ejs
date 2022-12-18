@@ -115,21 +115,9 @@
 
 
 
-          const apiUrlBase = "https://apis.datos.gob.ar/georef/api"
-  
-  
-               const getProvinces = async () => {
-              try {
-  
-                const response = await fetch(`${apiUrlBase}/provincias`);
-                const result = await response.json();
-  
-                result.provincias.sort((a, b) => a.nombre > b.nombre ? 1 : a.nombre < b.nombre ? -1 : 0)
-  
-                return result.provincias
-  
-              } catch (error) {
-                console.error
-              }
-  
-            }
+            
+          </script>
+
+</body>
+
+</html>
