@@ -13,7 +13,7 @@ router
 .put('/update/:id', updateEdit)
 .delete('/delete/:id', remove)
 .get('/search', search)
-.get('/filter', filter)
+.get('/filter/:id', filter)
 .get('/cart', carrito)
 
      

@@ -54,10 +54,11 @@
             </div>
             <div class="form_box">
                 <label class="form-label provincia" for="city" id="ciudad">Provincia</label>
-           
+                
             <select class="form-input" id="city" name="city">
               
             </select>
+            <small class="form__text--error"><%= locals.errors && errors.city? errors.city.msg :null %></small>
             </div>
             <div class="form_box">
                 <label class="form_label" for="password">Contraseña:</label>

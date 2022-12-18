@@ -143,13 +143,12 @@ return res.render("search", {
     db.Product.findAll({
       include: ['category'],
       where : {
-        id : req.params.id
+       categories_id : req.params.id
       }
     })
-    .then((category) => {{
-      return category
+    .then((products) => {{
       return res.render('products', {
-       category
+       products
         
     })
     }})
