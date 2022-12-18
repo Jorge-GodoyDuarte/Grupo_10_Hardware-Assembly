@@ -1,52 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+<%- include('./partials/head') %> <%- include('./partials/header') %>
 
-    <%- include('./partials/head')  %> 
-
-
-    
-    <%- include('./partials/header')  %>
-
-   
-        
-            
-            <body>
-
-                <div class="login-box">
-                    <h2>Login</h2>
-                    <form action="/users/login" class="form" method="POST" >
-                      <div class="user-box">
-                        <input type="text" name="email" id="email" required="" autocomplete="off" value="<%= locals.old && old.email ? old.email:null %>">
-                        <div>
-                            <small class="form__text--error"><%= locals.errors && errors.email? errors.email.msg :null %></small>
-                            <small id="errorEmail" class="form__text--error"></small>
-                        </div>
-                        <label>Username</label>
-                      </div>
-                      <div class="user-box">
-                        <input type="password" name="password" id="password" required="" autocomplete="off" autofocus="off">
-                        <div>
-                            <small class="form__text--error"><%= locals.errors && errors.password? errors.password.msg :null %></small>
-                            <small id="errorPass" class="form__text--error"></small>
-                        </div>
-                        <label>Password</label>
-                      </div>
-                      <a href="#">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        Submit
-                      </a>
-                    </form>
-                  </div>
-            </body>
-    <script src="/javascripts/userLogin.js">
-      
-    </script>
-
-    
-   
-  
-
+    <body>
+      <div class="login-box">
+        <h2>Iniciar sesion</h2>
+        <form action="/users/login" method="POST" novalidate>
+          <div class="user-box">
+            <input type="text" name="email" required="" autocomplete="off" autofocus="on" />
+            <label>Email</label>
+            <div>
+              <small class="form__text--error"><%= locals.errors && errors.email? errors.email.msg :null %></small>
+              </div>
+          </div>
+          <br>
+          
+          <div class="user-box">
+            <input type="password" name="password" required="" autocomplete="off" autofocus="off" />
+            <label>Password</label>
+            <div>
+              <small class="form__text--error"><%= locals.errors && errors.password? errors.password.msg :null %></small>
+              </div>
+          </div>
+ <!--          <div class="form-group">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember"
+              style="width: 30px; height: 30px" />
+            <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+          </div> -->
+          <button class="custom-button" type="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Ingresar
+          </button>
+        </form>
+      </div>
+    </body>
 </html>

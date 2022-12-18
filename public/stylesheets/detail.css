@@ -16,13 +16,17 @@
 }
 
 .detail__main-img {
-    width: 100%;
-    border: 2px solid #ebebeb;
+   
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.44);
+    width: auto;
+    max-width: 35%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 .detail__main-img img  {
-height: 100%;
-width: 100%;
+object-fit: cover;
+
 }
 
 .detail__main-tittle {

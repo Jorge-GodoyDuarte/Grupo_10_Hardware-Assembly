@@ -25,7 +25,6 @@ module.exports = {
     /*  res.send(errors) */
     if (errors.isEmpty()) {
       let { email } = req.body;
-
       db.User.findOne({
         where: {
           email,
@@ -44,67 +43,18 @@ module.exports = {
             role_id: +role_id,
             email
           };
-        /* carrito */
-        db.Order.findOne({
-          where : {
-            userId : req.session.userLogin.id,
-            statusId : 1
-          },
-          include : [
-            {
-              association : 'carts',
-              attributes : ['id','quantity'],
-              include : [
-                {
-                  association : 'product',
-                  attributes : ['id','name','price','discount'],
-                  include : ['images']
-                }
-              ]
-            }
-          ]
-        }).then(order => {
-            if(order) {
-        
-              req.session.orderCart = {
-                id : order.id,
-                total : order.total,
-                items : order.carts
-              }
-
-            }else {
-
-              db.Order.create({
-                date : new Date(),
-                total : 0,
-                userId : req.session.userLogin.id,
-                statusId : 1
-              }).then(order => {
-                
-                req.session.orderCart = {
-                  id : order.id,
-                  total : order.total,
-                  items : []
-                }
-  
-              })
-            }
-
-            return role_id === 1  ? res.redirect('http://localhost:3001') : res.redirect('/');
-
+            return  res.redirect('/');
         }).catch(error => console.log(error))
+      } else {
+        return res.render("login", {
+          errors: errors.mapped(),
+        });
+      }
+    },
 
-
-      });
-    } else {
-      return res.render("login", {
-        errors: errors.mapped(),
-      });
-    }
-  },
   processRegister: async (req, res) => {
     const errors = validationResult(req);
-    const { firstname, lastname, email, city, street, phone, password } =
+    const { firstname, lastname, email, street, phone, password,city } =
       req.body;
 
     // VALIDACIONES
@@ -117,13 +67,21 @@ module.exports = {
         password: bcryptjs.hashSync(password, 10),
         role_id: 1,
         payment_id: 3,
-        city: city && city.trim(),
+        city : city.trim(),
         street: street && street.trim(),
         phone: +phone,
-      }).then((user) => {
-        return res.redirect("/users/login");
+      }).then(({role_id,id,firstName,lastName}) => {
+        req.session.userLogin = {
+          firstName,
+          lastName,
+          role_id,
+          id
+        };
+
+        return res.redirect("/");
       });
     } else {
+      
       return res.render("register", {
         errors: errors.mapped(),
         old: req.body,
