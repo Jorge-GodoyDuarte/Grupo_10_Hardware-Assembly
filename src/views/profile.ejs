@@ -8,40 +8,41 @@
 
       <main class="profile">
         
-        <div class="saludo"><h2>Bienvenid@, </h2></div>
+        <div class="saludo"><h2>Bienvenido de nuevo <%= user.firstname%> !</h2></div>
         <section class="wrapper">
           <div class="img-User">
-            <img src="/images/users/<%= user.avatar ? user.avatar : 'default.png' %>" alt="" />
-
+            <img src="/images/users/<%= user.avatar ? user.avatar : 'default.png' %>" alt=""width="50%" height="50%" />
+           
 
           </div>
           <div class="info-User">
             <p>
-              <hr>
-              <span>Nombre Completo:</span>
+              
+              <span class="atributos"> Nombre Completo: </span></>
               <%= user.firstname%>
                 <%=user.lastname %>
             </p>
             <hr>
-            <p><span>Email:</span>
+            <p><span class="atributos">Email:</span>
               <%=user.email %>
             </p>
             <hr>
-            <p><span> Ciudad:</span>
+            <p><span class="atributos"> Ciudad:</span>
               <%=user.city %>
             </p>
             <hr>
-            <p><span>Calle:</span>
+            <p><span class="atributos">Calle:</span>
               <%=user.street %>
             </p>
             <hr>
-            <p><span>Telefono:</span>
+            <p><span class="atributos">Telefono:</span>
               <%=user.phone %>
             </p>
-<hr>
+<hr><div class="botonesP">
 <button type="button" class="btn btn-outline-danger"><a href="/users/logout" class="cerrarSesion">Cerrar sesión</a></button>
 <button type="button" class="btn btn-outline-primary"> <a href="/users/editarPerfil" class="editarPerfil">Editar perfil</a></button>
           </div>
+        </div>
         </section>
       
       </main>
@@ -51,3 +52,6 @@
   </body>
 
 </html>
+<form action="">
+  <label for=""></label>
+</form>
