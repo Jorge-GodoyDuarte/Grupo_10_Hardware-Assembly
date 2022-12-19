@@ -6,6 +6,8 @@
  
         <%- include('./partials/header')  %>
     
+        <div class="titulo-"><h3>Agregar Producto</h3>
+        </div>
         <div classs="container">
             <div class="row justify-content-center">
               <div class="col-md-10">
@@ -82,15 +84,15 @@
                                 <input class="form_input" type="number" id="discount" name="discount">
                                 <small class="form_text_error"><%= locals.discount && errors.discount? errors.name.msg :null %></small>
                             </div>
-                            <div class="button-group column">
                            
-                         <button type="submit" class="btn btn-outline-success">Guardar</button>
-                        
-                         <button type="button" class="btn btn-outline-danger"><a href="/">Cancelar</a></button>
-                          </div>
-                         
-                            </div>
                         </div>
+                        <div class="botones-add-edit">
+                          <button type="submit" class="btn btn-outline-success">Guardar</button>
+                      
+                          <button type="button" class="btn btn-outline-danger"><a href="/">Cancelar</a></button>
+                           </div>
+                      </div>
+                      </div>
                        
                         </div>
                       <!--  -->
@@ -101,7 +103,7 @@
               </div>
             </div>
           </div>
-    <footer></footer>
+   
 
 </body>
 

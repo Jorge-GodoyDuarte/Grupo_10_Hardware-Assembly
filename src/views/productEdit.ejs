@@ -6,7 +6,8 @@
 <body>
  
         <%- include('./partials/header')  %>
-    
+        <div class="titulo-"><h3>Editar Producto</h3>
+        </div>
         <div classs="container">
             <div class="row justify-content-center">
               <div class="col-md-10">
@@ -22,14 +23,14 @@
                         </div>
                         <div class="col-md-8">
                           
-                          <div class="form-group row">
+                          <div class="form-group- row">
                             <label for="name" class="col-md-4 col-form-label">Nombre</label>
                             <div class="col-sm-6">
                                 <input class="form_input" type="text" id="name" name="name" value="<%=products.name%>">
                                 <small class="text-danger"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
                             </div>
                           </div>
-                          <div class="form-group row">
+                          <div class="form-group- row">
                             <label for="category" class="col-md-4 col-form-label">Categoria</label>
                             <div class="col-sm-6">
                                 <select name="category" id="category">
@@ -40,7 +41,7 @@
                                     <small class="text-danger"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
                             </div>
                           </div>
-                          <div class="form-group row">
+                          <div class="form-group- row">
                             <label for="brand" class="col-md-4 col-form-label">Marca</label>
                             <div class="col-sm-6">
                                 <select name="brands" id="brands">
@@ -52,7 +53,7 @@
                             </div>
                           </div>
                           
-                          <div class="form-group row">
+                          <div class="form-group- row">
                             <label for="description" class="col-md-4 col-form-label">Description Producto</label>
                             <div class="col-sm-6">
                                 <input class="form_input" type="text" id="description" name="description" value="<%=products.description%>">
@@ -67,14 +68,14 @@
                       <hr>
                       <div class="row" >
                         <div class="col-md-8">
-                          <div class="form-group row">
+                          <div class="form-group- row">
                             <label for="attr_1" class="col-md-4 col-form-label">Precio</label>
                             <div class="col-sm-6">
                                 <input class="form_input" type="number" id="price" name="price" value="<%=products.price%>">
                                 <small class="text-danger"><%= locals.errors && errors.price ? errors.price.msg : null %></small>
                             </div>
                           </div>
-                          <div class="form-group row">
+                          <div class="form-group- row">
                             <label for="attr_2" class="col-md-4 col-form-label">Descuento</label>
                             <div class="col-sm-6">
                                 <input class="form_input" type="number" id="discount" name="discount" value="<%=products.discount%>">
@@ -102,7 +103,6 @@
           </div>
    
 
-    <footer></footer>
 
 </body>
 
