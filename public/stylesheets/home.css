@@ -225,7 +225,8 @@
 }
 
 .contenedor {
-  display: block;
+  display: flex;
+  padding: 20px;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
@@ -310,6 +311,7 @@
   margin: 15px 15px;
   background-color: #fff;
   display: inline-block;
+  box-shadow: 2px 1px 2px 1px rgba(128, 128, 128, 0.524);
 }
 .el-wrapper.active {
   background-color: #0d1329;
@@ -334,13 +336,14 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 600px) {
   .caja {
     width: 50%;
   }
   .el-wrapper {
     width: 290px;
     margin: 30px 30px;
+    
   }
 }
 
