@@ -1,9 +1,11 @@
 .body-terms{
    box-sizing: border-box;
 font-family: 'Raleway', sans-serif;
-background-color: rgb(113, 138, 146);
+background-color: var(--colorDark);
 }
-.container{
+.container-terms{
+    display: grid;
+    place-items: center;
     width: 300px;
     height: 700px;
     background-color: rgb(207, 221, 236);
@@ -11,12 +13,7 @@ border-radius: 5px;
 box-shadow: 2px 3px 2px 3px rgba(173, 185, 199, 0.502);
  
 }
-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
+
 .text{
     text-align: center;
   height: 500px;
@@ -35,9 +32,7 @@ form{
     justify-content: center;
     align-items: center;
 }
-button{
-    margin-top: 20px;
-}
+
 .arriba{
   
     display: flex;
@@ -47,6 +42,21 @@ button{
 }
 .abajo{
     display: none;
+    transition: 1.5s;
+}
+
+.button-terms {
+    background-color: lightsteelblue;
+    font-size: 18px;
+    padding: 5px 20px;
+    border: solid 1px;
+    border-radius: 50px;
+    transition: .2s;
+    margin-top: 10px;
+}
+.button-terms:hover {
+    background-color: var(--colorButton);
+    padding: 10px 20px;
 }
 @media(min-width:760px){
     .text{
@@ -56,9 +66,8 @@ button{
         border: 1px solid lightskyblue;
         padding: 20px;
         margin: 5%;
-     
     }
-    .container{
+    .container-terms{
         margin-top: 100px;
         margin-bottom: 500px;
         width: 600px;

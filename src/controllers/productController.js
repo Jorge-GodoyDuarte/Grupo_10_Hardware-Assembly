@@ -1,20 +1,9 @@
 const db = require("../database/models");
 const sequelize = db.sequelize;
-
 const {Op} = require('sequelize')
-
 const { name } = require("ejs");
 const { search } = require("../routes");
-
-const products = require("../data/db_Module").loadProducts();
-const brands = require("../data/db_Module").loadBrands();
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const {
-  storeProducts,
-  loadBrands,
-  loadProducts,
-  loadCategory,
-} = require("../data/db_Module");
 const { validationResult } = require("express-validator");
 const { Association } = require("sequelize");
 
@@ -38,17 +27,13 @@ module.exports = {
   },
   detail: (req, res) => {
     // Do the magic
-    let products = db.Product.findByPk(req.params.id, {
-        include : ['marcas']
-    });
-    let images = db.Image.findByPk(req.params.id);
-
-    Promise.all([products, images, brands])
-      .then(([products, images, brands]) => {
+    db.Product.findByPk(req.params.id, {
+        include : ['brand','images']
+    })
+      .then((product) => {
+       /*  return res.send(product) */
         return res.render("detail", {
-          products,
-          images,
-          brands,
+          product,
           toThousand,
         });
       })
@@ -129,7 +114,7 @@ module.exports = {
 		let { keywords } = req.query;
     
 		let product = db.Product.findAll({
-      include : ['marcas','categorias','images'],
+      include : ['brand','category','images'],
 			where: {
 				[Op.or]: [
 					{
@@ -145,36 +130,40 @@ module.exports = {
 				],
 			},
 		})
-    let images = db.Image.findAll({
-      include : ['products']
-    });
-    Promise.all([product,images])
-			.then(([result,images]) => {
+    let category = db.Category.findAll()
+    Promise.all([category, product])
+			.then((result) => {
+        
 return res.render("search", {
 					result,
 					toThousand,
-					keywords,
-          images,
-          product 
+					keywords
 				});  
 			})
 			.catch((error) => console.log(error));
 	},
   filter: (req,res) => {
-    const products = db.Product.findAll()
-    const productsFilter = products.filter(product => product.section === req.query.section)
-return res.render('products', {
-    products : productsFilter,
+    let { keywords } = req.query;
+    db.Product.findAll({
+      limit: 10,
+      include: ['category','images','brand'],
+      where : {
+       categories_id : req.params.id
+      }
+    })
+
+    .then((products) => {{
+      return res.render('products', {
+       products,
+       toThousand,
+       keywords
+        
+    })
+    }})
     
-})
+},
+carrito: (req,res)=>{
+  return res.render('cart')
 }
 }
-
-  /* carrito: (req,res)=>{
-        return res.render('shopping-cart',{
-            
-        })
-    },
-
-    
-    }, */
+   

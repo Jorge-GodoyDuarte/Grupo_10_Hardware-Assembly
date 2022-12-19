@@ -1,14 +1,12 @@
 const db = require("../database/models");
 const sequelize = db.sequelize;
-const { loadUsers, storeUsers } = require("../data/db_Module");
 const { validationResult } = require("express-validator");
 const bcryptjs = require("bcryptjs");
 const fs = require("fs");
 const path = require("path");
 const session = require("express-session");
 const jwt = require("jsonwebtoken");
-const authConfig = require("../database/config/auth");
-const { all } = require("../routes/users");
+
 /*     CRUD DATABASE     */
 module.exports = {
   login: (req, res) => {
@@ -27,7 +25,6 @@ module.exports = {
     /*  res.send(errors) */
     if (errors.isEmpty()) {
       let { email } = req.body;
-
       db.User.findOne({
         where: {
           email,
@@ -46,21 +43,18 @@ module.exports = {
             role_id: +role_id,
             email
           };
+            return  res.redirect('/');
+        }).catch(error => console.log(error))
+      } else {
+        return res.render("login", {
+          errors: errors.mapped(),
+        });
+      }
+    },
 
-          /* guardar la cookie */
-
-          return res.redirect("/");
-        })
-        .catch((error) => console.log(error));
-    } else {
-      return res.render("login", {
-        errors: errors.mapped(),
-      });
-    }
-  },
   processRegister: async (req, res) => {
     const errors = validationResult(req);
-    const { firstname, lastname, email, city, street, phone, password } =
+    const { firstname, lastname, email, street, phone, password,city } =
       req.body;
 
     // VALIDACIONES
@@ -73,13 +67,21 @@ module.exports = {
         password: bcryptjs.hashSync(password, 10),
         role_id: 1,
         payment_id: 3,
-        city: city && city.trim(),
+        city : city.trim(),
         street: street && street.trim(),
         phone: +phone,
-      }).then((user) => {
-        return res.redirect("/users/login");
+      }).then(({role_id,id,firstName,lastName}) => {
+        req.session.userLogin = {
+          firstName,
+          lastName,
+          role_id,
+          id
+        };
+
+        return res.redirect("/");
       });
     } else {
+      
       return res.render("register", {
         errors: errors.mapped(),
         old: req.body,
@@ -96,6 +98,7 @@ module.exports = {
   },
 
   profile: (req, res) => {
+    
     db.User.findByPk(req.session.userLogin.id, {
       include: ["roles", "metodos"]
     })
@@ -106,6 +109,7 @@ module.exports = {
       })
       .catch((error) => console.log(error));
   },
+  
   updateEdit: async (req, res) => {
         // VALIDACIONES
     const errors = validationResult(req);

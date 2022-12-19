@@ -7,38 +7,53 @@
 	<%- include('./partials/header')  %>
 	<div class="flex-contenedor">
 		<% if (result.length > 0) { %>
-			<div class="el-wrapper">
-				<div class="box-up">
-					<% result.forEach(({id,brand_id,name,categories_id,description,discount,price})=> { %>
-							<img class="img" src="<%= 'https://images.vexels.com/media/users/3/199820/isolated/preview/892bfdfcb80b356c53405aafbb716513-caja-de-carton-isometrica.png' %> " alt="" width="50%" height="50%">
-				  <div class="img-info">
-					<div class="info-inner">
-					  <span class="p-name">
-						<%= name %>
-					  </span>
-					  <span class="p-company">
-						
-					  </span>
+			<section class="contenedor">
+				<% for( let i=0; i < result.length; i++ ) { %>
+				  <div class="caja">
+					<a href="/products/filter?category=<%= result[i].id %>" class="category_item"
+					  title="<%= result[i].name %>">
+					  <img src="/images/logos-categorias/<%= result[i].image %> " alt="">
+					</a>
+				  </div>
+				  <% } %>
+			  </section>
+			  <div class="flex-contenedor">
+				<% result.forEach(({id,brand_id,name,categories_id,description,discount,price,images})=> { %>
+				  <div class="el-wrapper" id="el-wrapper">
+					<div class="box-up">
+						<img class="img" src="/images/product-images/<%= images.length ? images[0].name + '.jpg' : 'default.png' %> " alt="" width="50%"
+						height="50%">
+					  <div class="img-info">
+						<div class="info-inner">
+						  <span class="p-name">
+							<%= name %>
+						  </span>
+						  <span class="p-company">
+							<%= result.brand %>
+						  </span>
+						</div>
+		
+					  </div>
 					</div>
-	
+		
+					<div class="box-down">
+					  <div class="h-bg">
+						<div class="h-bg-inner"></div>
+					  </div>
+		
+		
+					  <span class="price">$<%= new Intl.NumberFormat().format(Math.trunc((price) - (price * discount / 100))) %>
+					  </span>
+					  <span class="go-description">
+						<a class="txt" href="/products/detail/<%= id%>"><span class="txt">VER-PRODUCTO</span></a>
+					  </span>
+		
+					</div>
 				  </div>
-				</div>
-	
-				<div class="box-down">
-				  <div class="h-bg">
-					<div class="h-bg-inner"></div>
-				  </div>
-	
-				  
-					<span class="price">$<%= new Intl.NumberFormat().format(Math.trunc((price) - (price * discount / 100))) %></span>
-					<span class="go-description">
-					  <a class="txt" href="/products/detail/<%= id%>"><span class="txt">VER-PRODUCTO</span></a>
-					</span>
-				  
-				</div>
+				  <% }) %>
 			  </div>
-			  
-			  <% }) %>
+		
+	
 		<% }else { %>	
 			<div class="col-12">
 				<h2 style="color: rgba(163, 31, 7, 0.767);"> No hay productos que coincidan con esta búsqueda</h2>
