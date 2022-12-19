@@ -1,79 +1,84 @@
-
 <header>
 
   <section class="section-header">
     <div class="burger">
       <div class="burger-menu"></div>
     </div>
-  </div> 
- 
-  <div>
-    <div class="div-nav-bar">
-      <div class="logo">
-        <a href="/"><h2>HardwareAssembly</h2></a>
-      </div>
-      <form action="/products/search" method="GET" class="search-form">
-      <div class="header__search">
-        <div class="header__form">
-          
-            <input class="shopping__header__button" type="search" name="keywords"
-           placeholder="Buscar productos, marcas y más .." >
-         
-          <button type="submit" style="cursor: pointer;">
-            <i class="fa-solid fa-magnifying-glass glass" style="cursor: pointer;"></i>
-          </button>
-          
-        </div>
-          
-      </div>  
-      </form>
-      <nav class="nav-bar " id="navbar">
-        <% if (locals.userLogin) { %>
-        <ul>
-          <li>
-            <a href="/users/profile">Perfil</a>
-          </li>
-          <li>
-            <li id="btn-cart"><button type="button" class="btn fs-4" data-bs-toggle="modal" data-bs-target="#cartModal">
-							 <i class="fas fa-shopping-basket"></i>
-						  </button></li>
-          </li>
-          <% if (userLogin.role_id === 2) { %>
-            <li>
-                <a href="/products/add">Agregar</a>
-              </li>
-              <% } %>
-          <li>
-            <a href="/users/logout" class="logout">Salir</a>
-          </li>
-          
-        </ul>
-        <% }else{ %>
-            <ul>
+    </div>
+
+    <div>
+
+      <div class="div-nav-bar">
+        <section class="contenedor-busqueda">
+          <div class="logo-home">
+            <a href="/">
+              <h4> Hardware&Assembly</h4>
+            </a>
+          </div>
+          <form action="/products/search" method="GET" class="search-form">
+            <div class="header__search">
+              <div class="header__form">
+  
+                <input class="shopping__header__button" type="search" name="keywords"
+                  placeholder="Buscar productos, marcas y más ..">
+  
+                <button type="submit" style="cursor: pointer;">
+                  <i class="fa-solid fa-magnifying-glass glass" style="cursor: pointer;"></i>
+                </button>
+  
+              </div>
+  
+            </div>
+          </form>
+        </section>
+        <nav class="nav-bar " id="navbar">
+          <% if (locals.userLogin) { %>
+            <div class="botones-logheader">
+              <ul>
                 <li>
+                  <a href="/users/profile">Perfil</a>
+                </li>
+                <li>
+               
+                    <i class="fas fa-shopping-basket"></i>
+                  </button></li>
+                </li>
+                <% if (userLogin.role_id===2) { %>
+                  <li>
+                    <a href="/products/add">Agregar</a>
+                  </li>
+                  <% } %>
+                    <li>
+                      <a href="/users/logout" class="logout">Salir</a>
+                    </li>
+
+              </ul>
+              <% }else{ %>
+                <ul>
+                  <li>
                     <a href="/users/login" class="login">Iniciar sesión</a>
                   </li>
                   <li>
                     <a href="/users/register">Registrate</a>
                   </li>
-            </ul>
+                </ul>
 
-              <% } %>
+                <% } %>
+            </div>
 
-
-      </nav>
-    </div>
-    <div class="theme-web">
-      <div class="toggle-title">
-        <p style="color: white" class="toggle-title2">MODO OSCURO</p>
+        </nav>
       </div>
-      <div class="toggle">
-        <i class="indicator"></i>
+      <div class="theme-web">
+        <div class="toggle-title">
+          <p style="color: white" class="toggle-title2">MODO OSCURO</p>
+        </div>
+        <div class="toggle">
+          <i class="indicator"></i>
+        </div>
       </div>
-    </div>
-  
-</section>
-  
+
+  </section>
+
 
   <script>
     hamburger = document.querySelector(".burger");
@@ -83,7 +88,7 @@
     hamburger.addEventListener("click", function () {
       navbar.classList.toggle('active')
 
-      if(menuOpen == true){
+      if (menuOpen == true) {
         hamburger.classList.add('open');
         menuOpen = false;
       } else {
@@ -95,12 +100,12 @@
     const toggle = document.querySelector(".toggle");
     const body = document.body;
     const toggleTitle = document.querySelector(".toggle-title");
-    
+
     toggle.addEventListener("click", async (e) => {
 
-      sessionStorage.setItem('modo',sessionStorage.getItem('modo') == 1 ? 0 : 1);
+      sessionStorage.setItem('modo', sessionStorage.getItem('modo') == 1 ? 0 : 1);
 
-      
+
       await toggle.classList.toggle("active");
       await toggleTitle.classList.toggle("active");
       await body.classList.toggle("dark");
@@ -112,17 +117,17 @@
     });
 
 
-window.addEventListener('load',  () => {
-  if(sessionStorage.getItem('modo') == 1) {
-                 document.body.classList.toggle('dark')
-                  toggleTitle.innerHTML = '<p style="color: white;">MODO OSCURO</p>';
-                 
-              }else{
-                 toggleTitle.innerHTML = '<p style="color: white;">MODO CLARO</p>';
-                 
-                 
-              }
-})
+    window.addEventListener('load', () => {
+      if (sessionStorage.getItem('modo') == 1) {
+        document.body.classList.toggle('dark')
+        toggleTitle.innerHTML = '<p style="color: white;">MODO OSCURO</p>';
+
+      } else {
+        toggleTitle.innerHTML = '<p style="color: white;">MODO CLARO</p>';
+
+
+      }
+    })
 
   </script>
 </header>
