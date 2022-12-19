@@ -45,7 +45,7 @@ input[type=number]::-webkit-outer-spin-button {
   position: absolute;
   top:0;
   left: 0;
-  padding: 10px 0;
+  padding-bottom: 20px 0;
   font-size: 16px;
   color: #fff;
   pointer-events: none;
@@ -54,7 +54,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .login-box .user-box input:focus ~ label,
 .login-box .user-box input:valid ~ label {
-  top: -20px;
+  top: -15px;
   left: 0;
   color: #03e9f4;
   font-size: 12px;

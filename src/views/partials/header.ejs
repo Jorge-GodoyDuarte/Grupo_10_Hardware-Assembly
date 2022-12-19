@@ -2,67 +2,69 @@
 <header>
 
   <section class="section-header">
-    <div class="burger">
-      <div class="burger-menu"></div>
-    </div>
-  </div> 
- 
-  <div>
-    <div class="div-nav-bar">
-      <div class="logo">
-        <a href="/"><h2>HardwareAssembly</h2></a>
+    <div class="dividiendo">
+    <div>
+      <div class="burger">
+        <div class="burger-menu"></div>
       </div>
-      <form action="/products/search" method="GET" class="search-form">
-      <div class="header__search">
-        <div class="header__form">
-          
-            <input class="shopping__header__button" type="search" name="keywords"
-           placeholder="Buscar productos, marcas y más .." >
-         
-          <button type="submit" style="cursor: pointer;">
-            <i class="fa-solid fa-magnifying-glass glass" style="cursor: pointer;"></i>
-          </button>
-          
+    </div> 
+   
+    <div>
+      <div class="div-nav-bar">
+        <div class="logo">
+          <a href="/"><h2>HardwareAssembly</h2></a>
         </div>
-          
-      </div>  
-      </form>
-      <nav class="nav-bar " id="navbar">
-        <% if (locals.userLogin) { %>
-        <ul>
-          <li>
-            <a href="/users/profile">Perfil</a>
-          </li>
-          <li>
-            <li id="btn-cart"><button type="button" class="btn fs-4" data-bs-toggle="modal" data-bs-target="#cartModal">
-							 <i class="fas fa-shopping-basket"></i>
-						  </button></li>
-          </li>
-          <% if (userLogin.role_id === 2) { %>
+        <form action="/products/search" method="GET" class="search-form">
+        <div class="header__search">
+          <div class="header__form">
+            
+              <input class="shopping__header__button" type="search" name="keywords"
+             placeholder="Buscar productos, marcas y más .." >
+           
+            <button type="submit" style="cursor: pointer;">
+              <i class="fa-solid fa-magnifying-glass glass" style="cursor: pointer;"></i>
+            </button>
+            
+          </div>
+            
+        </div>  
+        </form>
+        <nav class="nav-bar " id="navbar">
+          <% if (locals.userLogin) { %>
+          <ul>
             <li>
-                <a href="/products/add">Agregar</a>
-              </li>
-              <% } %>
-          <li>
-            <a href="/users/logout" class="logout">Salir</a>
-          </li>
-          
-        </ul>
-        <% }else{ %>
-            <ul>
-                <li>
-                    <a href="/users/login" class="login">Iniciar sesión</a>
-                  </li>
+              <a href="/users/profile">Perfil</a>
+            </li>
+            <li>
+              <li id="btn-cart"><button type="button" class="btn fs-4" data-bs-toggle="modal" data-bs-target="#cartModal">
+                 <i class="fas fa-shopping-basket"></i>
+                </button></li>
+            </li>
+            <% if (userLogin.role_id === 2) { %>
+              <li>
+                  <a href="/products/add">Agregar</a>
+                </li>
+                <% } %>
+            <li>
+              <a href="/users/logout" class="logout">Salir</a>
+            </li>
+            
+          </ul>
+          <% }else{ %>
+              <ul>
                   <li>
-                    <a href="/users/register">Registrate</a>
-                  </li>
-            </ul>
-
-              <% } %>
-
-
-      </nav>
-    </div>
+                      <a href="/users/login" class="login">Iniciar sesión</a>
+                    </li>
+                    <li>
+                      <a href="/users/register">Registrate</a>
+                    </li>
+              </ul>
+  
+                <% } %>
+  
+  
+        </nav>
+      </div>
     <div class="theme-web">
       <div class="toggle-title">
         <p style="color: white" class="toggle-title2">MODO OSCURO</p>

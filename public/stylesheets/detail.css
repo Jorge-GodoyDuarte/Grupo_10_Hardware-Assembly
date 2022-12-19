@@ -1,3 +1,4 @@
+
 /* MAIN */
 
 .alerta {
@@ -13,26 +14,32 @@
     display: flex;
     flex-wrap: wrap;
     padding: 50px;
+    
 }
 
 .detail__main-img {
-   
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.44);
     width: auto;
     max-width: 35%;
     align-items: center;
     justify-content: center;
     text-align: center;
+    overflow: hidden;
+    margin: 20px;
 }
 .detail__main-img img  {
 object-fit: cover;
-
+transition: 0.5s;
 }
-
-.detail__main-tittle {
+.detail__main-img img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.detail__main-tittle h4 {
     width: 100%;
     margin: 0px;
-    padding: 0px;
+    margin-left: 220%;
+    align-items: flex-start;
 }
 .detail__main-price-discount {
     display: flex;

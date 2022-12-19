@@ -5,28 +5,33 @@
     <body>
       <div class="login-box">
         <h2>Iniciar sesion</h2>
-        <form action="/users/login" method="POST" novalidate>
+        <form action="/users/login" id="form-login" method="POST" novalidate>
           <div class="user-box">
-            <input type="text" name="email" required="" autocomplete="off" autofocus="on" />
+            <input type="text" id="email" name="email" required="" autocomplete="off" autofocus="off" />
             <label>Email</label>
             <div>
               <small class="form__text--error"><%= locals.errors && errors.email? errors.email.msg :null %></small>
-              </div>
+              <small id="errorEmail" class="form__text--error"></small>  
+            </div>
           </div>
           <br>
           
           <div class="user-box">
-            <input type="password" name="password" required="" autocomplete="off" autofocus="off" />
+            <input type="password" id="password" name="password" required="" autocomplete="off" autofocus="off" />
             <label>Password</label>
             <div>
               <small class="form__text--error"><%= locals.errors && errors.password? errors.password.msg :null %></small>
-              </div>
+              <small id="errorPass" class="form__text--error"></small> 
+              <br> 
+              <span id="msgError" class="form__text--error"></span>
+            </div>
           </div>
  <!--          <div class="form-group">
             <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember"
               style="width: 30px; height: 30px" />
             <label class="form-check-label" for="exampleCheck1">Recordarme</label>
           </div> -->
+          
           <button class="custom-button" type="submit">
             <span></span>
             <span></span>
@@ -37,4 +42,6 @@
         </form>
       </div>
     </body>
+    <script src="/javascripts/userLogin.js"></script>
+
 </html>

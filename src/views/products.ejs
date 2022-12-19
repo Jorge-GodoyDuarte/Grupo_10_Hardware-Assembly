@@ -15,10 +15,10 @@
         
         <% if (products.length > 0) { %>
             <div class="flex-contenedor">
-                <% products.forEach(({id,name,brand,image,price})=> { console.log(products)%>
+              <% products.forEach(({id,brand_id,name,categories_id,description,discount,price,images})=> { %>
                   <div class="el-wrapper">
                     <div class="box-up">
-                      <img class="img" src="/images/product-images/<%= products.images ? products.images[0].name + '.jpg' : 'default.png' %> " alt="" width="50%"
+                      <img class="img" src="/images/product-images/<%= images ? images[0].name + '.jpg' : 'default.png' %> " alt="" width="50%"
                       height="50%">
                       <div class="img-info">
                         <div class="info-inner">
@@ -26,7 +26,7 @@
                             <%= name %>
                           </span>
                           <span class="p-company">
-                            <%= brand %>
+                            <%= products.brand %>
                           </span>
                         </div>
       
@@ -39,17 +39,21 @@
                       </div>
       
                       
-                        <span class="price">$<%= price %></span>
-                        <span class="go-description">
-                          <a class="txt" href="/products/detail/<%= id%>"><span class="txt">VER-PRODUCTO</span></a>
-                        </span>
-                        
-                    </div>
-                  </div>
+                       
+              <span class="price">$<%= new Intl.NumberFormat().format(Math.trunc((price) - (price * discount / 100))) %>
+              </span>
+              <span class="go-description">
+                <a class="txt" href="/products/detail/<%= id%>"><span class="txt">VER-PRODUCTO</span></a>
+              </span>
+
+            </div>
+          </div>
                   <% }) %>
               </div>
         <% } else {%>
-            <div class="alerta"> <h1>No se encontró la busquedá:</h1> <p class="alerta-keywords"><%= keywords%></p> </div>
+          <div class="alerta"> <h1>No se encontró la busquedá:</h1> <p class="alerta-keywords"><%= keywords%></p> </div>
+          <br>
+            <br>
             <% } %>
     
     </main>

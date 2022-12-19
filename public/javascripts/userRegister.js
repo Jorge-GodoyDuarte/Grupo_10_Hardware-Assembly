@@ -1,7 +1,7 @@
 console.log("userRegister.js connected!");
 const allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
 
-
+const $ = (element) => document.getElementById(element);
 
 const exRegs = {
   exRegAlfa: /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/,
