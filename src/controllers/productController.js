@@ -131,11 +131,12 @@ module.exports = {
 			},
 		})
     let category = db.Category.findAll()
-    Promise.all([category, product])
-			.then((result) => {
+    Promise.all([product, category])
+			.then(([product,category]) => {
         
 return res.render("search", {
-					result,
+					product,
+          category,
 					toThousand,
 					keywords
 				});  
@@ -144,17 +145,19 @@ return res.render("search", {
 	},
   filter: (req,res) => {
     let { keywords } = req.query;
-    db.Product.findAll({
+    let products = db.Product.findAll({
       limit: 10,
       include: ['category','images','brand'],
       where : {
        categories_id : req.params.id
       }
     })
-
-    .then((products) => {{
+    let category = db.Category.findAll()
+    Promise.all([products, category])
+    .then(([products,category]) => {{
       return res.render('products', {
        products,
+       category,
        toThousand,
        keywords
         
