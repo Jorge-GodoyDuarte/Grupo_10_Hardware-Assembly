@@ -102,7 +102,7 @@
                             target
                           );
                         default:
-                          validField("errorApellido", target);
+                          validField("errorPhone", target);
                           break;
                       }
                     });
