@@ -113,7 +113,7 @@ module.exports = {
 		// Do the magic
 		let { keywords } = req.query;
     
-		db.Product.findAll({
+		let product = db.Product.findAll({
       include : ['brand','category','images'],
 			where: {
 				[Op.or]: [
@@ -130,6 +130,8 @@ module.exports = {
 				],
 			},
 		})
+    let category = db.Category.findAll()
+    Promise.all([category, product])
 			.then((result) => {
         
 return res.render("search", {
