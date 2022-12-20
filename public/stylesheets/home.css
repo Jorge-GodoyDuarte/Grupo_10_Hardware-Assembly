@@ -322,25 +322,19 @@
   height: inherit;
   width: 100%;
 }
-.el-wrapper {
-  width: 22%;
-}
 
+
+ @media (min-width : 1150px) {
   .flex-contenedor {
     padding-left: 5%;
     padding-right: 5%;
   }
-
-@media (min-width: 1024) {
-
-  .flex-contenedor {
-    padding-left: 10%;
-    padding-right: 10%;
-  }
   .el-wrapper {
-    width: 25%;
+    width: 22%;
+    margin-left: 7px;
   }
-}
+ }
+
 @media (max-width: 991px) {
   .caja {
     width: 21%;

@@ -1,0 +1,38 @@
+.container_panel {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+datos {border:1px solid #ccc;padding:10px;font-size:1em;}
+
+datos tr:nth-child(even) {background:#ccc;}
+
+datos td {padding:5px;}
+
+datos tr.noSearch {background:White;font-size:0.8em;}
+
+datos tr.noSearch td {padding-top:10px;text-align:right;}
+
+.hide {display:none;}
+
+.red {color:Red;}
+
+.for_adm_product {
+	width: 100%;
+    max-width: 332px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.for_adm_product input {
+	width: 90%;
+    height: 30px;
+    margin: 0.5rem;
+}
+

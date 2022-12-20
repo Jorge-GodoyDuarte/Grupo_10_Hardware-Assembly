@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Sans+Pro:wght@400;600&family=Ubuntu&display=swap');
 @import './home.css';
 @import './login.css';
+@import './admin.css';
+@import './adminProducts.css';
 @import './shopping-cart.css';
 @import './form.css';
 @import './detail.css';
@@ -21,7 +23,10 @@
 
 
 
-
+a {
+    text-decoration: none;
+    outline: none;
+}
 
 
 
@@ -64,6 +69,7 @@ body {
     justify-items: center;
     height: 350px;
     grid-template-rows: 25% 60px auto;
+    margin: 0 auto;
 }
 
 
