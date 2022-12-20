@@ -8,6 +8,7 @@ const {adminCheck, upload } = require('../middlewares');
 router
 .get('/detail/:id', detail)
 .get('/add',/*adminCheck*/create)
+.post('/add/:id ', store)
 .get('/edit/:id', /*adminCheck*/ editProduct)
 .put('/update/:id', updateEdit)
 .delete('/delete/:id', remove)

@@ -84,6 +84,6 @@ window.addEventListener("load", async () => {
   for (let i = 0; i < productos.data.length; i++) {
     $(
       "listproduct"
-    ).innerHTML += `<div><div> <hr> Editar <i class="fa-sharp fa-solid fa-pen-to-square"><a href=""></a> </i><hr><li id:"atrib">ID   =${productos.data[i].id} </div><br><li id:"atrib">NOMBRE   =${productos.data[i].name}</li> <br><li id:"atrib">DESCUENTO   = ${productos.data[i].discount}</li><br><li id:"atrib">PRECIO    =${productos.data[i].price} </li></div> `;
+    ).innerHTML += `<div><div> <hr> <a href="/products/edit/${productos.data[i].id}"><i class="fa-sharp fa-solid fa-pen-to-square"></i><a>Editar<hr><li id:"atrib">ID   :${productos.data[i].id} </div><br><li id:"atrib">NOMBRE   :${productos.data[i].name}</li> <br><li id:"atrib">DESCUENTO   : ${productos.data[i].discount}</li><br><li id:"atrib">PRECIO    :${productos.data[i].price} </li></div> `;
   }
 });

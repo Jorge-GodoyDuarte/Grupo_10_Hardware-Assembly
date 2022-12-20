@@ -39,7 +39,7 @@ module.exports = {
       })
       .catch((error) => console.log(error));
   },
-  store: (req, res) => {
+    store: (req, res) => {
     const { name, price, discount, description, brand_id, categories_id } =
       req.body;
     db.Product.create({
