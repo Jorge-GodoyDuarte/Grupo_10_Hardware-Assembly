@@ -27,7 +27,11 @@
           </div>
           <% } %>
       </section>
+<<<<<<< HEAD
       <h2>Nuestros productos:</h2>
+=======
+      <h3 class="n-productos">Nuestros productos:</h3>
+>>>>>>> 15e95d79d30401887b665cbf49c41b1a242ee3f8
       <div class="flex-contenedor">
         <% product.forEach(({id,name,price,discount,images,brand})=> {%> 
           <div class="el-wrapper" id="el-wrapper" <%=  %> >
@@ -70,7 +74,7 @@
         </div>
       </section>
       <br>
-                                                    <h2 style="margin-left: 20px;">Recientemente agregados: </h2>
+                                                    <h3 class="n-productos">Recientemente agregados: </h3>
         <div class="flex-contenedor">
           <% newProduct.forEach(({id,name,price,discount,images,brand})=> {%> 
             <div class="el-wrapper" id="el-wrapper" <%=  %> >

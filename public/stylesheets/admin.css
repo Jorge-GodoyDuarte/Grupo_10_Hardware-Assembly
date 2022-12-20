@@ -1,4 +1,8 @@
 /* HEADER PANEL  */
+
+i{
+    margin-left:5px ;
+}
 .botonera-admin{
     display: flex;
     flex-direction: row;
@@ -8,7 +12,7 @@
     height: 125px;
     justify-content: space-around;
     list-style: none;
-
+    font-style: var(--tipografiaTitulos);
 }
 .botonera-admin .botones-admin{
     justify-content: space-around;
@@ -51,7 +55,7 @@
     display: flex;
     flex-direction: column;
     position: fixed;
-    background-color: #45a7b9;;
+    background-color: #45a7b9bb;;
     top:125px;
     
 }
@@ -65,7 +69,7 @@
     margin: 0;
     padding: 0;
     align-items: center;
-    background-color: gray;
+    background-color: rgba(155, 155, 155, 0.719);
 
 }
 .titulo{
@@ -86,6 +90,10 @@ flex-direction: row;
     color: black;
     margin: 0% auto;
    padding: 10px;
+   font-style: var(--tipografiaTitulos);
+   color: aliceblue;
+   border: 2px solid;
+   border-radius: 2px;
   
    
 }
