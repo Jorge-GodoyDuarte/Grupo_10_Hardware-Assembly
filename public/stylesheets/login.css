@@ -13,7 +13,7 @@ input[type=number]::-webkit-outer-spin-button {
   transform: translate(-50%, -50%);
   background: #0D1329;
   box-sizing: border-box;
-  box-shadow: 0 15px 25px #0D1329;
+  box-shadow: 6px 6px 17px #000;
   border-radius: 10px;
 }
 
@@ -73,7 +73,7 @@ input[type=number]::-webkit-outer-spin-button {
   text-transform: uppercase;
   overflow: hidden;
   transition: .5s;
-  margin-top: 40px;
+
   letter-spacing: 4px
 }
 
@@ -167,3 +167,9 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
   
+@media(max-width:425px){
+.login-box {
+  width: 90%;
+}
+}
+

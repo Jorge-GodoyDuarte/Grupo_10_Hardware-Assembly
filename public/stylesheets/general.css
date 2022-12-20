@@ -13,6 +13,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
     --tipografiaTitulos: 'Roboto';
     --tipografiaPrecios: 'Source Sans Pro';
@@ -39,5 +53,115 @@ body {
 }
 
 
+/* SEARCH ANIMATION */
 
+.box { 
+    border-radius: 15px; 
+    width: 400px; 
+    padding: 60px 60px 40px 60px; 
+    text-align: center;
+    display: grid;
+    justify-items: center;
+    height: 350px;
+    grid-template-rows: 25% 60px auto;
+}
+
+
+.loader-bad {
+    position:relative;
+    justify-self: center;
+	width:90px;
+	height:90px;
+    border-radius:10px;
+    transform-origin: bottom center;
+    animation: nonono 0.8s forwards linear, shapes 1s 2.0s forwards cubic-bezier(0.075, 0.82, 0.165, 1), color-bad 1s 3s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+    background: #bd0c0cc9;
+}
+.loader-bad:before {
+	content:'';
+	position:absolute;
+	transform: translate(-50%,-50%) rotate(45deg) scale(1);
+	top:100%;
+	width:16px;
+	height:16px;
+	border-radius:0px 0px 2px 0px;
+    animation: bubble 1.5s 1.6s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+    background:#bd0c0cc9;
+}
+.icon {
+	position:absolute;
+	transform: translate(-50%,-50%) rotate(0deg);
+	top:50%;
+	left:50%;
+}
+.icon svg {
+	width:60px;
+	stroke-width:2;
+	stroke-linecap:round;
+	stroke-linejoin: round;
+	stroke:#fff;
+	stroke-dashoffset: 40;
+	fill:none;
+}
+
+.search svg {
+	width:70px; 
+    stroke-dasharray: 80;
+    stroke-dashoffset: 0;
+    animation: icon-transform 1.2s 0.4s forwards cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.bad svg {
+    stroke-dasharray: 27.8; 
+    stroke-dashoffset: 28;
+	animation: face-bad 1s 1.2s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: translateY(5px);
+}
+
+@keyframes nonono{
+    0%{  transform: rotate(-10deg);}
+    5%{ transform: rotate(10deg); }
+    10%{ transform: rotate(-10deg); }
+    20%{ transform: rotate(10deg); }
+    30%{ transform: rotate(-10deg); }
+    40%{ transform: rotate(10deg); }
+    50%{ transform: rotate(-10deg); }
+    70%{ transform: rotate(10deg); }
+    90%{ transform: rotate(-10deg); }
+    100%{ transform: rotate(0deg); }  
+}
+
+@keyframes icon-transform {
+	0%{stroke-dashoffset: 0;}
+	100%{stroke-dashoffset: 85;}
+}
+@keyframes check {
+    0%{stroke-dashoffset: 23;}
+    100%{stroke-dashoffset: 0;}
+}
+
+@keyframes face-bad {
+    0%{stroke-dashoffset: 28;}
+    100%{stroke-dashoffset: 0;}
+}
+
+@keyframes bubble {
+	0% { top: 100%; transform: translate(-50%,-50%) rotate(45deg) scale(1); }
+    100%{ top: 50%;  transform: translate(-50%,-50%) rotate(45deg) scale(0); opacity: 0;}
+}
+
+@keyframes color{
+    0%{background:#F83F2E;}
+    100%{background: rgb(147, 223, 112);}
+}
+
+@keyframes color-bad{
+    0%{background:#F83F2E;}
+    100%{background: #989598;}
+}
+
+@keyframes shapes {
+	0% {border-radius:10px;}
+    100% {border-radius:45px;}
+}
 

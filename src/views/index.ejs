@@ -27,6 +27,7 @@
           </div>
           <% } %>
       </section>
+      <h4>Nuestros productos:</h4>
       <div class="flex-contenedor">
         <% product.forEach(({id,name,price,discount,images,brand})=> {%> 
           <div class="el-wrapper" id="el-wrapper" <%=  %> >
@@ -62,7 +63,49 @@
           </div>
           <% }) %>
       </div>
-
+      <br>
+      <section>
+        <div class="spanBanner">
+          <img src="/images/spanAorus.jpg" alt="" style="border-radius: 2px solid 50%;">
+        </div>
+      </section>
+      <br>
+                                                    <h4>Recientemente agregados: </h4>
+        <div class="flex-contenedor">
+          <% newProduct.forEach(({id,name,price,discount,images,brand})=> {%> 
+            <div class="el-wrapper" id="el-wrapper" <%=  %> >
+              <div class="box-up">
+                <img class="img" src="/images/product-images/<%= images.length ? images[0].name + '.jpg' : 'default.png' %> " alt="" width="50%"
+                height="50%">
+                <div class="img-info">
+                  <div class="info-inner">
+                    <span class="p-name">
+                      <%= name %>
+                    </span>
+                    <span class="p-company">
+                      <%= brand.name %>
+                    </span>
+                  </div>
+  
+                </div>
+              </div>
+  
+              <div class="box-down">
+                <div class="h-bg">
+                  <div class="h-bg-inner"></div>
+                </div>
+  
+  
+                <span class="price">$<%= new Intl.NumberFormat().format(Math.trunc((price) - (price * discount / 100))) %>
+                </span>
+                <span class="go-description">
+                  <a class="txt" href="/products/detail/<%= id%>"><span class="txt">VER-PRODUCTO</span></a>
+                </span>
+  
+              </div>
+            </div>
+            <% }) %>
+        </div>
       
       <%- include('./partials/footer') %>
 
