@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head') %>
+
+<%- include('./partials/headerPanel') %>
+    <section>
+        
+        <form action="/users/panel/<%= user.id%>?_method=PUT"  id="form_adm" class="form_adm" method="POST">
+            <br><br>
+            <div class="title">DATOS DEL ADMINISTRADOR</div> 
+            <hr style="border: 1px solid  rgb(100, 200, 255); width: 100px;">
+            <span style="color: rgba(42, 155, 216, 0.952); font-size: 20px"> Editar</span>
+            
+          <div class="user__details">
+            <div class="input__box">
+                <label class="form__label__profile" for="nombre"> <span>Nombre:</span> </label>
+                <input class="form__input__panel" type="text" id="firstname" name="firstname" value="<%= user.firstname%>">
+                <small  class="form__text--error"><%= locals.errors && errors.firstname? errors.firstname.msg :null %></small>
+                <small id="errorNombre" class="form__text--error"></small>
+            </div>
+            <div class="input__box">
+                <label class="form__label__profile" for="apellido"> <span>Apellido:</span></label>
+                <small id="errorApellido" class="form__text--error"></small>
+                <input class="form__input__panel" type="text" id="apellido" name="lastname" value="<%=user.lastname %>">
+            </div>
+            <div class="input__box">
+              <span class="details">Email</span>
+              <input class="form__input__panel input__email" type="email" id="email" name="email" readonly value="<%=user.email %>">
+              <small id="errorEmail" class="form__text--error"></small>
+            </div>
+            <div class="input__box">
+              <span class="details">Contraseña</span>
+              <br>
+              <input class="" type="password" id="password" name="password">
+              <small class="form__text--error"><%= locals.errors && errors.password? errors.password.msg :null %></small>
+              <small id="errorPass" class="form__text--error"></small> 
+            </div>
+            <div class="input__box">
+                <br>
+                <span class="details">Confirmar contraseña</span>
+                <input class="" type="password" id="password2" name="password2">
+                <br>
+                <small class="form__text--error"><%= locals.errors && errors.password2? errors.password2.msg :null %></small>
+                <small id="errorPass2" class="form__text--error"></small>
+              </div>
+   
+            <button type="submit" >Editar perfill</button>
+            <button type="reset">Cancelar </button>
+    </section>
+    
+  
+</body>
+<script src="/javascripts/admin.js"></script>
+</html>

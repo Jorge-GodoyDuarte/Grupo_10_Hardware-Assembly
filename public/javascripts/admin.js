@@ -1,6 +1,7 @@
-console.log("userLogin.js connected!");
-const apiUrlBase = "https://apis.datos.gob.ar/georef/api"
+console.log("admin.js connected!");
 
+
+const $ = (element) => document.getElementById(element);
 
 const exRegs = {
     exRegAlfa: /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/,
@@ -25,6 +26,7 @@ const exRegs = {
     target.classList.remove("is-invalid");
     target.classList.add("is-valid");
   };
+console.log($("password"))
 $("email").addEventListener("blur", async function ({ target }) {
   switch (true) {
     case !this.value.trim():
@@ -39,17 +41,46 @@ $("email").addEventListener("blur", async function ({ target }) {
   }
 });
 
+
+  
+  
   $("password").addEventListener("blur", function ({ target }) {
     switch (true) {
+      case !this.value.trim():
+        msgError("errorPass", "La contraseña es obligatoria", target);
+        break;
+      case !exRegs.exRegPass.test(this.value):
+        msgError(
+          "errorPass",
+          "La contraseña debe tener un símbolo, un número, una mayúscula, una minúscula y entre 6 y 8 caracteres",
+          target
+        );
+        break;
+      default:
+        validField("errorPass", target);
+        break;
+    }
+  });
+  
+  $("password2").addEventListener("blur", function ({ target }) {
+      switch (true) {
         case !this.value.trim():
-          msgError("errorPass", "La contraseña es obligatoria", target);
+          msgError("errorPass2", "Debes verificar la contraseña", target);
+          break;
+        case this.value.trim() !== $('password').value.trim():
+          msgError(
+            "errorPass2",
+            "Las contraseñas no coinciden",
+            target
+          );
           break;
         default:
-          validField("errorPass", target);
+          validField("errorPass2", target);
           break;
       }
     });
-  $("form-login").addEventListener("submit", function (e) {
+  
+  $("form_adm").addEventListener("submit", function (e) {
     e.preventDefault(); //chequea todos los eventos
   
   let error = false;
@@ -66,3 +97,12 @@ $("email").addEventListener("blur", async function ({ target }) {
   
       !error && this.submit()
     });
+/*     $("btn-show-pass").addEventListener("click", ({ target }) => {
+        if (target.localName === "i") {
+          target.classList.toggle("fa-eye");
+          $("password").type = $("password").type === "text" ? "password" : "text";
+        } else {
+          target.childNodes[0].classList.toggle("fa-eye");
+          $("password").type = $("password").type === "text" ? "password" : "text";
+        }
+      }); */

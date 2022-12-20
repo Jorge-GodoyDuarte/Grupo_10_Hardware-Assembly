@@ -9,6 +9,7 @@ const profileValidator = require('../validations/profileValidator')
 
 /* MIDDLEWARES  */
 const { userCheck, checkRedirect, adminCheck } = require('../middlewares');
+const { Panel, editAdmin, ProductList } = require('../controllers/adminController');
 
 /* /users */
 
@@ -21,5 +22,9 @@ router
 .get('/profile',userCheck,profile) // /users/profile
 .put('/profile/:id',/* upload.single('avatar'), */profileValidator,updateEdit)
 
+/* PANEL ADMIN */
+.get('/panel',Panel)
+.put('/panel/:id',editAdmin)
+.get('/panelProducts',ProductList)
   
 module.exports = router;

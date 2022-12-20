@@ -1,9 +1,4 @@
-body{
-    margin: 0%;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--tipografiaTitulos);
-}
+/* HEADER PANEL  */
 .botonera-admin{
     display: flex;
     flex-direction: row;
@@ -99,8 +94,37 @@ flex-direction: row;
     font-size: 20px;
     width: 100%;
 }
-.cat-1 a:hoover{
+.cat-1 a:hover{
     cursor: pointer;
 background-color:lightgray;
 }
 
+ul {
+    list-style: none;
+}
+
+/*BODY PANEL */
+
+
+.form_adm {
+    width: 100%;
+    max-width: 332px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form_adm input {
+    width: 90%;
+    height: 30px;
+    margin: 0.5rem;
+  }
+  
+  .form_adm button {
+    padding: 0.5em 1em;
+    border: none;
+    background: rgb(100, 200, 255);
+    cursor: pointer;
+  }

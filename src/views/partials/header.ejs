@@ -34,17 +34,20 @@
           <nav class="nav-bar " id="navbar">
             <% if (locals.userLogin) { %>
               <div class="botones-logheader">
-                <ul>
-                  <li>
-                    <a href="/users/profile"><i class="fas fa-user"></i> Perfil</a>
-                  </li>
-
-                  </li>
-                  <% if (userLogin.role_id===2) { %>
-                    <li class="add-header">
+                <% if (userLogin.role_id===2) { %>
+                  <ul>
+                    <li>
+                      <a href="/users/panel"><i class="fas fa-user"></i> Administracion</a>
+                    </li>
+                    <li style="display: none;">
                       <a href="/products/add">Agregar</a>
                     </li>
                     <% } %>
+                    <% if (userLogin.role_id===1) { %>
+                      <li>
+                      <a href="/users/profile"><i class="fas fa-user"></i> Perfil</a>
+                      </li>
+                      <% } %>
                       <li>
                         <a href="/users/logout" class="logout"><i class="fa fa-sign-out" aria-hidden="true"></i>
                           Salir</a>
