@@ -31,6 +31,7 @@ module.exports = {
         include : ['brand','images']
     })
       .then(product => {
+        
         return res.render("detail", {
           product,
           toThousand,
@@ -50,10 +51,10 @@ module.exports = {
       categories_id: +categories_id,
     })
       .then( product => {
-        if (req.files) {
+        if (req.files.length) {
           let images = req.files.map(({filename}) =>{
             let image = {
-              file : filename,
+              name : filename,
               product_id : product.id,
             }
             return image

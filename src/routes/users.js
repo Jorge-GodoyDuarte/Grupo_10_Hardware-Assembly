@@ -15,7 +15,7 @@ const { Panel, editAdmin, ProductList } = require('../controllers/adminControlle
 
 router
 .get('/login',checkRedirect,login) // users/login
-.get('/register', checkRedirect, register)
+.get('/register', checkRedirect,register)
 .post('/register/add',registerValidator,processRegister)
 .post('/login',loginValidator,processLogin)
 .get('/logout',logout) 
@@ -23,8 +23,8 @@ router
 .put('/profile/:id',/* upload.single('avatar'), */profileValidator,updateEdit)
 
 /* PANEL ADMIN */
-.get('/panel',Panel)
+.get('/panel',adminCheck, Panel)
 .put('/panel/:id',editAdmin)
-.get('/panelProducts',ProductList)
+.get('/panelProducts',adminCheck,ProductList)
   
 module.exports = router;
