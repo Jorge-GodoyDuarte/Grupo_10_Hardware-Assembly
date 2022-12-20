@@ -1,3 +1,4 @@
+
 /* MAIN */
 
 .alerta {
@@ -13,22 +14,32 @@
     display: flex;
     flex-wrap: wrap;
     padding: 50px;
+    
 }
 
 .detail__main-img {
-    width: 100%;
-    border: 2px solid #ebebeb;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.44);
+    width: auto;
+    max-width: 35%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    margin: 20px;
 }
 .detail__main-img img  {
-height: 100%;
-width: 100%;
+object-fit: cover;
+transition: 0.5s;
 }
-
-.detail__main-tittle {
+.detail__main-img img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.detail__main-tittle h4 {
     width: 100%;
     margin: 0px;
-    padding: 0px;
+    margin-left: 220%;
+    align-items: flex-start;
 }
 .detail__main-price-discount {
     display: flex;
@@ -92,28 +103,34 @@ h4 {
 }
 
 .detail__main-info{
-    width: 100%;
-    height: 100%;
-    margin-top: 15px;
+    width: 60%;
+    height: 300px;
+    margin: 0 auto;
     margin-bottom: 10px;
-    border: 2px solid #ebebeb;
-    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.44);
+    box-shadow: 0px 4px 8px 2px #263e94;
     display: flex;
     flex-direction: column;
     display: none;
+    font-size: var(--tipografiaTitulos);
 }
 .detail__main-info-product {
     display: flex;
+    margin-top: 20px;
+    padding: 10px;
     flex-direction: row;
+    height: 2rem;
+    font-size: var(--tipografiaTitulos);
 
 }
 
 .detail__main-info p {
 font-size: 16px;
-font-family: var(--tipografiaPrecios);
 width: 50%;
-gap: 5px;
-background-color: #C1C1C1;
+
+padding: 5px;
+font-weight: 400;
+font-style: var(--tipografiaPrecios)
+
 }
 .body__detail{
     margin: 0px;
@@ -124,7 +141,6 @@ background-color: #C1C1C1;
     flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
-display: none;
 }
 .detail__main-button {
     width: 100%;
@@ -168,6 +184,8 @@ color: #ffff;
     display: none;
 }
 .caracteristicas{
+    padding-top: 4rem;
+    padding-bottom: 7rem;
     text-decoration:underline;
 
 }
@@ -203,4 +221,13 @@ color: #ffff;
 .lateral1{
     width: 40%;
 }
+}
+@media (max-width:768px){
+.detail__main-info{ width: 100%;
+}
+.detail__main-img { height: 15rem;
+    width: 100%;
+max-width: none;
+}
+
 }

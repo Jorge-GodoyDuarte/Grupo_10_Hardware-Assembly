@@ -1,139 +1,4 @@
-/*general*/
 
-/*cajas*/
-
-
-/*.form{
-    display:flex;
-    flex-wrap: wrap;
-    gap:30px;
-    margin-bottom: 20px;
-}
-
-
-
- 
-.form_title{
-    text-align: center;
-}
-
-
-.form_subTitle{
-    margin-bottom: 20px;
-}
-
-.form_box{
-    width:80%;
-    margin: 0%;
-    padding: 0%;
-}
-.for__select-div {
-    width:100%;
-    margin: 0%;
-    padding: 0%;
-}
-
-
-.form_box_column{
-    display: flex;
-    flex-direction: column;
-    gap:0px;
-}
-
-.home_main_register{
-    align-items: center;
-
-}
-
-
-.form_input{
-    width:73%;
-    align-items: center;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top:10px;
-    padding: 10px;
-    border: 2px solid #a0a0a0;
-    border-bottom: 1px solid silver;
-    outline: none;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-.form_button_send{
-    width:80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    color:white
-}
-
-.recordar{
-    margin: 0 auto;
-    text-align: center;
-    padding: 10px;
-}
-
-.register_main_section{
-   
-    margin-left: 10%;
-    margin-right: 10%;
-    background: linear-gradient(45deg,red,blue,green,black);
-			background-size: 400% 400%;
-			position: relative;
-			animation: cambiar 4s ease-in-out infinite;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    margin-bottom: 10%;
-    margin-top: 10%;
-    color:#fff;
-    text-align: center;
-    font-family:'Roboto';
-    font-size: 16px ;}
-
-    @keyframes cambiar{
-        0%{background-position: 0 50%;}
-        50%{background-position: 100% 50%;}
-        100%{background-position: 0 50%;}
-    }
-
-
-.register_main{
-    margin-left: 10%;
-    margin-right: 10%;
-    background: linear-gradient(45deg,red,blue,green,black);
-    background-size: 400% 400%;
-    position: relative;
-    animation: cambiar 4s ease-in-out infinite;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    margin-bottom: 10%;
-    margin-top: 10%;
-    color:#fff;
-    text-align: center;
-}
-
-
-.form_select{
-    
-    
-    align-items: center;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top:10px;
-    padding: 10px;
-    border: 1px solid silver;
-    background-color: #fff;
-    margin-left: 10%;
-    margin-right: 10%;
-    
-}
-
-
-
-.form_text_error{
-    color: red;
-}
-*/
 .form__text--error{
     color:red
 }
@@ -143,10 +8,12 @@
     padding: 0;
     box-sizing: border-box;
   }
-
+.form-groupr {
+    width: 5px;
+}
 .register_main_section {
     width: 400px;
-    background: #24303c;
+    background: #0D1329;
     padding: 30px;
     margin: auto;
     margin-top: 100px;
@@ -156,7 +23,7 @@
     box-shadow: 7px 13px 37px #000;
   }
   
-  .form_input {
+  .register_input {
     width: 100%;
     background: #24303c;
     padding: 10px;
@@ -175,16 +42,28 @@
 
 
   .register_main_section .botons{
-    width: 100%;
-    background: #1f53c5;
-    border: none;
-    padding: 12px;
-    color: white;
-    margin: 16px 0;
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
     font-size: 16px;
-    cursor:pointer
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    background: rgba(0,0,0,.5);
   }
-
+  .register_main_section .botons:hover{
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+}
   .register_main_section .cancel{
     width: 100%;
     background: red;

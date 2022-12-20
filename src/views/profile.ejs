@@ -1,91 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-    <div class="header_profile">
-    <%- include('./partials/head')  %>
+<%-include('./partials/head')%>
 
-</div>
+  <body >
 
-<body class="home__body__profile">
-    
+    <%-include('./partials/header')%>
 
-    <main class="home__main__profile">
-
+      <main class="profile">
         
-            <div class="container-page__profile">
-                <div class="contatiner-page__form">
-                    
-                    
-                    <figure class="avatar__profile">
-                        <img  src="/images/users/<%= user.avatar ? user.avatar : 'default.png' %>" alt="avatar" class="avatar__img" id="imagePreview">
-                        <p class="text-danger" id="msgErrorAvatar"></p>
-                    </figure>
-                    
-                    <h1 class="form_title">Perfil de usuario</h1>
-                    <div>
-                        <form action="/users/profile/<%=user.id%>?_method=PUT" class="form" method="POST">
-                            <div class="form_title-div">
-                                
-                            </div>
-                        </div>
-            <div class="form__box__profile">
-                <label class="form__label__profile" for="nombre"> <span>Nombre:</span> </label>
-                <input class="form__input__profile" type="text" id="nombre" name="firstName" value="<%= user.firstname%>">
-                <div>
-                <small class="form__text--error"><%= locals.errors && errors.firstName? errors.firstName.msg :null %></small>
-                </div>
-            </div>
-            <div class="form__box__profile">
-                <label class="form__label__profile" for="apellido"> <span>Apellido:</span></label>
-                <input class="form__input__profile" type="text" id="apellido" name="lastName" value="<%=user.lastname %>">
-                  <div>    
-            <small class="form__text--error"><%= locals.errors && errors.lastName? errors.lastName.msg :null %></small>
-                 </div> 
-            </div>
+        <div class="saludo"><h2>Bienvenido de nuevo <%= user.firstname%> !</h2></div>
+        <section class="wrapper">
+          <div class="img-User">
+            <img src="/images/users/<%= user.avatar ? user.avatar : 'default.png' %>" alt=""width="50%" height="50%" />
+           
 
-            <div class="form__box__profile input__email">
-                <label class="form__label__profile" for="email"><span>Correo electronico:</span></label>
-                <input class="form__input__profile input__email" type="email" id="email" name="email" readonly value="<%=user.email %>" >
-                  <div>
-                <small class="form__text--error"><%= locals.errors && errors.email? errors.email.msg :null %></small>
-                </div>
-            </div>
-
-            
-                
-
-            <div class="form__box__profile">
-                <label class="form__label__profile" for="password"><span>Cambiar contraseña:</span></label>
-                <input class="form__input__profile" type="password" id="password" name="password">
-                <div>
-                    <small class="form__text--error"><%= locals.errors && errors.password? errors.password.msg :null %></small>
-                </div>
-            </div>
-
-            <div class="form__box__profile">
-                <label class="form__label__profile" for="password2"><span>Confirmar contraseña:</span></label>
-                <input class="form__input__profile" type="password" id="password2" name="password2">
-                <div>
-                <small class="form__text--error"><%= locals.errors && errors.password2? errors.password2.msg :null %></small>
-                </div>
-            </div>
-
-            <div class="form__box__profile">
-                <label class="form__label__profile" for="avatar"><span>Modificar imagen de perfil</span></label>
-                <input  class="form__input__profile" type="file" accept="png,jpg" id="avatar" name="avatar">
-                
-            </div>
-
-  <button class="profile__button__send" type="submit">Editar perfil </button>
-                <button class="profile__buton__cancel" type="reset">Cancelar </button>
-            </form>
+          </div>
+          <div class="info-User">
+            <p>
+              
+              <span class="atributos"> Nombre Completo: </span></>
+              <%= user.firstname%>
+                <%=user.lastname %>
+            </p>
+            <hr>
+            <p><span class="atributos">Email:</span>
+              <%=user.email %>
+            </p>
+            <hr>
+            <p><span class="atributos"> Ciudad:</span>
+              <%=user.city %>
+            </p>
+            <hr>
+            <p><span class="atributos">Calle:</span>
+              <%=user.street %>
+            </p>
+            <hr>
+            <p><span class="atributos">Telefono:</span>
+              <%=user.phone %>
+            </p>
+<hr><div class="botonesP">
+<button type="button" class="btn btn-outline-danger"><a href="/users/logout" class="cerrarSesion">Cerrar sesión</a></button>
+<button type="button" class="btn btn-outline-primary"> <a href="/users/editarPerfil" class="editarPerfil">Editar perfil</a></button>
+          </div>
         </div>
-                
-        </div>
-                
-        </main >
+        </section>
+      
+      </main>
 
-        <script src="/javascripts/userProfile.js"></script>
+      <%-include('./partials/footer')%>
 
-</body>
+  </body>
 
 </html>
+<form action="">
+  <label for=""></label>
+</form>

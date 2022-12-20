@@ -1,79 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('./partials/head')  %>
+<%- include('./partials/head') %>
 
 <body>
  
         <%- include('./partials/header')  %>
-    
-
-    <main class="home_main_register">
-
-        <section class="register_main_section">
-            
-        
-            <h1 class="form_title">Editar products</h1>
-    
-    
-            <form action="/products/update/<%=products.id%>?_method=PUT" class="form" method="POST">
-    
-
-                
-            <div class="form_box">
-                <label class="form_label" for="name">Nombre del products:</label>
-                <input class="form_input" type="text" id="name" name="name" value="<%=products.name%>">
-                <small class="text-danger"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
-            </div>
-            <div class="form_box">
-                <label class="form_label" for="brands">Coloca una marca:</label>
-                <select name="brands" id="brands">
-                    <% brands.forEach(brands => { %>
-                        <option value="<%= brands.id %>" <%= products.brand_id === brands       .id ? 'selected' : null %>><%= brands.name %> </option>
-                        
-                        <% }) %>
-                    </select>
+        <div class="titulo-"><h3>Editar Producto</h3>
+        </div>
+        <div classs="container">
+            <div class="row justify-content-center">
+              <div class="col-md-10">
+                <div class="card">
+               
+                  
+                  <d class="card-body">
+                     <form action="/products/update/<%=products.id%>?_method=PUT" class="form" method="POST">
+                      <!-- datos principales del producto -->
+                      <div class="row">
+                        <div class="col-md-4">
+                          <img src="/images/product-images/<%= products.images.length ? products.images[0].name + '.jpg' : 'default.png' %>" class="img-thumbnail img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                          
+                          <div class="form-group- row">
+                            <label for="name" class="col-md-4 col-form-label">Nombre</label>
+                            <div class="col-sm-6">
+                                <input class="form_input" type="text" id="name" name="name" value="<%=products.name%>">
+                                <small class="text-danger"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
+                            </div>
+                          </div>
+                          <div class="form-group- row">
+                            <label for="category" class="col-md-4 col-form-label">Categoria</label>
+                            <div class="col-sm-6">
+                                <select name="category" id="category">
+                                    <% categories.forEach(categories => { %>
+                                        <option value="<%= categories.id %>" <%= products.categories_id === categories.id ? 'selected' : null %>><%= categories.name %> </option>
+                                    <% }) %>
+                                    </select>
+                                    <small class="text-danger"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
+                            </div>
+                          </div>
+                          <div class="form-group- row">
+                            <label for="brand" class="col-md-4 col-form-label">Marca</label>
+                            <div class="col-sm-6">
+                                <select name="brands" id="brands">
+                                    <% brands.forEach(brands => { %>
+                                        <option value="<%= brands.id %>" <%= products.brand_id === brands.id ? 'selected' : null %>><%= brands.name %> </option>
+                                        
+                                        <% }) %>
+                                    </select>
+                            </div>
+                          </div>
+                          
+                          <div class="form-group- row">
+                            <label for="description" class="col-md-4 col-form-label">Description Producto</label>
+                            <div class="col-sm-6">
+                                <input class="form_input" type="text" id="description" name="description" value="<%=products.description%>">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    
+                      
+                      <!--precio y descuento-->
+                     
+                      <hr>
+                      <div class="row" >
+                        <div class="col-md-8">
+                          <div class="form-group- row">
+                            <label for="attr_1" class="col-md-4 col-form-label">Precio</label>
+                            <div class="col-sm-6">
+                                <input class="form_input" type="number" id="price" name="price" value="<%=products.price%>">
+                                <small class="text-danger"><%= locals.errors && errors.price ? errors.price.msg : null %></small>
+                            </div>
+                          </div>
+                          <div class="form-group- row">
+                            <label for="attr_2" class="col-md-4 col-form-label">Descuento</label>
+                            <div class="col-sm-6">
+                                <input class="form_input" type="number" id="discount" name="discount" value="<%=products.discount%>">
+                                <small class="text-danger"><%= locals.errors && errors.discount ? errors.discount.msg : null %></small>
+                            </div>
+                            
+                         
+                            </div>
+                          
+                        </div>
+                       
+                        <div class="button-group column">
+                            <button type="submit" class="btn btn-outline-primary">Editar</button>
+                         <button type="button" class="btn btn-outline-danger">Borrar</button>
+                         <button type="button" class="btn btn-outline-warning"><a href="/">Cancelar</a></button>
+                          </div>
+                        </div>
+                      
+                      
+                    </form>
+                  </div>
                 </div>
-            <div class="form_box">
-                <label class="form_label" for="price">Precio:</label>
-                <input class="form_input" type="number" id="price" name="price" value="<%=products.price%>">
-                <small class="text-danger"><%= locals.errors && errors.price ? errors.price.msg : null %></small>
+              </div>
             </div>
-            <div class="form_box">
-                <label class="form_label" for="discount">Descuento:</label>
-                <input class="form_input" type="number" id="discount" name="discount" value="<%=products.discount%>">
-                <small class="text-danger"><%= locals.errors && errors.discount ? errors.discount.msg : null %></small>
-            </div>
-            
-          <!--   <div class="form_box">
-                <input type="file" name="image" accept="image/png, .jpeg, .jpg, image/gif" multiple>
-            </div> -->
-            <div class="form_box">
-                <label class="form_label" for="category">Seleccione una categoria:</label>
-                <select name="category" id="category">
-                    <% categories.forEach(categories => { %>
-                        <option value="<%= categories.id %>" <%= products.categories_id === categories.id ? 'selected' : null %>><%= categories.name %> </option>
-                    <% }) %>
-                    </select>
-                </div>
-                <small class="text-danger"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
-                <div class="form_box">
-                    <label class="form_label" for="description">Descripción:</label>
-                    <input class="form_input" type="text" id="description" name="description" value="<%=products.description%>">
+          </div>
+   
 
-                </div>
-               <div>
-                <button><a href="/">Cancelar</a></button>
-                <button type="submit">Guardar</button>
-               </div>
-            </form>
-         
-    </section>
-                
-        </main >
-
-    <footer></footer>
 
 </body>
 
 </html>
+

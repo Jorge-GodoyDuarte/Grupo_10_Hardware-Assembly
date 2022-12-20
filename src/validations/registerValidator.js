@@ -29,12 +29,9 @@ module.exports =[
         .notEmpty()
         .withMessage('Coloca una calle'),
              
-        check('city')
-        .notEmpty()
-        .withMessage('Coloca una ciudad')
-        .bail()
-        .isAlpha('es-ES',{ignore : " "})
-        .withMessage('Sólo caracteres alfabeticos'),
+        /* body('city')
+        .exists()
+        .withMessage('Coloca una ciudad'), */
 
         check('phone')
         .notEmpty()

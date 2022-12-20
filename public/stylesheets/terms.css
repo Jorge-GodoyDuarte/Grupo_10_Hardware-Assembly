@@ -13,12 +13,7 @@ border-radius: 5px;
 box-shadow: 2px 3px 2px 3px rgba(173, 185, 199, 0.502);
  
 }
-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
+
 .text{
     text-align: center;
   height: 500px;

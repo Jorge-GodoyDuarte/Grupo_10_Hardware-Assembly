@@ -5,7 +5,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-const methodOverride = require('method-override')
+const methodOverride = require('method-override') // PARA UTILIZAR LOS METODOS PUT Y DELETE
 const session = require('express-session')
 
 const localsUserCheck=require('./middlewares/localsUserCheck')
@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, '../','public')));
 
 //app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(methodOverride('_method'));
+app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(session({
   secret:'hardware-assemblyforever',
   resave: false,
@@ -39,8 +39,10 @@ app.use(localsUserCheck)
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/products', productsRouter)
-
+app.use('/products', productsRouter);
+app.use('/api/users',require('./routes/APIs/apiUsers'));
+app.use('/api/products',require('./routes/APIs/apiProducts'));
+app.use('/api/carts',require('./routes/APIs/apiCarts'));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

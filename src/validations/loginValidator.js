@@ -1,5 +1,4 @@
 const { check, body } = require("express-validator");
-const { loadUsers } = require("../data/db_Module");
 const { compareSync } = require("bcryptjs");
 const db = require("../database/models");
 module.exports = [

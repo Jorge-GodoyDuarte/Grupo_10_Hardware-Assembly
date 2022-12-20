@@ -1,13 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Sans+Pro:wght@400;600&family=Ubuntu&display=swap');
 @import './home.css';
+@import './login.css';
 @import './shopping-cart.css';
 @import './form.css';
 @import './detail.css';
 @import './profile.css';
 @import './header.css';
+<<<<<<< HEAD
 @import './login.css';
+=======
+>>>>>>> b1ad0f0b683123a358792014db95ce431a033e6c
 @import './terms.css';
+@import './footer.css';
+@import './productadd-edit.css';
+@import './carrousel.css';
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+<<<<<<< HEAD
+=======
+
+>>>>>>> b1ad0f0b683123a358792014db95ce431a033e6c
 
 :root {
     --tipografiaTitulos: 'Roboto';
@@ -31,6 +42,7 @@ a{
 body {
     margin: 0px;
     padding: 0px;
+    background-color: #f4f4f8;
 }
 
 
