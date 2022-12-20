@@ -1,3 +1,21 @@
+.add-b{
+  background-image: url(/images/background2.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  height: 1000px;
+
+}
+#contenedor-1p{
+    width: 50%;
+    height: 600px;
+    margin: 0 auto;
+   display: flex;
+   flex-direction: column; 
+   justify-content: center;
+   align-items: center;
+   border-radius: 10px;
+   padding: 20px;
+}
 .botones-add-edit{
     margin-top: 15px;
    
@@ -11,7 +29,8 @@
 
 }
 .titulo-{
-
+    font-style: var(--tipografiaTitulos);
+    color:aliceblue;
     display: flex;
     text-align: center;
     justify-content: center;;
