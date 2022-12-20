@@ -26,8 +26,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../','public')));
 
-//app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(session({
   secret:'hardware-assemblyforever',

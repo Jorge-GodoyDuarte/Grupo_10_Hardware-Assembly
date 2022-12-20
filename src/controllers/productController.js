@@ -27,11 +27,10 @@ module.exports = {
   },
   detail: (req, res) => {
     // Do the magic
-    db.Product.findByPk(req.params.id, {
+        db.Product.findByPk(req.params.id, {
         include : ['brand','images']
     })
-      .then((product) => {
-       /*  return res.send(product) */
+      .then(product => {
         return res.render("detail", {
           product,
           toThousand,
@@ -50,7 +49,19 @@ module.exports = {
       brand_id: +brand_id,
       categories_id: +categories_id,
     })
-      .then((product) => {
+      .then( product => {
+        if (req.files) {
+          let images = req.files.map(({filename}) =>{
+            let image = {
+              file : filename,
+              product_id : product.id,
+            }
+            return image
+          })
+          db.Image.bulkCreate(images,{validate :true})
+          .then((result) => console.log(result))
+        }
+        
         return res.redirect("/products/detail/" + product.id);
       })
       .catch((error) => console.log(error));
@@ -62,7 +73,9 @@ module.exports = {
       include: ["images"],
     });
     let categories = db.Category.findAll();
-    let brands = db.Brand.findAll();
+    let brands = db.Brand.findAll({
+      order:["name"]
+    });
     Promise.all([products, categories, brands])
       .then(([products, categories, brands]) => {
         res.render("productEdit", {

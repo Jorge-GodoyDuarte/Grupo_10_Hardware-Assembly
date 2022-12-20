@@ -4,11 +4,11 @@ const router = express.Router();
 const {filter,detail,store,create,editProduct, updateEdit, remove, search,carrito} = require('../controllers/productController');
 const {adminCheck, upload } = require('../middlewares');
 /* /products */
-
+const {uploadImgProduct} = require('../middlewares/uploadFiles')
 router
 .get('/detail/:id', detail)
 .get('/add',/*adminCheck*/create)
-.post('/add/:id ', store)
+.post('/add', uploadImgProduct.array('imageupload'),store)
 .get('/edit/:id', /*adminCheck*/ editProduct)
 .put('/update/:id', updateEdit)
 .delete('/delete/:id', remove)
