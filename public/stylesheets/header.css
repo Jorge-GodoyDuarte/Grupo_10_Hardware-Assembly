@@ -186,6 +186,9 @@ text-align: left;
   background-color: rgb(189, 6, 6);
 }
 
+.add-header{
+  display:none;
+}
 
 
 .div-nav-bar {
