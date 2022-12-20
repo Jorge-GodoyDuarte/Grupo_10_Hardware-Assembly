@@ -11,9 +11,8 @@
       <div class="div-nav-bar">
         <section class="contenedor-busqueda">
           <div class="logo-home">
-            <a href="/">
-              <h4> Hardware&Assembly</h4>
-            </a>
+          <a href="/"><img src="logo.png" alt=""></a>
+
           </div>
           <form action="/products/search" method="GET" class="search-form">
             <div class="header__search">
@@ -37,7 +36,7 @@
                 <% if (userLogin.role_id===2) { %>
                   <ul>
                     <li>
-                      <a href="/users/panel"><i class="fas fa-user"></i> Administracion</a>
+                      <a href="/users/panel" class="login"><i class="fas fa-user"></i> Administracion</a>
                     </li>
                     <li style="display: none;">
                       <a href="/products/add">Agregar</a>
@@ -122,7 +121,14 @@
       if (sessionStorage.getItem('modo') == 1) {
         document.body.classList.toggle('dark')
         toggleTitle.innerHTML = '<p style="color: white;">MODO OSCURO</p>';
-
+        for (let i = 0; i < tarjet.length; i++) {
+        const elem = tarjet[i];
+        if(sessionStorage.getItem('modo') == 1){
+          elem.classList.add('active')
+        } else {
+          elem.classList.remove('active')
+        }
+      }
       } else {
         toggleTitle.innerHTML = '<p style="color: white;">MODO CLARO</p>';
 

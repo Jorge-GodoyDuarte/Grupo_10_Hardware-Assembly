@@ -66,3 +66,4 @@ $("email").addEventListener("blur", async function ({ target }) {
   
       !error && this.submit()
     });
+    

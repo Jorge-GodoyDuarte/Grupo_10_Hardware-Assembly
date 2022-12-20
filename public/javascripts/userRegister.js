@@ -143,7 +143,47 @@ $("email").addEventListener("blur", async function ({ target }) {
       break;
   }
 });
+$("password").addEventListener("focus", () => {
+  $("msgPass").hidden = false;
+});
 
+
+$("password").addEventListener("blur", function ({ target }) {
+  $("msgPass").hidden = true;
+  switch (true) {
+    case !this.value.trim():
+      msgError("errorPass", "La contraseña es obligatoria", target);
+      break;
+    case !exRegs.exRegPass.test(this.value):
+      msgError(
+        "errorPass",
+        "La contraseña debe tener un símbolo, un número, una mayúscula, una minúscula y entre 6 y 8 caracteres",
+        target
+      );
+      break;
+    default:
+      validField("errorPass", target);
+      break;
+  }
+});
+
+$("password2").addEventListener("blur", function ({ target }) {
+    switch (true) {
+      case !this.value.trim():
+        msgError("errorPass2", "Debes verificar la contraseña", target);
+        break;
+      case this.value.trim() !== $('password').value.trim():
+        msgError(
+          "errorPass2",
+          "Las contraseñas no coinciden",
+          target
+        );
+        break;
+      default:
+        validField("errorPass2", target);
+        break;
+    }
+  });
 
 $("form-register").addEventListener("submit", function (e) {
   e.preventDefault(); //chequea todos los eventos

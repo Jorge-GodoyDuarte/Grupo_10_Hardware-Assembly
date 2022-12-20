@@ -3,5 +3,6 @@ module.exports = {
     cookieCheck : require('./cookieCheck'),
     userCheck : require('./userCheck'),
     checkRedirect : require('./checkRedirect'),
-    adminCheck : require('./adminCheck')
+    adminCheck : require('./adminCheck'),
+    upload : require('./uploadFiles')
 }
