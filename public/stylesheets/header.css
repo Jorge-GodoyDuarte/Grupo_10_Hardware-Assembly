@@ -92,9 +92,13 @@
   box-shadow: inset 0 2px 60px  rgba(0,0,0,0.1),
               inset 0 2px 8px  rgba(0,0,0,0.1),
               inset 0 -4px 8px  rgba(0,0,0,0.5);
-  transition: 0.5s;
+  transition: 0.5s;}
+.botones-logheader{
+  display: flex;
+flex-direction: row;
+text-align: center;
+justify-content: center;
 }
-
  /* NAVEGATION */
   .header__search {
     display: block;
@@ -177,8 +181,17 @@ text-align: left;
   color: wheat;
   font-size: 30px;
 } */
-.login {
+.login-header {
   background-color: rgb(19, 95, 196);
+  display: block;
+  color: #fefefe;
+  font-size: 18px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 50px;
+  transition: 0.2s;
+  margin: 0 5px;
+  width: 150px;
 }
 .logout {
   background-color: rgb(189, 6, 6);
