@@ -23,11 +23,11 @@
                 <section>
 
                     <article class="detail__main-article">
-                        
+
                         <div class="detail__main-tittle">
-                            <h4>
+                            <h3>
                                 <%= product.name%>
-                            </h4>
+                            </h3>
                         </div>
 
                         <div class="superior-img-lateral">
@@ -54,43 +54,48 @@
                                             </h4>
                                         </div>
                                         <div class="price2">
-                                            <p class="detail__discount"> $<%= new
+                                            <h3 class="detail__discount"> $<%= new
                                                     Intl.NumberFormat().format(product.price)%>
-
-                                            </p>
+                                            </h3>
                                             <% } else { %>
                                                 <h4> $<%= product.price %>
                                                 </h4>
                                                 <% } %>
-                                                    <% if (product.discount> 0) { %>
-                                                        <h5>
-                                                            <%= product.discount%>%OFF
-                                                        </h5>
-                                                        <% } %>
+                                                    <h5>
+                                                        <% if (product.discount> 0) { %>
+                                                    </h5>
+                                                    <h5>
+                                                        <%= product.discount%>%OFF
+                                                    </h5>
+                                                    <% } %>
                                         </div>
 
                                 </div>
                                 <div class="boton-pedidos">
                                     <form action="" method="post">
-                                        <a href="/src/views/cart.ejs"><i class="fas fa-shopping-basket"></i></a>
+                                        <a href="/src/views/cart.ejs">
+                                            Agregar<i class="fas fa-shopping-basket"></i></a>
                                     </form>
+                                </div>
+
+                                <div class="detail__main-subtittle">
+                                    <div class="arriba">
+                                        <label for="check">
+                                            <h4 class="caracteristicas">
+                                                <input type="checkbox" name="check" id="check" value="1"
+                                                    onchange="javascript:showContent()" class="ocultar">
+                                                    Descripción<i class="fa-solid fa-square-caret-down"></i>
+                                            </h4>
+
+                                        </label>
+                                    </div>
+
                                 </div>
                             </section>
                         </div>
 
 
-                        <div class="detail__main-subtittle">
-                            <div class="arriba">
-                                <label for="check">
-                                    <h4 class="caracteristicas">
-                                        <input type="checkbox" name="check" id="check" value="1"
-                                            onchange="javascript:showContent()" class="ocultar">Descripcion del
-                                        producto:
-                                    </h4>
-                                </label>
-                            </div>
 
-                        </div>
 
 
                         <article class="detail__main-info" id="content">
@@ -101,8 +106,8 @@
                                 </p>
                             </div>
 
-                           
-<hr>
+
+                            <hr>
                             <div class="detail__main-info-product">
                                 <p>DESCRIPCIÓN</p>
                                 <p>
@@ -112,7 +117,7 @@
 
                         </article>
 
-                       
+
 
                     </article>
                     <article class="detail__main-article-button">
