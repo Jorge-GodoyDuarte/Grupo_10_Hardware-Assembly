@@ -29,6 +29,10 @@ datos tr:nth-child(even) {
 .titulo-listar{
   color: aliceblue;
 }
+.for_adm_product{
+  font-style: var(--tipografiaTitulos);
+  color:aliceblue;
+}
 .listado-p{
     width: 40%;
     display: flex;
