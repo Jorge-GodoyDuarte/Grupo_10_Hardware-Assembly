@@ -11,7 +11,7 @@
         <div class="saludo"><h2>Bienvenido de nuevo <%= user.firstname%> !</h2></div>
         <section class="wrapper">
           <div class="img-User">
-            <img src="/images/users/<%= user.avatar ? user.avatar : 'default.png' %>" alt=""width="50%" height="50%" />
+            <img src="/images/users/<%= user.avatar ? user.avatar : 'default.png' %>" alt=""width="50%" height="50%" class="imagen-perf"/>
            
 
           </div>
@@ -44,7 +44,7 @@
           </div>
         </div>
         </section>
-      
+        
       </main>
 
       <%-include('./partials/footer')%>
@@ -52,6 +52,3 @@
   </body>
 
 </html>
-<form action="">
-  <label for=""></label>
-</form>
