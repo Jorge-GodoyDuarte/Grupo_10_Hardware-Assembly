@@ -311,7 +311,7 @@
   margin: 15px 15px;
   background-color: #fff;
   display: inline-block;
-  box-shadow: 2px 1px 2px 1px rgba(128, 128, 128, 0.524);
+  box-shadow: 2px 1px 2px 1px #0d132942;
 }
 .el-wrapper.active {
   background-color: #0d1329;
