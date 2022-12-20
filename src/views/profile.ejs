@@ -10,15 +10,17 @@
         
         <div class="saludo"><h2>Bienvenido de nuevo <%= user.firstname%> !</h2></div>
         <section class="wrapper">
+      
           <div class="img-User">
             <img src="/images/users/<%= user.avatar ? user.avatar : 'default.png' %>" alt=""width="50%" height="50%" />
-           
+            <label for="avatar" class="btn btn-primary fs-4 p-3">Cambiar avatar</label>
+                        <input hidden type="file" class="form-input" id="avatar" name="avatar" accept="image/*">
 
           </div>
           <div class="info-User">
             <p>
               
-              <span class="atributos"> Nombre Completo: </span></>
+              <span class="atributos"> Nombre Completo: </span>
               <%= user.firstname%>
                 <%=user.lastname %>
             </p>
@@ -43,6 +45,7 @@
 <button type="button" class="btn btn-outline-primary"> <a href="/users/editarPerfil" class="editarPerfil">Editar perfil</a></button>
           </div>
         </div>
+      
         </section>
       
       </main>
@@ -52,6 +55,3 @@
   </body>
 
 </html>
-<form action="">
-  <label for=""></label>
-</form>

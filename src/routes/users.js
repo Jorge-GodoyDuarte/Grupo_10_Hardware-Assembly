@@ -17,6 +17,7 @@ router
 .get('/register', checkRedirect, register)
 .post('/register/add',registerValidator,processRegister)
 .post('/login',loginValidator,processLogin)
+
 .get('/logout',logout) 
 .get('/profile',userCheck,profile) // /users/profile
 .put('/profile/:id',/* upload.single('avatar'), */profileValidator,updateEdit)
