@@ -9,18 +9,22 @@ const profileValidator = require('../validations/profileValidator')
 
 /* MIDDLEWARES  */
 const { userCheck, checkRedirect, adminCheck } = require('../middlewares');
+const { Panel, editAdmin, ProductList } = require('../controllers/adminController');
 
 /* /users */
 
 router
 .get('/login',checkRedirect,login) // users/login
-.get('/register', checkRedirect, register)
+.get('/register', checkRedirect,register)
 .post('/register/add',registerValidator,processRegister)
 .post('/login',loginValidator,processLogin)
-
 .get('/logout',logout) 
 .get('/profile',userCheck,profile) // /users/profile
 .put('/profile/:id',/* upload.single('avatar'), */profileValidator,updateEdit)
 
+/* PANEL ADMIN */
+.get('/panel',adminCheck, Panel)
+.put('/panel/:id',editAdmin)
+.get('/panelProducts',adminCheck,ProductList)
   
 module.exports = router;

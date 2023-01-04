@@ -225,7 +225,8 @@
 }
 
 .contenedor {
-  display: block;
+  display: flex;
+  padding: 20px;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
@@ -273,14 +274,7 @@
   transform: scale(1.15) rotate(0.01deg);
 }
 
-.flex-contenedor {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  
-}
+
 
 .d-flex {
   display: -webkit-box;
@@ -310,6 +304,7 @@
   margin: 15px 15px;
   background-color: #fff;
   display: inline-block;
+  box-shadow: 2px 1px 2px 1px #0d132942;
 }
 .el-wrapper.active {
   background-color: #0d1329;
@@ -320,40 +315,73 @@
 .el-wrapper.active .price {
   color: #99fdecda;
 }
+.spanBanner img {
+  object-fit: cover;
+  position: relative;
+  top: 0px;
+  height: inherit;
+  width: 100%;
+}
+.el-wrapper {
+  width: 22%;
+}
 
+  .flex-contenedor {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+@media (min-width: 1024) {
+
+  .flex-contenedor {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .el-wrapper {
+    width: 25%;
+  }
+}
 @media (max-width: 991px) {
   .caja {
     width: 21%;
   }
-  .el-wrapper {
-    width: 345px;
-  }
+.el-wrapper {
+  width: 44%;
+
+}
 
   .banner {
     display: none;
   }
+  .spanBanner img {
+    object-fit: contain;
+    position: relative;
+    top: 0px;
+    height: inherit;
+    width: 100%;
+  }
+
 }
 
-@media (max-width: 767px) {
+@media (max-width: 600px) {
   .caja {
-    width: 50%;
+    width: 40%;
   }
   .el-wrapper {
-    width: 290px;
-    margin: 30px 30px;
-  }
+    width: 90%;
+}
 }
 
 .el-wrapper:hover .h-bg {
   left: 0px;
 }
-w .el-wrapper:hover .price {
+.el-wrapper:hover .price {
   left: 20px;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
-  color: #818181;
+  color: #8DE2D4;
 }
 
 .el-wrapper:hover .go-description {
@@ -521,7 +549,6 @@ w .el-wrapper:hover .price {
   -o-transition-delay: 100ms;
   transition-delay: 100ms;
   display: block;
-
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
@@ -529,7 +556,7 @@ w .el-wrapper:hover .price {
   font-size: 25px;
   font-weight: bold;
   color: #252525;
-  margin-left: 20%;
+  margin-left: 10%;
   margin-top: 5px;
 }
 
@@ -592,4 +619,11 @@ w .el-wrapper:hover .price {
   flex-wrap: wrap;
   width: 100%;
   color: black;
+}
+.spanBanner {
+  width: 80%;
+  height: 89px;
+  overflow: hidden;
+  padding-left: 20%;
+  border-radius: 35px;
 }

@@ -1,6 +1,6 @@
 console.log("userProfile.js connected!");
 const allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
-
+const $ = (element) => document.getElementById(element);
 
 
 $('avatar').addEventListener('change', function ({ target }) {

@@ -27,11 +27,11 @@ module.exports = {
   },
   detail: (req, res) => {
     // Do the magic
-    db.Product.findByPk(req.params.id, {
+        db.Product.findByPk(req.params.id, {
         include : ['brand','images']
     })
-      .then((product) => {
-       /*  return res.send(product) */
+      .then(product => {
+        
         return res.render("detail", {
           product,
           toThousand,
@@ -39,7 +39,7 @@ module.exports = {
       })
       .catch((error) => console.log(error));
   },
-  store: (req, res) => {
+    store: (req, res) => {
     const { name, price, discount, description, brand_id, categories_id } =
       req.body;
     db.Product.create({
@@ -50,7 +50,19 @@ module.exports = {
       brand_id: +brand_id,
       categories_id: +categories_id,
     })
-      .then((product) => {
+      .then( product => {
+        if (req.files.length) {
+          let images = req.files.map(({filename}) =>{
+            let image = {
+              name : filename,
+              product_id : product.id,
+            }
+            return image
+          })
+          db.Image.bulkCreate(images,{validate :true})
+          .then((result) => console.log(result))
+        }
+        
         return res.redirect("/products/detail/" + product.id);
       })
       .catch((error) => console.log(error));
@@ -62,7 +74,9 @@ module.exports = {
       include: ["images"],
     });
     let categories = db.Category.findAll();
-    let brands = db.Brand.findAll();
+    let brands = db.Brand.findAll({
+      order:["name"]
+    });
     Promise.all([products, categories, brands])
       .then(([products, categories, brands]) => {
         res.render("productEdit", {
@@ -113,7 +127,7 @@ module.exports = {
 		// Do the magic
 		let { keywords } = req.query;
     
-		db.Product.findAll({
+		let product = db.Product.findAll({
       include : ['brand','category','images'],
 			where: {
 				[Op.or]: [
@@ -130,9 +144,13 @@ module.exports = {
 				],
 			},
 		})
-			.then((result) => {
+    let category = db.Category.findAll()
+    Promise.all([product, category])
+			.then(([product,category]) => {
+        
 return res.render("search", {
-					result,
+					product,
+          category,
 					toThousand,
 					keywords
 				});  
@@ -140,6 +158,7 @@ return res.render("search", {
 			.catch((error) => console.log(error));
 	},
   filter: (req,res) => {
+    let { keywords } = req.query;
     let products = db.Product.findAll({
       limit: 10,
       include: ['category','images','brand'],
@@ -148,12 +167,13 @@ return res.render("search", {
       }
     })
     let category = db.Category.findAll()
-    Promise.all([products])
-    .then((products,categoria) => {{
-      return res.send(products)
+    Promise.all([products, category])
+    .then(([products,category]) => {{
       return res.render('products', {
        products,
-       toThousand
+       category,
+       toThousand,
+       keywords
         
     })
     }})
@@ -163,4 +183,3 @@ carrito: (req,res)=>{
   return res.render('cart')
 }
 }
-   

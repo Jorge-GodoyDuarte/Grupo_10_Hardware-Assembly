@@ -14,19 +14,20 @@ module.exports = {
 			include: ['images', 'category','brand']
 		});
 
-		let newest = db.Product.findAll({
-			limit: 4,
-			include: ['images', 'category']
-		})
+
    let category = db.Category.findAll()
-    
-    Promise.all([product, newest, category])
-    .then(([product, newest, category]) => {
+   let newProduct = db.Product.findAll({
+    limit: 5,
+    order : [['id','DESC']],
+    include: ['images', 'category','brand']
+  });
+    Promise.all([product,category, newProduct])
+    .then(([product,category, newProduct]) => {
       
       return res.render('index', {
         product,
-        newest,
         category,
+        newProduct,
         toThousand
       })
     })

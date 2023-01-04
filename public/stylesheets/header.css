@@ -8,27 +8,32 @@
     --bg-body: #C7E1FF;
 }
 
-.logo { 
+.logo-home { 
+  text-decoration:none;
   z-index: 1;
   background-color: #2c429233;
-  border-radius: 60px;
+  border-radius: 10px;
+  margin: 20px;
   margin-top: 20px;
-}
-.logo h3 {
-  font-style: var(--tipografiaTitulos);
-  font-weight: 800;
-  font-size: 35px;
+ 
   color: rgb(83, 194, 80);
-  text-align: center;
-  padding-left: 5px;
+  font-size: 35px;
   padding-top: 5px;
-  padding-bottom: 3px;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
-.logo img {
-  width: 180px;
-  height: 160px;
-  border-radius: 50px;
-}
+
+
+.contenedor-busqueda {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+ 
+  align-items: center;
+ 
+  }
 
 
 /* BUTTO DARK-MOON */
@@ -112,7 +117,7 @@
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    width: 100%;
+    width: 4rem;
     outline: none;
     box-sizing: border-box;
   }
@@ -122,13 +127,10 @@
   .shopping__header__button{ 
     display: flex;
     color: #01F603;
-    padding-left: 4px;
-    justify-content: center;
     background-color:#0D1329;
     font-size: 15px;
-    font-weight: 400;
     font-family: var(--tipografiaTitulos);
-    width: 33%;
+    width: 82%;
     height: 30px;
     border: 1px solid #cfcfcf;
     border-radius: 7px;
@@ -187,8 +189,10 @@ text-align: left;
 
 
 .div-nav-bar {
-  display: flex;
-  justify-content: end;
+ 
+
+  align-items: center;
+ flex-direction: row;
   width: 100%;
 }
 .nav-bar ul {
@@ -197,6 +201,7 @@ text-align: left;
   list-style: none;
   padding-right: 15px;
   padding-top: 2%;
+  align-items: center;
 }
 .nav-bar ul li a {
   display: block;
@@ -222,15 +227,19 @@ text-align: left;
   display: none;
 }
 
+
+
 @media (max-width: 1320px) {
   header {
     padding: 0 50px;
   }
-  .logo {
-    z-index: 1;
+  .logo-home {
+   
+   display: flex;
+   align-items: flex-start;
     width: 25%;
     height: 25%;
-    padding-left: 1rem;
+    
   }
 }
 @media (max-width: 1100px) {
@@ -238,15 +247,20 @@ text-align: left;
     padding: 0 30px;
   }
 }
+
 @media (max-width: 1000px) {
+  .contenedor-busqueda {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    }
+  
   .menu-dashboard {
     display: none;
   }
-  .logo {
-    display: none;
-  }
+  
  
-  header {
+  .header {
     cursor: pointer;
   }
   .burger {
@@ -302,7 +316,6 @@ text-align: left;
 .burger.open .burger-menu::after {
   transform: rotate(-45deg) translate(35px,35px);
 }
-
 /*  */
   .nav-bar {
     height: 0;

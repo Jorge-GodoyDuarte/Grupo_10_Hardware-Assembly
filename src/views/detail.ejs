@@ -6,126 +6,136 @@
     <body>
 
         <%- include('./partials/header') %>
-        <script type="text/javascript">
-            function showContent() {
-                element = document.getElementById("content");
-                check = document.getElementById("check");
-                if (check.checked) {
-                    element.style.display='block';
+            <script type="text/javascript">
+                function showContent() {
+                    element = document.getElementById("content");
+                    check = document.getElementById("check");
+                    if (check.checked) {
+                        element.style.display = 'block';
+                    }
+                    else {
+                        element.style.display = 'none';
+                    }
                 }
-                else {
-                    element.style.display='none';
-                }
-            }
-            
-        </script>
+
+            </script>
             <main>
                 <section>
 
                     <article class="detail__main-article">
+
                         <div class="detail__main-tittle">
-                            <h4>
+                            <h3>
                                 <%= product.name%>
-                            </h4>
+                            </h3>
                         </div>
 
-                       <div class="superior-img-lateral">
-                       
-                       
+                        <div class="superior-img-lateral">
+
+
                             <div class="detail__main-img">
-                                <img src="/images/product-images/<%= product.images[0].name ? product.images[0].name + '.jpg' : 'default.png' %>" alt="" width="50%" height="50%">
+                                <img src="/images/product-images/<%= product.images.name ? product.images.name + '.jpg' : 'default.png'  %>"
+                                    alt="" width="50%" height="50%">
                             </div>
-                            
-
-                                
-
-                                <section class="lateral1">
 
 
-                                    <div class="detail__main-price-discount">
 
-                                        <% if (product.discount) { %>
-                                            <div class="price-1">
-                                                <h4> PRECIO $<%= toThousand(new
-                                                        Intl.NumberFormat().format(Math.trunc((product.price) -
-                                                        (product.price * product.discount / 100))))%>
+
+                            <section class="lateral1">
+
+
+                                <div class="detail__main-price-discount">
+
+                                    <% if (product.discount) { %>
+                                        <div class="price-1">
+                                            <h4> PRECIO $<%= toThousand(new
+                                                    Intl.NumberFormat().format(Math.trunc((product.price) -
+                                                    (product.price * product.discount / 100))))%>
+                                            </h4>
+                                        </div>
+                                        <div class="price2">
+                                            <h3 class="detail__discount"> $<%= new
+                                                    Intl.NumberFormat().format(product.price)%>
+                                            </h3>
+                                            <% } else { %>
+                                                <h4> $<%= product.price %>
                                                 </h4>
-                                            </div>
-                                            <div class="price2">
-                                                <p class="detail__discount"> $<%= new
-                                                        Intl.NumberFormat().format(product.price)%>
-
-                                                </p>
-                                                <% } else { %>
-                                                    <h4> $<%= product.price %>
-                                                    </h4>
-                                                    <% } %>
+                                                <% } %>
+                                                    <h5>
                                                         <% if (product.discount> 0) { %>
-                                                            <h5>
-                                                                <%= product.discount%>%OFF
-                                                            </h5>
-                                                            <% } %>
-                                            </div>
+                                                    </h5>
+                                                    <h5>
+                                                        <%= product.discount%>%OFF
+                                                    </h5>
+                                                    <% } %>
+                                        </div>
 
-                                    </div>
-                                    <div class="boton-pedidos">
-                                        <form action="" method="post">
-                                            <button type="submit" class="boton-carrito"><i
-                                                    class="fa-solid fa-cart-flatbed-suitcase"><a href=""></a></i></button>
-                                        </form>
-                                    </div>
-                                </section>  
-                       </div>
+                                </div>
+                                <div class="boton-pedidos">
+                                    <form action="" method="post">
+                                        <a href="/src/views/cart.ejs">
+                                            Agregar<i class="fas fa-shopping-basket"></i></a>
+                                    </form>
+                                </div>
 
-                       
                                 <div class="detail__main-subtittle">
                                     <div class="arriba">
                                         <label for="check">
                                             <h4 class="caracteristicas">
-                                                <input type="checkbox" name="check" id="check" value="1" onchange="javascript:showContent()" class="ocultar">CARACTERISTICAS GENERALES
-                                               </h4>
+                                                <input type="checkbox" name="check" id="check" value="1"
+                                                    onchange="javascript:showContent()" class="ocultar">
+                                                    Descripción<i class="fa-solid fa-square-caret-down"></i>
+                                            </h4>
+
                                         </label>
                                     </div>
-                                    
+
                                 </div>
+                            </section>
+                        </div>
 
-                               
-                                <article class="detail__main-info" id="content">
-                                    <div class="detail__main-info-product">
-                                        <p>MARCA:</p>
-                                        <p>
-                                            <%= product.brand.name%>
-                                        </p>
-                                    </div>
-                                  
-                                
-                                    <div class="detail__main-info-product">
-                                        <p>DESCRIPCIÓN DEL PRODUCTO:</p>
-                                        <p>
-                                            <%= product.description%>
-                                        </p>
-                                    </div>
 
-                                </article>
-                              
+
+
+
+                        <article class="detail__main-info" id="content">
+                            <div class="detail__main-info-product">
+                                <p>MARCA:</p>
+                                <p>
+                                    <%= product.brand.name%>
+                                </p>
+                            </div>
+
+
+                            <hr>
+                            <div class="detail__main-info-product">
+                                <p>DESCRIPCIÓN</p>
+                                <p>
+                                    <%= product.description%>
+                                </p>
+                            </div>
+
+                        </article>
+
+
 
                     </article>
                     <article class="detail__main-article-button">
-                        <% if (locals.userLogin && userLogin.role_id === 2) { %>
-                        <div class="detail__main-button">
-                            <button class="detail__button1"> <a href="/products/edit/<%=product.id%>">
-                                    <h4 class="title-detail"> EDITAR </h4>
-                                </a></button>
-                        </div>
+                        <% if (locals.userLogin && userLogin.role_id===2) { %>
+                            <div class="detail__main-button">
+                                <button class="detail__button1"> <a href="/products/edit/<%=product.id%>">
+                                        <h4 class="title-detail"> EDITAR </h4>
+                                    </a></button>
+                            </div>
 
-                        <form action="/products/delete/<%= product.id%>?_method=DELETE" method="POST">
+                            <form action="/products/delete/<%= product.id%>?_method=DELETE" method="POST">
 
-                        </form>
-                        <% } %>
+                            </form>
+                            <% } %>
                     </article>
                 </section>
             </main>
-            <%- include('./partials/footer') %> 
+            <%- include('./partials/footer') %>
     </body>
 
 </html>

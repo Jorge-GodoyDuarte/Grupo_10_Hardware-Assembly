@@ -1,15 +1,39 @@
 const multer = require('multer');
 const path = require('path');
+const mime = require('mime');
 
-const storage = multer.diskStorage({
-    destination : (req,file, callback)=>{
-        callback(null, './public/images/users')
+const storageImgProduct = multer.diskStorage({
+    destination : function (req,file,callback) {
+        callback(null,'public/images/product-images')
     },
-    filename :(req,file,callback)=>{
-        callback(null, `avatar-${Date.now()}_users${path.extname(file.originalname)}`)
+    filename: function(req, file, cb) {
+        let ext = path.extname(file.originalname);
+        ext = ext.length > 1 ? ext : '.' + mime.extension(file.mimetype);
+        const fileName = Date.now() + '_imgpoduct' + ext;
+        console.log('filename: ', fileName); // <= vemos el resultado
+        cb(null, fileName);
     }
 });
-const upload = multer({
-    storage    
+
+
+const storageImgUser = multer.diskStorage({
+    destination : function (req,file,callback) {
+        callback(null,'public/images/users')
+    },
+    filename : function (req,file,callback){
+        callback(null, `${Date.now()}_users_${path.extname(file.originalname)}`)
+    }
 })
-module.exports = upload;
+
+const uploadImgProduct = multer({
+    storage : storageImgProduct
+})
+
+const uploadImgUser = multer({
+    storage : storageImgUser
+})
+
+module.exports = {
+    uploadImgProduct,
+    uploadImgUser
+}

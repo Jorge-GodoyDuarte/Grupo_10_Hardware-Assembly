@@ -6,22 +6,22 @@
 <body>
 	<%- include('./partials/header')  %>
 	<div class="flex-contenedor">
-		<% if (result.length > 0) { %>
-			<section class="contenedor">
-				<% for( let i=0; i < result.length; i++ ) { %>
-				  <div class="caja">
-					<a href="/products/filter?category=<%= result[i].id %>" class="category_item"
-					  title="<%= result[i].name %>">
-					  <img src="/images/logos-categorias/<%= result[i].image %> " alt="">
-					</a>
-				  </div>
-				  <% } %>
-			  </section>
+		<section class="contenedor">
+			<% for( let i=0; i < category.length; i++ ) { %>
+			  <div class="caja">
+				<a href="/products/filter/<%= category[i].id %>" class="category_item"
+				  title="<%= category[i].name %>">
+				  <img src="/images/logos-categorias/<%= category[i].image %> " alt="">
+				</a>
+			  </div>
+			  <% } %>
+		  </section>
+		<% if (product.length > 0) { %>
 			  <div class="flex-contenedor">
-				<% result.forEach(({id,brand_id,name,categories_id,description,discount,price})=> { %>
+				<% product.forEach(({id,brand_id,name,categories_id,description,discount,price,images})=> { %>
 				  <div class="el-wrapper" id="el-wrapper">
 					<div class="box-up">
-					  <img class="img" src="/images/<%= result.images ? images[0].name : 'default.png' %> " alt="" width="50%"
+						<img class="img" src="/images/product-images/<%= images.length ? images[0].name + '.jpg' : 'default.png' %> " alt="" width="50%"
 						height="50%">
 					  <div class="img-info">
 						<div class="info-inner">
@@ -29,7 +29,7 @@
 							<%= name %>
 						  </span>
 						  <span class="p-company">
-							<%= result.brand %>
+							<%= product.brand %>
 						  </span>
 						</div>
 		
@@ -55,13 +55,30 @@
 		
 	
 		<% }else { %>	
-			<div class="col-12">
-				<h2 style="color: rgba(163, 31, 7, 0.767);"> No hay productos que coincidan con esta búsqueda</h2>
+			<div class="box">
+				<div class="loader-bad">
+					<div class="icon search">
+						<svg viewBox="0 0 24 24">
+							<circle cx="11" cy="11" r="8"></circle>
+							<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+						</svg>
+					</div>
+					<div class="icon bad">
+						<svg viewBox="-394 266 30 30">
+							<line fill="none" stroke-width="3" x1="-372.1" y1="270.3" x2="-372.1" y2="275.8" />
+							<line fill="none" stroke-width="3" x1="-385.9" y1="270.3" x2="-385.9" y2="275.8" />
+							<path fill="none" stroke-width="3" d="M-367.1,290.6c0,0-3.6-5.6-11.9-5.6c-8.2,0-12.1,5.6-12.1,5.6" />
+						</svg>
+					</div>
+				</div>
+				<br>
+				<h3>Opss...</h3>
+				<h4> Resultado erroneo!</h4>
+				<p>No pudimos encontrar tu producto, intenta nuevamente! :( </p>
 			</div>
 			<% } %>	
 
 	  </div>
-	  <%- include('./partials/footer') %> 
-	<!-- /footer -->
+
 </body>	
 </html>
