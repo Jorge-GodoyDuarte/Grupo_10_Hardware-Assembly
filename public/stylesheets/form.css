@@ -1,4 +1,3 @@
-
 .form__text--error{
     color:red
 }
@@ -34,6 +33,10 @@
     font-family: 'calibri';
     font-size: 18px;
     color: white;
+  }
+
+  .form-box{
+    width:100%
   }
 
   .register_main_section h1{

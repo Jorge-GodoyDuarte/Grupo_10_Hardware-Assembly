@@ -183,4 +183,3 @@ carrito: (req,res)=>{
   return res.render('cart')
 }
 }
-   

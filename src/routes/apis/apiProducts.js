@@ -5,6 +5,7 @@ const router = express.Router();
 // ************ Controller Require ************
 const {list,detail,store,update,remove, getImage } = require('../../controllers/APIs/apiProductsController');
 
+
 // /api/products
 
 router
