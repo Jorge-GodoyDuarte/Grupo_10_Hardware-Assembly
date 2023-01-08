@@ -79,5 +79,10 @@ module.exports =[
                     return false
                 }
                 return true
-            }).withMessage('Las contraseñas no coinciden')
+            }).withMessage('Las contraseñas no coinciden'),
+            check('email')
+            .notEmpty()
+            .isEmail()
+            .withMessage('Ingresar un email válido'),
+            
 ]

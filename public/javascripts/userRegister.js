@@ -244,7 +244,10 @@ $("btn-show-pass").addEventListener("click", ({ target }) => {
               }
   
             };
-  
+  for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+    
+  }
             const getCities = async (provincia) => {
               try {
   

@@ -28,7 +28,7 @@
               <% products.forEach(({id,brand_id,name,categories_id,description,discount,price,images})=> { %>
                   <div class="el-wrapper">
                     <div class="box-up">
-                      <img class="img" src="/images/product-images/<%= images.length ? images[0].name + '.jpg' : 'default.png' %> " alt="" width="50%"
+                      <img class="img" src="/images/product-images/<%= images.length ? images[0].name : 'default.png' %> " alt="" width="50%"
                       height="50%">
                       <div class="img-info">
                         <div class="info-inner">
