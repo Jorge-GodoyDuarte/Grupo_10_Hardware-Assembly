@@ -4,13 +4,6 @@ export const SideBar = () => {
   return (
     <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-		
-			<a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-				<div className="sidebar-brand-icon">
-					<img className="w-100" src="/assets/images/logo.png" alt="Hardware Assembly"/>
-				</div>
-			</a>
-
 			
 			<hr className="sidebar-divider my-0"/>
 
@@ -18,19 +11,19 @@ export const SideBar = () => {
 			<li className="nav-item active">
 				<a className="nav-link" href="/">
 					<i className="fas fa-fw fa-tachometer-alt"></i>
-					<span>Dashboard - HA productos</span></a>
+					<span>HA - PANEL ADMIN</span></a>
 			</li>
 
 		
 			<hr className="sidebar-divider"/>
 
 			
-			<div className="sidebar-heading">Actions</div>
+			<div className="sidebar-heading">Acciones</div>
 
 			<li className="nav-item">
 				<a className="nav-link collapsed" href="/">
 					<i className="fas fa-fw fa-folder"></i>
-					<span>Pages</span>
+					<span>Paginas</span>
 				</a>
 			</li>
 

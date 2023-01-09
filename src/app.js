@@ -7,6 +7,7 @@ var logger = require('morgan');
 
 const methodOverride = require('method-override') // PARA UTILIZAR LOS METODOS PUT Y DELETE
 const session = require('express-session')
+const cors = require('cors');
 
 const localsUserCheck=require('./middlewares/localsUserCheck')
 const cookieCheck = require('./middlewares/cookieCheck');
@@ -45,6 +46,7 @@ app.use('/api/carts',require('./routes/APIs/apiCarts'));
 app.use(function(req, res, next) {
   next(createError(404));
 });
+app.use(cors());
 
 
 // error handler
@@ -58,5 +60,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen('3001', () => console.log('Servidor corriendo en el puerto 3001, TUKI'));
+app.listen('4000', () => console.log('Servidor corriendo en el puerto 4000, TUKI'));
 module.exports = app;
