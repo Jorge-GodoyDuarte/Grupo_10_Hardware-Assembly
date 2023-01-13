@@ -33,6 +33,7 @@ app.use(session({
   resave: false,
   saveUninitialized:true
 }))
+app.use(cors());
 app.use(cookieCheck)
 app.use(localsUserCheck)
 
@@ -46,7 +47,6 @@ app.use('/api/carts',require('./routes/APIs/apiCarts'));
 app.use(function(req, res, next) {
   next(createError(404));
 });
-app.use(cors());
 
 
 // error handler

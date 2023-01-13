@@ -34,17 +34,20 @@ export const ContentRowTop = () => {
 		
 	}
 	useEffect(() => {
-		const data = getData('/products');
-		console.log(data)
-		setstate({
-			...state,
-			products : {
-				title : "TOTAL DE PRODUCTOS",
-				color : "success",
-				icon : "fa-cart-shopping",
-				data : data.total
-			}
-	})
+		getData('/products')
+			.then(data => {
+				console.log(data);
+				setstate({
+					...state,
+					products : {
+						title : "TOTAL DE PRODUCTOS",
+						color : "success",
+						icon : "fa-cart-shopping",
+						data : data.meta.total
+					}
+				})
+			}).catch(error => console.error)
+		
 	}, []);
 
 

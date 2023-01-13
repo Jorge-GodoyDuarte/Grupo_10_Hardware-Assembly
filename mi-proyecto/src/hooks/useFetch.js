@@ -6,12 +6,7 @@ const FetchUser = async (endpoint, method= "GET", data) => {
     let response;
 
     if(method === "GET"){
-        response = await fetch(url,{
-            mode: "no-cors",
-            method: 'GET',
-            headers: {
-              'Content-Type' : 'application/json'}
-            });
+        response = await fetch(url);
     }
 
     if(method === "POST"){
@@ -26,8 +21,8 @@ const FetchUser = async (endpoint, method= "GET", data) => {
 
    
     let result = await response.json();
-
-    return result
+   
+    return result   
 }
 export {
     FetchUser
